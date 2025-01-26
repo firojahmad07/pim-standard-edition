@@ -1,0 +1,92 @@
+pimee_catalog_rule:
+  datagrid:
+    rule-grid:
+      actions:
+        execute: Ejecutar
+      title: Reglas
+      column:
+        label: Etiqueta
+        impacted_product_count:
+          label: Productos afectados
+          count: '{0,1}%count% producto afectado|]1,Inf[%count% productos afectados'
+          no_yet_calculated: Aún no calculado
+        tags:
+          label: Acciones
+        priority: Prioridad
+        status: Estado
+      mass_edit_action:
+        impacted_product_count: Calcular los productos afectados
+        execute: Ejecutar
+        delete: Borrar
+  condition:
+    fields:
+      family: Familia
+      family_variant: Variantes de familia
+      associations: Asociaciones
+      groups: Grupos
+      categories: Categorías
+      completeness: Completitud
+      identifier: Identificador
+      parent: Padre
+      enabled: Estado
+      entity_type: Tipo de entidad
+      created: Creado
+      updated: Actualizado
+    field_groups:
+      system: Sistema
+  acl_group:
+    rule: Reglas
+  acl:
+    rule:
+      edit_permissions: Editar reglas
+      view_permissions: Ver reglas
+      delete_permissions: Eliminar reglas
+      impacted_product_count_permissions: Calcular el número de productos afectados por las reglas
+      create_permissions: Crear reglas
+      execute_permissions: Ejecutar reglas
+  attribute:
+    tab:
+      rule.title: Reglas
+    grid:
+      is_smart.label: Atributo inteligente
+    acl:
+      rule.view_permissions: Ver reglas
+  product:
+    history: Regla aplicada "%rule%"
+  steps:
+    product_rule_definition_reader.title: Importar lector de reglas de producto
+    rule_definition_processor.title: Procesador de importación de reglas de productos
+    product_rule_definition_writer.title: Escritor de reglas de importación de productos
+    rules_execution.title: Ejecución de las reglas
+  notification:
+    execute_rules:
+      success: Ejecución de la(s) regla(s) completada
+      warning: Ejecución de la(s) regla(s) completada con advertencia(s)
+      error: Se ha producido un error durante la ejecución de las reglas
+    mass_edit_rule:
+      success: Cálculo de los productos afectados por las reglas terminadas
+      error: Se ha producido un error durante el cálculo del número de productos afectados por las reglas
+  datetime:
+    now: ahora
+    relative_date:
+      minute: ']-Inf, -1[ hace %absolute_count% minutos|{-1}hace 1 minuto|{1}en 1 minuto|]1, +Inf[en %absolute_count% minutos'
+      hour: ']-Inf, -1[ hace %absolute_count% horas|{-1}hace 1 hora|{1}en 1 hora|]1, +Inf[en %absolute_count% horas'
+      day: ']-Inf, -1[ hace %absolute_count% días|{-1}hace 1 día|{1}en 1 día|]1, +Inf[en %absolute_count% días'
+      week: ']-Inf, -1[ hace %absolute_count% semanas|{-1}hace 1 semana|{1}en 1 semana|]1, +Inf[en %absolute_count% semanas'
+      month: ']-Inf, -1[ hace %absolute_count% meses|{-1}hace 1 mes|{1}en 1 mes|]1, +Inf[en %absolute_count% meses'
+      year: ']-Inf, -1[ hace %absolute_count% años|{-1}hace 1 año|{1}en 1 año|]1, +Inf[en %absolute_count% años'
+  status:
+    enabled: Habilitado
+    disabled: Inhabilitado
+btn:
+  Execute rules: Ejecutar reglas
+job_execution:
+  summary:
+    rule_calculated: Número de reglas
+    read_rules: leer reglas
+    selected_entities: productos seleccionados / modelos de productos
+    skipped_invalid: productos omitidos / modelos de productos (inválidos)
+    updated_entities: productos actualizados / modelos de productos
+    executed_rules: reglas ejecutadas con éxito
+    errored_rules: reglas omitidas (inválidas)
+

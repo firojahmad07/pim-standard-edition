@@ -1,0 +1,3 @@
+services:
+    pimee_catalog_rule.reader.file.yaml_rule:
+        alias: 'pim_connector.reader.file.yaml'

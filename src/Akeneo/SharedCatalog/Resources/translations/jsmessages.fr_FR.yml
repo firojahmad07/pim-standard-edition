@@ -1,0 +1,28 @@
+batch_jobs.akeneo_shared_catalog.label: Envoyer à Shared Catalogs
+pim_common:
+  recipients: Destinataires
+  branding: Logo
+  result_count: "{0}Aucun résultat|{1}1 résultat|]1, Inf[{{ itemsCount }} résultats"
+  items_selected: "{0}0 élément sélectionné|{1}1 élément sélectionné|]1, Inf[{{ itemsCount }} éléments sélectionnés"
+shared_catalog:
+  recipients:
+    add: Ajouter les adresses e-mail des utilisateurs ici
+    placeholder: betty@akeneo.com
+    email: Adresse e-mail
+    invalid_email: Cette valeur n’est pas une adresse e-mail valide.
+    helper: "Ajoutez des destinataires pour leur donner accès à votre nouveau catalogue partagé. Vous pouvez remplir une liste d'adresses avec des séparateurs : espace, virgule, point-virgule et saut de ligne."
+    no_result: Désolé, aucun e-mail ne correspond à votre recherche
+    no_data: Aucune adresse email déclarée pour le moment
+    max_limit_reached: Vous avez atteint la limite de 500 destinataires.
+  branding:
+    upload_placeholder: "Glissez et déposez vos ressources ou cliquez ici"
+    uploading: Envoi des données en cours...
+    validation:
+      invalid_extension: "Extension de fichier non valide, les extensions autorisées sont: {{ allowed_extensions }}"
+      filesize_too_large: Le fichier que vous avez fourni est trop grand, la taille maximale est de 2MB
+      invalid_file: Ce fichier est invalide
+      invalid_color: Cette valeur n'est pas une couleur CSS valide.
+    logo:
+      label: Télécharger votre logo
+  button:
+    save: Enregistrer et partager

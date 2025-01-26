@@ -1,0 +1,43 @@
+services:
+    akeneo_referenceentity.infrastructure.persistence.query.enrich.find_all_existent_records_for_reference_entity_identifiers_public_api:
+        class: 'Akeneo\ReferenceEntity\Infrastructure\PublicApi\Enrich\SqlFindAllExistentRecordsForReferenceEntityIdentifiers'
+        arguments:
+            $connection: '@database_connection'
+
+    akeneo_referenceentity.infrastructure.persistence.query.enrich.find_records_labels_public_api:
+        class: Akeneo\ReferenceEntity\Infrastructure\PublicApi\Enrich\FindRecordsLabelTranslations
+        arguments:
+            - '@akeneo_referenceentity.infrastructure.persistence.query.find_record_labels_by_codes'
+
+    pimee.reference_entity.enrichment.find_all_existent_records_for_record_identifiers:
+        class: 'Akeneo\Pim\Enrichment\ReferenceEntity\Bundle\Enrichment\FindAllExistentRecordsForReferenceEntityIdentifiers'
+        arguments:
+            $allExistentRecordForReferenceEntityIdentifiers: '@akeneo_referenceentity.infrastructure.persistence.query.enrich.find_all_existent_records_for_reference_entity_identifiers_public_api'
+
+    akeneo_referenceentity.infrastructure.persistence.query.enrich.find_records_used_as_product_variant_axis:
+        class: Akeneo\Pim\Enrichment\ReferenceEntity\Bundle\Enrichment\SqlFindRecordsUsedAsProductVariantAxis
+        arguments:
+            - '@database_connection'
+            - '@akeneo.pim.structure.query.find_family_variants_identifiers_by_attribute_axes'
+            - '@pim_catalog.query.product_and_product_model_query_builder_factory'
+
+    # Enrichment > Reference entities
+    pimee.reference_entity.enrichment.product.get_products_linked_to_a_record_action:
+        class: Akeneo\Pim\Enrichment\ReferenceEntity\Component\Controller\Product\GetProductsLinkedToARecordAction
+        public: true
+        arguments:
+            - '@akeneo.pim.enrichment.query.product_and_product_model_query_builder_from_size_factory.with_product_identifier_cursor'
+            - '@akeneo.pim.enrichment.product.grid.query.fetch_product_and_product_model_rows'
+            - '@validator'
+            - '@pimee.reference_entity.enrichment.productnormalizer.linked_product_normalizer'
+
+    pimee.reference_entity.enrichment.productnormalizer.linked_product_normalizer:
+        class: Akeneo\Pim\Enrichment\ReferenceEntity\Component\Normalizer\LinkedProductsNormalizer
+        arguments:
+            - '@pim_enrich.normalizer.image'
+
+    # FilterProvider providers
+    pimee.reference_entity.enrichment.provider.filter.reference_entity:
+        class: 'Akeneo\Pim\Enrichment\ReferenceEntity\Bundle\FilterProvider\ReferenceEntityCollectionFilterProvider'
+        tags:
+            - { name: pim_enrich.provider.filter, priority: 90 }

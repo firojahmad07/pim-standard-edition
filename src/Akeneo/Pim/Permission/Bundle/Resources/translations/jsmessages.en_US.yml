@@ -1,0 +1,99 @@
+pim_enrich:
+    entity:
+        attribute:
+            property:
+                is_read_only: Read only
+
+pimee_import_export:
+    entity:
+        job_instance:
+            flash:
+                update:
+                    fail_empty_permission: You must select at least one allowed to edit job
+
+pimee_enrich.entity.category:
+    module:
+        permissions:
+            grant: The group <strong>{{ group }}</strong> will <strong>be {{ permission }}</strong> in this category
+            revoke: The group <strong>{{ group }}</strong> will <strong>not be {{ permission }}</strong> in this category
+
+pimee_enrich.entity.locale:
+    module:
+        permissions:
+            grant: The group <strong>{{ group }}</strong> will <strong>be {{ permission }}</strong> in this locale
+            revoke: The group <strong>{{ group }}</strong> will <strong>not be {{ permission }}</strong> in this locale
+
+pimee_enrich.entity.attribute group:
+    module:
+        permissions:
+            grant: The group <strong>{{ group }}</strong> will <strong>be {{ permission }}</strong> of this attribute group
+            revoke: The group <strong>{{ group }}</strong> will <strong>not be {{ permission }}</strong> of this attribute group
+
+pimee_enrich.entity.attribute_group:
+    module:
+        permissions:
+            added: The group {{ group }} will be allowed to {{ permission }} attribute group
+            view: Allowed to view attributes
+            edit: Allowed to edit attributes
+            removed: The group {{ group }} will not be allowed to {{ permission }} attribute group
+
+pimee_enrich.entity.job_instance:
+    module:
+        permissions:
+            added: The group {{ group }} will be allowed to {{ permission }} job profile
+            execute: Allowed to execute job profile
+            edit: Allowed to edit job profile
+            removed: The group {{ group }} will not be allowed to {{ permission }} job profile
+
+batch_jobs:
+    add_product_value_with_permission_and_rules:
+        label: Add product value with permission check & rules application
+        perform.label: Add product value
+    update_product_value_with_permission_and_rules:
+        label: Update product value with permission check & rules application
+        perform.label: Update product value
+    remove_product_value_with_permission_and_rules:
+        label: Remove product value with permission check & rules application
+        perform.label: Remove product value
+    edit_common_attributes_with_permission_and_rules:
+        label: Edit attributes with permission check & rules application
+        perform.label: Edit attributes
+        cleaner.label: Clean temporary files
+    default_steps:
+        send_for_approval: Send for approval
+
+pim_title:
+    pimee_enrich_locale_edit: Locale | Edit
+
+pim_analytics:
+    info_type:
+        nb_custom_locale_accesses: Number of custom locale accesses
+        nb_custom_category_accesses: Number of custom category accesses
+        nb_custom_attribute_group_accesses: Number of custom attribute group accesses
+
+category.permissions:
+    view.label: Allowed to view products
+    edit.label: Allowed to edit products
+    own.label: Allowed to own products
+    own.help: Review, publish, unpublish, classify and associate products
+    no_access_to_products: You don't have access to products in any tree, please contact your administrator
+    apply_on_children.label: Apply changes on children
+    apply_on_children.help: Existing permissions on children are kept
+
+pim_permissions:
+    widget:
+        entity:
+            attribute_group:
+                label: Attribute groups
+                help: If you want your app to be able to modify all your product data, choose the All option in the Edit level. Otherwise, select only the attribute groups that your app will be able to see or modify according to the level.
+            category:
+                label: Category trees
+                help: If you want your app to be able to modify your products without using PIM proposals, choose the Own level. Otherwise choose the Edit level.
+            locale:
+                label: Locales
+                help: If you want your app to be able to edit your products in all languages, choose the All option in the Edit level. Otherwise, select only the languages that your app will be able to see or modify according to the level.
+            not_granted_warning: This section is only accessible to users with the {{ permission }}. Please contact your administrator. With the right permission, you will be able to come back to the App settings and edit them.
+
+pimee_enrich.acl.category.edit_permissions: Manage category permissions
+pimee_enrich.acl.attribute_group.edit_permissions: Manage attribute group permissions
+pimee_enrich.acl.locale.edit_permissions: Manage locale permissions

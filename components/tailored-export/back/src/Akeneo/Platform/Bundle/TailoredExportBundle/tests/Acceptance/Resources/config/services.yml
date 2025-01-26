@@ -1,0 +1,45 @@
+services:
+    Akeneo\Platform\TailoredExport\Domain\Query\FindAssetLabelsInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\Asset\InMemoryFindAssetLabels
+
+    Akeneo\Platform\TailoredExport\Domain\Query\AssetCollection\FindAssetMainMediaAttributeInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\Asset\InMemoryFindAssetMainMediaAttribute
+
+    Akeneo\Platform\TailoredExport\Domain\Query\FindAssetMainMediaDataInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\Asset\InMemoryFindAssetMainMediaData
+
+    Akeneo\Platform\TailoredExport\Domain\Query\MeasurementConverterInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\Measurement\InMemoryMeasurementConverter
+
+    Akeneo\Platform\TailoredExport\Domain\Query\FindCategoryLabelsInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\Category\InMemoryFindCategoryLabels
+
+    Akeneo\Platform\TailoredExport\Domain\Query\FindFamilyLabelInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\Family\InMemoryFindFamilyLabel
+
+    Akeneo\Platform\TailoredExport\Domain\Query\FindFamilyVariantLabelInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\FamilyVariant\InMemoryFindFamilyVariantLabel
+
+    Akeneo\Platform\TailoredExport\Domain\Query\FindAttributeOptionLabelsInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\AttributeOption\InMemoryFindAttributeOptionLabels
+
+    Akeneo\Platform\TailoredExport\Domain\Query\FindRecordLabelsInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\ReferenceEntity\InMemoryFindRecordLabels
+
+    Akeneo\Platform\TailoredExport\Domain\Query\FindProductLabelsInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\Product\InMemoryFindProductLabels
+
+    Akeneo\Platform\TailoredExport\Domain\Query\FindProductModelLabelsInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\ProductModel\InMemoryFindProductModelLabels
+
+    Akeneo\Platform\TailoredExport\Domain\Query\FindGroupLabelsInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\Group\InMemoryFindGroupLabels
+
+    Akeneo\Platform\TailoredExport\Domain\Query\FindUnitLabelInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\Measurement\InMemoryFindUnitLabel
+
+    Akeneo\Platform\TailoredExport\Domain\Query\FindUnitSymbolInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\Measurement\InMemoryFindUnitSymbol
+
+    Akeneo\Platform\TailoredExport\Domain\Query\FindQualityScoresInterface:
+        class: Akeneo\Platform\TailoredExport\Test\Acceptance\FakeServices\QualityScore\InMemoryFindQualityScores

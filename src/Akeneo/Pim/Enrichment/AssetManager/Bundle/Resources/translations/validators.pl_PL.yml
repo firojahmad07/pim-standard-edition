@@ -1,0 +1,6 @@
+pim_asset_manager:
+  product_value:
+    validation:
+      asset_multiple_link:
+        limit_reached: 'Osiągnąłeś limit %limit% zasobów na kolekcję, nie możesz już dodawać zasobów do kolekcji.'
+      assets_should_belong_to_asset_family: 'Upewnij się, że zasób "%asset_code%" istnieje i należy do rodziny zasobów "%asset_family_identifier%" dla atrybutu "%attribute%".'

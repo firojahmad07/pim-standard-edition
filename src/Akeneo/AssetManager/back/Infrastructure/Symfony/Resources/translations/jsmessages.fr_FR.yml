@@ -1,0 +1,581 @@
+pim_title:
+  akeneo_asset_manager_asset_family_index: Gestionnaire de ressources
+  akeneo_asset_manager_asset_family_edit: Modifier une famille de ressources
+  akeneo_asset_manager_asset_edit: Modifier une ressource
+pim_asset_manager:
+  editor:
+    embedded:
+      invalid_link:
+        title: Lien incorporé suspect
+        message: Désolé, nous n'affichons pas cet élément intégré mais il sera correctement sauvegardé.
+  result_counter: '{0} Pas de résultat|{1} {{ count }} résultat|]1,Inf] {{ count }} résultats'
+  asset_counter: '{0}Pas de ressource |{1} {{ count }} ressource|]1,Inf] {{ count }} ressources'
+  asset_selected: '{0} {{ assetCount }} ressource sélectionnée|{1} {{ assetCount }} ressource sélectionnée|]1,Inf] {{ assetCount }} ressources sélectionnées'
+  asset_collection:
+    add_asset: 'Ajouter une ressource'
+    upload_asset: 'Charger des ressources'
+    add_asset_title: 'Ouvrir le sélecteur de ressources pour ajouter des ressources à la collection'
+    no_asset_in_collection: 'Désolé, il n''y a aucune ressource dans cette collection.'
+    helper:
+      title: 'Bienvenue dans votre nouvel espace de gestion des ressources de produits !'
+      text: 'Il n''y a pas de collection de ressources pour cette famille. Ajoutez simplement un attribut collection de ressources dans vos paramètres pour découvrir cette nouvelle fonctionnalité.'
+      link: 'Comment ajouter une collection de ressources ?'
+    no_asset:
+      title: 'Désolé, il n''y a aucune ressource pour ce produit.'
+    notification:
+      product_rule: 'Cette collection peut être mise à jour par une règle produit :'
+      limit: 'Vous avez atteint la limite de {{ limit }} ressources par collection, vous ne pouvez plus ajouter de ressource à votre collection.'
+    edit_asset: Modifier la ressource
+    remove_asset: Supprimer une ressource
+    remove_one_asset: Supprimer la ressource {{ assetName }} de la collection de ressources
+    remove_all_assets: Enlever toutes les ressources
+    other_actions: Autres actions
+    open_other_actions: Ouvrir d'autres actions
+    dismiss_other_actions: Cacher les autres actions
+    move_asset_to_left: Déplacer la ressource {{ assetName }} à gauche
+    move_asset_to_right: Déplacer la ressource {{ assetName }} à droite
+    legacy_helper:
+      moved_to_assets_tab: Pour voir la collection de ressources {{ label }}, allez à la section des ressources du produit.
+      is_missing_required: La collection de ressources {{ label }} est requise. Enrichissez-la dans la section des ressources du produit.
+  asset_picker:
+    title: Ajouter des ressources à votre produit
+    sub_title: Choisissez les ressources que vous souhaitez attacher à votre produit {{ productLabel }} dans la collection {{ attributeLabel }}
+    no_result:
+      title: Désolé, il n’y a aucune ressource pour votre recherche
+      sub_title: Essayez à nouveau avec d'autres critères de recherche
+    filter:
+      title: Filtres de ressources
+    basket:
+      empty_title: Votre panier est vide
+      remove_one_asset: Supprimer la ressource {{ assetName }} de la sélection des ressources
+      remove_all_assets: Tout supprimer
+  asset_preview:
+    previous: Ressource précédente
+    next: Prochaine ressource
+    empty_main_media: Cette ressource n'a pas de média.
+    other_main_media: Nous ne pouvons pas générer l'aperçu de cette ressource.
+    edit_asset: Modifier la ressource
+    download: Télécharger
+    copy_url: Copier l'URL
+    error: Une erreur s'est produite lors du chargement de l'aperçu.
+  breadcrumb:
+    products: Produits
+  app:
+    image:
+      wide:
+        remove: Supprimer le fichier
+        download: Télécharger le fichier
+        upload: Glissez et déposez un fichier pour le charger ou cliquez ici
+      small:
+        remove: Supprimer
+        download: Télécharger
+        upload: Glissez et déposez pour charger
+  grid:
+    counter: '{{ resultCount }} résultats'
+    counter_empty: '0 résultat'
+  asset_family:
+    column:
+      title: Navigation dans les ressources
+      selector:
+        title: Familles de ressources
+        no_data: Aucune famille de ressources disponible
+    validation:
+      code:
+        pattern: 'Ce champ ne peut être composé que de lettres, de chiffres et d''underscores.'
+        should_be_unique: 'Une famille de ressources portant le code "%asset_family_identifier%" existe déjà.'
+        limit_reached: 'Vous ne pouvez pas créer la famille de ressource "{{ %asset_family_label% }}" car vous avez atteint la limite de {{ %limit% }} familles de ressources'
+      transformation:
+        limit_reached: 'Vous avez atteint la limite de transformations de {{ %limit%}}'
+        same_operation_twice: 'L''opération "{{ %operation_type% }}" ne peut pas être définie deux fois dans la même transformation'
+        source_can_not_be_a_target: 'La source de l''attribut "{{ %attribute_code% }}" ne peut pas être un attribut cible d''une transformation.'
+        attribute_reference_should_exist: 'L''attribut "{{ %attribute_code% }}" n''existe pas pour cette famille de ressources'
+        filename_is_not_unique: 'Une transformation avec le préfixe de nom de fichier "{{ %filename_prefix% }}" et le suffixe "{{ %filename_suffix% }}" existe déjà pour l''attribut source "{{ %attribute_code%}}"'
+        code_is_not_unique: 'Vous ne pouvez pas définir deux transformations avec le même code "{{ %transformation_code%}}"'
+        unknown_extra_field: 'La propriété {{ {{ field }} }} n''était pas attendue.'
+      naming_convention:
+        property_should_exist: 'La propriété "{{ %property% }}" n''existe pas pour cette famille de ressources.'
+        not_main_media_attribute_code: 'La propriété doit correspondre au code de l''attribut défini comme média principal.'
+      rule_template:
+        limit_reached: 'Vous avez atteint la limite de %limit% règles de rattachement automatique aux produits pour la famille de ressources "%asset_family_identifier%".'
+        product_selection_cannot_be_empty: 'Vous devez spécifier au moins une sélection de produits dans votre règle de rattachement aux produits.'
+        product_assignment_cannot_be_empty: 'Vous devez spécifier au moins une affectation de produits dans votre règle de rattachement aux produits.'
+        extrapolated_attribute_should_exist: 'L''attribut "{{ %attribute_code% }}" n''existe pas dans cette famille de ressources.'
+        extrapolated_attribute_type_should_be_supported: 'L''attribut "{{ %attribute_code% }}" de type "{{ %attribute_type% }}" n''est pas pris en charge. Seuls les types d''attributs suivants sont supportés pour ce champ : {{ %supported_attribute_type% }}.'
+        channel_should_exist: 'Le canal "{{ %channel_code% }}" n''existe pas.'
+        locale_should_exist: 'La locale "{{ %locale_code% }}" n''est pas activée ou n''existe pas.'
+        extrapolated_attribute_type_should_not_have_one_value_per_channel: 'L''attribut "{{ %attribute_code% }}" ne peut pas être utilisé pour l''extrapolation car il a une valeur par canal.'
+        extrapolated_attribute_type_should_not_have_one_value_per_locale: 'L''attribut "{{ %attribute_code% }}" ne peut pas être utilisé pour l''extrapolation car il a une valeur par locale.'
+        assignment_mode_not_supported: 'Le mode d''affectation "{{ %assignment_mode% }}" trouvé dans une règle de rattachement aux produits n''est pas valide. Seuls les modes suivants sont acceptés : "replace" (remplacer) ou "add" (ajouter).'
+        channel_not_supported_for_field: 'Vous ne pouvez pas spécifier de canal pour le champ "{{ %product_field% }}".'
+        locale_not_supported_for_field: 'Vous ne pouvez pas spécifier de locale pour le champ "{{ %product_field% }}".'
+        assignmement_attribute_does_not_support_this_asset_family: 'L''attribut produit "%product_attribute_code%" ne peut pas contenir de ressources de la famille de ressources "%asset_family_identifier%"'
+        assignmement_attribute_does_not_exist: 'L''attribut produit "{{ %product_attribute_code% }}" n''existe pas.'
+        assignmement_attribute_is_not_an_asset_collection: 'L''attribut produit "{{ %product_attribute_code% }}" n''est pas un attribut de type collection de ressources.'
+    button:
+      save: Enregistrer
+      save_permission: Enregistrer
+      create: Créer une famille de ressources
+      edit: Modifier la famille
+      view: Voir la famille
+      execute_product_link_rules: Exécuter les règles
+      execute_naming_convention: Exécuter la convention de nommage
+    permission:
+      title: Autorisations de la famille de ressources
+    title: Ressources
+    breadcrumb: Familles de ressources
+    img: Le média principal de la famille de ressources nommée "{{ label }}"
+    tab:
+      assets: Ressources
+      attribute: Attributs
+      properties: Propriétés
+      permission: Autorisations
+      transformations: Transformations
+      product_link_rules: Règles de rattachement aux produits
+    transformations:
+      help:
+        description: Vous pouvez définir ici jusqu'à 10 transformations par famille de ressources.
+        link: Si vous souhaitez mieux comprendre comment fonctionnent les transformations des ressources, cliquez ici.
+      subsection: 'Propriétés de la transformation'
+    product_link_rules:
+      naming_convention_subsection: 'Propriétés de la convention de nommage'
+      product_link_rules_subsection: 'Propriétés des règles de rattachement aux produits'
+      help:
+        description: 'Vous pouvez définir ici jusqu''à 2 règles de rattachement automatique aux produits pour chaque famille de ressources.'
+        link: 'Si vous souhaitez en savoir plus sur les règles de rattachement automatique aux produits, cliquez ici.'
+      execute_rules:
+        confirm_title: Confirmer l’exécution
+        confirm_content: Êtes-vous certain de vouloir exécuter toutes les règles ? (cela peut prendre un certain temps)
+        execute_rules: Exécuter les règles
+      execute_naming_convention:
+        confirm_title: Confirmer l’exécution
+        confirm_content: Êtes-vous certain de vouloir exécuter la convention de nommage ? (cela peut prendre un certain temps)
+        execute_naming_convention: Exécuter la convention de nommage
+    naming_convention:
+      help:
+        description: Vous pouvez définir ici les propriétés de la convention de nommage.
+        link: Apprenez tout ce que vous devez savoir sur leur format.
+    properties:
+      title: Propriétés de la famille de ressources
+      identifier: Code
+      label: Libellé
+      media_file: Fichier média
+      attribute_as_main_media: Attribut comme média principal
+    attribute:
+      title: Attributs de la ressource
+      attribute:
+        error:
+          render_list: 'Une erreur s’est produite lors de l''affichage de l’attribut « {{ %attribute_code% }} ».'
+          render_edit: 'Une erreur s’est produite pendant l''affichage des champs de propriétés additionnelles de l’attribut « {{ %attribute_code% }} ».'
+    module:
+      delete:
+        button: Supprimer la famille de ressources
+        confirm: Êtes-vous sûr de vouloir supprimer cette famille de ressources ?
+    index:
+      grid:
+        count: '{0} Aucune famille de ressources|{1} {{ count }} famille de ressources|]1,Inf] {{ count }} familles de ressources'
+        help:
+          title: 'Bienvenue dans les Familles de ressources !'
+          description_part_one: 'Enrichissez les informations communes liées aux produits (ex: marques, fabricants, couleurs, matières, ingrédients...).'
+          description_part_two: Cela vous permettra de fournir une meilleure expérience produit à vos clients.
+          description_part_three: Cliquez sur le bouton « Créer» pour créer votre première famille de ressources, définir ses attributs et ses ressources.
+          description_part_four: Ensuite, pour lier aux produits, créez un attribut produit associé à cette famille de ressources.
+          description_part_five: Pour plus de détails, nous vous invitons à parcourir cet article.
+    create:
+      header:
+        title: Créer
+      subtitle: Familles de ressources
+      title: Créer une nouvelle famille de ressources
+      input:
+        label: Libellé
+        code: Code (obligatoire)
+    delete:
+      message: Êtes-vous sûr de vouloir supprimer la famille de ressources "{{ assetFamilyLabel }} " ?
+      title: Famille de ressources
+    edit:
+      discard_changes: Vous perdrez les modifications apportées à la famille de ressources "{{ assetFamilyLabel }}" si vous quittez la page.
+    notification:
+      save:
+        success: Famille de ressources mise à jour avec succès.
+        fail: Une erreur s'est produite pendant la sauvegarde de la famille de ressources.
+      create:
+        success: Famille de ressources créée avec succès.
+        fail: Une erreur s'est produite pendant la création de la famille de ressources.
+      delete:
+        success: Famille de ressources supprimée avec succès.
+        fail: Une erreur s'est produite pendant la suppression de la famille de ressources.
+      compute_transformations:
+        success: Les transformations ont été lancées. Une fois cette tâche terminée, vous verrez vos nouvelles variations mises à jour dans vos ressources.
+        fail: Une erreur est survenue lors de l'exécution des transformations.
+      execute_product_link_rules:
+        success: Les règles de rattachement aux produits ont été lancées.
+        fail: Une erreur s'est produite lors du lancement des règles de rattachement aux produits.
+      execute_naming_convention:
+        success: La convention de nommage a été lancée
+        fail: Une erreur s'est produite lors du lancement de la convention de nommage
+    helper:
+      title: Bienvenue dans le gestionnaire de ressources !
+      no_asset:
+        text: Il n'y a pas de ressources dans la famille {{ family }}. Cliquez sur "Créer" et choisissez si vous voulez créer une ressource vide ou si vous préférez charger en masse des ressources.
+      no_asset_family:
+        text: Une bibliothèque qui rassemble vos ressources (images, vidéos, documents...), filtrées par familles de ressources. Créez votre première famille de ressources, définissez ses attributs et chargez des ressources !
+        link: Pour plus d'informations, nous vous invitons à lire cet article.
+    no_data:
+      no_asset:
+        title: Désolé, il n'y a pas de ressource !
+        link: Cliquez ici pour ajouter une ressource
+      no_asset_family:
+        title: Désolé, il n'y a pas de famille de ressources !
+        link: Cliquez ici pour ajouter une famille de ressources
+  permission:
+    notification:
+      save:
+        success: Permissions de la famille de ressources mises à jour avec succès.
+        fail: Au moins un groupe d'utilisateurs doit avoir la permission d'édition sur cette famille de ressources
+    no_data:
+      title: Vous n’avez aucun groupe utilisateurs
+      subtitle: Pour gérer des permissions sur la famille de ressources, vous devez avoir au moins un groupe d'utilisateurs.
+      link: Cliquez ici pour ajouter votre premier groupe d'utilisateurs
+  asset:
+    img: Le média principal de la ressource nommée "{{ label }}"
+    created_at: Créé
+    updated_at: Mis à jour
+    validation:
+      limit_reached: 'Vous ne pouvez pas créer la ressource « {{ %asset_label% }} » car vous avez atteint la limite de {{ %limit% }} ressources pour cette famille de ressources'
+      code:
+        pattern: 'Ce champ ne peut être composé que de lettres, de chiffres et d''underscores.'
+        should_be_unique: 'Ce code existe déjà pour une autre ressource.'
+      server_error: 'Une erreur est survenue lors de la création de la ressource'
+    no_data:
+      title: Il n'y a aucune ressource pour {{ entityLabel }}.
+      subtitle: Cliquez sur le bouton "Créer" pour ajouter la première ressource
+    no_result:
+      title: Il n'y a aucun résultat pour votre recherche.
+      subtitle: Essayez à nouveau avec d'autres critères de recherche.
+    selector:
+      no_value: Cliquer ici pour sélectionner une ressource.
+      error:
+        value: Oups, il semble que le rendu du champ «{{ fieldName }}» a échoué. Voir la console du développeur pour plus de détails.
+    button:
+      save_and_execute_naming_convention: Enregistrer et exécuter la convention de nommage
+      save: Enregistrer
+      create: Créer une ressource
+      mass_upload: Chargement en masse
+      delete: Supprimer
+      back: Retour à la liste
+      launch_transformations: Lancer les transformations
+      fullscreen: Plein écran
+    product:
+      attribute: Attribut produit
+      counter: '{{ totalCount }} résultat|{{ totalCount }} résultats'
+      dropdown:
+        attribute: Attribut produit
+      title: Produits
+      no_attribute:
+        title: Il n'y a pas d'attribut produit lié à la famille de ressource "{{ entityLabel }}"
+        subtitle: 'Pour commencer à lier les produits à cette famille de ressources, vous pouvez en créer un nouveau : '
+        link: Créer un nouvel attribut de produit
+      not_enough_items:
+        title: Vous ne pouvez voir que {{ productCount }}/{{ totalCount }} produits.
+        subtitle:
+          usable_in_grid: Pour découvrir tous les produits liés, cliquez ci-dessous!
+          not_usable_in_grid: Pour découvrir tous les produits liés, l'attribut produit doit être défini comme "utilisable dans la grille".
+        button: Voir tous les produits
+      no_product:
+        title: Cette ressource n'est liée à aucun produit via l'attribut produit "{{ entityLabel }}".
+        subtitle: 'Commencez à lier les produits à cet attribut pour les voir ici'
+    no_linked_products: Cette ressource n'est liée à aucun produit.
+    enrich:
+      title: Attributs de la ressource
+      code: Code
+      label: Libellé
+      edit_subsection: Modifier la ressource
+      product_subsection: Produits liés
+      main_media_preview: Aperçu du média principal
+    title: Ressources
+    create:
+      header:
+        title: Créer
+      subtitle: Familles de ressources
+      title: Ajouter une nouvelle ressource dans {{ entityLabel }}
+      input:
+        label: Libellé
+        code: Code (requis)
+        create_another: Créer une autre ressource
+    upload:
+      line_count: '[0,1]{{ count }} fichier|]1,Inf] {{ count }} fichiers'
+      title: Charger des ressources
+      lines: Fichiers
+      retry: Réessayer
+      remove: Supprimer
+      remove_all: Tout supprimer
+      confirm: Créer
+      add_to_product: Ajouter au produit
+      drop_or_click_here: Glissez et déposez vos ressources ou cliquez ici
+      will_appear_here: Chargez des ressources et elles apparaîtront juste ici!
+      files_limit: Vous essayez de charger trop de fichiers, seul les {{ limit }} premiers seront chargés.
+      discard_changes: Vous perdrez vos ressources si vous fermez cette fenêtre sans les créer.
+      disabled_for_media_link: Vous ne pouvez pas charger de ressources dans cette famille car l'attribut utilisé comme média principal est un attribut de type "lien média".
+      upload_failure: Une erreur s'est produite lors du chargement du fichier.
+      cannot_retry: Une erreur s'est produite lors de la tentative de chargement du fichier.
+      list:
+        asset: Ressource
+        filename: Nom du fichier
+        code: Code (requis)
+        locale: Locale (requis)
+        channel: Canal (requis)
+        status: Statut
+      status:
+        waiting_for_upload: pas encore chargé
+        upload_in_progress: en cours
+        uploaded: chargé
+        valid: prêt à créer
+        invalid: erreur
+        created: créé
+    delete:
+      message: Êtes-vous sûr de vouloir supprimer la ressource "{{ assetLabel }}" ? Si elle est liée à des produits, les liens vers ces derniers seront supprimés.
+      title: Ressource
+    mass_delete:
+      confirm: '[0,1]Êtes-vous sûr(e) de vouloir supprimer la sélection de {{ assetCount }} ressources ?|]1,Inf]Êtes-vous sûr(e) de vouloir supprimer les {{ assetCount }} ressources sélectionnées ?'
+      extra_information: Si ces ressources sont liées à des produits, les liens seront également supprimés.
+      confirm_label: 'Merci de saisir le code de la famille de ressources suivant : "{{ assetFamilyIdentifier }}"'
+      title: Ressources
+    mass_edit:
+      subtitle: Modification en masse de ressources
+      title: "[0, 1]Modifier les valeurs d'attributs de {{ count }} ressource|]1,Inf] Modifier les valeurs d'attributs de {{ count }} ressources"
+      attribute_selected: "{0}Zéro attribut sélectionné|{1}1 attribut sélectionné|]1,Inf]{{ count }} attributs sélectionnés"
+      empty_selection:
+        title: Votre sélection d'attribut est vide. Veuillez sélectionner ceux que vous souhaitez modifier.
+        body: Vous ne savez pas ce que fait une modification en masse ?
+        link: Jetez un oeil à cet article.
+      action:
+        append: Ajouter
+        replace: Remplacer
+      select:
+        channel: Sélectionner un canal
+        locale: Sélectionner une locale
+        action: Sélectionner une action
+      helper:
+        content: Veuillez noter qu'il est possible d'ajouter plusieurs fois le même attribut, donc assurez-vous de sélectionner soigneusement vos attributs.
+        link: Vous pouvez consulter notre documentation pour éviter tout problème.
+      unsupported_attribute: Ce type d'attribut "{{ attributeType }}" n'est pas pris en charge
+    grid:
+      search: Rechercher sur le libellé, le code et les attributs texte
+      filter:
+        completeness:
+          label: Complet
+          all: Tous
+          'yes': 'Oui'
+          'no': 'Non'
+        option:
+          all: Tous
+          no_value: Sélectionnez une option pour filtrer
+          operator:
+            in: Dans la liste
+      more_result:
+        title: Ce n'est pas tout !
+        description: Vous venez de faire défiler les {{ maxDisplayedAssets }} premiers résultats parmi {{ total }} ressources. Pour en voir plus, essayez avec des critères de recherche plus spécifiques.
+      column:
+        code: Code
+        image: Image
+        label: Libellé
+        complete: Complet
+        action: Actions
+      completeness:
+        title_no_required: Aucun attribut requis
+        title_non_complete: 0 sur {{ required }} attributs complet
+        title_ongoing: '{{ complete }} attributs sur {{ required }} complets'
+        title_complete: Tous les {{ required }} attributs complets
+    tab:
+      enrich: Enrichir
+      product: Produits
+    notification:
+      save:
+        success: Ressource mise à jour avec succès.
+        fail: Une erreur s'est produite lors de la sauvegarde de la ressource.
+        validation_error: La ressource n'a pas pu être mise à jour
+      create:
+        success: Ressource créée avec succès.
+        fail: Une erreur s'est produite lors de la création de la ressource.
+      delete:
+        success: La ressource «{{ code }}» a été supprimée avec succès.
+        fail: Une erreur s'est produite lors de la suppression de la ressource.
+      mass_delete:
+        success: La suppression en masse des ressources a été lancée. Vous serez notifié lorsque la tâche sera terminée.
+        fail: Une erreur s'est produite lors du lancement de la tâche de suppression de masse
+      mass_edit:
+        launch:
+          success: L'édition en masse des ressources a été lancée. Vous serez notifié lorsque la tâche sera terminée.
+          fail: Une erreur s'est produite lors du lancement de la tâche d'édition en masse
+        validation:
+          fail: Une erreur s'est produite lors de la validation de l'édition de masse
+      execute_naming_convention:
+        success: Convention de nommage exécutée avec succès
+        fail: Une erreur s'est produite lors de l'exécution de la convention de nommage
+    completeness:
+      label: Complet
+  attribute:
+    validation:
+      limit_reached: 'Vous ne pouvez pas créer l''attribut « {{ %attribute_label% }} » parce que vous avez atteint la limite de {{ %limit% }} attributs pour cette famille de ressources'
+    default:
+      code: Code
+      label: Libellé
+      media_file: Fichier média
+    type:
+      text: Texte
+      media_file: Fichier média
+      asset: Lien unique de ressource
+      asset_collection: Collection de ressources
+      option: Option unique
+      option_collection: Options multiples
+      number: Nombre
+      media_link: Lien médias
+    is_required: requis pour la complétude
+    is_read_only: Lecture uniquement dans l'interface
+    media_type_preview: Aperçu du type de média
+    no_data:
+      title: Il n'y a aucun attribut personnalisé pour {{ entityLabel }}
+      subtitle: Cliquez sur le bouton "Ajouter un attribut" pour ajouter votre premier attribut personnalisé
+    button:
+      add: Ajouter un attribut
+    create:
+      header:
+        title: Créer
+      subtitle: Familles de ressources
+      title: Ajouter un nouvel attribut de ressource
+      description: Les paramètres suivants, sauf le libellé, ne peuvent pas être mis à jour après la création de l’attribut
+      input:
+        code: Code (requis)
+        label: Libellé
+        type: Type d'attribut
+        asset_type: Famille de ressources à lier (obligatoire)
+        value_per_locale: Valeur par locale
+        value_per_channel: Valeur par canal
+      placeholder:
+        asset_type: Sélectionnez votre famille de ressources liée
+    edit:
+      delete: Supprimer l'attribut
+      title: Modifier l’attribut {{ code }}
+      save: Enregistrer
+      cancel: Annuler
+      input:
+        code: Code (requis)
+        label: Libellé
+        type: Type d'attribut
+        asset_type: Famille de ressources liées (obligatoire)
+        value_per_locale: Valeur par locale
+        value_per_channel: Valeur par canal
+        is_required: Requis pour la complétude
+        is_read_only: Lecture uniquement dans l'interface
+        max_length: Nombre maximum de caractères
+        textarea: Zone de texte
+        is_rich_text_editor: Éditeur de texte enrichi
+        max_file_size: Taille maximale de fichier (MB)
+        allowed_extensions: Extensions autorisées
+        validation_rule: Règle de validation
+        regular_expression: Expression régulière
+        min_value: Valeur minimale
+        max_value: Valeur maximale
+        manage_options:
+          confirmation:
+            discard_changes: Vous perdrez les modifications effectuées sur la liste d'options si vous quittez la page
+          quick_edit:
+            label: Gérer les options
+          option:
+            label:
+              placeholder: Ecrivez votre nouveau libellé d'option ici
+        options:
+          validation_rule:
+            none: Aucune
+            email: Courriel
+            regular_expression: Expression régulière
+            url: URL
+        decimals_allowed: Valeurs décimales autorisées
+        prefix: Préfixe
+        suffix: Suffixe
+        media_type: Type de média
+    delete:
+      message: Êtes-vous sûr de vouloir supprimer l’attribut «{{ attributeLabel }} » ?
+      title: Attribut
+    notification:
+      list:
+        fail: Une erreur s'est produite pendant la mise à jour de la liste d'attributs.
+      save:
+        success: Attribut mis à jour avec succès.
+        fail: Une erreur s'est produite pendant la sauvegarde de l'attribut.
+        validation_error: L'attribut n'a pas pu être mis à jour
+      create:
+        success: Attribut créé avec succès.
+        fail: Une erreur s'est produite pendant la création de l'attribut.
+        validation_error: L'attribut n'a pas pu être créé
+      delete:
+        success: Attribut supprimé avec succès.
+        fail: Une erreur s'est produite pendant la suppression de l'attribut.
+    options:
+      no_value: Cliquez ici pour choisir une option.
+      sub_title: Familles de ressources
+      helper:
+        title: Traduction des libellés
+    media_link:
+      placeholder: Insérer le lien du média ici
+      read_only: Ce lien média est en lecture seule.
+      reload: Recharger la miniature du lien média
+    media_file:
+      placeholder: Glissez et déposez un fichier pour le charger ou cliquez ici
+      read_only: Ce fichier est en lecture seule.
+      uploading: Chargement...
+    used_as_transformation_target: Ce champ est en lecture seule car il est utilisé comme cible dans une transformation de ressources.
+  jobs:
+    asset_manager_execute_naming_convention:
+      error: 'L''exécution de la convention de nommage a échoué sur la ressource "{{ asset }}"'
+pim_enrich:
+  confirmation:
+    discard_changes: 'Vous perdrez les modifications effectuées sur l''entité "{{ entity }}" si vous quittez la page.'
+  entity:
+    attribute:
+      property:
+        type:
+          pim_catalog_asset_collection: Collection de ressources
+        section:
+          type_specific: Paramètres spécifiques
+        asset_family:
+          identifier: Famille de ressources liées (obligatoire)
+          default_label: Veuillez sélectionner une famille de ressources
+permission:
+  mass_action: Appliquer le droit {{ rightLevel }} sur tous les groupes
+#Analytics
+pim_catalog_volume:
+  section:
+    asset_family:
+      title: Axes sur les familles de ressources
+      hint: Si vous utilisez les familles de ressources, voici les axes pour vous aider à suivre votre volumétrie.
+  axis:
+    count_asset_family: Familles de ressources
+    average_max_assets_per_asset_family: Ressources par famille de ressouces
+    average_max_attributes_per_asset_family: Attributs par famille de ressources
+pim_import_export:
+  form:
+    job_instance:
+      tab:
+        properties:
+          with_prefix_suffix:
+            title: Exporter le préfixe et le suffixe
+            help: Exporter le préfixe et le suffixe des attributs de lien média
+akeneo_job_process_tracker:
+  type_filter:
+    asset_manager_execute_naming_convention: Exécuter la convention de nommage pour toutes les ressources de la famille
+    asset_manager_link_assets_to_products: Lier les ressources aux produits
+    asset_manager_compute_transformations: Exécuter les transformations de ressources
+    asset_manager_mass_delete_assets: Supprimer en masse des ressources
+    asset_manager_mass_edit_assets: Edition de masse des ressources
+batch_jobs:
+  default_steps:
+    execute_naming_convention: Exécuter la convention de nommage pour toutes les ressources de la famille
+    mass_delete_assets: Lancer la suppression en masse des ressources
+    mass_edit_assets: Lancer l'édition en masse des ressources
+    link_assets_to_products: Lier les ressources aux produits
+    compute_transformations: Exécuter les transformations de ressources
+job_execution:
+  summary:
+    assets: Ressources
+pim_notification.types.asset_manager_mass_delete_assets: Supprimer en masse des ressources
+pim_notification.types.asset_manager_mass_edit_assets: Edition de masse des ressources

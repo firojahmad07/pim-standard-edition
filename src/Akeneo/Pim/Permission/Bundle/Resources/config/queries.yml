@@ -1,0 +1,217 @@
+parameters:
+    pimee_security.query.product_category_access.class: Akeneo\Pim\Permission\Bundle\Entity\Query\ItemCategoryAccessQuery
+
+services:
+    pimee_security.query.product_category_access:
+        class: '%pimee_security.query.product_category_access.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '%pim_catalog.entity.product.class%'
+
+    pimee_security.query.product_model_category_access:
+        class: '%pimee_security.query.product_category_access.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '%pim_catalog.entity.product_model.class%'
+
+    pimee_security.query.product_category_access_with_ids:
+        class: Akeneo\Pim\Permission\Bundle\Entity\Query\ProductCategoryAccessQuery
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '%pim_catalog.entity.product.class%'
+
+    pimee_security.query.product_model_category_access_with_ids:
+        class: Akeneo\Pim\Permission\Bundle\Entity\Query\ProductModelCategoryAccessQuery
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '%pim_catalog.entity.product_model.class%'
+
+    pim_catalog.query.get_associated_product_codes_by_product:
+        class: Akeneo\Pim\Permission\Bundle\Entity\Query\GetAssociatedProductCodesByProductFromDB
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@security.token_storage'
+
+    pimee_security.query.get_access_group_id_for_locale_code:
+        class: Akeneo\Pim\Permission\Bundle\Entity\Query\GetAccessGroupIdsForLocaleCodeFromDb
+        arguments:
+            - '@database_connection'
+
+    pimee_enrich.doctrine.counter.category_product:
+        class: 'Akeneo\Pim\Permission\Bundle\Persistence\ORM\Category\Query\GrantedCategoryProductsCounter'
+        arguments:
+            - '@pim_catalog.query.product_query_builder_factory_without_permission'
+            - '@pim_catalog.repository.category'
+            - '@pimee_security.repository.category_access'
+            - '@security.authorization_checker'
+            - '@security.token_storage'
+        tags:
+            - { name: pim_enrich.doctrine.counter.category_item, type: product }
+
+    pimee_security.product_grid.query.list_attributes:
+        class: Akeneo\Pim\Permission\Bundle\Datagrid\Query\Sql\ListAttributesUseableInProductGrid
+        arguments:
+            - '@database_connection'
+
+    pimee_security.product_grid.query.list_available_columns:
+        class: Akeneo\Pim\Permission\Bundle\Datagrid\Query\Sql\ListProductGridAvailableColumns
+        arguments:
+            - '@database_connection'
+            - '@oro_datagrid.configuration.provider.chain'
+            - 'product-grid'
+
+    pimee_security.product_grid.query.list_available_column_groups:
+        class: Akeneo\Pim\Permission\Bundle\Datagrid\Query\Sql\ListProductGridAvailableColumnGroups
+        arguments:
+            - '@database_connection'
+            - '@oro_datagrid.configuration.provider.chain'
+
+    akeneo.pim.permission.product.query.fetch_user_rights_on_product:
+        class: Akeneo\Pim\Permission\Bundle\Enrichment\Storage\Sql\Product\FetchUserRightsOnProduct
+        arguments:
+            - '@database_connection'
+
+    akeneo.pim.permission.product.query.fetch_user_rights_on_product_model:
+        class: Akeneo\Pim\Permission\Bundle\Enrichment\Storage\Sql\ProductModel\FetchUserRightsOnProductModel
+        arguments:
+            - '@database_connection'
+
+    akeneo.pim.enrichement.connector.write.file.flat.generate_headers_from_family_codes_without_permission:
+        class: 'Akeneo\Pim\Enrichment\Bundle\Storage\Sql\Connector\Writer\File\Flat\GenerateHeadersFromFamilyCodes'
+        arguments:
+            - '@database_connection'
+
+    akeneo.pim.enrichment.connector.write.file.flat.generate_headers_from_family_codes:
+        class: 'Akeneo\Pim\Permission\Bundle\Enrichment\Storage\Sql\Connector\Writer\File\Flat\GenerateHeadersFromFamilyCodes'
+        arguments:
+            - '@database_connection'
+            - '@security.token_storage'
+            - '@akeneo.pim.enrichement.connector.write.file.flat.generate_headers_from_family_codes_without_permission'
+
+    akeneo.pim.enrichement.connector.write.file.flat.generate_headers_from_attribute_codes_without_permission:
+        class: 'Akeneo\Pim\Enrichment\Bundle\Storage\Sql\Connector\Writer\File\Flat\GenerateHeadersFromAttributeCodes'
+        arguments:
+            - '@database_connection'
+
+    akeneo.pim.enrichment.connector.write.file.flat.generate_headers_from_attribute_codes:
+        class: 'Akeneo\Pim\Permission\Bundle\Enrichment\Storage\Sql\Connector\Writer\File\Flat\GenerateHeadersFromAttributeCodes'
+        arguments:
+            - '@database_connection'
+            - '@security.token_storage'
+            - '@akeneo.pim.enrichement.connector.write.file.flat.generate_headers_from_attribute_codes_without_permission'
+
+    pimee_security.query.get_last_operations:
+        class: 'Akeneo\Pim\Permission\Bundle\Persistence\Sql\GetLastOperations'
+        decorates: pim_import_export.query.get_last_operations
+        decoration_inner_name: pim_import_export.query.get_last_operations.without_permission
+        arguments:
+            - '@pim_import_export.query.get_last_operations.without_permission'
+
+    pimee_security.query.sql.get_viewable_attribute_codes_for_user:
+        class: 'Akeneo\Pim\Permission\Bundle\Persistence\Sql\GetViewableAttributeCodesForUser'
+        arguments:
+            - '@database_connection'
+
+    pimee_security.query.get_viewable_attribute_codes_for_user:
+        class: 'Akeneo\Pim\Permission\Bundle\Persistence\Cache\LRUCachedGetViewableAttributeCodesForUser'
+        arguments:
+            - '@pimee_security.query.sql.get_viewable_attribute_codes_for_user'
+
+    pimee_security.query.sql.get_viewable_category_codes_for_user:
+        class: 'Akeneo\Pim\Permission\Bundle\Persistence\Sql\GetViewableCategoryCodesForUser'
+        arguments:
+            - '@database_connection'
+
+    pimee_security.query.get_all_viewable_locales_for_user:
+        class: 'Akeneo\Pim\Permission\Bundle\Persistence\Sql\LocaleRight\GetAllViewableLocalesForUser'
+        arguments:
+            - '@database_connection'
+        tags: ['akeneo.pim.cached_query']
+
+    akeneo.pim.enrichment.category.get_viewable_category_codes:
+        class: 'Akeneo\Pim\Permission\Bundle\Enrichment\Storage\Sql\Category\GetViewableCategoryCodes'
+        arguments:
+            - '@database_connection'
+
+    akeneo.pim.enrichment.category.get_ownable_category_codes:
+        class: 'Akeneo\Pim\Permission\Bundle\Enrichment\Storage\Sql\Category\GetOwnableCategoryCodes'
+        arguments:
+            - '@database_connection'
+
+    akeneo.pim.enrichment.category.get_editable_category_codes:
+        class: 'Akeneo\Pim\Permission\Bundle\Enrichment\Storage\Sql\Category\GetEditableCategoryCodes'
+        arguments:
+            - '@database_connection'
+
+    Akeneo\Pim\Permission\Component\Query\GetRawValues:
+        class: Akeneo\Pim\Permission\Bundle\Persistence\Sql\SqlGetRawValues
+        arguments:
+            - '@database_connection'
+
+    Akeneo\Pim\Permission\Bundle\Enrichment\Storage\Sql\Category\GetRootCategoryCodesAndLabels:
+        arguments:
+            - '@database_connection'
+
+    Akeneo\Pim\Permission\Bundle\Enrichment\Storage\Sql\AttributeGroup\GetAttributeGroupCodesAndLabels:
+        arguments:
+            - '@database_connection'
+
+    Akeneo\Pim\Permission\Bundle\Persistence\ORM\UserGroup\GetUserGroupsWithDefaultPermission:
+        arguments:
+            - '@database_connection'
+            - '@doctrine'
+            - '%pim_user.entity.group.class%'
+
+    Akeneo\Pim\Permission\Bundle\Persistence\ORM\Category\GetRootCategoryReferenceFromCode:
+        arguments:
+            - '@database_connection'
+            - '@doctrine'
+            - '%pim_catalog.entity.category.class%'
+
+    Akeneo\Pim\Permission\Bundle\Persistence\ORM\Category\GetAllRootCategoriesCodes:
+        arguments:
+            - '@database_connection'
+
+    Akeneo\Pim\Permission\Bundle\Persistence\ORM\Category\GetCategoriesAccessesWithHighestLevel:
+        arguments:
+            - '@database_connection'
+
+    Akeneo\Pim\Permission\Bundle\Persistence\ORM\Category\GetUserGroupRootCategoriesAccesses:
+        arguments:
+            - '@database_connection'
+
+    Akeneo\Pim\Permission\Bundle\Persistence\ORM\AttributeGroup\GetAttributeGroupReferenceFromCode:
+        arguments:
+            - '@database_connection'
+            - '@doctrine'
+            - '%pim_catalog.entity.attribute_group.class%'
+
+    Akeneo\Pim\Permission\Bundle\Persistence\ORM\AttributeGroup\GetAllAttributeGroupCodes:
+        arguments:
+            - '@database_connection'
+
+    Akeneo\Pim\Permission\Bundle\Persistence\ORM\AttributeGroup\GetAttributeGroupsAccessesWithHighestLevel:
+        arguments:
+            - '@database_connection'
+
+    Akeneo\Pim\Permission\Bundle\Persistence\ORM\AttributeGroup\GetUserGroupAttributeGroupsAccesses:
+        arguments:
+            - '@database_connection'
+
+    Akeneo\Pim\Permission\Bundle\Persistence\ORM\Locale\GetUserGroupLocalesAccesses:
+        arguments:
+            - '@database_connection'
+
+    Akeneo\Pim\Permission\Bundle\Persistence\ORM\Locale\GetAllActiveLocalesCodes:
+        arguments:
+            - '@database_connection'
+
+    Akeneo\Pim\Permission\Bundle\Persistence\ORM\Locale\GetActiveLocalesAccessesWithHighestLevel:
+        arguments:
+            - '@database_connection'
+
+    Akeneo\Pim\Permission\Bundle\Persistence\ORM\Locale\GetActiveLocaleReferenceFromCode:
+        arguments:
+            - '@database_connection'
+            - '@doctrine'
+            - '%pim_catalog.entity.locale.class%'

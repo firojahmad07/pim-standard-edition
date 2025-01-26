@@ -1,0 +1,25 @@
+parameters:
+    akeneo_rule_engine.event_subscriber.log_execution.class: Akeneo\Tool\Bundle\RuleEngineBundle\EventSubscriber\LogExecutionSubscriber
+
+services:
+    akeneo_rule_engine.event_subscriber.log_execution:
+        class: '%akeneo_rule_engine.event_subscriber.log_execution.class%'
+        arguments:
+            - '@logger'
+            - '%env(LOGGING_LEVEL)%'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    akeneo_rule_engine.event_subscriber.installer:
+        class: Akeneo\Tool\Bundle\RuleEngineBundle\EventSubscriber\InstallerSubscriber
+        arguments:
+            - '@akeneo_rule_engine.event_subscriber.assets_installer'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    akeneo_rule_engine.event_subscriber.assets_installer:
+        class: Akeneo\Platform\Bundle\InstallerBundle\Event\Subscriber\AssetsInstaller
+        arguments:
+            - '@filesystem'
+            - '%pim_ee_dev_src_folder_location%/src/Akeneo/Pim/Automation/RuleEngine/front/src'
+            - '%kernel.project_dir%/public/bundles/akeneopimruleengine'

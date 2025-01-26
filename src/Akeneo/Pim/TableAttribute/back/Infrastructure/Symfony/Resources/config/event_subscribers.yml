@@ -1,0 +1,29 @@
+services:
+    pim_table_attribute.event_subscriber.assets_installer:
+        class: Akeneo\Platform\Bundle\InstallerBundle\Event\Subscriber\AssetsInstaller
+        arguments:
+            - '@filesystem'
+            - 'src/Akeneo/Pim/TableAttribute/front/src'
+            - '%kernel.project_dir%/public/bundles/akeneopimtableattribute'
+
+    Akeneo\Pim\TableAttribute\Infrastructure\Symfony\Install\InstallAssetsSubscriber:
+        arguments:
+            - '@pim_table_attribute.event_subscriber.assets_installer'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\TableAttribute\Infrastructure\TableConfiguration\EventSubscriber\ScheduleTableAttributeForUpdateSubscriber:
+        arguments:
+            - '@doctrine.orm.entity_manager'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\TableAttribute\Infrastructure\TableConfiguration\EventSubscriber\CleanOptionsJobSubscriber:
+        arguments:
+            - '@security.token_storage'
+            - '@akeneo_batch.job.job_instance_repository'
+            - '@akeneo_batch_queue.launcher.queue_job_launcher'
+            - '@Akeneo\Tool\Bundle\BatchBundle\Persistence\Sql\SqlCreateJobInstance'
+            - 'clean_table_values_following_deleted_options'
+        tags:
+            - { name: kernel.event_subscriber }

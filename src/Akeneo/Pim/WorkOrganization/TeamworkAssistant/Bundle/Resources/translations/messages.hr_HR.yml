@@ -1,0 +1,13 @@
+teamwork_assistant:
+  project:
+    required: Ta vrijednost ne smije biti prazana.
+  notification:
+    project_calculation:
+      start: Početak
+    project_finished:
+      show: Prikaži
+    due_date:
+      start: Početak
+  datagrid:
+    contributor_in_progress: U tijeku
+    contributor_done: Gotovo

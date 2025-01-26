@@ -1,0 +1,59 @@
+parameters:
+    # Maximum number of asset families
+    asset_family_limit: 100
+    # Maximum number of attributes per asset families
+    asset_family_maximum_attribute: 100
+    # Maximum number of assets for single asset family
+    asset_manager_asset_limit_per_asset_family: 10000000
+    # Maximum number of option for a single list attribute of an asset family
+    asset_family_option_limit_per_list_attribute: 100
+    # Number of assets per page for the connector
+    asset_family_connector_assets_limit_per_page: 100
+    # Number of asset families per page for the connector
+    asset_family_connector_asset_families_limit_per_page: 200
+    # Maximum number of assets to process in a single API request
+    asset_family_connector_maximum_assets_to_process_per_request: 100
+    # Maximum rule templates per asset families
+    asset_manager_rule_template_by_asset_family_limit: 2
+    # List of available operations
+    asset_manager_transformation_operation:
+        - 'Akeneo\AssetManager\Domain\Model\AssetFamily\Transformation\Operation\ColorspaceOperation'
+        - 'Akeneo\AssetManager\Domain\Model\AssetFamily\Transformation\Operation\OptimizeJpegOperation'
+        - 'Akeneo\AssetManager\Domain\Model\AssetFamily\Transformation\Operation\ResizeOperation'
+        - 'Akeneo\AssetManager\Domain\Model\AssetFamily\Transformation\Operation\ResolutionOperation'
+        - 'Akeneo\AssetManager\Domain\Model\AssetFamily\Transformation\Operation\ScaleOperation'
+        - 'Akeneo\AssetManager\Domain\Model\AssetFamily\Transformation\Operation\ThumbnailOperation'
+        - 'Akeneo\AssetManager\Domain\Model\AssetFamily\Transformation\Operation\IccStripOperation'
+    # Maximum transformations per asset families
+    asset_manager_transformations_by_asset_family_limit: 10
+    # Set to "true" to automatically load asset fixtures
+    env(SHOULD_LOAD_ASSETS_FIXTURES): 'false'
+    should_load_assets_fixtures: '%env(bool:SHOULD_LOAD_ASSETS_FIXTURES)%'
+    average_max_number_of_values_per_asset_limit: -1
+    allowed_media_link_protocols: ['http', 'https']
+    supported_pdf_mime_types:
+        - 'application/pdf'
+    supported_image_mime_types:
+        - 'image/g3fax'
+        - 'image/gif'
+        - 'image/heic'
+        - 'image/jp2'
+        - 'image/jpeg'
+        - 'image/jpg'
+        - 'image/jxr'
+        - 'image/png'
+        - 'image/psd'
+        - 'image/svg'
+        - 'image/svg+xml'
+        - 'image/tiff'
+        - 'image/vnd.adobe.photoshop'
+        - 'image/vnd.dwg'
+        - 'image/webp'
+        - 'image/x-3ds'
+        - 'image/x-canon-cr2'
+        - 'image/x-eps'
+        - 'image/x-ms-bmp'
+        - 'image/x-paintnet'
+        - 'image/x-portable-pixmap'
+        - 'image/x-tga'
+        - 'image/x-xcf'

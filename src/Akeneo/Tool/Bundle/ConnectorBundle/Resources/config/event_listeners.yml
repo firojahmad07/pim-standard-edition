@@ -1,0 +1,34 @@
+parameters:
+    pim_connector.reset_processed_items_batch_subscriber.class: Akeneo\Tool\Bundle\ConnectorBundle\EventListener\ResetProcessedItemsBatchSubscriber
+    pim_connector.clear_batch_cache_subscriber.class: Akeneo\Tool\Bundle\ConnectorBundle\EventListener\ClearBatchCacheSubscriber
+
+services:
+    pim_connector.reset_processed_items_batch_subscriber:
+        class: '%pim_connector.reset_processed_items_batch_subscriber.class%'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    pim_connector.clear_batch_cache_subscriber:
+          class: '%pim_connector.clear_batch_cache_subscriber.class%'
+          arguments:
+              - '@pim_connector.doctrine.cache_clearer'
+          tags:
+              - { name: kernel.event_subscriber }
+
+    pim_connector.fetch_remote_file_before_import:
+        class: 'Akeneo\Tool\Bundle\ConnectorBundle\EventListener\FetchRemoteFileBeforeImport'
+        arguments:
+            - '@oneup_flysystem.jobs_storage_filesystem'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    pim_connector.event_subscriber.store_remote_files_after_export:
+        class: 'Akeneo\Tool\Bundle\ConnectorBundle\EventListener\FetchRemoteFilesAfterExport'
+        arguments:
+            - '@akeneo_batch.job.job_registry'
+            - '@pim_catalog.version_provider'
+            - '@akeneo_file_storage.file_storage.filesystem_provider'
+            - '@akeneo_file_storage.file_storage.file.output_file_fetcher'
+            - '@logger'
+        tags:
+            - { name: kernel.event_subscriber }

@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "PATCH",
+    "route": "akeneo_reference_entities_reference_entity_attribute_option_rest_connector_create_or_update",
+    "query": {
+      "referenceEntityIdentifier": "brand_4",
+      "attributeCode": "sales_area",
+      "optionCode": "australia"
+    },
+    "body": {
+      "code":  "australia",
+      "labels":  {
+        "en_US":  "Australia",
+        "fr_FR":  "Australie"
+      }
+    }
+  },
+  "response": {
+    "status": 403,
+    "body": {
+      "code": 403,
+      "message": "Access forbidden. You are not allowed to create or update reference entities."
+    }
+  }
+}

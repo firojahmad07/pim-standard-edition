@@ -1,0 +1,89 @@
+parameters:
+    pimee_workflow.connector.job.job_parameters.constraint_collection_provider.mass_review.class: Akeneo\Pim\WorkOrganization\Workflow\Component\Connector\Job\JobParameters\ConstraintCollectionProvider\MassReview
+
+services:
+    # Validation constraints for Imports ------------------------------------------------------------------------------
+    pimee_workflow.connector.job.job_parameters.constraint_collection_provider.product_csv_import:
+        class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\Job\JobParameters\ConstraintCollectionProvider\ProductCsvImport'
+        arguments:
+            - '@akeneo_pim_enrichment.job.job_parameters.constraint_collection_provider.simple_csv_import'
+            -
+                - 'csv_product_proposal_import'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }
+
+    pimee_workflow.connector.job.job_parameters.constraint_collection_provider.product_model_csv_import:
+        class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\Job\JobParameters\ConstraintCollectionProvider\ProductModelCsvImport'
+        arguments:
+            - '@akeneo_pim_enrichment.job.job_parameters.constraint_collection_provider.simple_csv_import'
+            -
+                - 'csv_product_model_proposal_import'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }
+
+    pimee_workflow.connector.job.job_parameters.constraint_collection_provider.product_xlsx_import:
+        class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\Job\JobParameters\ConstraintCollectionProvider\ProductCsvImport'
+        arguments:
+            - '@akeneo_pim_enrichment.job.job_parameters.constraint_collection_provider.simple_xlsx_import'
+            -
+                - 'xlsx_product_proposal_import'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }
+
+    pimee_workflow.connector.job.job_parameters.constraint_collection_provider.product_model_xlsx_import:
+        class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\Job\JobParameters\ConstraintCollectionProvider\ProductModelCsvImport'
+        arguments:
+            - '@akeneo_pim_enrichment.job.job_parameters.constraint_collection_provider.simple_xlsx_import'
+            -
+                - 'xlsx_product_model_proposal_import'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }
+
+    # Validation constraints for Exports ------------------------------------------------------------------------------
+    pimee_workflow.connector.job.job_parameters.constraint_collection_provider.product_csv_export:
+        class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\Job\JobParameters\ConstraintCollectionProvider\ProductCsvExport'
+        arguments:
+            - '@akeneo_pim_enrichment.job.job_parameters.constraint_collection_provider.simple_csv_export'
+            -
+                - 'csv_published_product_export'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }
+
+    pimee_workflow.connector.job.job_parameters.constraint_collection_provider.product_xlsx_export:
+        class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\Job\JobParameters\ConstraintCollectionProvider\ProductXlsxExport'
+        arguments:
+            - '@akeneo_pim_enrichment.job.job_parameters.constraint_collection_provider.simple_xlsx_export'
+            -
+                - 'xlsx_published_product_export'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }
+
+    # Validation constraints for MassEdit -----------------------------------------------------------------------------
+    pimee_workflow.connector.job.job_parameters.constraint_collection_provider.mass_review:
+        class: '%pimee_workflow.connector.job.job_parameters.constraint_collection_provider.mass_review.class%'
+        arguments:
+            -
+                - 'approve_product_draft'
+                - 'refuse_product_draft'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }
+
+    pimee_enrich.connector.job.job_parameters.constraint_collection_provider.published_product_csv_quick_export:
+        class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\Job\JobParameters\ConstraintCollectionProvider\ProductQuickExport'
+        arguments:
+            - '@akeneo_pim_enrichment.job.job_parameters.constraint_collection_provider.simple_csv_export'
+            -
+                - 'csv_published_product_quick_export'
+                - 'csv_published_product_grid_context_quick_export'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }
+
+    pimee_enrich.connector.job.job_parameters.constraint_collection_provider.published_product_xlsx_quick_export:
+        class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\Job\JobParameters\ConstraintCollectionProvider\ProductQuickExport'
+        arguments:
+            - '@akeneo_pim_enrichment.job.job_parameters.constraint_collection_provider.simple_xlsx_export'
+            -
+                - 'xlsx_published_product_quick_export'
+                - 'xlsx_published_product_grid_context_quick_export'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }

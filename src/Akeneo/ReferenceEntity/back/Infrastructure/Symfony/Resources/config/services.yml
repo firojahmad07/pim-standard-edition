@@ -1,0 +1,151 @@
+services:
+    akeneo_referenceentity.command.installer.fixtures_installer:
+        class: Akeneo\ReferenceEntity\Infrastructure\Symfony\Command\Installer\FixturesInstaller
+        arguments:
+            - '@doctrine.dbal.default_connection'
+            - '@akeneo_file_storage.file_storage.file.file_storer'
+            - '@akeneo_referenceentity.client.record'
+            - '@pim_catalog.command_launcher'
+
+    akeneo_referenceentity.command.installer.assets_installer:
+        class: Akeneo\Platform\Bundle\InstallerBundle\Event\Subscriber\AssetsInstaller
+        arguments:
+            - '@filesystem'
+            - '%pim_ee_dev_src_folder_location%/src/Akeneo/ReferenceEntity/front'
+            - '%kernel.project_dir%/public/bundles/akeneoreferenceentity'
+
+    akeneo_referenceentity.event_subscriber.installer:
+        class: Akeneo\ReferenceEntity\Infrastructure\Symfony\Command\InstallerCommand
+        arguments:
+            - '@akeneo_referenceentity.command.installer.fixtures_installer'
+            - '@akeneo_referenceentity.command.installer.assets_installer'
+            - '%should_load_reference_entities_fixtures%'
+        tags:
+            - { name: kernel.event_subscriber }
+            - { name: 'console.command'}
+
+    akeneo_referenceentity.command.refresh_records:
+        class: Akeneo\ReferenceEntity\Infrastructure\Persistence\Sql\CLI\RefreshRecordsCommand
+        arguments:
+            - '@logger'
+            - '@akeneo_referenceentity.infrastructure.persistence.cli.all_records_identifiers'
+            - '@akeneo_referenceentity.infrastructure.persistence.sql.record.refresh_records.refresh_record'
+            - '@doctrine.dbal.default_connection'
+        tags:
+            - { name: 'console.command'}
+
+    Akeneo\ReferenceEntity\Infrastructure\Symfony\Command\MigrateRecordsIndexMappingCommand:
+        arguments:
+            - '@Akeneo\Tool\Component\Elasticsearch\PublicApi\Read\IndexMigrationIsDoneInterface'
+            - '@Akeneo\Tool\Component\Elasticsearch\PublicApi\Write\MigrateIndexWithoutDowntimeHandlerInterface'
+            - '@akeneo_referenceentity.client.record.index_configuration.files'
+            - '%record_index_name%'
+        tags:
+            - {name: console.command}
+
+    akeneo_referenceentity.event_subscriber.remove_user_group:
+        class: Akeneo\ReferenceEntity\Infrastructure\EventSubscriber\RemoveUserGroupSubscriber
+        arguments:
+            - '@akeneo.referencentity.infrastructure.persistence.query.find_reference_entity_where_user_group_is_last_to_have_edit_right'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\Enrichment\ReferenceEntity\Bundle\EventSubscriber\RemoveNonExistentReferenceEntityValuesSubscriber:
+        arguments:
+            - '@security.token_storage'
+            - '@akeneo_batch.job.job_instance_repository'
+            - '@akeneo_batch_queue.launcher.queue_job_launcher'
+            - '@database_connection'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    akeneo_referenceentity.updater.adder.reference_entity_collection:
+        class: Akeneo\Pim\Enrichment\ReferenceEntity\Component\Updater\Adder\ReferenceEntityCollectionAdder
+        arguments:
+        - '@pim_catalog.builder.entity_with_values'
+        - ['akeneo_reference_entity_collection']
+        tags:
+        - { name: 'pim_catalog.updater.adder' }
+
+    akeneo_referenceentity.updater.copier.reference_entity_single_link:
+        class: Akeneo\Pim\Enrichment\ReferenceEntity\Component\Updater\Copier\ReferenceEntityAttributeCopier
+        parent: pim_catalog.updater.copier.abstract
+        arguments:
+            - ['akeneo_reference_entity']
+            - ['akeneo_reference_entity']
+        tags:
+            - { name: 'pim_catalog.updater.copier' }
+
+    akeneo_referenceentity.updater.copier.reference_entity_collection:
+        class: Akeneo\Pim\Enrichment\ReferenceEntity\Component\Updater\Copier\ReferenceEntityAttributeCopier
+        parent: pim_catalog.updater.copier.abstract
+        arguments:
+            - ['akeneo_reference_entity_collection']
+            - ['akeneo_reference_entity_collection']
+        tags:
+            - { name: 'pim_catalog.updater.copier' }
+
+    Akeneo\Pim\Enrichment\ReferenceEntity\Component\Updater\Remover\ReferenceEntityCollectionRemover:
+        arguments:
+            - '@pim_catalog.validator.helper.attribute'
+            - '@pim_catalog.builder.entity_with_values'
+        tags:
+            - { name: 'pim_catalog.updater.remover' }
+
+    akeneo_referenceentity.application.attribute.subscribers.set_default_attributes_on_reference_entity_creation_subscriber:
+        class: Akeneo\ReferenceEntity\Application\Attribute\Subscribers\SetDefaultAttributesOnReferenceEntityCreationSubscriber
+        arguments:
+            - '@akeneo_referenceentity.infrastructure.persistence.repository.reference_entity'
+            - '@akeneo_referenceentity.infrastructure.persistence.repository.attribute'
+            - '@akeneo_referenceentity.application.attribute.create_attribute_handler'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    akeneo_referenceentity.application.reference_entity.subscribers.set_null_on_default_attributes_deletion_subscriber:
+        class: Akeneo\ReferenceEntity\Application\ReferenceEntity\Subscribers\SetNullOnDefaultAttributesDeletionSubscriber
+        arguments:
+            - '@akeneo_referenceentity.infrastructure.persistence.repository.reference_entity'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    akeneo_referenceentity.infrastructure.reference_entity.subscribers.refresh_record_subscriber:
+        class: Akeneo\ReferenceEntity\Infrastructure\Persistence\Sql\Subscribers\RefreshRecordsSubscriber
+        arguments:
+            - '@pim_catalog.command_launcher'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\ReferenceEntity\Infrastructure\Symfony\Command\IndexRecordsCommand:
+        arguments:
+            - '@akeneo_referenceentity.client.record'
+            - '@akeneo_referenceentity.infrastructure.persistence.repository.reference_entity'
+            - '@akeneo_referenceentity.infrastructure.search.elasticsearch.record_indexer'
+            - '@akeneo_referenceentity.infrastructure.persistence.query.reference_entity_exists'
+            - '%record_index_name%'
+        tags:
+            - { name: console.command }
+
+    # form providers
+    akeneo_referenceentity.provider.form.job_instance:
+        class: 'Akeneo\Platform\Bundle\ImportExportBundle\Provider\Form\JobInstanceFormProvider'
+        arguments:
+            -
+                csv_reference_entity_record_export: pim-job-instance-csv-reference-entity-record-export
+                xlsx_reference_entity_record_export: pim-job-instance-xlsx-reference-entity-record-export
+                csv_reference_entity_record_import: pim-job-instance-csv-reference-entity-record-import
+                xlsx_reference_entity_record_import: pim-job-instance-xlsx-reference-entity-record-import
+        tags:
+            - { name: pim_enrich.provider.form, priority: 100 }
+
+    # Notification factories
+    akeneo_referenceentity.factory.mass_operation_notification:
+        class: 'Akeneo\Platform\Bundle\ImportExportBundle\Factory\MassEditNotificationFactory'
+        arguments:
+            - ['reference_entity_mass_delete_records']
+            - '%pim_notification.entity.notification.class%'
+        tags:
+            - { name: pim_notification.factory.notification }
+
+    # Feature flag service
+    akeneo_referenceentity.feature_flag:
+        class: 'Akeneo\Platform\Bundle\FeatureFlagBundle\ReferenceEntityFeature'

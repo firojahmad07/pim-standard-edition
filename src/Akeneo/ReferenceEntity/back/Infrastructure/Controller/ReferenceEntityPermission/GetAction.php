@@ -1,0 +1,50 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Akeneo\ReferenceEntity\Infrastructure\Controller\ReferenceEntityPermission;
+
+use Akeneo\ReferenceEntity\Domain\Model\ReferenceEntity\ReferenceEntityIdentifier;
+use Akeneo\ReferenceEntity\Domain\Query\ReferenceEntityPermission\FindReferenceEntityPermissionsDetailsInterface;
+use Akeneo\ReferenceEntity\Domain\Query\ReferenceEntityPermission\PermissionDetails;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+/**
+ * @author    Samir Boulil <samir.boulil@akeneo.com>
+ * @copyright 2018 Akeneo SAS (http://www.akeneo.com)
+ */
+class GetAction
+{
+    public function __construct(
+        private FindReferenceEntityPermissionsDetailsInterface $findReferenceEntityPermissionsDetails
+    ) {
+    }
+
+    public function __invoke(Request $request, string $referenceEntityIdentifier): JsonResponse
+    {
+        $referenceEntityIdentifier = $this->getReferenceEntityIdentifierOr404($referenceEntityIdentifier);
+        $referenceEntityPermissionDetails = $this->findReferenceEntityPermissionsDetails->find($referenceEntityIdentifier);
+        $result = $this->normalizePermissionDetails($referenceEntityPermissionDetails);
+
+        return new JsonResponse($result);
+    }
+
+    private function getReferenceEntityIdentifierOr404(string $identifier): ReferenceEntityIdentifier
+    {
+        try {
+            return ReferenceEntityIdentifier::fromString($identifier);
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException($e->getMessage());
+        }
+    }
+
+    /**
+     * @param PermissionDetails[] $referenceEntityPermissionDetails
+     */
+    private function normalizePermissionDetails(array $referenceEntityPermissionDetails): array
+    {
+        return array_map(static fn (PermissionDetails $permissionDetails) => $permissionDetails->normalize(), $referenceEntityPermissionDetails);
+    }
+}

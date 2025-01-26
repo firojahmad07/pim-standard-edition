@@ -1,0 +1,54 @@
+services:
+    akeneo_assetmanager.infrastructure.persistence.query.enrich.find_all_existent_assets_for_asset_family_identifiers_public_api:
+        class: 'Akeneo\AssetManager\Infrastructure\PublicApi\Enrich\SqlFindAllExistentAssetsForAssetFamilyIdentifiers'
+        arguments:
+            $connection: '@database_connection'
+
+    pimee.asset_manager.enrichment.find_all_existent_assets_for_asset_identifiers:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Bundle\Enrichment\FindAllExistentAssetsForAssetFamilyIdentifiers'
+        arguments:
+            $allExistentAssetForAssetFamilyIdentifiers: '@akeneo_assetmanager.infrastructure.persistence.query.enrich.find_all_existent_assets_for_asset_family_identifiers_public_api'
+
+    akeneo_assetmanager.infrastructure.persistence.query.enrich.find_asset_label_translation_public_api:
+        class: Akeneo\AssetManager\Infrastructure\PublicApi\Enrich\FindAssetLabelTranslation
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.persistence.query.find_asset_labels_by_codes'
+
+    akeneo_assetmanager.infrastructure.persistence.query.enrich.get_asset_main_media_values_public_api:
+        class: 'Akeneo\AssetManager\Infrastructure\PublicApi\Enrich\SqlGetAssetMainMediaValues'
+        arguments:
+            - '@database_connection'
+
+    akeneo_assetmanager.infrastructure.persistence.query.enrich.get_main_media_file_info_collection_public_api:
+        class: 'Akeneo\AssetManager\Infrastructure\PublicApi\Enrich\SqlGetMainMediaFileInfoCollection'
+        arguments:
+            - '@database_connection'
+
+    # Enrichment > Reference entities
+    pimee.asset_manager.enrichment.product.get_products_linked_to_an_asset_action:
+        class: Akeneo\Pim\Enrichment\AssetManager\Component\Controller\Product\GetProductsLinkedToAnAssetAction
+        public: true
+        arguments:
+            - '@akeneo.pim.enrichment.query.product_and_product_model_query_builder_from_size_factory.with_product_identifier_cursor'
+            - '@akeneo.pim.enrichment.product.grid.query.fetch_product_and_product_model_rows'
+            - '@validator'
+            - '@pimee.asset_manager.enrichment.productnormalizer.linked_product_normalizer'
+
+    pimee.asset_manager.enrichment.productnormalizer.linked_product_normalizer:
+        class: Akeneo\Pim\Enrichment\AssetManager\Component\Normalizer\LinkedProductsNormalizer
+        arguments:
+            - '@pim_enrich.normalizer.image'
+
+    pimee.asset_manager.enrichment.asset_preview_generator:
+        class: Akeneo\AssetManager\Infrastructure\PublicApi\Enrich\AssetPreviewGenerator
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.asset'
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.asset_family'
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.attribute'
+            - '@akeneo_assetmanager.infrastructure.persistence.asset.hydrator.image_preview_url_generator'
+
+    # FilterProvider providers
+    pimee.asset_manager.enrichment.provider.filter.asset_collection:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Bundle\FilterProvider\AssetCollectionFilterProvider'
+        tags:
+            - { name: pim_enrich.provider.filter, priority: 90 }

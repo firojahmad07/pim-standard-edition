@@ -1,0 +1,148 @@
+pimee_workflow:
+  product_draft:
+    author: Autor
+    source: Fuente
+    created: Propuesto el
+    changes: Cambios
+    locale: Configuración regional
+    product:
+      label: Etiqueta del producto
+    attribute:
+      label: Atributo
+    status:
+      label: Estado
+      working_copy: Versión de trabajo
+    notification:
+      partial_approve: '%owner% ha aceptado el(los) valor(es) para el(los) %attributes% para el producto %product%'
+      partial_approve_number: '%owner% ha aceptado %attributes_count% valores para los atributos para el producto %product%'
+      partial_reject: '%owner% ha rechazado el(los) valor(es) de %attributes% para el producto %product%'
+      partial_reject_number: '%owner% ha rechazado %attributes_count% valores de atributos para el producto %product%'
+      partial_remove: '%owner% ha eliminado el/los valor(es) en %attributes% en el/los producto(s) %product%'
+      partial_remove_number: '%owner% ha eliminado los valores de %attributes_count% atributos en el producto %product%'
+      approve: '%owner% ha aceptado su propuesta por el producto %product%'
+      refuse: '%owner% ha rechazado su propuesta por el producto %product%'
+      remove: '%owner% ha eliminado su propuesta por el producto %product%'
+      mass_edit_sent_for_approval: 'Edición en masa <strong>%jobLabel%</strong> terminada: %sentForApprovalCount% propuestas generadas de %readProductsCount% productos'
+    mass_review_action:
+      approve: Aprobar seleccionados
+      refuse: Rechazar seleccionados
+      error:
+        draft_not_ready: Esta propuesta no está lista para ser aprobada
+        not_product_owner: Usted no es propietario del producto asociado a esta proposición
+        cannot_edit_attributes: Usted no puede editar los atributos modificados en esta propuesta
+        invalid_draft: Esta propuesta no puede aplicarse debido al siguiente error. %error%
+  proposal:
+    to_review: '%author.firstname% %author.lastname% ha enviado una propuesta a revisar por el producto %product.label%'
+    individual_import: '%author.firstname% %author.lastname% ha enviado propuestas a revisar desde una importación'
+    generic_import: Usted tiene propuestas provenientes de una importación a revisar
+    original_value: Original
+  published_product:
+    index: Productos publicados
+    title: Producto publicado
+  acl.published_product:
+    index: Gestionar productos publicados
+  product:
+    permission:
+      own: Revisar / publicar
+      edit: Editar
+      view: Visualizar
+  steps:
+    product_draft_processor.title: Procesador de propuesta
+    approve.title: Aprobar la proposición
+    refuse.title: Rechazar la proposición
+  mass_edit_action:
+    published:
+      page_title: Productos publicados
+      page_subtitle: Edición en masa (1 producto publicado)|Edición en masa (%count% productos publicados)
+      title: Seleccione una operación
+      subtitle: Seleccione la operación que desea ejecutar en el producto publicado que ha seleccionado|Seleccione la operación que desea ejecutar en los %count% productos publicados que ha seleccionado
+      confirm: Está a punto de actualizar un producto publicado con la siguiente información, por favor confirme.|Está a punto de actualizar %count% productos publicados con la siguiente información, por favor confirme.
+      steps:
+        first: Seleccione los productos publicados
+        second: Seleccione una operación
+        third: Configuración
+        fourth: Confirmación
+  check_removal:
+    product_error: Imposible eliminar un producto publicado
+    entity_error: Las entidades vinculadas a productos publicados no se pueden eliminar.
+btn:
+  publish: Publicar
+  unpublish: Remover publicación
+  save working copy: Guardar copia de trabajo
+  save working copy and next: Guardar copia de trabajo y avanzar
+  save working copy and finish: Guardar copia de trabajo y finalizar
+  send for approval: Enviar a aprobar
+  sent for approval: Enviado a aprobar
+  editworkingcopy: Editar copia de trabajo
+flash:
+  product:
+    updated: La copia de trabajo del producto ha sido actualizada
+    published: El producto ha sido publicado exitosamente.
+    unpublished: Se ha removido la publicación del producto exitosamente.
+  product_draft:
+    updated: El borrador ha sido guardado con éxito
+    approve:
+      success: La propuesta ha sido aplicada con éxito.
+      error: La propuesta no puede ser aplicada debido al siguiente error. %error%
+    refuse:
+      success: La propuesta ha sido rechazada.
+    remove:
+      success: La propuesta ha sido eliminada.
+pim_menu:
+  item:
+    published_product: Productos publicados
+    proposal: Propuestas
+confirmation:
+  product:
+    publish: '¿Está seguro que desea publicar este producto?'
+    unpublish: '¿Está seguro que desea quitar la publicación este producto ?'
+Attributes.title: Atributos
+Completeness.title: Completitud
+publish_product.steps.publish_product_tasklet.title: Publicar producto
+unpublish_product.steps.unpublish_product_tasklet.title: Remover publicación de producto
+approve_product_draft.steps.approve.title: Aprobar la proposición
+approve_product_draft.steps.refuse.title: Rechazar propuesta
+job_execution.summary:
+  approved: aprobado
+  refused: rechazada
+  mass_published: Productos publicados
+  mass_unpublished: Productos no publicados
+  proposal: Propuesta creada
+  proposal_deleted: propuesta eliminada
+  proposal_updated: propuesta actualizada
+  proposal_created: propuesta creada
+  proposal_skipped: propuesta omitida (sin diferencias)
+published products: Productos publicados
+pim_analytics:
+  info_type:
+    nb_published_products: Número de productos publicados
+    nb_product_drafts: Número de borradores de productos
+pimee_dashboard:
+  widget:
+    product_drafts:
+      title: Propuesta a revisar
+      date: Fecha
+      author: Autor
+      product: Producto
+      review: Revisión
+      empty: No hay borradores de producto para revisar
+pim_enrich:
+  mass_edit_action:
+    publish:
+      label: Publicar
+      description: Publicar los productos seleccionados, la presente información publicada será eliminada por la copia de trabajo actual.
+      success_flash: Productos seleccionados han sido publicados con éxito.
+      launched_flash: El trabajo de publicación de productos está ejecutándose.
+      message:
+        info: Los productos %nbProducts% seleccionados serán publicados.
+    unpublish:
+      label: Remover publicación
+      description: Quitar publicación de los productos seleccionados, la información publicada será eliminada.
+      success_flash: Se ha quitado la publicación de los productos seleccionados.
+      launched_flash: El trabajo de quitar la publicación de productos está actualmente en ejecución.
+      message:
+        info: Los %nbProducts% productos seleccionados serán quitados de la publicación.
+pimee_enrich:
+  product:
+    tab:
+      proposal.title: Propuestas

@@ -1,0 +1,13 @@
+akeneo_data_quality_insights:
+  axis:
+    consistency: Konsistenz
+  attribute_grid:
+    quality_column_label: Qualität
+    to_improve_locale: Um in {{ locale }} zu verbessern
+  product_grid:
+    filter_label:
+      spelling_quality: Rechtschreibqualität
+  dictionary:
+    title: Wörterbuch
+Consistency: Konsistenz
+akeneo_data_quality_insights_dictionary: Wörterbuch

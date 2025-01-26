@@ -1,0 +1,147 @@
+services:
+    # CSV Import steps ------------------------------------------------------------------------------------------------
+    pimee_workflow.step.csv_product_proposal.import:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'import'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@pimee_workflow.reader.file.csv_product_draft'
+            - '@pimee_workflow.processor.denormalization.product_draft'
+            - '@pim_base_connector.writer.database.product_draft'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    pimee_workflow.step.csv_product_model_proposal.import:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'import'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@pimee_workflow.reader.file.csv_product_model_draft'
+            - '@pimee_workflow.processor.denormalization.product_model_draft'
+            - '@pim_base_connector.writer.database.product_model_draft'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    # CSV Export steps ------------------------------------------------------------------------------------------------
+    pimee_workflow.step.csv_published_product.export:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'export'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@pimee_workflow.reader.published_product'
+            - '@pimee_workflow.processor.normalization.published_product'
+            - '@pim_connector.writer.file.csv_product'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    # XLSX IMport steps -----------------------------------------------------------------------------------------------
+    pimee_workflow.step.xlsx_product_proposal.import:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'import'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@pimee_workflow.reader.file.xlsx_product_draft'
+            - '@pimee_workflow.processor.denormalization.product_draft'
+            - '@pim_base_connector.writer.database.product_draft'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    pimee_workflow.step.xlsx_product_model_proposal.import:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'import'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@pimee_workflow.reader.file.xlsx_product_model_draft'
+            - '@pimee_workflow.processor.denormalization.product_model_draft'
+            - '@pim_base_connector.writer.database.product_model_draft'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    # XLSX Export steps -----------------------------------------------------------------------------------------------
+    pimee_workflow.step.xlsx_published_product.export:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'export'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@pimee_workflow.reader.published_product'
+            - '@pimee_workflow.processor.normalization.published_product'
+            - '@pim_connector.writer.file.xlsx_product'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    # Draft steps -----------------------------------------------------------------------------------------------------
+    pimee_workflow.step.approve_product_draft.perform:
+        class: '%pim_connector.step.tasklet.class%'
+        arguments:
+            - 'perform'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@pimee_workflow.mass_review_tasklet.approve_draft'
+
+    pimee_workflow.step.refuse_product_draft.perform:
+        class: '%pim_connector.step.tasklet.class%'
+        arguments:
+            - 'perform'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@pimee_workflow.mass_review_tasklet.refuse_draft'
+
+    # CSV Quick Export steps ------------------------------------------------------------------------------------------
+    pimee_workflow.step.csv_published_product.quick_export:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'export'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@pimee_workflow.connector.reader.mass_edit.published_product'
+            - '@pimee_workflow.connector.processor.quick_export.published_product'
+            - '@pimee_workflow.writer.file.csv_published_product_quick_export'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    # XLSX Quick Export steps -----------------------------------------------------------------------------------------
+    pimee_workflow.step.xlsx_published_product.quick_export:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'export'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@pimee_workflow.connector.reader.mass_edit.published_product'
+            - '@pimee_workflow.connector.processor.quick_export.published_product'
+            - '@pimee_workflow.writer.file.xlsx_published_product_quick_export'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    pimee_enrich.step.publish_product.perform:
+        class: '%pim_connector.step.tasklet.class%'
+        arguments:
+            - 'perform'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@pimee_workflow.mass_edit_tasklet.publish_product'
+
+    pimee_enrich.step.unpublish_product.perform:
+        class: '%pim_connector.step.tasklet.class%'
+        arguments:
+            - 'perform'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@pimee_workflow.mass_edit_tasklet.unpublish_product'
+
+    pimee_workflow.step.mass_edit.send_for_approval:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'send_for_approval'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@pimee_workflow.reader.database.product_draft'
+            - '@pimee_workflow.processor.mark_product_draft_as_ready'
+            - '@pimee_workflow.writer.database.product_and_product_model_draft'
+            - 100
+            - '@akeneo_batch.job.job_stopper'

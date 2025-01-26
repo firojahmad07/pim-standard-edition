@@ -1,0 +1,4 @@
+akeneo_authentication:
+  acl:
+    sso:
+      title: Eenmalige aanmelding (SSO) beheren 

@@ -1,0 +1,145 @@
+pimee_workflow:
+  product_draft:
+    author: Tekijä
+    source: Lähde
+    created: Ehdotettu
+    changes: Muutokset
+    locale: Lokaation konteksti
+    product:
+      label: Tuotenimike
+    attribute:
+      label: Attribuutti
+    status:
+      label: Status
+      working_copy: Työkopio
+    notification:
+      partial_approve: '%owner% on hyväksynyt arvot attribuuteille "%attributes%" tuotteella "%product%"'
+      partial_approve_number: '%owner% on hyväksynyt arvot %attributes_count% attribuutille tuotteella "%product%"'
+      partial_reject: '%owner% on hylännyt arvot attribuuteille "%attributes%" tuotteella "%product%"'
+      partial_reject_number: '%owner% on hylännyt arvot %attributes_count% attribuutille tuotteella "%product%"'
+      partial_remove: '%owner% on poistanut arvot attribuuteilta "%attributes%" tuotteella "%product%"'
+      partial_remove_number: '%owner% on poistanut arvot %attributes_count% attribuutilta tuotteella "%product%"'
+      approve: '%owner% hyväksyi ehdotuksenne tuotteeseen %product%'
+      refuse: '%owner% on hylännyt ehdotuksen koskien tuotetta %product%'
+      remove: '%owner% on poistanut ehdotuksen koskien tuotetta %product%'
+      mass_edit_sent_for_approval: 'Massamuokkaus <strong>%jobLabel%</strong> päättynyt: %sentForApprovalCount% ehdotusta luotu %readProductsCount% tuotteelle'
+    mass_review_action:
+      approve: Hyväksy kaikki valitut
+      refuse: Hylkää kaikki valitut
+      error:
+        draft_not_ready: Tämä ehdotus ei ole valmis hyväksyttäväksi
+        not_product_owner: Et omista tuotetta, joka liittyy tähän ehdotukseen
+        cannot_edit_attributes: Et voi muokata attribuutteja, joita tämä ehdotus muokkaa
+        invalid_draft: Tätä ehdotusta ei voi käyttää seuraavan virheen vuoksi. %error%
+  proposal:
+    to_review: '%author.firstname% %author.lastname% on lähettänyt ehdotuksen tarkistaa tuotteen %product.label%'
+    individual_import: '%author.firstname% %author.lastname% on lähettänyt ehdotukset tarkistettavaksi'
+    generic_import: Sinulle on ehdotuksia tarkistettavaksi
+    original_value: Alkuperäinen
+  published_product:
+    index: Julkaistut tuotteet
+    title: Julkaistu tuote
+  acl.published_product:
+    index: Hallitse julkaistuja tuotteita
+  product:
+    permission:
+      own: Tarkista / julkaise
+      edit: Muokkaa
+      view: Näytä
+  steps:
+    product_draft_processor.title: Ehdotuksen prosessori
+    approve.title: Hyväksy ehdotus
+    refuse.title: Hylkää ehdotus
+  mass_edit_action:
+    published:
+      page_title: Julkaistu tuote
+      page_subtitle: Massamuokkaa (1 julkaistu tuote)|Massamuokkaa (%count% julkaistua tuotetta)
+      title: Valitse toiminto
+      subtitle: Valitse toiminto, jonka haluat suorittaa valitulle julkaistulle tuotteelle|Valitse toiminto, jonka haluat suorittaa %count% julkaistulle tuotteelle
+      confirm: Olet päivittämässä julkaistua tuotetta seuraavilla tiedoila, ole hyvä ja vahvista. | Olet päivittämässä %count% julkaistua tuotetta seuraavilla tiedoilla, ole hyvä ja vahvista.
+      steps:
+        first: Valitse julkaistut tuotteet
+        second: Valitse toiminto
+        third: Muuta asetuksia
+        fourth: Vahvista
+btn:
+  publish: Julkaise
+  unpublish: Peruuta julkaisu
+  save working copy: Tallenna työn alla oleva kopio
+  save working copy and next: Tallenna työn alla oleva kopio ja jatka
+  save working copy and finish: Tallenna työn alla oleva kopio ja lopeta
+  send for approval: Lähetä hyväksyttäväksi
+  sent for approval: Lähetetty hyväksyttäväksi
+  editworkingcopy: Muokkaa työn alla olevaa kopiota
+flash:
+  product:
+    updated: Tuotteen työkopio on päivitetty
+    published: Tuote on julkaistu onnistuneesti.
+    unpublished: Tuotteen tila on muutettu onnistuneesti tilaan "Julkaisematon".
+  product_draft:
+    updated: Luonnos on tallennettu onnistuneesti
+    approve:
+      success: Ehdotus on otettu käyttöön onnistuneesti.
+      error: Ehdotusta ei voida ottaa käyttöön seuraavan virheen vuoksi. %error%
+    refuse:
+      success: Ehdotus on hylätty.
+    remove:
+      success: Ehdotus on poistettu.
+pim_menu:
+  item:
+    published_product: Julkaistu tuote
+    proposal: Ehdotukset
+confirmation:
+  product:
+    publish: Oletko varma, että haluat julkaista tämän tuotteen?
+    unpublish: Oletko varma, että haluat muuttaa tuotteen tilan tilaan "Julkaisematon"?
+Attributes.title: Attribuutit
+Completeness.title: Valmistumisaste
+publish_product.steps.publish_product_tasklet.title: Julkaise tuote
+unpublish_product.steps.unpublish_product_tasklet.title: Muuta tuote tilaan "Julkaisematon"
+approve_product_draft.steps.approve.title: Hyväksy ehdotus
+approve_product_draft.steps.refuse.title: Hylkää ehdotus
+job_execution.summary:
+  approved: hyväksytty
+  refused: hylätty
+  mass_published: Tuote julkaistu
+  mass_unpublished: Tuote ei julkaistu
+  proposal: Ehdotus luotu
+  proposal_deleted: ehdotus poistettu
+  proposal_updated: ehdotus päivitetty
+  proposal_created: ehdotus luotu
+  proposal_skipped: ehdotus ohitettu (ei eroja)
+published products: Julkaistu tuote
+pim_analytics:
+  info_type:
+    nb_published_products: Julkaistujen tuotteiden määrä
+    nb_product_drafts: Tuoteluonnosten lukumäärä
+pimee_dashboard:
+  widget:
+    product_drafts:
+      title: Tarkastettavat ehdotukset
+      date: Päivämäärä
+      author: Tekijä
+      product: Tuote
+      review: Tarkastus
+      empty: Ei tuoteluonnoksia tarkastettavaksi
+pim_enrich:
+  mass_edit_action:
+    publish:
+      label: Julkaise
+      description: Julkaise valitut tuotteet, tällä hetkellä julkaistu data pyyhkiytyy julkaistavan datan alta.
+      success_flash: Valitut tuotteet ovat julkaistu onnistuneesti.
+      launched_flash: Työ "Tuotteiden julkaisu" on tällä hetkellä käynnissä.
+      message:
+        info: '%nbProducts% valitut tuotteet julkaistaan.'
+    unpublish:
+      label: Peruuta julkaisu
+      description: Muuta valittujen tuotteiden tila tilaan "Julkaisematon", tällä hetkellä julkaistu data poistetaan.
+      success_flash: Valitut tuotteet ovat onnistuneesti muutettu tilaan "Julkaisematon".
+      launched_flash: Työ "Peruuta julkaisu tuotteelta/tuotteilta" on käynnissä.
+      message:
+        info: '%nbProducts% valittujen tuotteiden julkaisu peruutetaan.'
+pimee_enrich:
+  product:
+    tab:
+      proposal.title: Ehdotukset

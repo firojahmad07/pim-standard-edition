@@ -1,0 +1,9 @@
+teamwork_assistant:
+  common:
+    required: Obavezno
+  project:
+    label: Ime
+    locale: Postavke jezika i regije
+    description: Opis
+  widget:
+    description: Opis

@@ -1,0 +1,118 @@
+parameters:
+    pimee_workflow.query.draft_authors.class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Doctrine\ORM\Query\DraftAuthors
+
+services:
+    pimee_workflow.query.draft_authors:
+        class: '%pimee_workflow.query.draft_authors.class%'
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.select_draft_source_filter_choices:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Doctrine\ORM\Query\SelectDraftSourceFilterChoicesQuery
+        public: true
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.get_associated_product_codes_by_published_product:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Doctrine\ORM\Query\GetAssociatedProductCodesByPublishedProductFromDB
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@security.token_storage'
+
+    pimee_workflow.sql.product.update_draft_author:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Storage\Sql\ProductDraft\UpdateDraftAuthor
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.sql.product_model.update_draft_author:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Storage\Sql\ProductModelDraft\UpdateDraftAuthor
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.count_product_proposals:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Storage\Sql\CountProductProposals
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.count_product_model_proposals:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Storage\Sql\CountProductModelProposals
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.sql.product.find_existing_attribute_codes:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Storage\Sql\FindExistingAttributeCodesQuery
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.select_proposal_ids_from_product_ids:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Storage\Sql\SelectProposalIdsFromProductIdsQuery
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.select_model_proposal_ids_from_product_model_ids:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Storage\Sql\SelectModelProposalIdsFromProductModelIdsQuery
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.get_workflow_status_from_product_model_codes:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Storage\Sql\GetWorkflowStatusFromProductModelCodes
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.get_workflow_status_from_product_identifiers:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Storage\Sql\GetWorkflowStatusFromProductIdentifiers
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.select_product_ids_by_user_and_draft_status:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Doctrine\ORM\Query\SelectProductIdsByUserAndDraftStatusQuery
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.select_product_model_ids_by_user_and_draft_status:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Doctrine\ORM\Query\SelectProductModelIdsByUserAndDraftStatusQuery
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.get_published_product_completenesses:
+        class: 'Akeneo\Pim\WorkOrganization\Workflow\Bundle\Storage\Sql\SqlGetPublishedProductCompletenesses'
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.save_published_product_completenesses:
+        class: 'Akeneo\Pim\WorkOrganization\Workflow\Bundle\Storage\Sql\SqlSavePublishedProductCompletenesses'
+        arguments:
+            - '@database_connection'
+            - '@logger'
+
+    pimee_workflow.query.select_attribute_labels_from_codes:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Doctrine\ORM\Query\SelectAttributeLabelsFromCodesQuery
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.get_published_version_id_by_version_ids:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Doctrine\ORM\Query\GetPublishedVersionIdsByVersionIdsQuery
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.find_published_product_id:
+        class: 'Akeneo\Pim\WorkOrganization\Workflow\Bundle\Storage\Sql\SqlFindPublishedProductId'
+        arguments:
+            - '@database_connection'
+
+    pimee_workflow.query.find_draft_ids_concerning_removed_attributes:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Doctrine\ORM\Query\FindDraftIdsConcerningRemovedAttributesQuery
+        arguments:
+            - '@database_connection'
+            - 100
+
+    pimee_security.published_product_grid.query.list_available_columns:
+        class: Akeneo\Pim\Permission\Bundle\Datagrid\Query\Sql\ListProductGridAvailableColumns
+        arguments:
+            - '@database_connection'
+            - '@oro_datagrid.configuration.provider.chain'
+            - 'published-product-grid'
+
+    Akeneo\Pim\WorkOrganization\Workflow\Bundle\Doctrine\ORM\Query\FindProductAssociationToPublishByProductQuery:
+        arguments:
+            - '@database_connection'

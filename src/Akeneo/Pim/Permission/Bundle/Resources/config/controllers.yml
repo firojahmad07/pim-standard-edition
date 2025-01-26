@@ -1,0 +1,197 @@
+parameters:
+    pimee_security.controller.permission_rest.class: Akeneo\Pim\Permission\Bundle\Controller\InternalApi\PermissionRestController
+    pimee_security.controller.product.class: Akeneo\Pim\Permission\Bundle\Controller\ProductController
+
+services:
+    pimee_security.controller.permission_rest:
+        public: true
+        class: '%pimee_security.controller.permission_rest.class%'
+        arguments:
+            - '@security.authorization_checker'
+            - '@pim_catalog.repository.attribute_group'
+            - '@pim_user.context.user'
+            - '@akeneo_batch.job.job_instance_repository'
+            - '@akeneo.pim.enrichment.category.get_viewable_category_codes'
+            - '@akeneo.pim.enrichment.category.get_editable_category_codes'
+            - '@akeneo.pim.enrichment.category.get_ownable_category_codes'
+
+    pimee_security.controller.product:
+        public: true
+        class: '%pimee_security.controller.product.class%'
+        parent: pim_pdf_generator.controller.product
+        arguments:
+            - '@security.authorization_checker'
+            - '@pim_user.context.user'
+
+    pim_enrich.controller.rest.attribute:
+        public: true
+        class: 'Akeneo\Pim\Structure\Bundle\Controller\InternalApi\AttributeController'
+        arguments:
+            - '@pim_catalog.repository.attribute'
+            - '@pim_internal_api_serializer'
+            - '@security.token_storage'
+            - '@pim_catalog.filter.chained'
+            - '@pimee_enrich.repository.attribute.search'
+            - '@pim_catalog.updater.attribute'
+            - '@validator'
+            - '@pim_catalog.saver.attribute'
+            - '@pim_catalog.remover.attribute'
+            - '@pim_catalog.factory.attribute'
+            - '@pim_user.context.user'
+            - '@pim_catalog.localization.localizer.number'
+            - '@pim_enrich.normalizer.attribute'
+            - '@translator'
+            - '@akeneo.pim.structure.query.attribute_is_an_family_variant_axis'
+            - '@pim_catalog.repository.channel'
+
+    pim_datagrid.controller.productgrid:
+        public: true
+        class: Oro\Bundle\PimDataGridBundle\Controller\ProductGridController
+        arguments:
+            - '@pimee_security.product_grid.query.list_attributes'
+            - '@pim_datagrid.datagrid.configuration.product.filters_configurator'
+            - '@pim_datagrid.extension.filter'
+            - '@pim_user.context.user'
+            - '@pim_datagrid.manager.datagrid_view'
+            - '@pimee_security.product_grid.query.list_available_columns'
+            - '@pimee_security.product_grid.query.list_available_column_groups'
+
+    # overridden to filter categories with a category access repository that handles permissions
+    pim_enrich.controller.category_tree.product:
+        public: true
+        class: 'Akeneo\Pim\Permission\Bundle\Controller\Ui\CategoryTreeController'
+        arguments:
+            - '@event_dispatcher'
+            - '@pim_user.context.user'
+            - '@pim_catalog.saver.category'
+            - '@pim_catalog.remover.category'
+            - '@pim_catalog.factory.category'
+            - '@pim_catalog.repository.category'
+            - '@oro_security.security_facade'
+            - '@translator'
+            - '@pim_internal_api_serializer'
+            - '@pim_catalog.updater.category'
+            - '@validator'
+            - '@pim_enrich.normalizer.violation'
+            - '@pim_enrich.doctrine.counter.category_product'
+            - '@Akeneo\Pim\Enrichment\Bundle\Storage\Sql\Category\CountTreesChildren'
+            - { related_entity: product, form_type: 'Akeneo\Pim\Enrichment\Bundle\Form\Type\CategoryType', acl: pim_enrich_product, route: pim_enrich }
+            - '@pimee_security.repository.category_access'
+            - '@security.token_storage'
+            - '@Akeneo\Pim\Enrichment\Bundle\Form\CategoryFormViewNormalizer'
+        calls:
+            - [ setContainer, [ '@service_container' ] ]
+
+    # overriden to add security checks and use a smarter product saver which update draft or working copy
+    pim_enrich.controller.product:
+        public: true
+        class: 'Akeneo\Pim\Permission\Bundle\Controller\Ui\ProductController'
+        arguments:
+            - '@translator'
+            - '@pim_catalog.repository.product'
+            - '@pim_catalog.repository.category'
+            - '@pim_catalog.saver.product'
+            - '%pim_catalog.entity.category.class%'
+            - '@oro_security.security_facade'
+            - 'pim_enrich_product_categories_view'
+            - '@@AkeneoPimEnrichment/Product/listCategories.json.twig'
+            - '@pim_catalog.manager.category'
+        calls:
+            - [ setContainer, [ '@service_container' ] ]
+
+    pim_enrich.controller.product_model:
+        public: true
+        class: 'Akeneo\Pim\Permission\Bundle\Controller\Ui\ProductModelController'
+        arguments:
+            - '@pim_catalog.repository.product_model'
+            - '@pim_catalog.repository.category'
+            - '@oro_security.security_facade'
+            - '%pim_catalog.entity.category.class%'
+            - 'pim_enrich_product_model_categories_view'
+            - '@@AkeneoPimEnrichment/ProductModel/listCategories.json.twig'
+            - '@pim_catalog.manager.category'
+        calls:
+            - [ setContainer, [ '@service_container' ] ]
+
+    pim_enrich.controller.locale:
+        public: true
+        class: 'Akeneo\Pim\Permission\Bundle\Controller\Ui\LocaleController'
+        arguments:
+            - '@form.factory'
+            - '@twig'
+            - '@translator'
+            - '@akeneo.pim.automation.data_quality_insights.feature'
+            - '@Akeneo\Pim\Automation\DataQualityInsights\Application\Spellcheck\SupportedLocaleValidator'
+
+    pim_enrich.controller.rest.job_instance:
+        public: true
+        class: 'Akeneo\Platform\Bundle\ImportExportBundle\Controller\InternalApi\JobInstanceController'
+        arguments:
+            - '@akeneo_batch.job.job_instance_repository'
+            - '@akeneo_batch.job.job_registry'
+            - '@pim_standard_format_serializer'
+            - '@akeneo_batch.updater.job_instance'
+            - '@akeneo_batch.saver.job_instance'
+            - '@akeneo_batch.remover.job_instance'
+            - '@validator'
+            - '@akeneo_batch.job.job_parameters_validator'
+            - '@akeneo_batch.job_parameters_factory'
+            - '@pim_connector.launcher.authenticated_job_launcher'
+            - '@security.token_storage'
+            - '@router'
+            - '@pim_enrich.provider.form.chained'
+            - '@pim_catalog.filter.chained'
+            - '@pim_enrich.normalizer.violation'
+            - '@akeneo_batch.job_instance_factory'
+            - '@event_dispatcher'
+            - '@pim_catalog.filter.chained'
+            - '@oneup_flysystem.jobs_storage_filesystem'
+            - '@oro_security.security_facade'
+
+    Akeneo\Pim\Permission\Bundle\Controller\InternalApi\GetCategoriesForPermissionsAction:
+        public: true
+        arguments:
+            - '@Akeneo\Pim\Permission\Bundle\Enrichment\Storage\Sql\Category\GetRootCategoryCodesAndLabels'
+            - '@router'
+
+    Akeneo\Pim\Permission\Bundle\Controller\InternalApi\PostCategoriesPermissionsAction:
+        public: true
+        arguments:
+            - '@oro_security.security_facade'
+            - '@validator'
+            - '@Akeneo\Pim\Permission\Bundle\Saver\UserGroupCategoryPermissionsSaver'
+
+    Akeneo\Pim\Permission\Bundle\Controller\InternalApi\GetUserGroupCategoriesPermissionsAction:
+        public: true
+        arguments:
+            - '@Akeneo\Pim\Permission\Bundle\Persistence\ORM\Category\GetUserGroupRootCategoriesAccesses'
+
+    Akeneo\Pim\Permission\Bundle\Controller\InternalApi\GetAttributeGroupsForPermissionsAction:
+        public: true
+        arguments:
+            - '@Akeneo\Pim\Permission\Bundle\Enrichment\Storage\Sql\AttributeGroup\GetAttributeGroupCodesAndLabels'
+            - '@router'
+
+    Akeneo\Pim\Permission\Bundle\Controller\InternalApi\GetUserGroupAttributeGroupsPermissionsAction:
+        public: true
+        arguments:
+            - '@Akeneo\Pim\Permission\Bundle\Persistence\ORM\AttributeGroup\GetUserGroupAttributeGroupsAccesses'
+
+    Akeneo\Pim\Permission\Bundle\Controller\InternalApi\GetUserGroupLocalesPermissionsAction:
+        public: true
+        arguments:
+            - '@Akeneo\Pim\Permission\Bundle\Persistence\ORM\Locale\GetUserGroupLocalesAccesses'
+
+    Akeneo\Pim\Permission\Bundle\Controller\InternalApi\SaveAttributeGroupsPermissionsAction:
+        public: true
+        arguments:
+            - '@oro_security.security_facade'
+            - '@validator'
+            - '@Akeneo\Pim\Permission\Bundle\Saver\UserGroupAttributeGroupPermissionsSaver'
+
+    Akeneo\Pim\Permission\Bundle\Controller\InternalApi\SaveLocalesPermissionsAction:
+        public: true
+        arguments:
+            - '@oro_security.security_facade'
+            - '@validator'
+            - '@Akeneo\Pim\Permission\Bundle\Saver\UserGroupLocalePermissionsSaver'

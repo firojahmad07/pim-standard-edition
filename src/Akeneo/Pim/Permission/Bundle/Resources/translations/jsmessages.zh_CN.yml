@@ -1,0 +1,87 @@
+pim_enrich:
+  entity:
+    attribute:
+      property:
+        is_read_only: 只读
+pimee_import_export:
+  entity:
+    job_instance:
+      flash:
+        update:
+          fail_empty_permission: 必须至少选择一个允许编辑的作业
+pimee_enrich.entity.category:
+  module:
+    permissions:
+      grant: 分组 <strong>{{ group }}</strong> 将<strong>会{{ permission }}</strong>在该类别中
+      revoke: 分组 <strong>{{ group }}</strong> 将<strong>不会{{ permission }}</strong>在该类别中
+pimee_enrich.entity.locale:
+  module:
+    permissions:
+      grant: 分组 <strong>{{ group }}</strong> 将<strong>会{{ permission }}</strong>在该区域中
+      revoke: 分组 <strong>{{ group }}</strong> 将<strong>不会{{ permission }}</strong>在该区域中
+pimee_enrich.entity.attribute group:
+  module:
+    permissions:
+      grant: 分组 <strong>{{ group }}</strong> 将 <strong>会{{ permission }}</strong>在该属性组中
+      revoke: 分组 <strong>{{ group }}</strong> 将<strong>不会{{ permission }}</strong>在该属性组中
+pimee_enrich.entity.attribute_group:
+  module:
+    permissions:
+      added: 分组 {{ group }} 将被允许{{ permission }}属性组
+      view: 允许查看属性
+      edit: 允许编辑属性
+      removed: 分组 {{ group }} 将不被允许{{ permission }}属性组
+pimee_enrich.entity.job_instance:
+  module:
+    permissions:
+      added: 分组 {{ group }} 将被允许{{ permission }}作业配置文件
+      execute: 允许执行作业配置文件
+      edit: 允许编辑作业配置文件
+      removed: 分组 {{ group }} 将不被允许{{ permission }}作业配置文件
+batch_jobs:
+  add_product_value_with_permission_and_rules:
+    label: 添加产品值与权限检查及规则应用
+    perform.label: 添加产品值
+  update_product_value_with_permission_and_rules:
+    label: 更新产品值与权限检查及规则应用
+    perform.label: 更新产品值
+  remove_product_value_with_permission_and_rules:
+    label: 移除产品值与权限检查及规则应用
+    perform.label: 移除产品值
+  edit_common_attributes_with_permission_and_rules:
+    label: 编辑属性与权限检查及规则应用
+    perform.label: 编辑属性
+    cleaner.label: 清理临时文件
+  default_steps:
+    send_for_approval: 发送以进行审批
+pim_title:
+  pimee_enrich_locale_edit: 区域设置 | 编辑
+pim_analytics:
+  info_type:
+    nb_custom_locale_accesses: 自定义区域的访问次数
+    nb_custom_category_accesses: 自定义类别的访问次数
+    nb_custom_attribute_group_accesses: 自定义属性组的访问次数
+category.permissions:
+  view.label: 允许查看产品
+  edit.label: 允许编辑产品
+  own.label: 允许拥有产品
+  own.help: 审查、发布、取消发布、分类和关联产品
+  no_access_to_products: 您无权访问任何树中的产品，请联系您的管理员
+  apply_on_children.label: 将更改应用于子级
+  apply_on_children.help: 保留对子级的现有权限
+pim_permissions:
+  widget:
+    entity:
+      attribute_group:
+        label: 属性组
+        help: 如果您希望应用能够修改所有的产品数据，请在编辑级别选择“所有”选项。否则，只选择您的应用能够根据级别看到或修改的属性组。
+      category:
+        label: 目录树
+        help: 如果您希望应用能够在不使用 PIM 提案的情况下修改您的产品，请选择“拥有”级别。否则请选择编辑级别。
+      locale:
+        label: 区域
+        help: 如果您希望应用能够以所有语言编辑您的产品，请在编辑级别选择“所有”选项。否则，只选择您的应用可以根据级别查看或修改的语言。
+      not_granted_warning: 此部分仅供拥有 {{ permission }} 权限的用户访问。请与您的管理员联系。如果拥有正确的权限，您将能够返回到应用设置并编辑它们。
+pimee_enrich.acl.category.edit_permissions: 管理类别权限
+pimee_enrich.acl.attribute_group.edit_permissions: 管理属性组权限
+pimee_enrich.acl.locale.edit_permissions: 管理区域设置权限

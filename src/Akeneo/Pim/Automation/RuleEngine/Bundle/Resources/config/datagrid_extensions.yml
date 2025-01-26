@@ -1,0 +1,36 @@
+parameters:
+    pim_catalog_rule.datagrid.extension.selector.orm.attribute.is_smart.class: Akeneo\Pim\Automation\RuleEngine\Bundle\Datagrid\Extension\Selector\Orm\Attribute\IsSmartSelectorExtension
+
+services:
+    pim_catalog_rule.datagrid.extension.selector.orm.attribute.is_smart:
+        class: '%pim_catalog_rule.datagrid.extension.selector.orm.attribute.is_smart.class%'
+        arguments:
+            - '%pim_catalog.entity.attribute.class%'
+            - '%akeneo_rule_engine.model.rule_relation.class%'
+            - '@oro_datagrid.datagrid.request_params'
+        tags:
+            - { name: oro_datagrid.extension }
+
+    pim_datagrid.datasource.rule:
+        class: '%pim_datagrid.datasource.default.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@pim_datagrid.datasource.result_record.hydrator.default'
+        calls:
+            - [ setMassActionRepository, ['@pimee_catalog_rule.repository.rule_definition_mass_action' ]]
+        tags:
+            - { name: oro_datagrid.datasource, type: pim_datasource_rule }
+
+    pim_datagrid.extension.mass_action.type.rules:
+        class: '%oro_datagrid.extension.mass_action.type.ajax.class%'
+        public: true
+        shared: false
+        tags:
+            - { name: oro_datagrid.extension.mass_action.type, type: rules }
+
+    pim_datagrid.extension.mass_action.type.delete_rules:
+        class: '%oro_datagrid.extension.mass_action.type.ajax.class%'
+        public: true
+        shared: false
+        tags:
+            - { name: oro_datagrid.extension.mass_action.type, type: delete-rules }

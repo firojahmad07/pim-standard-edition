@@ -1,0 +1,210 @@
+batch_jobs.xlsx_tailored_product_export.label: カスタム商品を XLSX 形式でエクスポート
+batch_jobs.xlsx_tailored_product_model_export.label: カスタム商品モデルをXLSX形式でエクスポート
+batch_jobs.csv_tailored_product_export.label: カスタム商品をCSVでエクスポート
+batch_jobs.csv_tailored_product_model_export.label: カスタム商品モデルをCSVでエクスポート
+pim_common:
+  quality_score: 品質スコア
+akeneo.tailored_export:
+  filters:
+    completeness:
+      locales:
+        label: 完全性のロケールを定義する
+        placeholder: ロケールをいくつか選択
+        remove: ロケールを削除
+    quality_score:
+      score:
+        remove: 品質スコアを削除
+      locales:
+        placeholder: ロケールをいくつか選択
+        label: 品質スコアのロケールを定義する
+        remove: ロケールを削除
+  form:
+    job_instance:
+      tab:
+        content:
+          title: 商品の選択
+        column:
+          title: 構造をエクスポート
+        filters:
+          title: 商品選択を定義する
+      edit:
+        title: 編集するには、PIM 管理者とアクセス許可を確認してください。
+      launch:
+        title: エクスポートするには、PIM 管理者とアクセス許可を確認してください。
+  column_list:
+    title: 列
+    header:
+      column_name: 列名
+      source_data: 列コンテンツ
+    column_row:
+      target_placeholder: ここに新しい列名を定義する
+      placeholder_helper: スプレッドシートからすべての列名をコピーして、列を自動的に作成できます。
+      remove: 列を削除
+      no_source: コンテンツソースを定義する
+    no_column_selection:
+      title: エクスポートプロファイルが空です。
+      subtitle: '「最初の列を追加」をクリックして、エクスポートテーブルの構築を開始します。'
+      link: 詳細についてはヘルプセンターをご確認ください。
+      add_column: 最初の列を追加
+  column_details:
+    sources:
+      title: ソース
+      add: ソースを追加
+      no_result: 結果はありません。
+      locale_specific: この属性はロケール固有です。
+      remove:
+        title: ソース
+        text: このソースを本当に削除しますか？
+        button: このソースを削除
+      invalid_source:
+        attribute: この属性は削除され、別のタイプで再作成されました。このソースを削除して、もう一度追加してください。
+        association_type: この属性タイプは削除され、別のタイプで再作成されました。このソースを削除して、もう一度追加してください。
+        property: このプロパティは無効です。このソースを削除して、もう一度追加してください。
+        asset_collection_main_media: 属性により使用されるアセットコレクションの主要メディアが見つかりません。アセットファミリーの設定を確認してください。
+      no_source_configuration:
+        title: このソースで利用できる操作はありません。値がそのままエクスポートされます。
+      deleted_attribute:
+        title: この属性は削除されました。ソースとして使用できません。
+      deleted_association_type:
+        title: この関連タイプは削除されました。ソースとして使用できません。
+      no_source_selected:
+        title: '「ソースを追加」をクリックして列コンテンツの定義を開始します。'
+        link: 詳細についてはヘルプセンターをご確認ください。
+      no_column_selected:
+        title: 最初の列が定義されると、最初のソースを選択できます。
+      selection:
+        title: 選択
+        collection_separator:
+          title: 区切り
+          comma: コンマ (,)
+          semicolon: セミコロン (;)
+          pipe: パイプ (|)
+        type:
+          amount: 数量
+          currency: 通貨
+          main_media: 主要メディア
+          key: ファイルキー
+          path: パス
+          name: ファイル名
+        asset_collection:
+          property: プロパティ
+          with_prefix_and_suffix: 接頭辞と接尾辞を追加
+        format: フォーマット
+        parent:
+          information:
+            locale: ラベルとして使用される属性にロケールごとに値がある場合、特定のロケールを選択できます。
+            channel: ラベルとして使用される属性にチャンネルごとに値がある場合、特定のチャンネルを選択できます。
+        measurement:
+          information: この属性では、値、ユニットコード、ユニットラベル、または値とユニットラベルのいずれかをエクスポートできます。
+          value: 値
+          unit_locale: ユニットロケール
+          unit_code: ユニットコー​​ド
+          unit_label: ユニットラベル
+          value_and_unit_label: 値とユニットラベル
+        price:
+          currency_code: 通貨コード
+          currency_label: 通貨ラベル
+          currency_locale: 通貨ロケール
+          information: この属性では、通貨コード、通貨ラベル、または金額のいずれかをエクスポートできます。
+        file:
+          information: この属性では、パス、ファイルキーまたはファイル名のいずれかをエクスポートできます。
+        decimal_separator:
+          title: 小数点記号
+          comma: コンマ (,)
+          dot: ドット (.)
+          arabic_comma: アラビア文字の小数点記号 (٫)
+        quantified_association:
+          quantity: 数量
+        association:
+          entity_type: エンティティタイプ
+          information:
+            locale: ラベルとして使用される属性にロケールごとに値がある場合、特定のロケールを選択できます。
+            channel: ラベルとして使用される属性にチャンネルごとに値がある場合、特定のチャンネルを選択できます。
+      operation:
+        header: 操作
+        measurement_conversion:
+          title: 変換
+          placeholder: 変換なし
+          target_unit_code.label: 変換先
+        replacement:
+          title: 値を置き換える
+          placeholder: 置換値を定義する
+          enabled: 有効な置換値
+          disabled: 無効な置換値
+          yes: Yesの置換値
+          no: Noの置換値
+          edit_mapping: 置換値を編集
+          modal:
+            records: レコードを管理
+            options: オプションを管理
+            subtitle: 置換
+            no_result:
+              title: この属性には値がありません
+            empty_result:
+              title: 検索結果はありません
+              text: 新しい検索条件で再試行してください
+            filters:
+              mapped:
+                label: 表示
+                unmapped: 置換なしのすべての値
+                mapped: 置換されたすべての値
+                all: すべての値
+            table:
+              header:
+                values: 値
+                replacement: 置換値
+              field:
+                to_placeholder: 置換値を定義する
+            validation_error: 置換値で無効のものがあります。各フィールドの下にあるエラーメッセージを参照してください。
+        default_value:
+          title: 空のときに既定値を使用
+          label: 既定値
+          placeholder: 値を定義
+        clean_html_tags:
+          title: HTMLタグを消去
+          label: HTMLタグを自動的に消去
+    concatenation:
+      title: 連結
+      preview: プレビュー
+      space_between: ソース間にスペースを追加
+      add_text: テキストを追加
+      text_placeholder: テキストを定義
+  column:
+    delete_message: この列を本当に削除しますか？
+  validation:
+    required: この値は必須です。
+    max_length_reached: 値が長すぎます。{{ limit }} 以下の文字数で設定してください。
+    columns:
+      max_column_count_reached: '{{ limit }} 列の上限に達しました。これ以上エクスポートに列を追加できません。'
+      target:
+        should_not_be_blank: 列名を定義してください。
+        max_length_reached: 列名が長すぎます。{{ limit }} 文字未満である必要があります。
+        should_be_unique: この列名はすでに存在します。新しい列名を入力してください。
+    sources:
+      max_source_count_reached: '{{ limit }}ソースの上限に達しました。この列にこれ以上ソースを追加できません。'
+      association_type_should_exist: 関連タイプ {{ association_type_code }} は存在しません。作成するか、別のソースを選択してください。
+    concatenation:
+      max_text_count_reached: '{{ limit }}テキスト要素の上限に達しました。これ以上テキストを追加できません。'
+    locale:
+      should_be_active: ロケール {{ locale_code }} は無効化されています。再度有効にするか、別のロケールを選択してください。
+      should_be_bound_to_channel: チャンネル {{ channel_code }} のロケール {{ locale_code }} は無効化されています。再度有効にするか、別のロケールを選択してください。
+    channel:
+      should_exist: チャンネル {{ channel_code }} は削除されています。別のチャンネルを選択してください。
+    attribute:
+      should_exist: 属性 {{ attribute_code }} は存在しません。作成するか、別のソースを選択してください。
+      locale_should_not_be_blank: 属性 {{ attribute_code }} はロケールごとに値を持つようになりました。作成するか、別のソースを選択してください。
+      channel_should_not_be_blank: 属性 {{ attribute_code }} はチャンネルごとに値を持つようになりました。作成するか、別のソースを選択してください。
+      locale_should_be_blank: 属性 {{ attribute_code }} はロケールごとに値を持たなくなりました。作成するか、別のソースを選択してください。
+      channel_should_be_blank: 属性 {{ attribute_code }} はチャンネルごとに値を持たなくなりました。作成するか、別のソースを選択してください。
+      invalid_specific_locale: 属性 {{ attribute_code }} はロケール固有です。別のロケールを選択してください。
+    asset_collection:
+      locale_should_not_be_blank: アセットファミリー{{ asset_family_code }}の主要メディア属性は、ロケールごとに値を持つようになりました。作成するか、別のソースを選択してください。
+      channel_should_not_be_blank: アセットファミリー{{ asset_family_code }}の主要メディア属性は、チャンネルごとに値を持つようになりました。作成するか、別のソースを選択してください。
+      locale_should_be_blank: アセットファミリー{{ asset_family_code }}の主要メディア属性は、ロケールごとに値を持たなくなりました。作成するか、別のソースを選択してください。
+      channel_should_be_blank: アセットファミリー{{ asset_family_code }}の主要メディア属性は、チャンネルごとに値を持たなくなりました。作成するか、別のソースを選択してください。
+      invalid_type: アセットファミリー{{ asset_family_code }}の主要メディア属性タイプが変更されました。作成するか、別のソースを選択してください。
+    measurement:
+      family:
+        does_not_exist: '{{ measurement_family_code }}測定ファミリーは存在しません。'
+      unit:
+        does_not_exist: '{{ unit_code }}ユニットは、{{ measurement_family_code }}測定ファミリーに存在しません。'

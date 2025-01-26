@@ -1,0 +1,188 @@
+akeneo_data_quality_insights_dashboard:
+    path: /data-quality-insights/dashboard
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\Dashboard\DashboardController
+        _feature: data_quality_insights
+    methods: [GET]
+
+akeneo_data_quality_insights_dashboard_overview:
+    path: /data-quality-insights/dashboard/overview/{channel}/{locale}/{timePeriod}
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\Dashboard\DashboardOverviewController
+        _feature: data_quality_insights
+    methods: [GET]
+
+akeneo_data_quality_insights_dashboard_widget_families:
+    path: /data-quality-insights/dashboard/widget/families/{channel}/{locale}
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\Dashboard\DashboardWidgetFamiliesController
+        _feature: data_quality_insights
+    methods: [GET]
+
+akeneo_data_quality_insights_dashboard_widget_categories:
+    path: /data-quality-insights/dashboard/widget/categories/{channel}/{locale}
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\Dashboard\DashboardWidgetCategoriesController
+        _feature: data_quality_insights
+    methods: [GET]
+
+akeneo_data_quality_insights_dashboard_key_indicators:
+    path: /data-quality-insights/dashboard/key_indicators/{channel}/{locale}
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\Dashboard\DashboardKeyIndicatorsController
+        _feature: data_quality_insights
+    methods: [GET]
+
+akeneo_data_quality_insights_dashboard_quality_score_evolution:
+    path: /data-quality-insights/dashboard/quality-score-evolution/{channel}/{locale}
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\Dashboard\DashboardQualityScoreEvolutionController
+        _feature: data_quality_insights
+    methods: [GET]
+
+akeneo_data_quality_insights_product_evaluation:
+    path: /data-quality-insights/product-evaluation/{productId}
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\GetProductEvaluationController
+        _feature: data_quality_insights
+    methods: [GET]
+
+akeneo_data_quality_insights_product_model_evaluation:
+    path: /data-quality-insights/product-model-evaluation/{productId}
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\GetProductModelEvaluationController
+        _feature: data_quality_insights
+    methods: [GET]
+
+akeneo_data_quality_insights_update_attribute_group_activation:
+    path: /data-quality-insights/attribute-group-activation
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\UpdateAttributeGroupActivationController
+        _feature: data_quality_insights
+    methods: [ POST ]
+
+akeneo_data_quality_insights_get_attribute_group_activation:
+    path: /data-quality-insights/attribute-group-activation/{attributeGroupCode}
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\GetAttributeGroupActivationController
+        _feature: data_quality_insights
+    methods: [ GET ]
+
+akeneo_data_quality_insights_get_all_attribute_groups_activation:
+    path: /data-quality-insights/attribute-groups-activation
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\GetAllAttributeGroupsActivationController
+        _feature: data_quality_insights
+    methods: [ GET ]
+
+akeneo_data_quality_insights_product_quality_score:
+    path: /data-quality-insights/product-quality-score/{productId}
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\GetProductQualityScoreController
+        _feature: data_quality_insights
+    methods: [GET]
+
+akeneo_data_quality_insights_check_text:
+    path: /data-quality-insights/check-text
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\CheckTextController
+        _feature: data_quality_insights
+    methods: [POST]
+
+akeneo_data_quality_insights_check_text_ignore:
+    path: /data-quality-insights/product/check-text/ignore
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\AddProductWordInDictionaryController
+        _feature: data_quality_insights
+    methods: [POST]
+
+akeneo_data_quality_insights_product_model_check_text_ignore:
+    path: /data-quality-insights/product-model/check-text/ignore
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\AddProductModelWordInDictionaryController
+        _feature: data_quality_insights
+    methods: [POST]
+
+akeneo_data_quality_insights_attribute_check_text_ignore:
+    path: /data-quality-insights/attribute/check-text/ignore
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\AddAttributeWordInDictionaryController
+        _feature: data_quality_insights
+    methods: [POST]
+
+akeneo_data_quality_insights_attribute_option_check_text_ignore:
+    path: /data-quality-insights/attribute-option/check-text/ignore
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\AddAttributeOptionWordInDictionaryController
+        _feature: data_quality_insights
+    methods: [POST]
+
+akeneo_data_quality_insights_get_attribute_labels_error_count:
+    path: /data-quality-insights/attribute/{attributeCode}/labels/error-count
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\GetAttributeLabelsErrorCountController
+        _feature: data_quality_insights
+    methods: [GET]
+
+akeneo_data_quality_insights_get_attribute_options_labels_error_count:
+    path: /data-quality-insights/attribute/{attributeCode}/options-labels/error-count
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\GetAttributeOptionsLabelsErrorCountController
+        _feature: data_quality_insights
+    methods: [GET]
+
+akeneo_data_quality_insights_get_attribute_spellcheck_evaluation:
+    path: /data-quality-insights/attribute/{attributeCode}/evaluation
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\GetAttributeSpellcheckEvaluationController
+        _feature: data_quality_insights
+    methods: [GET]
+
+akeneo_data_quality_insights_get_number_of_products_impacted_by_attribute_spelling_mistakes:
+    path: /data-quality-insights/attribute/{attributeCode}/products-error-count
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\GetNumberOfProductsImpactedByAttributeSpellingMistakesController
+        _feature: data_quality_insights
+    methods: [GET]
+
+akeneo_data_quality_insights_get_spellcheck_supported_locales:
+    path: /data-quality-insights/spellcheck-supported-locales
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\GetSpellcheckSupportedLocalesController
+        _feature: data_quality_insights
+    methods: [ GET ]
+
+akeneo_data_quality_insights_get_locale_dictionary_words:
+    path: /data-quality-insights/locale-dictionary-words/{localeCode}
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\Dictionary\GetLocaleDictionaryWordsController
+        _feature: data_quality_insights
+    methods: [ GET ]
+
+akeneo_data_quality_insights_delete_locale_dictionary_word:
+    path: /data-quality-insights/locale-dictionary-words/{wordId}
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\Dictionary\DeleteWordFromDictionaryController::delete
+        _feature: data_quality_insights
+    methods: [ DELETE ]
+
+akeneo_data_quality_insights_get_locales_dictionary_info:
+    path: /data-quality-insights/locales-dictionary-info
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\GetLocalesDictionaryInfoController
+        _feature: data_quality_insights
+    methods: [ POST ]
+
+akeneo_data_quality_insights_add_words_to_dictionary:
+    path: /data-quality-insights/locale-dictionary-words/{localeCode}
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\Dictionary\AddWordsToDictionaryController::addWordsToSingleLocale
+        _feature: data_quality_insights
+    methods: [ POST ]
+
+akeneo_data_quality_insights_add_words_to_locales_dictionaries:
+    path: /data-quality-insights/locale-dictionary-words
+    defaults:
+        _controller: Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Symfony\Controller\Dictionary\AddWordsToDictionaryController::addWordsToMultipleLocales
+        _feature: data_quality_insights
+    methods: [ POST ]

@@ -1,0 +1,470 @@
+pimee_catalog_rule:
+  overview: "]-Inf, 1]{{ count }} règle|]1, Inf[{{ count }} règles"
+  execution_button: Exécuter les règles
+  selected: "]-Inf, 1]{{ count }} règle sélectionnée|]1, +Inf[{{ count }} règles sélectionnées"
+  dropdown:
+    title: Autres actions
+  popin:
+    execute_rules:
+      confirm_title: Confirmer l’exécution
+      confirm_content: Êtes-vous certain(e) de vouloir exécuter les règles ? (cela peut prendre un certain temps)
+  notification:
+    fail: L'action n'a pas été effectuée
+    launched: L'exécution des règles est en cours, vous serez notifié(e) lorsque cela sera terminé.
+  attribute:
+    list:
+      code.label: Code
+      condition.label: Condition
+      action.label: Action
+      no_rule_yet.label: Il n'y a aucune règle pour le moment
+  rule:
+    value: Valeur
+    include_children: Inclure les enfants
+    condition:
+      if.label: Si
+    action:
+      then.label: Alors
+      set_value.label: est modifié dans
+      copy_value.label: est copié dans
+      set.label: est modifié dans
+      copy.label: est copié dans
+      add.label: est ajouté dans
+      remove.label: est retirée de
+  datagrid:
+    rule-grid:
+      actions:
+        execute:
+          confirm_title: Confirmer l’exécution
+          confirm_content: Êtes-vous sûr de vouloir exécuter la règle ?
+      mass_edit_action:
+        confirm_title: Confirmer le calcul
+        confirm_content: Êtes-vous sûr de vouloir calculer le nombre de produits impactés par les règles ?
+      mass_action:
+        execute:
+          confirm_title: Confirmer l’exécution
+          confirm_content: Êtes-vous sûr de vouloir exécuter les règles ? (Cela peut prendre un certain temps)
+          success: L'exécution des règles est en cours, vous serez notifié(e) lorsque cela sera terminé.
+          error: Une erreur s'est produite lors de l'exécution des règles.
+          empty_selection: Aucune règle n'a été sélectionnée.
+        delete:
+          confirm_title: Confirmer l’exécution
+          confirm_content: Êtes-vous sûr de vouloir supprimer la (les) règle(s) sélectionnée(s) ?
+          success: Les règles ont bien été supprimées.
+          error: Une erreur s'est produite lors de la suppression des règles.
+          empty_selection: Aucune règle n'a été sélectionnée.
+      tags:
+        set: Définir
+        add: Ajouter
+        calculate: Calculer
+        clear: Effacer
+        concatenate: Concaténer
+        copy: Copier
+        remove: Supprimer
+  form:
+    category:
+      catalog: Catalogue
+      select: Sélectionnez une catégorie
+      open_tree: Ouvrir l'arbre des catégories
+      tree: Arborescence des catégories
+      menu: Sélectionner un arbre de catégories
+      folder:
+        selected: Répertoire sélectionné
+        not_selected: Répertoire
+      folders:
+        selected: Dossiers sélectionnés
+        not_selected: Répertoires
+      arrow:
+        open: Ouvrir la branche de catégories
+        close: Fermer la branche de catégories
+    tab:
+      list: Constructeur de règle et onglets de propriétés
+      rule_builder: Générateur de règles
+    attribute:
+      tab:
+        rules:
+          title: Règles
+    creation:
+      helper: Le moteur de règles peut radicalement augmenter votre productivité dans le PIM en automatisant des actions.
+      english_flag: Libellé pour l'anglais
+      title: Créer une nouvelle règle
+      notification:
+        success: La règle a été créée avec succès
+        failed: La création de la règle a échoué
+      constraint:
+        code:
+          required: Le code de la règle est requis.
+          too_short: "Le code de la règle est trop court. Il doit comporter {{ characterLimit }} caractères ou plus."
+          allowed_characters: Le code de la règle ne peut être composé que de caractères alphanumériques et de tirets bas.
+          unique: Ce code existe déjà.
+      cross_link: Quitter le formulaire de création de règle
+    edit:
+      header:
+        welcome: Bienvenue dans votre nouvelle zone de gestion de règles automatiques!
+        description: Pour créer une règle, vous devez définir votre sélection de produits, puis ajouter une ou plusieurs actions.
+        documentation_link: Cliquez ici pour découvrir toutes les fonctionnalités du moteur de règles.
+      properties:
+        section:
+          general: Paramètres généraux
+          labels: Traductions du libellé
+      character_left: "]-Inf, 1]{{ count }} caractère restant|]1, +Inf[{{ count }} caractères restants"
+      priority:
+        label: Priorité
+      status:
+        label: Statut
+        enabled: Activé
+        disabled: Désactivé
+      add_to_category: Ajouter à une catégorie
+      add_conditions: Ajouter des conditions
+      products_count:
+        products: "]-Inf, 1]{{ count }} produit|]1, +Inf[{{ count }} produits"
+        product_models: "]-Inf, 1]{{ count }} modèle de produit|]1, +Inf[{{ count }} modèles de produits"
+        products_and_product_models: "{{ products }} et {{ product_models }}"
+        pending: Calcul des produits et des modèles de produits
+        error: Impossible de calculer les produits et les modèles de produits impactés
+      product_selection: Sélection de produits
+      preview: Aperçu
+      fields:
+        family: Famille
+        family_variant: Variante de famille
+        category: Catégorie
+        identifier: Identifiant
+        attribute: Attribut
+        groups: Groupes
+        parent: Parent
+        measurement_unit: Unité de mesure
+        measurement_default_unit: "Unité par défaut ({{ unit }})"
+        currency: Devise
+        operator: Opérateur
+        entity_type:
+          label: Type d'entité
+          placeholder: Veuillez sélectionner un type d'entité
+      execute:
+        button: Enregistrer et exécuter
+        title: Enregistrer et exécuter la règle
+        description: La règle actuelle va être sauvegardée et exécutée en arrière-plan. Une fois terminé, vous serez notifié.
+      duplicate:
+        button: Enregistrer et dupliquer
+        title: Dupliquer la règle "{{ originalRuleCode }}"
+      actions:
+        add_action: Ajouter une action
+        add_category:
+          title: AJOUTER des catégories
+          helper: Pour ajouter votre sélection de produits à une ou plusieurs catégories, veuillez commencer par sélectionner vos arbres de catégories et ensuite vos catégories.
+        add_groups:
+          title: AJOUTER des produits aux groupes
+          helper: Pour ajouter des produits à des groupes, veuillez sélectionner un ou plusieurs groupes
+          subtitle: Sélectionnez vos groupes
+        set_groups:
+          title: DÉFINIR les groupes de produits
+          helper: Pour définir les groupes de produits, veuillez sélectionner un ou plusieurs groupes
+          subtitle: Sélectionnez vos groupes
+        set_category:
+          title: DÉFINIR les catégories
+          helper: Pour classifier votre sélection de produits dans une ou plusieurs catégories (et les retirer des anciennes), veuillez commencer par sélectionner vos arbres de catégories et ensuite vos catégories.
+        category:
+          select_category_trees: Sélectionnez vos arbres de catégories
+          select_category_tree: Sélectionner votre arbre de catégories
+          select_categories: Sélectionnez vos catégories
+          select_category: Sélectionnez votre catégorie
+          category_tree: Arbre de catégories
+          categories_selected: "]-Inf, 1]{{ count }} catégorie sélectionnée|]1, +Inf[{{ count }} catégories sélectionnées"
+          no_category_tree: Veuillez d'abord sélectionner un arbre de catégories.
+          remove_unknown_category: " Cliquez ici pour supprimer cette catégorie."
+        set_family:
+          title: DEFINIR une famille
+          subtitle: Sélectionnez votre famille
+        set_attribute:
+          title: DEFINIR une valeur d'attribut
+          helper: Pour définir des valeurs à votre attribut, veuillez commencer par sélectionner votre attribut cible, puis ajoutez la valeur souhaitée.
+          target_subtitle: Sélectionnez votre destination
+          value_subtitle: Définissez votre valeur
+          attribute_label: Attribut
+          attribute_placeholder: Sélectionnez votre attribut de destination
+          select_reference_entity: Sélectionnez vos entités référentielles
+          select_asset: Sélectionnez vos ressources
+          select_measurement_unit: Sélectionnez votre unité
+          table_attribute_helper: Les anciennes valeurs de cet attribut seront remplacées dans toute votre sélection de produit
+        set_quantified_associations:
+          title: DEFINIR des associations quantifiées
+          helper: Pour définir des associations quantifiées, veuillez sélectionner le(s) type(s) d'association puis les produits, modèles ou groupes de produits que vous souhaitez associer à votre sélection de produits.
+        set_associations:
+          title: DEFINIR des associations
+          helper: Pour définir des associations, veuillez sélectionner votre ou vos types d'association et ensuite les produits, modèles ou groupes de produits que vous souhaitez associer à votre sélection de produits.
+          select_association_type: Sélectionnez votre type d'association
+          association_types: Types d'association
+          add_group: Ajouter un groupe
+          add_product: Ajouter un produit
+          add_product_model: Ajouter un modèle de produit
+          add_association_type: Ajouter un type d'association
+          select_title:
+            products: Sélectionnez vos produits
+            product_models: Sélectionnez vos modèles de produits
+            groups: Sélectionnez vos groupes
+          select:
+            products: Produits
+            product_models: Modèles de produit
+            groups: Groupes
+          counts:
+            products: ']-Inf, 1]{{ count }} produit|]1, +Inf[{{ count }} produits'
+            product_models: ']-Inf, 1]{{ count }} modèle de produit|]1, +Inf[{{ count }} modèles de produits'
+            groups: ']-Inf, 1]{{ count }} groupe|]1, +Inf[{{ count }} groupes'
+        add_associations:
+          title: AJOUTER des associations
+          helper: Pour ajouter des associations, veuillez sélectionner votre ou vos types d'association et ensuite les produits, modèles ou groupes de produits que vous souhaitez associer à votre sélection de produits.
+        clear_attribute:
+          title: EFFACER la valeur d'attribut
+          subtitle: Sélectionnez l'attribut à effacer
+          attribute_label: Attribut
+        clear_associations:
+          title: EFFACER les associations
+          helper: Toutes les associations des produits sélectionnés seront effacées.
+        clear_quantified_associations:
+          title: EFFACER les associations quantifiées
+          helper: Toutes les associations quantifiées des produits sélectionnés seront effacées.
+        clear_categories:
+          title: EFFACER les catégories
+        clear_groups:
+          title: EFFACER les groupes
+        remove_category:
+          title: SUPPRIMER les catégories
+          helper: Pour supprimer votre sélection de produits d'une ou de plusieurs catégories, veuillez commencer par sélectionner vos arborescences de catégories, puis vos catégories.
+        remove_attribute_value:
+          title: SUPPRIMER la valeur de l'attribut
+          helper: Pour supprimer des valeurs de votre attribut, veuillez commencer par sélectionner votre attribut cible et ensuite les valeurs que vous voulez supprimer.
+          value_subtitle: Définissez vos valeurs à supprimer
+        add_attribute_value:
+          title: AJOUTER une valeur d'attribut
+          helper: Pour ajouter des valeurs à votre attribut, veuillez commencer par sélectionner votre attribut cible et définissez ensuite les valeurs que vous souhaitez ajouter.
+          value_subtitle: Définissez les valeurs à ajouter
+        copy:
+          title: COPIER une valeur d'attribut
+          helper: Pour copier les valeurs d'un attribut à un autre, veuillez commencer par sélectionner votre attribut source et ensuite, votre attribut de destination.
+          select_source: Sélectionner votre source
+          select_target: Sélectionnez votre destination
+          no_source: Veuillez d'abord sélectionner votre attribut source.
+        delete:
+          label: Supprimer l'action
+          description: Êtes-vous sûr de vouloir supprimer cette action ?
+        set_status:
+          title: DÉFINIR le statut
+          subtitle: Définissez votre statut
+          helper: Pour définir le statut des produits, veuillez sélectionner un statut dans la liste ci-dessous
+          placeholder: Sélectionnez le statut
+        remove_groups:
+          title: SUPPRIMER les produits des groupes
+          helper: Pour supprimer des produits des groupes, veuillez sélectionner un ou plusieurs groupes
+          subtitle: Sélectionnez vos groupes
+        calculate:
+          title: CALCULER des valeurs
+          helper: Pour calculer des valeurs d'attribut numérique, veuillez choisir le(s) attribut(s) et/ou le(s) valeur(s) et ensuite sélectionner l'attribut cible dans lequel vous voulez mettre le résultat. Vous pouvez également arrondir le résultat final si nécessaire.
+          add_value: Ajouter une valeur
+          add_attribute: Ajouter un attribut
+          select_target: Sélectionnez votre destination
+          attribute_placeholder: Sélectionnez votre attribut de destination
+          round_precision: Précision de l'arrondi
+          operator:
+            add: Ajouter
+            subtract: Soustraire
+            multiply: Multiplier
+            divide: Diviser
+            choose: Choisissez un opérateur
+        concatenate:
+          title: CONCATENER les valeurs
+          helper: Pour concaténer des valeurs d'attribut, veuillez ajouter les attributs et ensuite sélectionner l'attribut cible.
+          select_target: Sélectionnez votre cible
+          attribute_placeholder: Sélectionnez votre attribut cible
+          add_text: Ajouter du texte
+          add_attribute: Ajouter un attribut
+          add_new_line: Ajouter un saut de ligne
+          line_break: Saut de ligne
+          date_format: Sélectionnez un format de date
+          label_locale: Locale du libellé
+          unit_label_locale: Locale de l'unité
+          remove_new_line_confirm:
+            label: Retirer le saut de ligne de la liste des opérations
+            description: Le nouvel attribut cible n'accepte pas les sauts de ligne. Ce changement supprimera tous les sauts de ligne.
+      conditions:
+        delete:
+          label: Supprimer la condition
+          description: Êtes-vous sûr de vouloir supprimer cette condition ?
+        operators:
+          "STARTS WITH": commence par
+          "ENDS WITH": finit par
+          "CONTAINS": contient
+          "DOES NOT CONTAIN": ne contient pas
+          "EMPTY": est vide
+          "NOT EMPTY": n'est pas vide
+          "IN": dans
+          "NOT IN": pas dans
+          "IN CHILDREN": est dans les enfants
+          "NOT IN CHILDREN": pas dans les enfants
+          "UNCLASSIFIED": n'est pas classifié
+          "IN OR UNCLASSIFIED": n'est pas classifié ou est dans
+          "BETWEEN": entre
+          "NOT BETWEEN": n'est pas entre
+          "=": est égal à
+          "!=": n'est pas égal à
+          ">": supérieur à
+          ">=": égal ou supérieur à
+          "<": inférieur à
+          "<=": inférieur ou égal à
+      notification:
+        success: La règle a été mise à jour avec succès
+        failed: La mise à jour de la règle a échoué
+        execute_success: Règle mise à jour et exécutée avec succès
+        execute_failed: La règle a été sauvegardée mais il y a eu une erreur lors de l'exécution
+      discard_changes: Vos modifications seront perdues si vous ne les enregistrez pas.
+      please_select_attribute: Veuillez d'abord sélectionner votre attribut de destination.
+      unhandled_attribute_type: Désolé, ce type d'attribut n'est pas encore géré dans l'interface. Veuillez utiliser les imports de règles.
+      empty_section:
+        set_up_action: Bien joué ! Vous avez défini votre sélection de produits. Maintenant, il est temps de configurer votre action.
+        set_up_condition: Si vous ne voulez pas affecter l'ensemble de votre catalogue, veuillez ajouter au moins une condition.
+        add_action: Ensuite, ajoutez une ou plusieurs actions à appliquer à vos produits/modèles de produits.
+        doc: Vous ne savez pas ce qu'est une action ?
+        doc_link: Cet article peut vous aider.
+    delete:
+      description: Êtes-vous sûr(e) de vouloir supprimer cette règle ? Il est impossible d'annuler cette action.
+      notification:
+        failed: La suppression de la règle a échoué
+        success: Règle supprimée avec succès
+    helper:
+      add_to_category: Pour ajouter votre sélection de produits à une ou plusieurs catégories, veuillez commencer par sélectionner vos arbres de catégories, puis vos catégories.
+      clear_attribute: Pour effacer la valeur de l'attribut, veuillez commencer par sélectionner l'attribut à effacer.
+      clear_categories: Toutes les catégories des produits sélectionnés seront effacées.
+      clear_groups: Tous les groupes des produits sélectionnés seront effacés.
+      product_selection: "Vous devez définir votre sélection de produits pour créer votre règle. Si vous ne savez pas comment, "
+      product_selection_doc_link: jetez un coup d'oeil à cet article.
+      set_attribute_info_clear: Vous devez renseigner une valeur à définir. Si vous voulez effacer la valeur de l'attribut, veuillez utiliser l'action "Effacer les valeurs d'attributs".
+    legend:
+      add_to_category: Créer une action
+      product_selection: Créer une condition
+    tree:
+      item:
+        selected: Élément sélectionné
+        not_selected: Sélectionner l'élément
+    date:
+      operators:
+        specific_date: Date spécifique
+      label:
+        date_type: Choisissez un type de date
+        operator: Choisissez un opérateur
+        date: Choisissez une date
+        relative_date: Choisissez une date
+        locale: Choisissez une locale
+        scope: Choisissez un canal
+        period: Choisissez une unité de temps
+        open_period: Ouvrir le menu de l'unité de temps
+        date_from: Choisissez une date de début
+        date_to: Choisissez une date de fin
+        date_past: Date passée
+        date_future: Date future
+        date_present: Maintenant
+      day: "]-Inf, 1] Jour|]1, +Inf[ Jours"
+      week: "]-Inf, 1] Semaine|]1, +Inf[ Semaines"
+      month: "]-Inf, 1] Mois|]1, +Inf[ Mois"
+      year: "]-Inf, 1] Année|]1, +Inf[ Années"
+      hour: "]-Inf, 1] Heure|]1, +Inf[ Heures"
+      minute: "]-Inf, 1] Minute|]1, +Inf[ Minutes"
+  exceptions:
+    loading: Une erreur s'est produite lors du chargement de la définition de règle.
+    required: Ce champ est obligatoire
+    required_attribute: Vous devez indiquer un attribut
+    required_locale: Une locale est requise pour l'attribut {{ attributeLabel }}
+    required_scope: Un canal est requis pour l'attribut {{ attributeLabel }}
+    required_currency: Une devise est requise pour l'attribut {{ attributeLabel }}
+    required_locale_completeness: Une locale est requise pour la complétude
+    required_scope_completeness: Un canal est requis pour la complétude
+    required_value: Vous devez indiquer une valeur pour cette action
+    required_categories: Au moins une catégorie est requise pour cette action
+    required_constant_for_operation: Une valeur constante est requise pour cette opération
+    required_operator_for_operation: Un opérateur est requis pour cette opération
+    required_unit: Une unité de mesure est requise
+    identifier_or_quantity_missing: Un identifiant et une quantité sont requis pour chaque élément
+    required_item: Au moins un élément est requis pour cette action
+    division_by_zero: Les divisions par zéro ne sont pas possibles
+    two_operations_are_required: La liste des opérations doit contenir 2 opérations ou plus.
+    two_items_are_required: La liste doit contenir 2 éléments ou plus.
+    unknown_or_inactive_locale: 'La locale "{{ localeCode }}" n''existe pas ou n''est pas activée'
+    unknown_or_inactive_currency: 'La devise "{{ currencyCode }}" n''existe pas ou n''est pas activée'
+    unbound_locale: 'La locale "{{ localeCode }}" n''est pas activée dans le canal "{{ channelCode }}"'
+    unbound_currency: 'La devise "{{ currencyCode }}" n''est pas activée dans le canal "{{ channelCode }}"'
+    locale_on_unlocalizable_attribute: Cet attribut n'est pas localisable. Veuillez supprimer la locale avant de continuer.
+    unknown_scope: 'Le canal "{{ scopeCode }}" n''existe pas'
+    scope_on_unscopable_attribute: Cet attribut n'est pas scopable. Veuillez supprimer le canal avant de continuer.
+    unknown_families: "{1}La famille {{ familyCodes }} n'existe pas|]1,+Inf[Les {{ familyCodes }} familles n'existent pas"
+    unknown_family_variants: "{1}La variante de famille {{ familyVariantCodes }} n'existe pas|]1,+Inf[Les {{ familyVariantCodes }} variantes de famille n'existent pas"
+    unknown_attribute_options: "{1}L'option {{ attributeOptionCodes }} n'existe pas|]1,+Inf[Les options {{ attributeOptionCodes }} n'existent pas"
+    unknown_attribute_code: "L'attribut {{ attributeCode }} n'existe pas"
+    unknown_categories: "{1}La catégorie {{ categoryCodes }} n'existe pas.|]1, +Inf[Les {{ categoryCodes }} catégories n'existent pas"
+    unknown_attribute: "Cet attribut n'existe pas."
+    unknown_groups: "{1} Le groupe {{ groupCodes }} n'existe pas|]1, +Inf[Les groupes suivants n'existent pas: {{ groupCodes }}"
+    select_another_attribute_or_remove_action: "Sélectionnez un autre attribut ou supprimez cette action."
+    select_another_attribute: "Sélectionnez un autre attribut"
+    or: ou
+    create_attribute_link: cliquez ici pour créer l'attribut
+    edit_unauthorize: Vous n'êtes pas autorisé à modifier les règles
+    wrong_date_timespan: Pour définir une période valide, assurez-vous que votre date de fin n'est pas définie avant votre date de début.
+    measurement_family_not_found: La famille de mesure "{{ measurement_code }}" n'existe pas
+    unit_not_found: L'unité "{{ unitCode }}" n'a pas été trouvée dans la famille de mesure "{{ measurement_code }}"
+    empty_association_warning: Si vous laissez cette liste vide, cette règle effacera ce type d'association.
+pim_enrich:
+  entity:
+    rule:
+      module:
+        delete:
+          confirm: Êtes-vous sûr de vouloir supprimer cette règle ? Il est impossible d'annuler cette action
+      flash:
+        delete:
+          success: Règle supprimée avec succès
+flash:
+  rule:
+    impacted_product_count: L'action de masse pour calculer le nombre de produits impactés a été lancée. Vous serez notifié lorsque cela sera terminé.
+    executed: L'exécution des règles est en cours, vous serez notifié(e) lorsque cela sera terminé.
+    enabled: La règle a été activée
+    disabled: La règle a été désactivée
+batch_jobs:
+  add_attribute_value:
+    execute_rules.label: Exécution des règles
+  default_steps:
+    export_rules: Export des règles
+    import_rules: Import des règles
+    calculate_affected_products: Calculer les produits affectés
+    execute_rules: Exécution des règles
+  yml_rule_import:
+    label: Import des règles en YAML
+    import.label: Import des règles
+  yml_rule_export:
+    label: Export des règles en YAML
+    export.label: Export des règles
+  rule_impacted_product_count:
+    label: Nombre de produits impactés
+    perform.label: Calcul du nombre de produits affectés
+  csv_product_import_with_rules:
+    label: Import de produits en CSV avec exécution des règles
+    import.label: Import des produits
+  csv_product_model_import_with_rules:
+    label: Import de modèles de produits en CSV avec exécution des règles
+  xlsx_product_import_with_rules:
+    label: Import de produits en XLSX avec exécution des règles
+    import.label: Import des produits
+  xlsx_product_model_import_with_rules:
+    label: Import de modèles de produits en XLSX avec exécution des règles
+pim_notification:
+  types:
+    rule: Paramètres des règles
+    mass_edit_rule: Edition en masse de règles
+    execute_rules: Exécution des règles
+pim_menu:
+  navigation:
+    settings:
+      automation: Automatisation
+  item:
+    rule: Règles
+pim_title:
+  pimee_catalog_rule_rule_index: Règles
+  pimee_catalog_rule_edit: Modifier la règle
+  pimee_catalog_rule_new: Règles
+akeneo_job_process_tracker:
+  type_filter:
+    mass_edit_rule: Edition en masse de règles
+    execute_rules: Exécution des règles

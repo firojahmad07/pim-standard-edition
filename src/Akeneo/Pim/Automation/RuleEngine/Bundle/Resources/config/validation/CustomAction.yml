@@ -1,0 +1,8 @@
+Akeneo\Pim\Automation\RuleEngine\Component\Command\DTO\CustomAction:
+    constraints:
+        - \Akeneo\Pim\Automation\RuleEngine\Component\Validator\Constraint\CustomAction: ~
+    properties:
+        type:
+            - NotBlank:
+               message: pimee_catalog_rule.rule_definition.validation.actions.custom.missing_type_key
+            - Type: string

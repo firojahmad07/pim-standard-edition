@@ -1,0 +1,20 @@
+Akeneo\Pim\Automation\RuleEngine\Component\Command\DTO\ConcatenateAction:
+    constraints:
+        -   \Akeneo\Pim\Automation\RuleEngine\Component\Validator\Constraint\TargetAcceptsNewLine: ~
+    properties:
+        from:
+            - NotNull:
+                message: pimee_catalog_rule.rule_definition.validation.actions.concatenate.missing_from_key
+            - Type: array
+            - Count:
+                min: 2
+                minMessage: pimee_catalog_rule.rule_definition.validation.actions.concatenate.source_count
+            - All:
+                - NotNull: ~
+                - Type: object
+            - Valid: ~
+        to:
+            - NotNull:
+                message: pimee_catalog_rule.rule_definition.validation.actions.concatenate.missing_to_key
+            - Type: object
+            - Valid: ~

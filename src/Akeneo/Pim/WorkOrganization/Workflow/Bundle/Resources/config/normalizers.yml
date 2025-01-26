@@ -1,0 +1,168 @@
+parameters:
+    pimee_workflow.normalizer.product_draft.class:     Akeneo\Pim\WorkOrganization\Workflow\Bundle\Normalizer\ProductDraftNormalizer
+    pimee_workflow.normalizer.published_product.class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Normalizer\PublishedProductNormalizer
+    pimee_workflow.normalizer.entity_with_values_proposal.class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Datagrid\Normalizer\EntityWithValuesProposalNormalizer
+    pimee_workflow.normalizer.published_product_version.class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Versioning\VersionNormalizer
+
+services:
+    pimee_workflow.normalizer.product_draft:
+        class: '%pimee_workflow.normalizer.product_draft.class%'
+        tags:
+            - { name: pim_internal_api_serializer.normalizer, priority: 120 }
+
+    pimee_workflow.normalizer.published_product:
+        class: '%pimee_workflow.normalizer.published_product.class%'
+        arguments:
+            - '@pim_catalog.normalizer.standard.product.properties'
+            - '@pimee_workflow.normalizer.standard.published_product.associations'
+        tags:
+            - { name: pim_standard_format_serializer.normalizer, priority: 130 }
+
+    pimee_workflow.normalizer.value_collection_without_empty_values_provider:
+        class: 'Akeneo\Pim\WorkOrganization\Workflow\Bundle\Datagrid\Normalizer\ValueCollectionWithoutEmptyValuesProvider'
+        arguments:
+            - '@akeneo.pim.enrichment.factory.value'
+            - '@pim_standard_format_serializer'
+            - '@akeneo.pim.structure.query.get_attributes'
+            -
+    pimee_workflow.normalizer.proposal_changes:
+        class: 'Akeneo\Pim\WorkOrganization\Workflow\Bundle\Datagrid\Normalizer\ProposalChangesNormalizer'
+        arguments:
+            - '@pimee_workflow.presenter.registry'
+            - '@security.authorization_checker'
+            - '@pim_catalog.repository.attribute'
+            - '@pim_catalog.repository.locale'
+            - '@pimee_workflow.helper.product_draft_changes_permission'
+            - '@pimee_workflow.normalizer.value_collection_without_empty_values_provider'
+
+    pimee_workflow.normalizer.entity_with_values_proposal:
+        class: '%pimee_workflow.normalizer.entity_with_values_proposal.class%'
+        arguments:
+            - '@pim_datagrid_serializer'
+            - '@pimee_workflow.normalizer.proposal_changes'
+            - '@pim_user.context.user'
+        tags:
+            - { name: pim_datagrid_serializer.normalizer }
+        lazy: true
+
+    pimee_workflow.normalizer.datagrid.published_product:
+        class: 'Akeneo\Pim\WorkOrganization\Workflow\Bundle\Datagrid\Normalizer\PublishedProductNormalizer'
+        arguments:
+            - '@pim_catalog.filter.chained'
+            - '@pim_enrich.normalizer.image'
+            - '@pimee_workflow.query.get_published_product_completenesses'
+        tags:
+            - { name: pim_datagrid_serializer.normalizer, priority: 150 }
+        lazy: true
+
+    pimee_enrich.normalizer.published_product:
+        class: 'Akeneo\Pim\WorkOrganization\Workflow\Component\Normalizer\InternalApi\PublishedProductNormalizer'
+        arguments:
+            - '@pimee_workflow.normalizer.published_product'
+            - '@pim_catalog.association.missing_association_adder'
+            - '@pimee_workflow.values_filler.published_product_with_permission'
+            - '@pim_catalog.localization.localizer.converter'
+            - '@pim_enrich.converter.standard_to_enrich.product_value'
+            - '@pim_enrich.normalizer.version'
+            - '@pim_versioning.manager.version'
+            - '@pim_user.context.user'
+            - '@pim_enrich.provider.form.chained'
+            - '@pim_structure_version.provider.structure_version.product'
+            - '@pimee_workflow.query.get_published_product_completenesses'
+            - '@pim_enrich.normalizer.image'
+            - '@pim_catalog.repository.locale'
+            - '@pim_enrich.normalizer.product'
+            - '@security.authorization_checker'
+            - '@pimee_security.repository.category_access'
+            - '@pimee_workflow.normalizer.internal_api.published_product_completeness_collection'
+        tags:
+            - { name: pim_internal_api_serializer.normalizer, priority: 130 }
+
+    pimee_workflow.normalizer.internal_api.published_product_completeness_collection:
+        class: 'Akeneo\Pim\WorkOrganization\Workflow\Component\Normalizer\InternalApi\PublishedProductCompletenessCollectionNormalizer'
+        arguments:
+            - '@pimee_workflow.normalizer.internal_api.published_product_completeness'
+            - '@akeneo.pim.enrichment.channel.query.get_labels'
+            - '@akeneo.pim.enrichment.attribute.query.get_labels'
+        tags:
+            - { name: pim_internal_api_serializer.normalizer }
+
+    pimee_workflow.normalizer.internal_api.published_product_completeness:
+        class: 'Akeneo\Pim\WorkOrganization\Workflow\Component\Normalizer\InternalApi\PublishedProductCompletenessNormalizer'
+
+    pimee_workflow.normalizer.standard.published_product:
+        class: '%pim_catalog.normalizer.standard.product.class%'
+        arguments:
+            - '@pim_catalog.normalizer.standard.product.properties'
+            - '@pimee_workflow.normalizer.standard.published_product.associations'
+            - '@pim_catalog.normalizer.standard.product.quantified_associations'
+        tags:
+            - { name: pim_serializer.normalizer, priority: 90 }
+
+    pimee_workflow.normalizer.standard.published_product.associations:
+        class: '%pim_catalog.normalizer.standard.product.associations.class%'
+        arguments:
+            - '@pimee_workflow.query.get_associated_product_codes_by_published_product'
+        tags:
+            - { name: pim_serializer.normalizer, priority: 40 }
+
+    # Versioning
+    pimee_workflow.normalizer.published_product_version:
+        class: '%pimee_workflow.normalizer.published_product_version.class%'
+        arguments:
+            - '@pim_enrich.normalizer.version'
+            - '@pimee_workflow.repository.published_product'
+        tags:
+            - { name: pim_internal_api_serializer.normalizer, priority: 120 }
+
+    pimee_enrich.normalizer.product:
+        class: 'Akeneo\Pim\WorkOrganization\Workflow\Bundle\Normalizer\ProductNormalizer'
+        arguments:
+            - '@pim_enrich.normalizer.product'
+            - '@pimee_workflow.manager.published_product'
+            - '@pimee_workflow.repository.product_draft'
+            - '@pimee_workflow.applier.draft'
+            - '@pimee_security.repository.category_access'
+            - '@security.token_storage'
+            - '@pimee_security.cached_authorization_checker'
+            - '@pim_catalog.repository.product'
+            - '@pim_catalog.completeness.missing_required_attributes_calculator'
+            - '@pim_enrich.normalizer.missing_required_attributes'
+        tags:
+            - { name: pim_internal_api_serializer.normalizer, priority: 120 }
+
+    pimee_enrich.normalizer.product_model:
+        class: 'Akeneo\Pim\WorkOrganization\Workflow\Bundle\Normalizer\ProductModelNormalizer'
+        arguments:
+            - '@pim_enrich.normalizer.product_model'
+            - '@pimee_workflow.repository.product_model_draft'
+            - '@pimee_workflow.applier.draft'
+            - '@pimee_security.repository.category_access'
+            - '@security.token_storage'
+            - '@security.authorization_checker'
+            - '@pim_catalog.repository.product_model'
+        tags:
+            - { name: pim_internal_api_serializer.normalizer, priority: 120 }
+
+    pimee_workflow.normalizer.user:
+        class: 'Akeneo\Pim\WorkOrganization\Workflow\Component\Normalizer\InternalApi\UserNormalizer'
+        arguments:
+            $categoryAccessRepository: '@pimee_security.repository.category_access'
+            $getAllEditableCategoryCodes: '@akeneo.pim.enrichment.category.get_editable_category_codes'
+            $getAllOwnableCategoryCodes: '@akeneo.pim.enrichment.category.get_ownable_category_codes'
+
+    pimee_workflow.normalizer.missing_required_attributes:
+        class: 'Akeneo\Pim\WorkOrganization\Workflow\Bundle\Normalizer\MissingRequiredAttributesNormalizer'
+        decorates: 'pim_enrich.normalizer.missing_required_attributes'
+        arguments:
+            - '@pimee_security.cached_authorization_checker'
+            - '@pim_catalog.repository.cached_attribute'
+            - '@pim_catalog.repository.cached_locale'
+
+    Akeneo\Pim\WorkOrganization\Workflow\Component\Normalizer\Standard\UserNormalizer:
+        decorates: 'pim_user.normalizer.user.standard'
+        decoration_inner_name: 'pim_user.normalizer.user.standard.base'
+        arguments:
+            - '@pim_user.normalizer.user.standard.base'
+        tags:
+            - { name: pim_standard_format_serializer.normalizer }

@@ -1,0 +1,36 @@
+pimee_catalog_rule:
+  datagrid:
+    rule-grid:
+      actions:
+        execute: Utför
+      title: Regler
+      mass_edit_action:
+        execute: Utför
+        delete: Radera
+  acl_group:
+    rule: Regler
+  acl:
+    rule:
+      view_permissions: Visa regler
+      delete_permissions: Ta bort regler
+      execute_permissions: Utför regler
+  attribute:
+    tab:
+      rule.title: Regler
+    grid:
+      is_smart.label: Smart
+    acl:
+      rule.view_permissions: Visa regler
+  product:
+    history: Tillämpad regel "%rule%"
+  steps:
+    rules_execution.title: Regler utföranden
+btn:
+  Execute rules: Utför regler
+job_execution:
+  summary:
+    rule_calculated: Antal regler
+pim_datagrid:
+  cells:
+    type:
+      execute_rules: Regler utföranden

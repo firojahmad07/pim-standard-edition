@@ -1,0 +1,102 @@
+config:
+    config:
+        pim/controller-registry:
+            controllers:
+                akeneo_asset_manager_asset_family_index:
+                    module: pim/controller/asset-family/list
+                akeneo_asset_manager_asset_family_edit:
+                    module: pim/controller/asset-family/edit
+                akeneo_asset_manager_asset_edit:
+                    module: pim/controller/asset/edit
+
+        akeneoassetmanager/application/configuration/value:
+            media_file:
+                view: '@akeneoassetmanager/application/component/asset/edit/enrich/data/media-file.tsx'
+            text:
+                view: '@akeneoassetmanager/application/component/asset/edit/enrich/data/text.tsx'
+            media_link:
+                view: '@akeneoassetmanager/application/component/asset/edit/enrich/data/media-link.tsx'
+            number:
+                view: '@akeneoassetmanager/application/component/asset/edit/enrich/data/number.tsx'
+            option:
+                view: '@akeneoassetmanager/application/component/asset/edit/enrich/data/option.tsx'
+                filter: '@akeneoassetmanager/application/component/asset/list/filter/option.tsx'
+            option_collection:
+                view: '@akeneoassetmanager/application/component/asset/edit/enrich/data/option-collection.tsx'
+                filter: '@akeneoassetmanager/application/component/asset/list/filter/option.tsx'
+
+        akeneoassetmanager/application/configuration/attribute:
+            media_file:
+                icon: bundles/pimui/images/attribute/icon-mediafile.svg
+                denormalize: '@akeneoassetmanager/domain/model/attribute/type/media-file'
+                reducer: '@akeneoassetmanager/application/reducer/attribute/type/media-file'
+                view: '@akeneoassetmanager/application/component/attribute/edit/media-file.tsx'
+            text:
+                icon: bundles/pimui/images/attribute/icon-text.svg
+                denormalize: '@akeneoassetmanager/domain/model/attribute/type/text'
+                reducer: '@akeneoassetmanager/application/reducer/attribute/type/text'
+                view: '@akeneoassetmanager/application/component/attribute/edit/text.tsx'
+            number:
+                icon: bundles/pimui/images/attribute/icon-number.svg
+                denormalize: '@akeneoassetmanager/domain/model/attribute/type/number'
+                reducer: '@akeneoassetmanager/application/reducer/attribute/type/number'
+                view: '@akeneoassetmanager/application/component/attribute/edit/number.tsx'
+            option:
+                icon: bundles/pimui/images/attribute/icon-select.svg
+                denormalize: '@akeneoassetmanager/domain/model/attribute/type/option'
+                reducer: '@akeneoassetmanager/application/reducer/attribute/type/option'
+                view: '@akeneoassetmanager/application/component/attribute/edit/option.tsx'
+            option_collection:
+                icon: bundles/pimui/images/attribute/icon-multiselect.svg
+                denormalize: '@akeneoassetmanager/domain/model/attribute/type/option-collection'
+                reducer: '@akeneoassetmanager/application/reducer/attribute/type/option'
+                view: '@akeneoassetmanager/application/component/attribute/edit/option.tsx'
+            media_link:
+                icon: bundles/pimui/images/attribute/icon-medialink.svg
+                denormalize: '@akeneoassetmanager/domain/model/attribute/type/media-link'
+                reducer: '@akeneoassetmanager/application/reducer/attribute/type/media-link'
+                view: '@akeneoassetmanager/application/component/attribute/edit/media-link.tsx'
+
+        akeneoassetmanager/application/configuration/sidebar:
+            akeneo_asset_manager_asset_family_edit:
+                tabs:
+                    attribute:
+                        label: pim_asset_manager.asset_family.tab.attribute
+                        view: '@akeneoassetmanager/application/component/asset-family/edit/attribute'
+                    property:
+                        label: pim_asset_manager.asset_family.tab.properties
+                        view: '@akeneoassetmanager/application/component/asset-family/edit/properties'
+                    permission:
+                        label: pim_asset_manager.asset_family.tab.permission
+                        view: '@akeneoassetmanager/application/component/asset-family/edit/permission'
+                    transformation:
+                        label: pim_asset_manager.asset_family.tab.transformations
+                        view: '@akeneoassetmanager/application/component/asset-family/edit/transformation'
+                    product_link_rule:
+                        label: pim_asset_manager.asset_family.tab.product_link_rules
+                        view: '@akeneoassetmanager/application/component/asset-family/edit/product-link-rule'
+            akeneo_asset_manager_asset_edit:
+                tabs:
+                    enrich:
+                        label: pim_asset_manager.asset.tab.enrich
+                        view: '@akeneoassetmanager/application/component/asset/edit/enrich'
+
+    paths:
+        pim/controller/asset-family/list: akeneoassetmanager/infrastructure/controller/asset-family/list.tsx
+        pim/controller/asset-family/edit: akeneoassetmanager/infrastructure/controller/asset-family/edit.tsx
+        pim/controller/asset/edit: akeneoassetmanager/infrastructure/controller/asset/edit.tsx
+
+        # TODO RAC-546
+        pim/attribute-edit-form/properties/asset-family: akeneoassetmanager/infrastructure/attribute/asset-single-link-field.ts
+        pim/asset-single-link-field: akeneoassetmanager/infrastructure/product/asset-single-link-field.tsx
+
+        pim/export/asset-family-field: akeneoassetmanager/infrastructure/export/asset-family-field.ts
+
+        oro/datafilter/asset-family-collection-filter: akeneoassetmanager/infrastructure/product-grid/filter/attribute/asset-family-collection
+        oro/datagrid/asset-multiple-link-cell: akeneoassetmanager/infrastructure/product-grid/cell/attribute/asset-multiple-link-cell
+
+        pimee/filter/attribute/asset-family-collection: pimui/js/filter/attribute/asset-family-collection
+        pimee/filter/attribute/assets-collection: pimui/js/filter/attribute/assets-collection
+
+        # Needed by onboarder for hooking into the asset code creation
+        akeneoassetmanager/application/asset-upload/utils/line-factory: akeneoassetmanager/application/asset-upload/utils/line-factory

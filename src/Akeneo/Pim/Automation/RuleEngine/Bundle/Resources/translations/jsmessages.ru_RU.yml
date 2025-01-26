@@ -1,0 +1,85 @@
+pimee_catalog_rule:
+  execution_button: Выполнить привила
+  popin:
+    execute_rules:
+      confirm_title: Подтвердить выполнение
+  notification:
+    launched: Начато выполнение правил. Вы будете уведомлены, когда это будет сделано.
+  attribute:
+    list:
+      code.label: Код
+      condition.label: Условие
+      action.label: Действие
+  rule:
+    condition:
+      if.label: Если
+    action:
+      then.label: Тогда
+      set_value.label: установлено в
+      copy_value.label: копируется в
+      set.label: установлено в
+      copy.label: копируется в
+      add.label: Добавлено в
+      remove.label: удален из
+  datagrid:
+    rule-grid:
+      actions:
+        execute:
+          confirm_title: Подтвердить выполнение
+          confirm_content: Вы уверены, что хотите выполнить правило?
+      mass_edit_action:
+        confirm_title: Подтвердить расчет
+      mass_action:
+        execute:
+          confirm_title: Подтвердить выполнение
+          success: Начато выполнение правил. Вы будете уведомлены, когда это будет сделано.
+          empty_selection: Правила не выбраны.
+        delete:
+          confirm_title: Подтвердить выполнение
+          confirm_content: Вы уверены, что хотите удалить выбранные правила?
+          success: Вы успешно удалили правила.
+          empty_selection: Правила не выбраны.
+  form:
+    attribute:
+      tab:
+        rules:
+          title: Правила
+pim_enrich:
+  entity:
+    rule:
+      module:
+        delete:
+          confirm: Вы уверены, что хотите удалить это правило? Это действие отменить невозможно
+flash:
+  rule:
+    executed: Начато выполнение правил. Вы будете уведомлены, когда это будет сделано.
+batch_jobs:
+  add_attribute_value:
+    execute_rules.label: Выполнение правил
+  default_steps:
+    execute_rules: Выполнение правил
+  rule_impacted_product_count:
+    perform.label: Вычислить затрагиваемые продукты
+  csv_product_import_with_rules:
+    label: Импорт продуктов из CSV с правилами
+    import.label: Импорт продуктов
+  csv_product_model_import_with_rules:
+    label: Импорт моделей продуктов в CSV с правилами
+  xlsx_product_import_with_rules:
+    label: Импорт продуктов из XLSX с правилами
+    import.label: Импорт продуктов
+  xlsx_product_model_import_with_rules:
+    label: Импорт модели продукта в XLSX с правилами
+pim_notification:
+  types:
+    rule: Настройки правил
+    execute_rules: Выполнение правил
+pim_menu:
+  item:
+    rule: Правила
+pim_title:
+  pimee_catalog_rule_rule_index: Правила
+  pimee_catalog_rule_new: Правила
+akeneo_job_process_tracker:
+  type_filter:
+    execute_rules: Выполнение правил

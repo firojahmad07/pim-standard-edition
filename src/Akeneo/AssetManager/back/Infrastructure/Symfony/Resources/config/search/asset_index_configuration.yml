@@ -1,0 +1,46 @@
+settings:
+    analysis:
+        normalizer:
+            text_normalizer:
+                filter: ['lowercase']
+    mapping:
+        # ES default value is 1000. This value can be too low for big catalogs.
+        # For more information see https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html#mapping-limit-settings
+        total_fields:
+            limit: '%elasticsearch_total_fields_limit%'
+
+mappings:
+    properties:
+        identifier:
+            type: 'keyword'
+        asset_family_code:
+            type: 'keyword'
+            normalizer: 'text_normalizer'
+        code:
+            type: 'keyword'
+            normalizer: 'text_normalizer'
+        updated_at:
+            type: 'date'
+    dynamic_templates:
+        -
+            asset_full_text_search:
+                path_match: 'asset_full_text_search.*.*'
+                mapping:
+                    type: 'keyword'
+                    normalizer: 'text_normalizer'
+        -
+            asset_code_label_search:
+                path_match: 'asset_code_label_search.*'
+                mapping:
+                    type: 'keyword'
+                    normalizer: 'text_normalizer'
+        -
+            complete_value_keys:
+                path_match: 'complete_value_keys.*'
+                mapping:
+                    type: 'boolean'
+        -
+            values:
+                path_match: 'values.*'
+                mapping:
+                    type: 'keyword'

@@ -1,0 +1,36 @@
+pimee_catalog_rule:
+  datagrid:
+    rule-grid:
+      actions:
+        execute: Executar
+      title: Regras
+      mass_edit_action:
+        execute: Executar
+        delete: Deletar
+  acl_group:
+    rule: Regras
+  acl:
+    rule:
+      view_permissions: Visualizar regras
+      delete_permissions: Excluir regras
+      execute_permissions: Executar regras
+  attribute:
+    tab:
+      rule.title: Regras
+    grid:
+      is_smart.label: Inteligente
+    acl:
+      rule.view_permissions: Visualizar regras
+  product:
+    history: Regra "%rule%" aplicada
+  steps:
+    rules_execution.title: Execução de regras
+btn:
+  Execute rules: Executar regras
+job_execution:
+  summary:
+    rule_calculated: Número de regras
+pim_datagrid:
+  cells:
+    type:
+      execute_rules: Execução de regras

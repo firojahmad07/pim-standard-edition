@@ -1,0 +1,71 @@
+teamwork_assistant:
+  common:
+    required: Erforderlich
+    warning: Bitte beachten Sie, dass die Berechnung von Projekten einige Zeit dauern kann. Ihr Projekt ist daher möglicherweise nicht sofort sichtbar.
+  grid:
+    view_selector:
+      create: Projekt erstellen
+      edit: Projekt bearbeiten
+      remove: Projekt entfernen
+      create_from_view: Neues Projekt aus dieser Ansicht anlegen
+      start_new_project: Neues Projekt starten
+      confirmation:
+        remove: Sind Sie sicher, dass Sie dieses Projekt entfernen möchten?
+      projects: Projekte
+  project:
+    label: Name
+    locale: Gebietsschema
+    label_maxlength: Dieser Wert ist zu lang. Er sollte {{ max }} oder weniger Zeichen haben.
+    description: Beschreibung
+    due_date: Fälligkeitsdatum
+    due_date_past: Sie können kein Datum in der Vergangenheit auswählen.
+    leaving_scope: Sie verlassen den Projektbereich.
+  edit_project_modal:
+    saved: Das Projekt wurde gespeichert.
+    title: Projekt bearbeiten
+  create_project_modal:
+    saved: Das Projekt wurde gespeichert. Sie werden benachrichtigt, sobald die Berechnung abgeschlossen ist.
+    title: Projekt
+    label_already_used: Dieser Wert wird bereits für ein Projekt verwendet.
+  widget:
+    no_project: Sie haben aktuell kein Projekt
+    no_project_create: erstellen Sie ein neues Projekt
+    description: Beschreibung
+    due_date: Fälligkeitsdatum
+    todo: ToDo
+    in_progress: In Bearbeitung
+    done: Fertig
+    all_contributors: Alle Mitwirkenden
+    you: Du
+    display_products: Produkte anzeigen
+    projects: Projekte
+    contributors: Beitragende
+    placeholder:
+      contributor_selector: Suche Mitwirkende
+      project_selector: Suche Projekt
+    completeness:
+      to_start: PRODUKTE ZU BEARBEITEN
+      in_progress: Produkte in Bearbeitung
+      done: Fertiggestellte Produkte
+    searching: Suche...
+    no_search_results: Leider gibt es keine Ergebnisse.
+pim_datagrid:
+  view_selector:
+    project: Projekte
+batch_jobs:
+  project_calculation:
+    project_calculation.label: Projekt-Kalkulation
+    prepare_project_calculation.label: Projekt-Kalkulation vorbereiten
+    clean_contributor_group.label: Überprüfe Benutzerberechtigung für das Gebietsschema des Projekts
+  refresh_project_completeness_calculation:
+    label: Projektvollständigkeit aktualisieren
+    refresh_project_completeness_calculation.label: Projektvollständigkeit aktualisieren
+pim_notification:
+  types:
+    project_created: Ein neues Projekt für Sie
+    project_finished: Projekt abgeschlossen
+    project_calculation: Projekt-Kalkulation
+    project_due_date: Projekt-Fälligkeitsdatum festlegen
+pim_analytics:
+  info_type:
+    nb_projects: Anzahl der Projekte

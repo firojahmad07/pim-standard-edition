@@ -1,0 +1,147 @@
+pimee_workflow:
+  product_draft:
+    author: Autor/a
+    source: Font
+    created: Proposat a
+    changes: Canvis
+    locale: Context de configuració regional
+    product:
+      label: Etiqueta de producte
+    attribute:
+      label: Atribut
+    status:
+      label: Estat
+      working_copy: Còpia de treball
+    notification:
+      partial_approve: '%owner% ha acceptat el/s valor/s per a %attributes% pel producte %product%'
+      partial_approve_number: '%owner% ha acceptat els valors pels atributs %attributes_count% pel producte %product%'
+      partial_reject: '%owner% ha rebutjat el/s valor/s per a %attributes% pel producte %product%'
+      partial_reject_number: '%owner% ha rebutjat els valors pels atributs %attributes_count% pel producte %product%'
+      partial_remove: '%owner% ha eliminat el/s valor/s per a %attributes% del producte %product%'
+      partial_remove_number: '%owner% ha suprimit els valors pels atributs %attributes_count% del producte %product%'
+      approve: '%owner% ha acceptat la seva proposta pel producte %product%'
+      refuse: '%owner% ha rebutjat la proposta pel producte %product%'
+      remove: '%owner% ha rebutjat la proposta pel producte %product%'
+    mass_review_action:
+      approve: Aprovar els seleccionats
+      refuse: Rebutjar els seleccionats
+      error:
+        draft_not_ready: Aquesta proposta no està preparada per ser aprovada
+        not_product_owner: No teniu el producte relacionat a aquesta proposta
+        cannot_edit_attributes: No podeu editar els atributs modificats per aquesta proposta
+        invalid_draft: Aquesta proposta no es pot aplicar a causa de l'error següent. %error%
+  proposal:
+    to_review: '%author.firstname% %author.lastname% ha enviat una proposta de revisió pel producte %product.label%'
+    individual_import: '%author.firstname% %author.lastname% ha enviat propostes a revisar de la tasca d''importació'
+    generic_import: Teniu propostes per revisar de la tasca d'importació
+    original_value: Original
+  published_product:
+    index: Productes publicats
+    title: Producte publicat
+  acl.published_product:
+    index: Administrar productes publicats
+  product:
+    permission:
+      own: Revisar / publicar
+      edit: Editar
+      view: Vista
+  steps:
+    product_draft_processor.title: Processador de proposta
+    approve.title: Aprovar la proposta
+    refuse.title: Rebutjar proposta
+  mass_edit_action:
+    published:
+      page_title: Productes publicats
+      page_subtitle: Edició en massa (1 producte publicat) | Edició en massa (%count% productes publicats)
+      title: Trieu l'operació
+      subtitle: Trieu la operació que voleu realitzar sobre el producte seleccionat i publicat | Trieu la operació que voleu realitzar sobre els %count% productes seleccionats i publicats
+      confirm: Esteu a punt d'actualitzar un producte publicat amb la informació següent, confirmeu. | Esteu a punt d'actualitzar %count% productes publicats amb la informació següent, confirmeu.
+      steps:
+        first: Triar productes publicats
+        second: Trieu l'operació
+        third: Configurar
+        fourth: Confirmar
+  check_removal:
+    product_error: Impossible eliminar un producte publicat
+    entity_error: Les entitats vinculades a productes publicats no es poden eliminar.
+btn:
+  publish: Publicar
+  unpublish: Desfer la publicació
+  save working copy: Desa una còpia de treball
+  save working copy and next: Desar una còpia de treball i continuar
+  save working copy and finish: Desar una còpia de treball i finalitzar
+  send for approval: Enviar per a la seva aprovació
+  sent for approval: Enviat per a la seva aprovació
+  editworkingcopy: Editar la còpia de treball
+flash:
+  product:
+    updated: La còpia de treball del producte s'ha actualitzat
+    published: El producte ha estat publicat amb èxit.
+    unpublished: El producte ha estat despublicat amb èxit.
+  product_draft:
+    updated: El projecte s'ha desat correctament
+    approve:
+      success: La proposta s'ha aplicat amb èxit.
+      error: La proposta no es pot aplicar a causa de l'error següent. %error%
+    refuse:
+      success: La proposta ha estat rebutjada.
+    remove:
+      success: La proposta ha estat eliminada.
+pim_menu:
+  item:
+    published_product: Productes publicats
+    proposal: Propostes
+confirmation:
+  product:
+    publish: Esteu segur que voleu publicar aquest producte ?
+    unpublish: Esteu segur que voleu despublicar aquest producte ?
+Attributes.title: Atributs
+Completeness.title: Integritat
+publish_product.steps.publish_product_tasklet.title: Publicar el producte
+unpublish_product.steps.unpublish_product_tasklet.title: Despublicar els productes
+approve_product_draft.steps.approve.title: Aprovar la proposta
+approve_product_draft.steps.refuse.title: Rebutjar la proposta
+job_execution.summary:
+  approved: aprovat
+  refused: rebutjat
+  mass_published: Producte publicat
+  mass_unpublished: Producte despublicat
+  proposal: Proposta creada
+  proposal_deleted: proposta suprimida
+  proposal_updated: proposta actualitzada
+  proposal_created: proposta creada
+  proposal_skipped: proposta omesa (no hi ha diferències)
+published products: Productes publicats
+pim_analytics:
+  info_type:
+    nb_published_products: Número de productes publicats
+    nb_product_drafts: Nombre d'esborranys de productes
+pimee_dashboard:
+  widget:
+    product_drafts:
+      title: Propostes per revisar
+      date: Data
+      author: Autor/a
+      product: Producte
+      review: Revisar
+      empty: No hi ha cap esborrany de producte per revisar
+pim_enrich:
+  mass_edit_action:
+    publish:
+      label: Publicar
+      description: Publicar els productes seleccionats, les dades actuals seran esborrades per l'actual còpia de treball.
+      success_flash: Els productes seleccionats s'han publicat amb èxit.
+      launched_flash: El treball de publicació del(s) producte(s) s'està executant.
+      message:
+        info: Els productes %nbProducts% seleccionats seran publicats.
+    unpublish:
+      label: Desfer la publicació
+      description: Anul·lar la publicació dels productes seleccionats. S'esborraran les dades publicades actualment.
+      success_flash: Els productes seleccionats s'han despublicat amb èxit.
+      launched_flash: El treball de despublicació del(s) producte(s) està en marxa.
+      message:
+        info: Els productes %nbProducts% seleccionats seran despublicats.
+pimee_enrich:
+  product:
+    tab:
+      proposal.title: Propostes

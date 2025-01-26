@@ -1,0 +1,53 @@
+Akeneo\Tool\Bundle\RuleEngineBundle\Model\RuleDefinition:
+    type: entity
+    table: akeneo_rule_engine_rule_definition
+    changeTrackingPolicy: DEFERRED_EXPLICIT
+    indexes:
+        akeneo_rule_engine_rule_definition_code__index:
+            columns:
+                - code
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        code:
+            type: string
+            length: 100
+            nullable: false
+            column: code
+        type:
+            type: string
+            length: 100
+            nullable: false
+            column: type
+        content:
+            type: json
+            nullable: true
+            column: content
+        priority:
+            type: integer
+            nullable: false
+            options:
+                default: 0
+        impactedSubjectCount:
+            type: integer
+            nullable: true
+            column: impacted_subject_count
+        enabled:
+            type: boolean
+            column: enabled
+            nullable: false
+            options:
+                default: true
+    oneToMany:
+        relations:
+            targetEntity: Akeneo\Tool\Bundle\RuleEngineBundle\Model\RuleRelationInterface
+            mappedBy: rule
+        translations:
+            targetEntity: Akeneo\Tool\Bundle\RuleEngineBundle\Model\RuleDefinitionTranslationInterface
+            mappedBy: foreignKey
+            cascade:
+                - persist
+                - detach

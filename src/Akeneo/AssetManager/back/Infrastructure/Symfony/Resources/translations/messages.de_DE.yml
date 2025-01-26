@@ -1,0 +1,84 @@
+akeneo_assetmanager:
+  acl_group:
+    asset_manager: Asset Manager
+  acl:
+    asset_family:
+      create: Neue Asset-Familie erstellen
+      edit: Asset-Familien-Eigenschaften bearbeiten
+      delete: Asset-Familie löschen
+      manage_permission: Asset-Familie Berechtigungen verwalten
+      manage_transformation: Asset-Familie-Transformationen verwalten
+      manage_product_link_rule: Regeln für Produktverlinkungen der Asset-Familie verwalten
+      execute_product_link_rule: Produkt-Link-Regeln für alle Assets einer Asset-Familie ausführen
+      execute_naming_conventions: Benennungskonventionen auf Assets ausführen
+    asset:
+      create: Asset erstellen
+      edit: Asset bearbeiten
+      delete: Assets löschen
+      list_product: Liste der zu erfassenden verknüpften Produkte
+      execute_naming_conventions: Namenskonventionen ausführen
+    attribute:
+      create: Attribut einer Asset-Familie hinzufügen
+      edit: Ein Attribut einer Asset-Familie bearbeiten
+      delete: Ein Attribut einer Asset-Familie löschen
+    option:
+      edit: Optionen bearbeiten
+      delete: Entfernen einer Option
+  jobs:
+    asset_manager_execute_naming_convention:
+      error: 'Die Namenskonvention ist beim Asset "{{ asset }}" fehlgeschlagen'
+    asset_manager_mass_delete:
+      error: 'Massenlöschung fehlgeschlagen auf Asset(s) "{{ assets }}" mit Fehler: "{{ error }}"'
+    asset_manager_mass_edit:
+      error: 'Die Massenbearbeitung auf Asset(s) "{{ assets }}" fehlgeschlagen mit Fehler: "{{ error }}"'
+pim_analytics:
+  info_type:
+    api_connection: Anzahl der API-Verbindungen
+    nb_asset_families: Anzahl der Asset-Familien
+    max_number_of_assets_per_asset_family: Maximale Anzahl von Assets pro Asset-Familie
+    average_number_of_values_per_assets: Durchschnittliche Anzahl von Werten pro Assets
+    average_number_of_assets_per_asset_family: Durchschnittliche Anzahl der Attribute pro Familie
+    max_number_of_attributes_per_asset_family: Maximale Anzahl von Attributen pro Asset Familie
+    average_number_of_attributes_per_asset_family: Durchschnittliche Anzahl von Attributen pro Asset-Familie
+    data_source:
+      tracked: Datenziel verfolgt
+      untracked: Datenziel nicht verfolgt
+    data_destination:
+      tracked: Datenquelle verfolgt
+      untracked: Datenquelle nicht verfolgt
+    other:
+      tracked: Andere getrackt
+      untracked: Andere nicht getrackt
+#average_percentage_localizable_only_attributes: Average percentage of localizable only attributes per asset family
+#average_percentage_scopable_only_attributes: Average percentage of scopable only attributes per asset family
+#average_percentage_scopable_and_localizable_attributes: Average percentage of localizable and scopable attributes per asset family
+pim_catalog_asset_collection: Asset-Sammlung
+batch_jobs:
+  default_steps:
+    execute_naming_convention: Asset-Familien-Namenskonvention ausführen
+    link_assets_to_products: Assets mit Produkten verknüpfen
+    compute_transformations: Asset-Transformationen berechnen
+job_execution:
+  summary:
+    assets: Assets
+    transformations: Asset-Transformationen
+    skipped: Übersprungen
+pim_mass_edit.notification.asset_manager_mass_delete_assets:
+  warning: Assets erfolgreich mit Warnungen gelöscht
+  success: Assets erfolgreich gelöscht
+  error: Löschen des Assets fehlgeschlagen
+pim_mass_edit.notification.asset_manager_mass_edit_assets:
+  warning: Assets erfolgreich mit Warnungen bearbeitet
+  success: Assets erfolgreich bearbeitet
+  error: Asset Edition fehlgeschlagen
+pim_api:
+  acl:
+    asset_family:
+      create: Erstellen und Aktualisieren von Assetfamilien
+      list: Assetfamilien auflisten
+    asset:
+      create: Erstellen und Aktualisieren von Assets
+      list: Assets auflisten
+      remove: Assets löschen
+  acl_group:
+    asset: Assets

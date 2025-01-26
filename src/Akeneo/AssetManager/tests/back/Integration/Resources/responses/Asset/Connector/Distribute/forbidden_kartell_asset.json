@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "route": "akeneo_asset_manager_asset_rest_connector_get",
+    "query": {
+      "assetFamilyIdentifier": "Brand",
+      "code": "Kartell"
+    }
+  },
+  "response": {
+    "status": 403,
+    "body": {
+      "code": 403,
+      "message": "Access forbidden. You are not allowed to list assets."
+    }
+  }
+}

@@ -1,0 +1,115 @@
+parameters:
+    pimee_catalog_rule.controller.rule.class: Akeneo\Pim\Automation\RuleEngine\Bundle\Controller\RuleController
+
+services:
+    pimee_catalog_rule.controller.rule:
+        public: true
+        class: '%pimee_catalog_rule.controller.rule.class%'
+        arguments:
+            - '@akeneo_rule_engine.repository.rule_definition'
+            - '@akeneo_rule_engine.remover.rule_definition'
+            - '@security.token_storage'
+            - '@akeneo_batch_queue.launcher.queue_job_launcher'
+            - '@akeneo_batch.job.job_instance_repository'
+            - '@pim_catalog_rule.datagrid.oro_to_pim_grid_filter'
+            - '@oro_datagrid.mass_action.parameters_parser'
+
+    pimee_enrich.controller.rule_relation:
+        public: true
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\Controller\InternalApi\RuleRelationController'
+        arguments:
+            - '@akeneo_rule_engine.repository.rule_relation'
+            - '@pim_internal_api_serializer'
+            - '@pim_catalog.resolver.fqcn'
+
+    pimee_enrich.controller.rule_definition.get:
+        public: true
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\Controller\InternalApi\GetRuleDefinitionController'
+        arguments:
+            - '@akeneo_rule_engine.repository.rule_definition'
+            - '@akeneo_rule_engine.normalizer.rule_definition'
+
+    pimee_enrich.controller.rule_definition.create:
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\Controller\InternalApi\CreateRuleDefinitionController'
+        public: true
+        arguments:
+            - '@Akeneo\Pim\Automation\RuleEngine\Component\Command\CreateOrUpdateRuleDefinitionHandler'
+            - '@akeneo_rule_engine.repository.rule_definition'
+            - '@akeneo_rule_engine.normalizer.rule_definition'
+            - '@pim_internal_api_serializer'
+            - '@validator'
+            - '@oro_security.security_facade'
+
+    pimee_enrich.controller.rule_definition.update:
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\Controller\InternalApi\UpdateRuleDefinitionController'
+        public: true
+        arguments:
+            - '@akeneo_rule_engine.repository.rule_definition'
+            - '@Akeneo\Pim\Automation\RuleEngine\Component\Command\CreateOrUpdateRuleDefinitionHandler'
+            - '@akeneo_rule_engine.normalizer.rule_definition'
+            - '@pim_internal_api_serializer'
+            - '@validator'
+            - '@oro_security.security_facade'
+
+    pimee_enrich.controller.rule_definition.duplicate:
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\Controller\InternalApi\DuplicateRuleDefinitionController'
+        public: true
+        arguments:
+            - '@akeneo_rule_engine.repository.rule_definition'
+            - '@Akeneo\Pim\Automation\RuleEngine\Component\Command\CreateOrUpdateRuleDefinitionHandler'
+            - '@akeneo_rule_engine.normalizer.rule_definition'
+            - '@pim_internal_api_serializer'
+            - '@validator'
+            - '@oro_security.security_facade'
+
+    pimee_enrich.controller.rule_definition.get_impacted_product_count:
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\Controller\InternalApi\GetImpactedProductCountController'
+        public: true
+        arguments:
+            - '@pimee_catalog_rule.builder.product'
+            - '@pimee_catalog_rule.selector.product'
+            - '@pim_enrich.query.product_and_product_model_document_type_facet_factory'
+
+    pimee_enrich.controller.rule_definition.get_available_fields:
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\Controller\InternalApi\GetAvailableFieldsController'
+        public: true
+        arguments:
+            - '@pimee_catalog_rule.query.sql.get_grouped_attributes'
+            - '@pim_user.context.user'
+            - '@translator'
+
+    pimee_enrich.controller.rule_definition.get_categories:
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\Controller\InternalApi\GetCategoriesController'
+        public: true
+        arguments:
+            - '@pim_catalog.repository.category'
+            - '@pim_catalog.filter.chained'
+            - '@pim_internal_api_serializer'
+
+    pimee_enrich.controller.rule_definition.get_category_tree:
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\Controller\InternalApi\GetCategoryTreeController'
+        public: true
+        arguments:
+            - '@pim_catalog.repository.category'
+            - '@oro_security.security_facade'
+            - '@@AkeneoPimEnrichment/Product/listCategories.json.twig'
+        calls:
+            - [ 'setContainer', [ '@service_container' ] ]
+
+    pimee_enrich.controller.rule_definition.search_products_and_product_models:
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\Controller\InternalApi\SearchProductsAndModelsController'
+        public: true
+        arguments:
+            - '@akeneo.pim.enrichment.query.product_query_builder_from_size_factory.with_product_identifier_cursor'
+
+    pimee_enrich.controller.rule_definition.change_status:
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\Controller\InternalApi\ChangeRuleDefinitionStatusController'
+        public: true
+        arguments:
+            - '@Akeneo\Pim\Automation\RuleEngine\Component\Handler\UpdateRuleStatusHandler'
+            - '@oro_security.security_facade'
+
+    Akeneo\Pim\Automation\RuleEngine\Bundle\Controller\InternalApi\GetAttributesRulesNumberController:
+        public: true
+        arguments:
+            - '@Akeneo\Pim\Automation\RuleEngine\Bundle\Query\Sql\SqlGetAttributesRulesNumber'

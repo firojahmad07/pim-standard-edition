@@ -1,0 +1,136 @@
+services:
+    # Attributes
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.attribute_updater_registry:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\AttributeUpdaterRegistry
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.labels_updater:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\LabelsUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 120 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.is_required_updater:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\IsRequiredUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 120 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.is_read_only_updater:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\IsReadOnlyUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 120 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.max_length_updater:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\MaxLengthUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 120 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.is_textarea:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\IsTextareaUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 120 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.validation_rule:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\ValidationRuleUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 110 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.regular_expression:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\RegularExpressionUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 100 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.is_rich_text_editor:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\IsRichTextEditorUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 110 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.max_file_size_updater:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\MaxFileSizeUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 110 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.allowed_extensions_updater:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\AllowedExtensionsUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 110 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.options_updater:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\OptionsUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 110 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.decimals_allowed:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\DecimalsAllowedUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 120 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.min_max_value:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\MinMaxValueUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 120 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.prefix:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\MediaLink\PrefixUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 120 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.suffix:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\MediaLink\SuffixUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 120 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.media_link.media_type:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\MediaLink\MediaTypeUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 120 }
+
+    akeneo_assetmanager.application.edit_attribute.attribute_updater.media_file.media_type:
+        class: Akeneo\AssetManager\Application\Attribute\EditAttribute\AttributeUpdater\MediaFile\MediaTypeUpdater
+        tags:
+            - { name: akeneo_assetmanager.attribute_updater, priority: 120 }
+
+    # Assets
+    akeneo_assetmanager.application.registry.edit_asset.asset_value_updater.asset_value_updater_registry:
+        class: Akeneo\AssetManager\Application\Asset\EditAsset\ValueUpdater\ValueUpdaterRegistry
+
+    akeneo_assetmanager.application.edit_asset.asset_value_updater.text_updater:
+        class: Akeneo\AssetManager\Application\Asset\EditAsset\ValueUpdater\TextUpdater
+        tags:
+            - { name: akeneo_assetmanager.asset_value_updater }
+
+    akeneo_assetmanager.application.edit_asset.asset_value_updater.media_file_updater:
+        class: Akeneo\AssetManager\Application\Asset\EditAsset\ValueUpdater\MediaFileUpdater
+        tags:
+            - { name: akeneo_assetmanager.asset_value_updater }
+
+    akeneo_assetmanager.application.edit_asset.asset_value_updater.empty_updater:
+        class: Akeneo\AssetManager\Application\Asset\EditAsset\ValueUpdater\EmptyUpdater
+        arguments:
+            - '@Akeneo\AssetManager\Domain\Query\AssetFamily\Transformation\GetTransformationsSource'
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.attribute'
+        tags:
+            - { name: akeneo_assetmanager.asset_value_updater }
+
+    akeneo_assetmanager.application.edit_asset.asset_value_updater.option_updater:
+        class: Akeneo\AssetManager\Application\Asset\EditAsset\ValueUpdater\OptionUpdater
+        tags:
+            - { name: akeneo_assetmanager.asset_value_updater }
+
+    akeneo_assetmanager.application.edit_asset.asset_value_updater.option_collection_updater:
+        class: Akeneo\AssetManager\Application\Asset\EditAsset\ValueUpdater\OptionCollectionUpdater
+        tags:
+            - { name: akeneo_assetmanager.asset_value_updater }
+
+    akeneo_assetmanager.application.edit_asset.asset_value_updater.append_option_collection_updater:
+        class: Akeneo\AssetManager\Application\Asset\EditAsset\ValueUpdater\AppendOptionCollectionUpdater
+        tags:
+            - { name: akeneo_assetmanager.asset_value_updater }
+
+    akeneo_assetmanager.application.edit_asset.asset_value_updater.number_updater:
+        class: Akeneo\AssetManager\Application\Asset\EditAsset\ValueUpdater\NumberUpdater
+        tags:
+            - { name: akeneo_assetmanager.asset_value_updater }
+
+    akeneo_assetmanager.application.edit_asset.asset_value_updater.mediaLink_updater:
+        class: Akeneo\AssetManager\Application\Asset\EditAsset\ValueUpdater\MediaLinkUpdater
+        tags:
+            - { name: akeneo_assetmanager.asset_value_updater }

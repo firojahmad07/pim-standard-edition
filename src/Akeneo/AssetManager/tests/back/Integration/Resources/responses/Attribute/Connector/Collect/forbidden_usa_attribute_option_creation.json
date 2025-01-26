@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "PATCH",
+    "route": "akeneo_asset_manager_asset_family_attribute_option_rest_connector_create_or_update",
+    "query": {
+      "assetFamilyIdentifier": "brand_4",
+      "attributeCode": "sales_area",
+      "optionCode": "usa"
+    },
+    "body": {
+      "code":  "usa",
+      "labels":  {
+        "en_US":  "USA",
+        "fr_FR":  "Aux Etats-Unis"
+      }
+    }
+  },
+  "response": {
+    "status": 403,
+    "body": {
+      "code": 403,
+      "message": "Access forbidden. You are not allowed to create or update asset families."
+    }
+  }
+}

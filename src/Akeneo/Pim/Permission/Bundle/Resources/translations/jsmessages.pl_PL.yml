@@ -1,0 +1,87 @@
+pim_enrich:
+  entity:
+    attribute:
+      property:
+        is_read_only: Tylko do odczytu
+pimee_import_export:
+  entity:
+    job_instance:
+      flash:
+        update:
+          fail_empty_permission: Musisz wybrać co najmniej jedną grupę użytkowników, aby edytować zadanie
+pimee_enrich.entity.category:
+  module:
+    permissions:
+      grant: Grupa <strong>{{ group }}</strong> będzie <strong>{{ permission }}</strong> w tej kategorii
+      revoke: Grupa <strong>{{ group }}</strong> nie będzie <strong>{{ permission }}</strong> w tej kategorii
+pimee_enrich.entity.locale:
+  module:
+    permissions:
+      grant: Grupa <strong>{{ group }}</strong> będzie <strong>{{ permission }}</strong> w tej kategorii
+      revoke: Grupa <strong>{{ group }}</strong>nie będzie <strong>{{ permission }}</strong> w tej kategorii
+pimee_enrich.entity.attribute group:
+  module:
+    permissions:
+      grant: Grupa <strong>{{ group }}</strong> będzie <strong>{{ permission }}</strong> w tych arybutach
+      revoke: Grupa <strong>{{ group }}</strong> nie będzie <strong>{{ permission }}</strong> w tych arybutach
+pimee_enrich.entity.attribute_group:
+  module:
+    permissions:
+      added: Grupa {{ group }} będzie miała dostęp do grupy atrybutów {{ permission }} 
+      view: Możliwość wyświetlenia atrybutów
+      edit: Możliwość edycji atrybutów
+      removed: Grupa {{ group }} nie będzie mogła korzystać z {{ permission }} grupy atrybutów
+pimee_enrich.entity.job_instance:
+  module:
+    permissions:
+      added: Grupa {{ group }} będzie miała dostęp do profilu pracy {{ permission }}
+      execute: Możliwość wykonywania zadań
+      edit: Możliwość edycji profilu zadania
+      removed: Grupa {{ group }} nie ma pozwolenia {{ permission }} tą pracę
+batch_jobs:
+  add_product_value_with_permission_and_rules:
+    label: Dodaj wartość produktu ze sprawdzeniem uprawnień i zasadami aplikacji
+    perform.label: Dodaj wartość produktu
+  update_product_value_with_permission_and_rules:
+    label: Dodaj wartość produktu ze sprawdzeniem uprawnień i zasadami aplikacji
+    perform.label: Aktualizuj wartość produktu
+  remove_product_value_with_permission_and_rules:
+    label: Usuń wartość produktu ze sprawdzeniem uprawnień i zasadami aplikacji
+    perform.label: Usuń wartość produktu
+  edit_common_attributes_with_permission_and_rules:
+    label: Edytuj zwykłe atrybuty ze sprawdzeniem upranień i zasad aplikacji
+    perform.label: Edytuj atrybuty
+    cleaner.label: Wyczyść pliki tymczasowe
+  default_steps:
+    send_for_approval: Wyślij do zatwierdzenia
+pim_title:
+  pimee_enrich_locale_edit: Lokalizacja | Edytuj
+pim_analytics:
+  info_type:
+    nb_custom_locale_accesses: Liczba dostępów do niestandardowych wersji językowych
+    nb_custom_category_accesses: Liczba dostępów do niestandardowych kategorii
+    nb_custom_attribute_group_accesses: Liczba dostępów do niestandardowych grup atrybutów
+category.permissions:
+  view.label: Dopuszczone wyświetlanie produktów
+  edit.label: Dopuszczona edycja produktów
+  own.label: Dopuszczone posiadanie produktów
+  own.help: Przeglądaj, publikuj, cofaj publikacje, klasyfikuj i powiązuj produkty
+  no_access_to_products: Nie masz dostępu do produktów w żadnym drzewie. Skontaktuj się z administratorem
+  apply_on_children.label: Zastosuj zmiany do elementów podrzędnych
+  apply_on_children.help: Istniejące uprawnienia dotyczące elementów podrzędnych są zachowywane
+pim_permissions:
+  widget:
+    entity:
+      attribute_group:
+        label: Grupy atrybutów
+        help: Jeżeli chcesz, aby Twoja aplikacja mogła modyfikować wszystkie dane produktów, wybierz opcję Wszystkie na poziomie Edycja. W przeciwnym wypadku wybierz tylko te grupy atrybutów, które aplikacja będzie mogła widzieć lub modyfikować w zależności od poziomu.
+      category:
+        label: Drzewa kategorii
+        help: Jeżeli chcesz, aby Twoja aplikacja mogła modyfikować produkty, nie korzystając z propozycji PIM, wybierz poziom Własne. W przeciwnym przypadku wybierz poziom Edycja.
+      locale:
+        label: Wersje językowe
+        help: Jeżeli chcesz, aby Twoja aplikacja mogła edytować produkty we wszystkich językach, wybierz opcję Wszystkie na poziomie Edycja. W przeciwnym wypadku wybierz tylko te języki, które aplikacja będzie mogła widzieć lub modyfikować w zależności od poziomu.
+      not_granted_warning: Ta sekcja jest dostępna tylko dla użytkowników z uprawnieniem {{ permission }}. Skontaktuj się z administratorem. Gdy uzyskasz odpowiednie uprawnienie, będziesz mieć możliwość powrotu do ustawień aplikacji i ich edycji.
+pimee_enrich.acl.category.edit_permissions: Zarządzaj uprawnieniami w kategorii
+pimee_enrich.acl.attribute_group.edit_permissions: Zarządzaj uprawnieniami grup atrybutów
+pimee_enrich.acl.locale.edit_permissions: Zarządzaj uprawnieniami wersji językowych

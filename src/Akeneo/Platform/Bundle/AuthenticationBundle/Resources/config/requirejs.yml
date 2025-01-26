@@ -1,0 +1,10 @@
+config:
+    config:
+        pim/controller-registry:
+            controllers:
+                authentication_sso_configuration_edit:
+                    module: pim/authentication/sso/configuration/sso-controller
+                    aclResourceId: pimee_sso_configuration
+
+    paths:
+        pim/authentication/sso/configuration/sso-controller: akeneopimenterpriseauthentication/js/sso/configuration/SSOConfigurationController.tsx

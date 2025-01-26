@@ -1,0 +1,36 @@
+pimee_catalog_rule:
+  datagrid:
+    rule-grid:
+      actions:
+        execute: Izvrši
+      title: Pravila
+      mass_edit_action:
+        execute: Izvrši
+        delete: Brisanje
+  acl_group:
+    rule: Pravila
+  acl:
+    rule:
+      view_permissions: Prikaži pravila
+      delete_permissions: Obriši pravila
+      execute_permissions: Izvrši pravila
+  attribute:
+    tab:
+      rule.title: Pravila
+    grid:
+      is_smart.label: Pametni
+    acl:
+      rule.view_permissions: Prikaži pravila
+  product:
+    history: Primjenjeno pravilo "%rule%"
+  steps:
+    rules_execution.title: Izvođenje pravila
+btn:
+  Execute rules: Izvrši pravila
+job_execution:
+  summary:
+    rule_calculated: Broj pravila
+pim_datagrid:
+  cells:
+    type:
+      execute_rules: Izvođenje pravila

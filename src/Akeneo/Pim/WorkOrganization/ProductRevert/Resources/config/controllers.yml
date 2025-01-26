@@ -1,0 +1,12 @@
+parameters:
+    pimee_revert.controller.product_version.class: Akeneo\Pim\WorkOrganization\ProductRevert\Controller\ProductVersionController
+
+services:
+    pimee_revert.controller.product_version:
+        public: true
+        class: '%pimee_revert.controller.product_version.class%'
+        arguments:
+            - '@doctrine'
+            - '%pim_versioning.entity.version.class%'
+            - '@pimee_revert.reverter.product'
+            - '@pim_internal_api_serializer'

@@ -1,0 +1,28 @@
+services:
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\AttributeGrid\AddQualityDataExtension:
+        arguments:
+            - '@akeneo.pim.automation.data_quality_insights.feature'
+            - '@oro_datagrid.datagrid.request_params'
+        tags:
+            - { name: oro_datagrid.extension }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\AttributeGrid\RegisterQualityColumn:
+        arguments:
+            - '@akeneo.pim.automation.data_quality_insights.feature'
+        tags:
+            - { name: kernel.event_listener, event: oro_datagrid.datgrid.build.before.attribute-grid, method: buildBefore }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\AttributeGrid\RegisterQualityFilter:
+        arguments:
+            - '@akeneo.pim.automation.data_quality_insights.feature'
+            - '@pim_catalog.repository.locale'
+            - '@translator'
+        tags:
+            - { name: kernel.event_listener, event: oro_datagrid.datgrid.build.before.attribute-grid, method: buildBefore }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\AttributeGrid\QualityFilter:
+        arguments:
+            - '@form.factory'
+            - '@oro_filter.filter_utility'
+        tags:
+            - { name: oro_filter.extension.orm_filter.filter, type: data_quality_insights_attribute_quality_filter }

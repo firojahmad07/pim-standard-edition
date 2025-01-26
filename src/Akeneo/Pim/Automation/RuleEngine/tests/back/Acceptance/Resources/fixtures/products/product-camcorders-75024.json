@@ -1,0 +1,34 @@
+{
+    "id": 169,
+    "identifier": "camcorder_75024",
+    "family": "camcorders",
+    "categories": [],
+    "enabled": true,
+    "values": {
+        "name": {
+            "<all_channels>": {
+                "en_US": "75024"
+            }
+        },
+        "pim_brand": {
+            "<all_channels>": {
+                "<all_locales>": "Crown Bolt"
+            }
+        },
+        "description": {
+            "ecommerce": {
+                "en_US": "this is the description"
+            }
+        },
+        "weight": {
+            "<all_channels>": {
+                "<all_locales>": 415
+            }
+        },
+        "in_stock": {
+            "<all_channels>": {
+                "<all_locales>": 200
+            }
+        }
+    }
+}

@@ -1,0 +1,215 @@
+batch_jobs.xlsx_tailored_product_export.label: Op maat gemaakte export van producten in XLSX
+batch_jobs.xlsx_tailored_product_model_export.label: Op maat gemaakte export van productmodellen in XLSX
+batch_jobs.csv_tailored_product_export.label: Op maat gemaakte export van producten in CSV
+batch_jobs.csv_tailored_product_model_export.label: Op maat gemaakte export van productmodellen in CSV
+pim_common:
+  quality_score: Kwaliteitsscore
+akeneo.tailored_export:
+  filters:
+    completeness:
+      locales:
+        label: Geef voor de volledigheid de talen aan
+        placeholder: Selecteer enkele talen
+        remove: Verwijder de taal
+    quality_score:
+      score:
+        remove: Kwaliteitsscore verwijderen
+      locales:
+        placeholder: Selecteer enkele talen
+        label: Geef de talen voor de kwaliteitsscore op
+        remove: Verwijder de taal
+  form:
+    job_instance:
+      tab:
+        content:
+          title: Productselectie
+        column:
+          title: Structuur exporteren
+        filters:
+          title: Geef uw productselectie op
+      edit:
+        title: Controleer uw machtigingen bij uw PIM-beheerder om te bewerken.
+      launch:
+        title: Controleer uw machtigingen bij uw PIM-beheerder om te exporteren.
+  column_list:
+    title: Kolommen
+    header:
+      column_name: Kolomnaam
+      source_data: Inhoud van kolom
+    column_row:
+      target_placeholder: Geef hier de naam van de kolom op
+      placeholder_helper: U kunt alle kolomnamen van een spreadsheet kopiëren om automatisch kolommen te maken.
+      remove: Kolom verwijderen
+      no_source: Geef de bron van de inhoud op
+    no_column_selection:
+      title: Uw exportprofiel is leeg.
+      subtitle: Klik op 'Eerste kolom toevoegen' om uw exporttabel te gaan bouwen.
+      link: Kijk in ons helpcenter voor meer informatie.
+      add_column: Eerste kolom toevoegen
+  column_details:
+    sources:
+      title: Bronnen
+      add: Bron toevoegen
+      no_result: Er zijn geen resultaten.
+      locale_specific: Dit attribuut is taalspecifiek.
+      remove:
+        title: bron
+        text: Weet u zeker dat u deze bron wilt verwijderen?
+        button: Deze bron verwijderen
+      invalid_source:
+        attribute: Dit attribuut is verwijderd en opnieuw aangemaakt met een ander type. Verwijder deze bron en voeg het opnieuw toe.
+        association_type: Dit associatietype is verwijderd en opnieuw aangemaakt met een ander type. Verwijder deze bron en voeg het opnieuw toe.
+        property: Deze eigenschap is ongeldig. Verwijder deze bron en voeg hem opnieuw toe.
+        asset_collection_main_media: De belangrijkste media van de door het attribuut gebruikte assetcollectie is niet gevonden. Controleer de instelling voor de assetfamilie.
+      no_source_configuration:
+        title: Er zijn geen bewerkingen beschikbaar voor deze bron. De waarde wordt geëxporteerd zoals hij er nu staat.
+      deleted_attribute:
+        title: Dit attribuut is verwijderd, u kunt het niet meer als bron gebruiken.
+      deleted_association_type:
+        title: Dit associatietype is verwijderd, u kunt het niet meer als bron gebruiken.
+      no_source_selected:
+        title: Klik op 'Bron toevoegen' om de inhoud van de kolom op te geven.
+        link: Kijk in ons helpcenter voor meer informatie.
+      no_column_selected:
+        title: Nadat u de eerste kolom heeft gedefinieerd, kunt u uw eerste bron selecteren.
+      selection:
+        title: Selectie
+        collection_separator:
+          title: Scheidingsteken
+          comma: Komma (,)
+          semicolon: Puntkomma (;)
+          pipe: Sluisteken (|)
+        type:
+          amount: Bedrag
+          currency: Valuta
+          main_media: Belangrijkste media
+          key: Bestandssleutel
+          path: Pad
+          name: Bestandsnaam
+        asset_collection:
+          property: Eigenschap
+          with_prefix_and_suffix: Voorvoegsel & achtervoegsel toevoegen
+        format: Indeling
+        parent:
+          information:
+            locale: Als het attribuut dat gebruikt wordt als label een waarde per locatie heeft, kunt u een specifieke taal selecteren.
+            channel: Als het attribuut dat gebruikt wordt als label een waarde per kanaal heeft, kunt u een specifiek kanaal selecteren.
+        measurement:
+          information: Voor dit attribuut kun je de waarde of de code of het label van de eenheid exporteren.
+          value: Waarde
+          unit_locale: Taal van eenheid
+          unit_code: Code van eenheid
+          unit_label: Label van eenheid
+          value_and_unit_label: Waarde en unit label
+        price:
+          currency_code: Valutacode
+          currency_label: Valutalabel
+          currency_locale: Taal voor valuta
+          information: Voor dit attribuut kunt u de valutacode, het valutabelabel of het bedrag exporteren.
+          currencies: Valuta’s selecteren
+          all_currencies: Alle
+        file:
+          information: Voor dit attribuut kunt u het pad, de bestandssleutel of de bestandsnaam exporteren.
+        decimal_separator:
+          title: Decimaal scheidingsteken
+          comma: Komma (,)
+          dot: Punt (.)
+          arabic_comma: Decimaal scheidingsteken voor Arabisch (٫)
+        quantified_association:
+          quantity: Aantal
+        association:
+          entity_type: Type entiteit
+          information:
+            locale: Als het attribuut dat als label wordt gebruikt een waarde per taal heeft, kunt u een specifieke taal selecteren.
+            channel: Als het attribuut dat als label wordt gebruikt een waarde per kanaal heeft, kunt u een specifiek kanaal selecteren.
+      operation:
+        header: Bewerkingen
+        measurement_conversion:
+          title: Conversie
+          placeholder: Geen conversie
+          target_unit_code.label: Omzetten naar
+        replacement:
+          title: Waarde vervangen
+          placeholder: Geef de vervangende waarde op
+          enabled: Vervangende waarde ingeschakeld
+          disabled: Vervangende waarde uitgeschakeld
+          yes: Wel vervangende waarde
+          no: Geen vervangende waarde
+          edit_mapping: Vervangende waarden bewerken
+          modal:
+            records: Records beheren
+            options: Opties beheren
+            subtitle: Vervanging
+            no_result:
+              title: Dit attribuut bevat geen waarde
+            empty_result:
+              title: Er zijn geen resultaten voor uw zoekopdracht
+              text: Probeer opnieuw met nieuwe zoekcriteria
+            filters:
+              mapped:
+                label: Weergave
+                unmapped: Alle waarden zonder vervanging
+                mapped: Alle waarden met vervanging
+                all: Alle waarden
+            table:
+              header:
+                values: Waarden
+                replacement: Vervangende waarden
+              field:
+                to_placeholder: Geef de vervangende waarde op
+            validation_error: Sommige vervangende waarden zijn ongeldig. Raadpleeg de foutmeldingen onder elk veld.
+        default_value:
+          title: Standaardwaarde gebruiken indien leeg
+          label: Standaardwaarde
+          placeholder: Waarde definiëren
+        clean_html_tags:
+          title: HTML-tags weghalen
+          label: HTML-tags automatisch weghalen
+    concatenation:
+      title: Samenvoeging
+      preview: Voorbeeld
+      space_between: Spatie toevoegen tussen de bronnen
+      add_text: Tekst toevoegen
+      text_placeholder: Tekst definiëren
+  column:
+    delete_message: Weet u zeker dat u deze kolom wilt verwijderen?
+  validation:
+    required: Deze waarde is verplicht.
+    max_length_reached: Deze waarde is te lang. Hij mag {{ limit }} tekens of minder bevatten.
+    columns:
+      max_column_count_reached: U hebt de limiet van {{ limit }} kolommen bereikt. U kunt geen kolommen meer toevoegen aan uw export.
+      target:
+        should_not_be_blank: Geef een kolomnaam op.
+        max_length_reached: De kolomnaam is te lang. Hij mag {{ limit }} tekens of minder bevatten.
+        should_be_unique: Deze kolomnaam bestaat al, voer een nieuwe naam in.
+    sources:
+      max_source_count_reached: U hebt de limiet van {{ limit }} bronnen bereikt. U kunt geen bronnen meer toevoegen aan deze kolom.
+      association_type_should_exist: Het associatietype {{ association_type_code }} bestaat niet. Maak het aan of kies een andere bron.
+    concatenation:
+      max_text_count_reached: U heeft de limiet van {{ limit }} tekstelementen bereikt. U kunt geen tekst meer toevoegen.
+    locale:
+      should_be_active: De taal {{ locale_code }} is gedeactiveerd. Activeer deze opnieuw of selecteer een andere taal.
+      should_be_bound_to_channel: De taal {{ locale_code }} is gedeactiveerd voor het kanaal {{ channel_code }}. Activeer het kanaal opnieuw of selecteer een andere taal.
+    channel:
+      should_exist: Het kanaal {{ channel_code }} is verwijderd. Selecteer een ander kanaal.
+    attribute:
+      should_exist: Het attribuut {{ attribute_code }} bestaat niet. Maak het aan of kies een andere bron.
+      locale_should_not_be_blank: Het attribuut {{ attribute_code }} bevat nu een waarde per taal. Maak deze aan of kies een andere bron.
+      channel_should_not_be_blank: Het attribuut {{ attribute_code }} bevat nu een waarde per kanaal. Maak dit aan of kies een andere bron.
+      locale_should_be_blank: Het attribuut {{ attribute_code }} bevat geen waarde per taal meer. Maak deze aan of kies een andere bron.
+      channel_should_be_blank: Het attribuut {{ attribute_code }} bevat geen waarde per kanaal meer. Maak dit aan of kies een andere bron.
+      invalid_specific_locale: Het attribuut {{ attribute_code }} is taalspecifiek. Selecteer een andere taal.
+    asset_collection:
+      locale_should_not_be_blank: Het belangrijkste media-attribuut van de assetfamilie {{ asset_family_code }} bevat nu een waarde per taal. Maak het aan of kies een andere bron.
+      channel_should_not_be_blank: Het belangrijkste media-attribuut van de assetfamilie {{ asset_family_code }} bevat nu een waarde per kanaal. Maak het aan of kies een andere bron.
+      locale_should_be_blank: Het belangrijkste media-attribuut van de assetfamilie {{ asset_family_code }} heeft geen waarde per taal meer. Maak het aan of kies een andere bron.
+      channel_should_be_blank: Het belangrijkste media-attribuut van de assetfamilie {{ asset_family_code }} heeft geen waarde per kanaal meer. Maak het aan of kies een andere bron.
+      invalid_type: Het belangrijkste media-attribuut van de assetfamilie {{ asset_family_code }} is gewijzigd. Maak het aan of kies een andere bron.
+    measurement:
+      family:
+        does_not_exist: De afmetingenfamilie {{ measurement_family_code }} bestaat niet.
+      unit:
+        does_not_exist: De eenheid {{ unit_code }} bestaat niet in de afmetingenfamilie {{ measurement_family_code }}.
+    currency:
+      should_be_active: '{0} De valuta''s "{{ currency_codes }}" zijn niet gekoppeld aan een kanaal.{1} De munteenheid "{{ currency_codes }}" is niet gekoppeld aan een kanaal.ins. ]1,Inf] De valuta''s "{{ currency_codes }}" zijn niet gekoppeld aan een kanaal.'
+      should_be_active_on_channel: '{0} De valuta''s "{{ currency_codes }}" zijn niet gekoppeld aan een kanaal.{1} De munteenheid "{{ currency_codes }}" is niet gekoppeld aan een kanaal.ins. ]1,Inf] De valuta''s "{{ currency_codes }}" zijn niet gekoppeld aan een kanaal.'

@@ -1,0 +1,92 @@
+pimee_catalog_rule:
+  overview: "]-Inf, 1]{{ count }} rule|]1, Inf[{{ count }} rules"
+  execution_button: Execute rules
+  popin:
+    execute_rules:
+      confirm_title: Confirm execution
+  notification:
+    launched: The rules execution has been launched. You will be notified when it is done.
+  attribute:
+    list:
+      code.label: Code
+      condition.label: Condition
+      action.label: Action
+  rule:
+    condition:
+      if.label: if
+    action:
+      then.label: then
+      set_value.label: is set into
+      copy_value.label: is copied into
+      set.label: is set into
+      copy.label: is copied into
+      add.label: is added into
+      remove.label: is removed from
+  datagrid:
+    rule-grid:
+      actions:
+        execute:
+          confirm_title: Confirm execution
+          confirm_content: Are you sure you want to execute the rule?
+      mass_edit_action:
+        confirm_title: Confirm calculation
+      mass_action:
+        execute:
+          confirm_title: Confirm execution
+          success: The rules execution has been launched. You will be notified when it is done.
+          error: An error occurred during the execution of the rules.
+          empty_selection: No rules selected.
+        delete:
+          confirm_title: Confirm execution
+          confirm_content: Are you sure you want to delete the selected rules?
+          success: You successfuly deleted the rules.
+          error: An error occurred during the deletion of the rules.
+          empty_selection: No rules selected.
+  form:
+    attribute:
+      tab:
+        rules:
+          title: Rules
+    creation:
+      english_flag: Label for English
+pim_enrich:
+  entity:
+    rule:
+      module:
+        delete:
+          confirm: Are you sure you want to delete this rule? It is not possible to undo this action
+flash:
+  rule:
+    executed: The rules execution has been launched. You will be notified when it is done.
+batch_jobs:
+  add_attribute_value:
+    execute_rules.label: Rules execution
+  default_steps:
+    execute_rules: Rules execution
+  rule_impacted_product_count:
+    perform.label: Count impacted products
+  csv_product_import_with_rules:
+    label: Product import in CSV with rules
+    import.label: Product import
+  csv_product_model_import_with_rules:
+    label: Product model import in CSV with rules
+  xlsx_product_import_with_rules:
+    label: Product import in XLSX with rules
+    import.label: Product import
+  xlsx_product_model_import_with_rules:
+    label: Product model import in XLSX with rules
+pim_notification:
+  types:
+    rule: Rules Settings
+    mass_edit_rule: Mass edit rule
+    execute_rules: Rules execution
+pim_menu:
+  item:
+    rule: Rules
+pim_title:
+  pimee_catalog_rule_rule_index: Rules
+  pimee_catalog_rule_new: Rules
+akeneo_job_process_tracker:
+  type_filter:
+    mass_edit_rule: Mass edit rule
+    execute_rules: Rules execution

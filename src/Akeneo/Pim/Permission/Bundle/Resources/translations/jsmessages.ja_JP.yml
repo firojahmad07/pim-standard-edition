@@ -1,0 +1,87 @@
+pim_enrich:
+  entity:
+    attribute:
+      property:
+        is_read_only: 読み取り専用
+pimee_import_export:
+  entity:
+    job_instance:
+      flash:
+        update:
+          fail_empty_permission: ジョブの編集を許可するユーザーグループを少なくとも 1 つ選択する必要があります
+pimee_enrich.entity.category:
+  module:
+    permissions:
+      grant: このグループ<strong>{{ group }}</strong>は、このカテゴリで<strong>{{ permission }}</strong>されます
+      revoke: このグループ<strong>{{ group }}</strong>は、このカテゴリでは<strong>{{ permission }}</strong>されません
+pimee_enrich.entity.locale:
+  module:
+    permissions:
+      grant: このグループ<strong>{{ group }}</strong>は、このロケールで<strong>{{ permission }}</strong>されます
+      revoke: このグループ<strong>{{ group }}</strong>は、このロケールでは<strong>{{ permission }}</strong>されません
+pimee_enrich.entity.attribute group:
+  module:
+    permissions:
+      grant: このグループ<strong>{{ group }}</strong>は、この属性グループで<strong>{{ permission }}</strong>されます
+      revoke: このグループ<strong>{{ group }}</strong>は、この属性グループでは<strong>{{ permission }}</strong>されません
+pimee_enrich.entity.attribute_group:
+  module:
+    permissions:
+      added: グループ {{ group }} は、{{ permission }} 属性グループが許可されます
+      view: 属性の表示を許可
+      edit: 属性の編集を許可
+      removed: グループ {{ group }} は、{{ permission }} 属性のグループが許可されません
+pimee_enrich.entity.job_instance:
+  module:
+    permissions:
+      added: グループ {{ group }} は、{{ permission }} ジョブのプロファイルが許可されます。
+      execute: ジョブプロファイルの実行を許可
+      edit: ジョブプロファイルの編集を許可
+      removed: グループ {{ group }} は、{{ permission }} ジョブのプロファイルが許可されません
+batch_jobs:
+  add_product_value_with_permission_and_rules:
+    label: 許可チェック＆ルール適用による商品値の追加
+    perform.label: 商品値を追加
+  update_product_value_with_permission_and_rules:
+    label: 許可チェック＆ルール適用により商品値を更新
+    perform.label: 商品の値を更新
+  remove_product_value_with_permission_and_rules:
+    label: 許可チェック＆ルール適用によりよる商品値を削除
+    perform.label: 商品値を削除
+  edit_common_attributes_with_permission_and_rules:
+    label: 許可チェック＆ルール適用により属性を編集
+    perform.label: 属性を編集
+    cleaner.label: 一時ファイルを削除
+  default_steps:
+    send_for_approval: 承認のために送信
+pim_title:
+  pimee_enrich_locale_edit: ロケール | 編集
+pim_analytics:
+  info_type:
+    nb_custom_locale_accesses: カスタムロケールのアクセス数
+    nb_custom_category_accesses: カスタムカテゴリのアクセスの数
+    nb_custom_attribute_group_accesses: カスタム属性グループのアクセスの数
+category.permissions:
+  view.label: 商品の表示を許可済
+  edit.label: 商品の編集を許可済
+  own.label: 商品の所有を許可済
+  own.help: 商品をレビュー、公開、非公開、分類、および関連付けます
+  no_access_to_products: どのツリーにおいても商品データへのアクセス権限がありません。管理者に問い合わせてください。
+  apply_on_children.label: 下位への変更を適用
+  apply_on_children.help: 下位の既存の権限は維持されます
+pim_permissions:
+  widget:
+    entity:
+      attribute_group:
+        label: 属性グループ
+        help: アプリがすべての商品データを変更できるようにする場合は、編集レベルですべてのオプションを選択します。それ以外の場合は、アプリがレベルに応じて表示または変更できる属性グループのみを選択します。
+      category:
+        label: カテゴリツリー
+        help: PIM提案を使用せずに商品を変更できるようにする場合は、所有レベルを選択します。それ以外の場合は、編集レベルを選択します。
+      locale:
+        label: ロケール
+        help: アプリがすべての言語で商品を編集できるようにする場合は、編集レベルですべてのオプションを選択します。それ以外の場合は、アプリがレベルに応じて表示または変更できる言語のみを選択します。
+      not_granted_warning: このセクションは {{ permission }} を持つユーザーのみアクセス可能です。管理者にお問い合わせください。適切な権限があれば、アプリの設定に戻って編集することができます。
+pimee_enrich.acl.category.edit_permissions: カテゴリ権限を管理
+pimee_enrich.acl.attribute_group.edit_permissions: 属性グループの権限を管理
+pimee_enrich.acl.locale.edit_permissions: ロケール権限を管理

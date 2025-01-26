@@ -1,0 +1,39 @@
+services:
+  Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\SelectionHydrator:
+    public: true
+
+  Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\ElementCollectionHydrator:
+    public: true
+
+  Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\OperationCollectionHydrator:
+    public: true
+
+  Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\FormatHydrator:
+    public: true
+    arguments:
+      - '@Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\ElementCollectionHydrator'
+
+  Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\ValueHydrator:
+    arguments:
+      - '@Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\Value\AttributeValueHydrator'
+      - '@Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\Value\PropertyValueHydrator'
+      - '@Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\Value\AssociationTypeValueHydrator'
+
+  Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\Value\AssociationTypeValueHydrator:
+  Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\Value\AttributeValueHydrator:
+    arguments:
+      - '@pim_standard_format_serializer'
+
+  Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\Value\PropertyValueHydrator:
+    arguments:
+      - '@Akeneo\Platform\TailoredExport\Domain\Query\FindQualityScoresInterface'
+
+  Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\ColumnCollectionHydrator:
+    arguments:
+      - '@Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\SelectionHydrator'
+      - '@Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\FormatHydrator'
+      - '@Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\OperationCollectionHydrator'
+
+  Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\ValueCollectionHydrator:
+    arguments:
+      - '@Akeneo\Platform\TailoredExport\Infrastructure\Hydrator\ValueHydrator'

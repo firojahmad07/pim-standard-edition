@@ -1,0 +1,61 @@
+akeneo_referenceentity:
+  acl_group:
+    reference_entity: 参照エンティティ
+  acl:
+    reference_entity:
+      create: エンティティを作成
+      edit: エンティティのプロパティを編集
+      delete: エンティティを削除
+      manage_permission: 参照エンティティのアクセス権限を管理
+    record:
+      create: 記録を作成
+      edit: レコードを編集
+      delete: 記録を削除
+      list_product: 記録にリンクされた商品を一覧表示
+    attribute:
+      create: 参照エンティティに属性を追加
+      edit: 参照エンティティの属性を編集
+      delete: 参照エンティティの属性を削除
+    option:
+      edit: オプションを編集
+      delete: オプションを削除
+  jobs:
+    reference_entity_mass_delete:
+      error: '一括削除は記録 "{{ records }}" で失敗しました。エラー: "{{ error }}"'
+      used_as_product_variant_axis: 'これらの記録は1つ以上の商品バリアントでバリアント軸として使用されているため削除できません'
+pim_analytics:
+  info_type:
+    nb_reference_entities: 参照エンティティ数
+    max_number_of_records_per_reference_entity: 参照エンティティごとの最大記録数
+    average_number_of_values_per_records: 全参照エンティティの記録ごとの平均値
+    average_number_of_records_per_reference_entity: 参照エンティティごとの平均記録数
+    max_number_of_attributes_per_reference_entity: 参照エンティティごとの最大属性数
+    average_number_of_attributes_per_reference_entity: 参照エンティティごとの平均属性数
+    average_percentage_localizable_only_attributes: 参照エンティティごとにローカライズ可能な属性のみの平均パーセンテージ (%)
+    average_percentage_scopable_only_attributes: 参照エンティティごとに参照可能な属性のみの平均パーセンテージ (%)
+    average_percentage_scopable_and_localizable_attributes: 参照エンティティごとにローカライズ可能かつ参照可能な属性のみの平均パーセンテージ (%)
+job_execution:
+  summary:
+    records: 記録
+pim_notification:
+  types:
+    reference_entity_mass_delete_records: 記録を一括削除
+pim_mass_edit:
+  notification:
+    reference_entity_mass_delete_records:
+      warning: 記録は警告付きで正常に削除されました
+      success: 記録は正常に削除されました
+      error: 記録の削除に失敗しました
+akeneo_reference_entity: 参照エンティティの単一のリンク
+akeneo_reference_entity_collection: 参照エンティティの複数のリンク
+pim_api:
+  acl:
+    reference_entity:
+      create: 参照エンティティを作成して更新
+      list: 参照エンティティを一覧表示
+    record:
+      create: 参照エンティティの記録を作成して更新
+      list: 参照エンティティの記録を一覧表示
+      remove: 参照エンティティの記録を削除
+  acl_group:
+    reference_entity: 参照エンティティ

@@ -1,0 +1,71 @@
+services:
+    pim_connector.step.csv_reference_entity_record.export:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'export'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@akeneo_referenceentity.job.reader.database.reference_entity_record'
+            - '@akeneo_referenceentity.job.processor.normalization.reference_entity_record'
+            - '@akeneo_referenceentity.job.writer.csv_file.reference_entity_record'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    pim_connector.step.xlsx_reference_entity_record.export:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'export'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@akeneo_referenceentity.job.reader.database.reference_entity_record'
+            - '@akeneo_referenceentity.job.processor.normalization.reference_entity_record'
+            - '@akeneo_referenceentity.job.writer.xlsx_file.reference_entity_record'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    pim_connector.step.csv_reference_entity_record.import:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'import'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@akeneo_referenceentity.job.reader.file.csv_reference_entity_record'
+            - '@akeneo_referenceentity.job.processor.denormalization.create_and_edit_record_command'
+            - '@akeneo_referenceentity.job.writer.handle.record.database'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    pim_connector.step.xlsx_reference_entity_record.import:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'import'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@akeneo_referenceentity.job.reader.file.xlsx_reference_entity_record'
+            - '@akeneo_referenceentity.job.processor.denormalization.create_and_edit_record_command'
+            - '@akeneo_referenceentity.job.writer.handle.record.database'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    akeneo_referenceentity.step.mass_delete_records:
+        class: '%pim_connector.step.tasklet.class%'
+        arguments:
+            - 'mass_delete_records'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@akeneo_referenceentity.tasklet.mass_delete_records_tasklet'
+        public: false
+
+    akeneo_referenceentity.tasklet.mass_delete_records_tasklet:
+        class: 'Akeneo\ReferenceEntity\Infrastructure\Job\MassDeleteRecordsTasklet'
+        arguments:
+            - '@akeneo_referenceentity.application.record.delete_records_handler'
+            - '@akeneo_referenceentity.infrastructure.search.elasticsearch.query_builder'
+            - '@akeneo_referenceentity.client.record'
+            - '@akeneo_batch.job_repository'
+            - '@akeneo_referenceentity.infrastructure.search.elasticsearch.record_indexer'
+            - '@akeneo_batch.job.job_stopper'
+            - '@validator'
+            - '@akeneo_referenceentity.infrastructure.persistence.query.enrich.find_records_used_as_product_variant_axis'
+            - 1000
+        public: false

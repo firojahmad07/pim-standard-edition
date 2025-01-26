@@ -1,0 +1,17 @@
+user:
+  email_notifications: Être notifié/e de l'expiration des ressources
+pimee_enrich.entity.product:
+  duplicate:
+    title: Dupliquer le produit {{ product_identifier }}
+    button: Dupliquer
+    flash:
+      success: Le produit {{ product_identifier }} a été dupliqué avec succès.
+      success_with_attribute_codes: Le produit {{ product_identifier }} a été dupliqué avec succès. Vous devez enrichir le {{ unique_attribute_codes }} avec des valeurs uniques
+pim_dashboard:
+  widget:
+    teamwork_assistant:
+      title: Projets
+      helper: Pour en savoir plus sur les projets et comment vous pouvez améliorer votre complétude, <a href="{{ link }}" target="_blank">consultez notre help center</a>.
+      no_project:
+        title: Les projets peuvent vous aider à suivre l'évolution de votre sélection de produits.
+        subtitle: Créez votre premier projet.

@@ -1,0 +1,20 @@
+pimee_security_permissions_rest:
+    path: /rest.{_format}
+    defaults: { _controller: pimee_security.controller.permission_rest:permissionsAction, _format: json }
+    methods: [GET]
+    requirements:
+        _format: json
+
+pimee_security_locales_permissions_rest:
+    path: /locales/rest.{_format}
+    defaults: { _controller: pimee_security.controller.permission_rest:localesPermissionsAction, _format: json }
+    methods: [GET]
+    requirements:
+        _format: json
+
+pim_pdf_generator_download_product_pdf:
+    path: /enrich/product/{id}/download-pdf
+    defaults: { _controller: pimee_security.controller.product:downloadPdfAction }
+    requirements:
+        id: '[0-9a-f]+'
+    methods: [GET]

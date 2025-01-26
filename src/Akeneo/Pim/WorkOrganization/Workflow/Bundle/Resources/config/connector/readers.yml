@@ -1,0 +1,51 @@
+services:
+    # products
+    pimee_workflow.reader.file.csv_product_draft:
+        parent: pim_connector.reader.file.csv_product
+        class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\Reader\File\Csv\ProductReader'
+        arguments:
+            - '@pim_connector.reader.file.csv_iterator_factory'
+            - '@pimee_base_connector.array_converter.flat_to_standard.product_draft_changes'
+            - '@pim_connector.reader.file.media_path_transformer'
+
+    pimee_workflow.reader.file.xlsx_product_draft:
+        parent: pim_connector.reader.file.xlsx_product
+        class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\Reader\File\Xlsx\ProductReader'
+        arguments:
+            - '@pim_connector.reader.file.xlsx_iterator_factory'
+            - '@pimee_base_connector.array_converter.flat_to_standard.product_draft_changes'
+            - '@pim_connector.reader.file.media_path_transformer'
+
+    # product models
+    pimee_workflow.reader.file.csv_product_model_draft:
+        parent: pim_connector.reader.file.csv_product_model
+        class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\Reader\File\Csv\ProductModelReader'
+        arguments:
+            - '@pim_connector.reader.file.csv_iterator_factory'
+            - '@pimee_base_connector.array_converter.flat_to_standard.product_draft_changes'
+            - '@pim_connector.reader.file.media_path_transformer'
+
+    pimee_workflow.reader.file.xlsx_product_model_draft:
+        parent: pim_connector.reader.file.xlsx_product_model
+        class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\Reader\File\Xlsx\ProductModelReader'
+        arguments:
+            - '@pim_connector.reader.file.xlsx_iterator_factory'
+            - '@pimee_base_connector.array_converter.flat_to_standard.product_draft_changes'
+            - '@pim_connector.reader.file.media_path_transformer'
+
+    # published products
+    pimee_workflow.connector.reader.mass_edit.published_product:
+        class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\Reader\Database\ProductReader'
+        arguments:
+            - '@pimee_workflow.doctrine.query.published_product_query_builder_factory'
+            - '@pim_catalog.repository.channel'
+            - '@pim_catalog.converter.metric'
+
+    # Product drafts
+    pimee_workflow.reader.database.product_draft:
+        class: Akeneo\Pim\WorkOrganization\Workflow\Component\Connector\Reader\Database\ProductDraftReader
+        arguments:
+            - '@pim_enrich.reader.database.product_and_product_model'
+            - '@pimee_workflow.repository.product_draft'
+            - '@pimee_workflow.repository.product_model_draft'
+

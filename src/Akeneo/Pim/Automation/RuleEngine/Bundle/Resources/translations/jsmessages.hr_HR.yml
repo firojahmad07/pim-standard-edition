@@ -1,0 +1,76 @@
+pimee_catalog_rule:
+  execution_button: Izvrši pravila
+  notification:
+    launched: Izvođenje pravila je pokrenuto. Biti ćete obaviješteni kad bude gotovo.
+  attribute:
+    list:
+      code.label: Kod
+      condition.label: Stanje
+      action.label: Akcija
+  rule:
+    condition:
+      if.label: ako
+    action:
+      then.label: tada
+      set_value.label: je postavljen u
+      copy_value.label: kopira se u
+      set.label: je postavljen u
+      copy.label: kopira se u
+      add.label: dodaje se u
+      remove.label: je uklonjen iz
+  datagrid:
+    rule-grid:
+      actions:
+        execute:
+          confirm_content: Jeste li sigurni da želite izvršiti pravilo?
+      mass_action:
+        execute:
+          success: Izvođenje pravila je pokrenuto. Biti ćete obaviješteni kad bude gotovo.
+          empty_selection: Nije odabrano niti jedno pravilo.
+        delete:
+          confirm_content: Jeste li sigurni da želite obrisati odabrana pravila?
+          success: Uspješno ste izbrisali pravila.
+          empty_selection: Nije odabrano niti jedno pravilo.
+  form:
+    attribute:
+      tab:
+        rules:
+          title: Pravila
+pim_enrich:
+  entity:
+    rule:
+      module:
+        delete:
+          confirm: Jeste li sigurni da želite izbrisati ovo pravilo? Nije moguće poništiti ovu akciju
+flash:
+  rule:
+    executed: Izvođenje pravila je pokrenuto. Biti ćete obaviješteni kad bude gotovo.
+pim_dashboard.widget.last_operations.job_type.mass_edit_rule: Postavke pravila
+batch_jobs:
+  add_attribute_value:
+    execute_rules.label: Izvođenje pravila
+  default_steps:
+    execute_rules: Izvođenje pravila
+  rule_impacted_product_count:
+    perform.label: Izračunaj zahvaćene proizvode
+  csv_product_import_with_rules:
+    label: Uvoz proizvoda u CSV s pravilima
+    import.label: Uvoz proizvoda
+  xlsx_product_import_with_rules:
+    label: Uvoz proizvoda u XLSX s pravilima
+    import.label: Uvoz proizvoda
+pim_notification:
+  types:
+    rule: Postavke pravila
+    execute_rules: Izvođenje pravila
+pim_menu:
+  item:
+    rule: Pravila
+pim_title:
+  pimee_catalog_rule_rule_index: Pravila
+  pimee_catalog_rule_new: Pravila
+pim_import_export:
+  widget:
+    last_operations:
+      job_type:
+        execute_rules: Izvođenje pravila

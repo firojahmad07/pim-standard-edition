@@ -1,0 +1,245 @@
+services:
+    # Jobs
+    akeneo_assetmanager.job.csv_asset_export:
+        class: '%pim_connector.job.simple_job.class%'
+        arguments:
+            - 'asset_manager_csv_asset_export'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            -
+                - '@akeneo_assetmanager.step.csv_asset.export'
+            - true
+        tags:
+            - { name: akeneo_batch.job, connector: '%pim_connector.connector_name.csv%', type: '%pim_connector.job.export_type%' }
+
+    akeneo_assetmanager.job.xlsx_asset_export:
+        class: '%pim_connector.job.simple_job.class%'
+        arguments:
+            - 'asset_manager_xlsx_asset_export'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            -
+                - '@akeneo_assetmanager.step.xlsx_asset.export'
+            - true
+        tags:
+            - { name: akeneo_batch.job, connector: '%pim_connector.connector_name.xlsx%', type: '%pim_connector.job.export_type%' }
+
+    akeneo_assetmanager.job.csv_asset_import:
+        class: '%pim_connector.job.simple_job.class%'
+        arguments:
+            - 'asset_manager_csv_asset_import'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            -
+                - '@pim_connector.step.charset_validator'
+                - '@akeneo_assetmanager.step.csv_asset.import'
+        tags:
+            - { name: akeneo_batch.job, connector: '%pim_connector.connector_name.csv%', type: '%pim_connector.job.import_type%' }
+
+    akeneo_assetmanager.job.xlsx_asset_import:
+        class: '%pim_connector.job.simple_job.class%'
+        arguments:
+            - 'asset_manager_xlsx_asset_import'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            -
+                - '@pim_connector.step.charset_validator'
+                - '@akeneo_assetmanager.step.xlsx_asset.import'
+        tags:
+            - { name: akeneo_batch.job, connector: '%pim_connector.connector_name.xlsx%', type: '%pim_connector.job.import_type%' }
+
+    # STEPS
+    akeneo_assetmanager.step.csv_asset.export:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'export'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@akeneo_assetmanager.job.reader.database'
+            - '@akeneo_assetmanager.job.processor.normalization.asset'
+            - '@akeneo_assetmanager.job.writer.csv_file.asset'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    akeneo_assetmanager.step.xlsx_asset.export:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'export'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@akeneo_assetmanager.job.reader.database'
+            - '@akeneo_assetmanager.job.processor.normalization.asset'
+            - '@akeneo_assetmanager.job.writer.xlsx_file.asset'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    akeneo_assetmanager.step.csv_asset.import:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'import'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@akeneo_assetmanager.job.reader.file.csv_asset'
+            - '@akeneo_assetmanager.job.processor.denormalization.create_and_edit_asset_command'
+            - '@akeneo_assetmanager.job.writer.handle.asset.database'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    akeneo_assetmanager.step.xlsx_asset.import:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'import'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@akeneo_assetmanager.job.reader.file.xlsx_asset'
+            - '@akeneo_assetmanager.job.processor.denormalization.create_and_edit_asset_command'
+            - '@akeneo_assetmanager.job.writer.handle.asset.database'
+            - '%pim_job_product_batch_size%'
+            - '@akeneo_batch.job.job_stopper'
+
+    # Providers
+    akeneo_assetmanager.job.provider.csv_asset_export:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Component\Connector\Provider\CsvAssetExport'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }
+            - { name: akeneo_batch.job.job_parameters.default_values_provider }
+
+    akeneo_assetmanager.job.provider.xlsx_asset_export:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Component\Connector\Provider\XlsxAssetExport'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }
+            - { name: akeneo_batch.job.job_parameters.default_values_provider }
+
+    akeneo_assetmanager.job.job_parameters.constraint_collection_provider.simple_csv_import:
+        class: 'Akeneo\Tool\Component\Connector\Job\JobParameters\ConstraintCollectionProvider\SimpleCsvImport'
+        arguments:
+            -
+                - 'asset_manager_csv_asset_import'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }
+
+    akeneo_assetmanager.job.job_parameters.constraint_collection_provider.simple_xlsx_import:
+        class: 'Akeneo\Tool\Component\Connector\Job\JobParameters\ConstraintCollectionProvider\SimpleXlsxImport'
+        arguments:
+            -
+                - 'asset_manager_xlsx_asset_import'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }
+
+
+    akeneo_assetmanager.job.job_parameters.default_values_provider.simple_csv_import:
+        class: 'Akeneo\Tool\Component\Connector\Job\JobParameters\DefaultValuesProvider\SimpleCsvImport'
+        arguments:
+            -
+                - 'asset_manager_csv_asset_import'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.default_values_provider }
+
+    akeneo_assetmanager.job.job_parameters.default_values_provider.simple_xlsx_import:
+        class: 'Akeneo\Tool\Component\Connector\Job\JobParameters\DefaultValuesProvider\SimpleXlsxImport'
+        arguments:
+            -
+                - 'asset_manager_xlsx_asset_import'
+        tags:
+            - { name: akeneo_batch.job.job_parameters.default_values_provider }
+
+    # Readers:
+    akeneo_assetmanager.job.reader.database:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Component\Connector\Reader\Database\AssetReader'
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.persistence.query.find_identifiers_by_asset_family'
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.asset'
+            - '@akeneo_assetmanager.infrastructure.search.elasticsearch.asset.query.count_assets'
+
+    akeneo_assetmanager.job.reader.file.csv_asset:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Component\Connector\Reader\File\Csv\AssetReader'
+        arguments:
+            - '@pim_connector.reader.file.csv_iterator_factory'
+            - '@akeneo_assetmanager.job.array_converter.flat_to_standard.asset'
+
+    akeneo_assetmanager.job.reader.file.xlsx_asset:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Component\Connector\Reader\File\Xlsx\AssetReader'
+        arguments:
+            - '@pim_connector.reader.file.xlsx_iterator_factory'
+            - '@akeneo_assetmanager.job.array_converter.flat_to_standard.asset'
+
+    # Processors:
+    akeneo_assetmanager.job.processor.normalization.asset:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Component\Connector\Processor\Normalization\AssetProcessor'
+
+    akeneo_assetmanager.job.processor.denormalization.create_and_edit_asset_command:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Component\Connector\Processor\Denormalization\AssetProcessor'
+        arguments:
+            - '@akeneo_assetmanager.application.factory.asset.connector.edit_asset_command_factory'
+            - '@akeneo_assetmanager.infrastructure.persistence.query.asset_exists'
+            - '@validator'
+            - '@akeneo_assetmanager.infrastructure.persistence.query.find_media_file_attribute_codes'
+            - '@akeneo_file_storage.file_storage.file.file_storer'
+            - '@Akeneo\AssetManager\Application\Asset\ExecuteNamingConvention\Connector\EditAssetCommandFactory'
+
+    # Writers
+    akeneo_assetmanager.job.writer.csv_file.asset:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Component\Connector\Writer\File\Csv\AssetWriter'
+        arguments:
+            - '@akeneo_assetmanager.job.array_converter.standard_to_flat.asset'
+            - '@pim_connector.factory.flat_item_buffer'
+            - '@pim_connector.writer.file.flat_item_buffer_flusher'
+            - '@akeneo_assetmanager.infrastructure.persistence.query.find_attributes_indexed_by_identifier'
+            - '@akeneoassetmanager.infrastructure.persistence.cache.query.find_activated_locales_per_channels'
+            - '@pim_connector.writer.file.media_exporter_path_generator'
+            - '@akeneo_file_storage.repository.file_info'
+            - '@akeneo_file_storage.file_storage.filesystem_provider'
+
+    akeneo_assetmanager.job.writer.xlsx_file.asset:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Component\Connector\Writer\File\Xlsx\AssetWriter'
+        arguments:
+            - '@akeneo_assetmanager.job.array_converter.standard_to_flat.asset'
+            - '@pim_connector.factory.flat_item_buffer'
+            - '@pim_connector.writer.file.flat_item_buffer_flusher'
+            - '@akeneo_assetmanager.infrastructure.persistence.query.find_attributes_indexed_by_identifier'
+            - '@akeneoassetmanager.infrastructure.persistence.cache.query.find_activated_locales_per_channels'
+            - '@pim_connector.writer.file.media_exporter_path_generator'
+            - '@akeneo_file_storage.repository.file_info'
+            - '@akeneo_file_storage.file_storage.filesystem_provider'
+
+    akeneo_assetmanager.job.array_converter.standard_to_flat.asset:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Component\Connector\ArrayConverter\StandardToFlat\Asset'
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.attribute'
+
+    akeneo_assetmanager.job.array_converter.flat_to_standard.asset:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Component\Connector\ArrayConverter\FlatToStandard\Asset'
+        arguments:
+            - '@pim_connector.array_convertor.checker.fields_requirement'
+            - '@akeneo_assetmanager.infrastructure.persistence.query.find_attributes_details'
+
+    akeneo_assetmanager.job.writer.handle.asset.database:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Component\Connector\Writer\Database\AssetWriter'
+        arguments:
+            - '@akeneo_assetmanager.application.asset.create_asset_handler'
+            - '@akeneo_assetmanager.application.asset.edit_asset_handler'
+            - '@akeneo_assetmanager.infrastructure.search.elasticsearch.asset.index_asset_event_aggregator'
+            - '@akeneo_assetmanager.application.asset.subscribers.compute_asset_transformation_event_aggregator'
+            - '@akeneo_assetmanager.application.asset.link_assets.link_assets_handler'
+
+    # Flat value translator
+    pimee_connector.flat_translators.attribute_value_translator.reference_entity_multiple_link:
+        class: Akeneo\Pim\Enrichment\ReferenceEntity\Component\Connector\FlatTranslator\FlatAttributeValueTranslator\ReferenceEntityMultipleLinkValueTranslator
+        arguments:
+            - '@akeneo_referenceentity.infrastructure.persistence.query.enrich.find_records_labels_public_api'
+        tags:
+            - { name: pim_enrich.connector.flat_translators.attribute_value }
+
+    pimee_connector.flat_translators.attribute_value_translator.reference_entity_single_link:
+        class: Akeneo\Pim\Enrichment\ReferenceEntity\Component\Connector\FlatTranslator\FlatAttributeValueTranslator\ReferenceEntitySimpleLinkValueTranslator
+        arguments:
+            - '@akeneo_referenceentity.infrastructure.persistence.query.enrich.find_records_labels_public_api'
+        tags:
+            - { name: pim_enrich.connector.flat_translators.attribute_value }
+
+    pimee_connector.flat_translators.attribute_value_translator.asset_collection:
+        class: Akeneo\Pim\Enrichment\AssetManager\Component\Connector\FlatTranslator\AttributeValueTranslator\AssetCollectionTranslator
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.persistence.query.enrich.find_asset_label_translation_public_api'
+        tags:
+            - { name: pim_enrich.connector.flat_translators.attribute_value }

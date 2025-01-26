@@ -1,0 +1,54 @@
+parameters:
+    # Datagrid
+    pimee_security.event_subscriber.datagrid.product_category_access.class: Akeneo\Pim\Permission\Bundle\Datagrid\EventListener\ProductCategoryAccessSubscriber
+
+    # Enrich
+    pimee_security.event_subscriber.enrich.job_permissions.class:            Akeneo\Pim\Permission\Bundle\EventSubscriber\Enrich\JobPermissionsSubscriber
+
+    pimee_security.event_subscriber.add_default_permissions.class: Akeneo\Pim\Permission\Bundle\EventSubscriber\AddDefaultPermissionsSubscriber
+    pimee_security.subscriber.save_permissions.class: Akeneo\Pim\Permission\Bundle\EventSubscriber\SavePermissionsSubscriber
+
+services:
+    # Datagrid
+    pimee_security.event_subscriber.datagrid.product_category_access:
+        class: '%pimee_security.event_subscriber.datagrid.product_category_access.class%'
+        arguments:
+            - '@security.token_storage'
+            - '@akeneo.pim.enrichment.category.get_viewable_category_codes'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    # Enrich
+    pimee_security.event_subscriber.enrich.job_permissions:
+        class: '%pimee_security.event_subscriber.enrich.job_permissions.class%'
+        arguments:
+            - '@security.authorization_checker'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    pimee_security.event_subscriber.add_default_permissions:
+        class: '%pimee_security.event_subscriber.add_default_permissions.class%'
+        arguments:
+            - '@pim_user.repository.group'
+            - '@pimee_security.manager.attribute_group_access'
+            - '@pimee_security.manager.job_profile_access'
+            - '@pimee_security.manager.category_access'
+            - '@pimee_security.manager.locale_access'
+            - '@Akeneo\Pim\Permission\Bundle\Persistence\ORM\UserGroup\GetUserGroupsWithDefaultPermission'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    pimee_security.subscriber.save_permissions:
+        class: '%pimee_security.subscriber.save_permissions.class%'
+        arguments:
+            - '@pim_user.repository.group'
+            - '@pimee_security.manager.attribute_group_access'
+            - '@pimee_security.manager.job_profile_access'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\Permission\Bundle\EventSubscriber\UpdateCategoryTimestampOnPermissionUpdatesSubscriber:
+        arguments:
+            - '@pim_catalog.saver.category'
+        tags:
+            - { name: kernel.event_subscriber }

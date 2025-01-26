@@ -1,0 +1,61 @@
+akeneo_referenceentity:
+  acl_group:
+    reference_entity: Entità riferimenti
+  acl:
+    reference_entity:
+      create: Crea un'entità
+      edit: Modifica le proprietà dell'entità
+      delete: Elimina un'entità
+      manage_permission: Gestisci i permessi delle entità di riferimento
+    record:
+      create: Crea una riga
+      edit: Modifica i record
+      delete: Elimina registri
+      list_product: Elenca i prodotti collegati per registrare
+    attribute:
+      create: Aggiungi un attributo ad un'entità di riferimento
+      edit: Modifica un attributo di un'entità di riferimento
+      delete: Elimina un attributo da una entità di riferimento
+    option:
+      edit: Modifica opzioni
+      delete: Rimuovi una opzione
+  jobs:
+    reference_entity_mass_delete:
+      error: 'Eliminazione di massa non riuscita sui registri "{{ records }}" con errore: "{{ error }}"'
+      used_as_product_variant_axis: 'Impossibile eliminare questi registri poiché sono utilizzati come un asse variante in uno o più dei tuoi prodotti variante'
+pim_analytics:
+  info_type:
+    nb_reference_entities: Numero di entità di riferimento
+    max_number_of_records_per_reference_entity: Numero massimo di registri per entità di riferimento
+    average_number_of_values_per_records: Numero medio di valori per registro su tutte le entità di riferimento
+    average_number_of_records_per_reference_entity: Numero medio di registri per entità di riferimento
+    max_number_of_attributes_per_reference_entity: Numero massimo di attributi per entità di riferimento
+    average_number_of_attributes_per_reference_entity: Numero medio di attributi per entità di riferimento
+    average_percentage_localizable_only_attributes: Percentuale media di attributi solo localizzabili per entità di riferimento
+    average_percentage_scopable_only_attributes: Percentuale media di attributi a solo scopo per entità di riferimento
+    average_percentage_scopable_and_localizable_attributes: Percentuale media di attributi localizzabili e di scopo per entità di riferimento
+job_execution:
+  summary:
+    records: Registri
+pim_notification:
+  types:
+    reference_entity_mass_delete_records: Eliminazione di massa registri
+pim_mass_edit:
+  notification:
+    reference_entity_mass_delete_records:
+      warning: Registri eliminati con successo con avvisi
+      success: Registri eliminati con successo
+      error: Eliminazione del registro non riuscita
+akeneo_reference_entity: Entità di riferimento a collegamento singolo
+akeneo_reference_entity_collection: Entità di riferimento a collegamenti multipli
+pim_api:
+  acl:
+    reference_entity:
+      create: Creare e aggiornare entità di riferimento
+      list: Elenco entità di riferimento
+    record:
+      create: Creare e aggiornare i record di entità di riferimento
+      list: Elenco dei record dell'entità di riferimento
+      remove: Elimina tutti i record dell'entità di riferimento
+  acl_group:
+    reference_entity: Entità riferimenti

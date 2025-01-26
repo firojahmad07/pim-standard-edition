@@ -1,0 +1,539 @@
+pim_menu:
+  tab:
+    connect: Połącz
+  navigation:
+    connect: Połącz nawigację
+  navigation_back:
+    connection: Powrót do Połączenia
+  navigation_block:
+    connection: Nawigacja po połączeniach
+  item:
+    connection_audit: Panel połączenia
+    connection_settings: Połączenia
+    connection_settings_edit: Ustawienia połączeń
+    connection_monitoring: Monitorowanie błędu
+    connection_webhook_edit: Subskrypcja zdarzeń
+    connection_webhook_event_logs: Dziennik zdarzeń
+    data_flows: Przepływy danych
+    connect_connection_settings: Ustawienia połączeń
+    marketplace: Rynek
+    connected_apps: Aplikacje
+pim_title:
+  akeneo_connectivity_connection_connect_marketplace: Rynek
+  akeneo_connectivity_connection_connect_marketplace_profile: Rynek
+  akeneo_connectivity_connection_connect_apps_activate: Połącz
+  akeneo_connectivity_connection_connect_apps_authorize: Połącz
+  akeneo_connectivity_connection_connect_apps_authenticate: Połącz
+  akeneo_connectivity_connection_settings_index: Ustawienia połączeń
+  akeneo_connectivity_connection_settings_edit: Ustawienia połączeń
+  akeneo_connectivity_connection_settings_any: Ustawienie połączenia
+  akeneo_connectivity_connection_audit_index: Panel połączenia
+  akeneo_connectivity_connection_audit_any: Panel połączenia
+  akeneo_connectivity_connection_error_management_dashboard: Panel połączenia
+  akeneo_connectivity_connection_error_management_connection_monitoring: Monitorowanie połączeń
+  akeneo_connectivity_connection_webhook_edit: Subskrypcja zdarzeń
+  akeneo_connectivity_connection_webhook_regenerate_secret: Subskrypcja zdarzeń
+  akeneo_connectivity_connection_webhook_event_logs: Dziennik zdarzeń
+  akeneo_connectivity_connection_settings_redirect: Połączenia
+  akeneo_connectivity_connection_connect_connected_apps: Aplikacje
+  akeneo_connectivity_connection_connect_connected_apps_edit: Ustawienia aplikacji
+  akeneo_connectivity_connection_connect_connected_apps_delete: Usuń aplikację
+  akeneo_connectivity_connection_connect_marketplace_test_app_create: Utwórz aplikację testową
+  akeneo_connectivity_connection_connect_marketplace_test_app_delete: Usuń aplikację testową
+akeneo_connectivity.connection:
+  connect:
+    marketplace:
+      title: Chcesz połączyć PIM z inną aplikacją? 🤟
+      sub_title: Sprawdź nasz rynek, aby zobaczyć, którą aplikację można połączyć z Akeneo PIM.
+      link: Dostęp do rynku
+      helper:
+        title: '{0} Brak aplikacji lub wtyczek kompatybilnych z twoją wersją PIM.|{1} Aplikacje lub wtyczki kompatybilne z twoją wersją PIM: {{ count }}|[2,Inf] Aplikacje lub wtyczki kompatybilne z twoją wersją PIM: {{ count }}'
+        title_without_apps: '{0} Brak wtyczek kompatybilnych z twoją wersją PIM.|{1} Wtyczki kompatybilne z twoją wersją PIM: {{ count }}.|[2,Inf] Wtyczki kompatybilne z twoją wersją PIM: {{ count }}'
+        description: To tylko podgląd. Aby uzyskać więcej szczegółów, zobacz nasz rynek internetowy.
+        link: Przejdź do rynku internetowego
+      card:
+        developed_by: 'Autor: {{ author }}'
+        read_more: czytaj więcej
+        more_info: Więcej informacji
+        connect: Połącz
+        connected: Połączono
+      extensions:
+        title: Wtyczki
+        total: '{0} Brak wtyczek|{1} Liczba wtyczek: 1|[2,Inf] Liczba wtyczek: {{ total }} '
+        empty: Brak wtyczek kompatybilnych z twoją wersją
+      apps:
+        title: Aplikacje
+        total: '{0} Brak aplikacji|{1} 1 aplikacja|[2,Inf] Liczba aplikacji: {{ total }}'
+        empty: Brak aplikacji kompatybilnych z twoją wersją
+      unreachable: Nie możemy nawiązać połączenia z rynkiem. Spróbuj ponownie później.
+      scroll_to_top: Przewiń do początku
+      test_apps:
+        title: Moje aplikacje testowe
+        removed_user: Użytkownik usunięty
+        create_a_test_app: Utwórz aplikację testową
+        modal:
+          subtitle: Utwórz aplikację testową
+          app_information:
+            title: Informacje o aplikacji
+            description: Jeśli potrzebujesz pomocy, zapoznaj się z naszym artykułem.
+            link: Jak przetestować aplikację przed jej publikacją?
+            fields:
+              name: Nazwa
+              activate_url: Adres URL aktywacji
+              callback_url: Adres URL wywołania zwrotnego
+          credentials:
+            title: Dane uwierzytelniające
+            warning: Pamiętaj o zapisaniu tych poświadczeń, ponieważ wyświetlamy je tu tylko raz.
+            client_id: Identyfikator klienta
+            client_secret: Sekret klienta
+        errors:
+          creation:
+            name:
+              max_length: Nazwa aplikacji testowej jest za długa. Może składać się z maksymalnie 255 znaków.
+              not_blank: Nazwa aplikacji testowej jest wymagana.
+            client_id:
+              max_length: Identyfikator klienta jest za długi. Może składać się z maksymalnie 36 znaków.
+              not_blank: Identyfikator klienta jest wymagany.
+            activate_url:
+              max_length: Adres URL aktywacji jest za długi. Może składać się z maksymalnie 255 znaków.
+              must_be_url: Adres URL aktywacji musi być prawidłowym adresem URL.
+              not_blank: Adres URL aktywacji jest wymagany.
+            callback_url:
+              max_length: Adres URL wywołania zwrotnego jest za długi. Może składać się z maksymalnie 255 znaków.
+              must_be_url: Adres URL wywołania zwrotnego musi być prawidłowym adresem URL.
+              not_blank: Adres URL wywołania zwrotnego jest wymagany.
+        delete:
+          subtitle: Aplikacje
+          title: Potwierdź usunięcie
+          description: Za chwilę usuniesz aplikację testową z tego PIM.
+          warning: Potwierdzenie spowoduje usunięcie aplikacji testowej ze strony rynku i połączonej z nią aplikacji.
+          flash:
+            success: Aplikacja testowa została usunięta z powodzeniem.
+            error: Przepraszamy, w czasie usuwania aplikacji testowej wystąpił błąd.
+    connected_apps:
+      list:
+        apps:
+          title: Połączone aplikacje
+          total: '{0} Brak aplikacji|{1} 1 aplikacja|[2,Inf] Liczba aplikacji: {{ total }}'
+          empty: Nie połączono jeszcze żadnych aplikacji.
+          check_marketplace: 'Przejdź na stronę {{ marketplaceLink }}, aby przeglądać całą dostępną treść i zainstalować swoją pierwszą aplikację.'
+          marketplace_link_anchor: Rynek
+        test_apps:
+          title: Moje aplikacje testowe
+          removed_user: Użytkownik usunięty
+        helper:
+          title: '[0,1] Twój PIM jest połączony z {{ count }} aplikacją.|[2,Inf] Twój PIM jest połączony z {{ count }} aplikacjami.'
+          description_1: Nowe aplikacje powstają regularnie, więc regularnie zaglądaj na stronę Rynek, aby przekonać się, jak możesz połączyć Twój PIM z innymi aplikacjami.
+          description_2: Chcesz dowiedzieć się więcej o aplikacjach?
+          link: Aby uzyskać więcej informacji, sprawdź nasze Centrum Pomocy.
+        card:
+          developed_by: 'Autor: {{ author }}'
+          manage_app: Zarządzaj aplikacją
+          open_app: Otwórz aplikację
+        flash:
+          error: Przepraszamy, podczas pobierania listy połączonych aplikacji wystąpił błąd.
+      edit:
+        not_found: Nie znaleziono aplikacji
+        tabs:
+          settings: Ustawienia
+          permissions: Uprawnienia
+          error_monitoring: Monitorowanie błędu
+        settings:
+          monitoring:
+            title: Ustawienia ogólne
+          authorizations:
+            title: autoryzacje
+            information: 'Aby dowiedzieć się więcej o autoryzacjach aplikacji, przejdź na stronę {{ link }}.'
+            information_link_anchor: Artykuł w Centrum Pomocy
+            no_scope: Nie zażądano żadnych określonych autoryzacji.
+        error_monitoring:
+          error: Ups, coś poszło nie tak!
+          helper:
+            description: Tutaj możesz zobaczyć szczegóły każdego błędu tej aplikacji z ostatnich 7 dni. Liczba błędów jest ograniczona do 100 błędów.
+          not_data_source: Na razie strona monitorowania dostępna jest tylko dla aplikacji źródłowej.
+          not_auditable:
+            title: Aplikacja niemonitorowana
+            description:
+              1: Aby śledzić błędy w tej aplikacji,
+              2: aktywuj monitorowanie
+              3: w ustawieniach.
+        flash:
+          load_permissions_error.title: 'Nie można załadować zapisanych uprawnień dotyczących obiektu {{ entity }}.'
+          load_permissions_error.description: Spróbuj ponownie później.
+          save_permissions_error.title: 'Nie można zaktualizować uprawnień obiektu {{ entity }}.'
+          save_permissions_error.description: Sprawdź ustawienia uprawnień aplikacji.
+          success: Pomyślnie zaktualizowano ustawienia aplikacji.
+          monitoring_settings_error.description: Przepraszamy, podczas edycji aplikacji wystąpił błąd.
+      delete:
+        subtitle: Aplikacje
+        title: Potwierdź usunięcie
+        description: Czy na pewno chcesz usunąć tę aplikację? Nie masz pewności, jakie będą tego skutki?
+        link: Oto co się stanie.
+        flash:
+          success: Aplikacja została usunięta z powodzeniem.
+          error: Przepraszamy, w czasie usuwania aplikacji wystąpił błąd.
+    apps:
+      loader:
+        message: Ładowanie...
+      flash:
+        permissions_error.title: 'Nie można zapisać uprawnień obiektu {{ entity }}.'
+        permissions_error.description: Sprawdź ustawienia uprawnień aplikacji.
+      wizard:
+        title: Połącz
+        action:
+          confirm: Potwierdź
+          cancel: Anuluj
+          previous: Poprzednie
+          next: Następne
+          allow_and_next: Zezwól i przejdź dalej
+          allow_and_finish: Zezwól i zakończ
+        progress:
+          authentication: Uwierzytelnianie
+          authorizations: Autoryzacje
+          permissions: Uprawnienia
+          summary: Świetnie!
+        authentication:
+          title: 'Aplikacja {{ app_name }} musi'
+          helper: Aby dowiedzieć się więcej o uwierzytelnieniu aplikacji, zapoznaj się z naszym artykułem
+          helper_link: Jak połączyć PIM z aplikacjami?
+          scope_profile: Wyświetl swoje imię i nazwisko
+          scope_email: Wyświetl swój adres e-mail
+        authorize:
+          title: 'Aplikacja {{ app_name }} musi'
+          no_scope_title: 'Aplikacja {{ app_name }} chciałaby uzyskać dostęp do Twojego PIM.'
+          no_scope: Nie zażądano żadnych określonych autoryzacji.
+          helper: Aby dowiedzieć się więcej o autoryzacji aplikacji,
+          helper_link: zapoznaj się z artykułem w naszym Centrum Pomocy.
+        flash:
+          success: Aplikacja została pomyślnie skonfigurowana.
+          error: Przepraszamy, podczas łączenia aplikacji wystąpił błąd.
+        permission:
+          helper: Jeśli potrzebujesz pomocy, zapoznaj się z naszym artykułem
+          helper_link: Jak skonfigurować uprawnienia aplikacji?
+      title: Połącz
+      activate:
+        flash:
+          error: Przepraszamy, wystąpił błąd podczas łączenia z aplikacją.
+      scope:
+        type:
+          view: 'Zobacz {{ entities }}'
+          edit: 'Zobacz i edytuj {{ entities }}'
+          delete: 'Zobacz, edytuj i usuń {{ entities }}'
+        entities:
+          catalog_structure: atrybuty, grupy atrybutów, rodziny i warianty rodziny
+          attribute_options: opcje atrybutów
+          categories: kategorie
+          channel_localization: wersje językowe i waluty
+          channel_settings: kanały
+          association_types: typy powiązań
+          products: produkty i modele produktów
+          reference_entity: obiekty referencyjne
+          reference_entity_record: rekordy obiektów referencyjnych
+          asset_families: rodziny zasobów
+          assets: zasoby
+      error:
+        sub_text: Skontaktuj się z twórcą aplikacji lub pomocą Akeneo
+      constraint:
+        client_id:
+          not_blank: Atrybut client_id jest wymagany.
+          must_be_valid: Atrybut client_id nie odpowiada żadnemu znanemu klientowi.
+          must_have_ongoing_authorization: Obiekt client_id nie ma obecnie żadnych procesów autoryzacji w toku.
+        response_type:
+          not_blank: Atrybut response_type jest wymagany.
+          must_be_code: Atrybut response_type musi mieć wartość kodową.
+        redirect_uri:
+          not_blank: Atrybut redirect_uri jest wymagany.
+          must_be_url: Atrybut redirect_uri nie jest prawidłowym adresem URL.
+  connections: Połączenia
+  secondary_actions:
+    title: Inne działania
+  developer_mode: Tryb deweloperski
+  connection:
+    code: Kod
+    label: Nazwa
+    flow_type: Typ przepływu
+    image: Obraz
+    auditable: Śledź na pulpicie przepływów danych
+    client_id: ID klienta
+    secret: Sekret
+    username: Nazwa użytkownika
+    password: Hasło
+    user_role_id: Rola
+    user_group_id: Grupa
+    constraint:
+      connections_number_limit_reached: Osiągnięto limit 50 połaczeń i podłączonych aplikacji.
+      code:
+        required: Kod połączenia jest wymagany
+        invalid: Kod połączenia może zawierać tylko litery, cyfry i podkreślenia.
+        too_short: Kod połączenia jest zbyt krótki. Powinien mieć co najmniej 3 znaki.
+        too_long: Kod połączenia jest zbyt długi. Powinien mieć 100 lub mniej znaków.
+        must_be_unique: Kod połączenia musi być unikalny.
+      label:
+        required: Etykieta połączenia jest wymagana.
+        too_short: Etykieta połączenia jest zbyt krótka. Powinna mieć co najmniej 3 znaki.
+        too_long: Etykieta połączenia jest zbyt długa. Powinna mieć 100 lub mniej znaków.
+      flow_type:
+        invalid: Typ połączeń może być tylko 'data_source', 'data_destination' lub 'other'.
+      image:
+        must_exist: Obraz nie został znaleziony. Spróbuj ponownie.
+      type:
+        required: Typ połączenia jest wymagany.
+        too_long: Typ połączenia jest zbyt długi. Powinien mieć 30 lub mniej znaków.
+  flow_type:
+    data_source: Źródło danych | Źródła danych
+    data_destination: Przeznaczenie danych | Przeznaczenia danych
+    other: Inne | Inne
+  connection_count: '{{ count }} połączenie | {{ count }} połączenia | {{ count }} połączeń'
+  no_connection:
+    title: Nie zadeklarowano jeszcze połączenia.
+    message: Dodaj pierwszy/e klikając na przycisk "Utwórz" powyżej lub
+    message_link: kliknij tutaj.
+  create_connection:
+    title: Utwórz nowe połączenie
+    description: Możesz podłaczyć maksymalnie 50 podmiotów zewnętrznych lub aplikacji.
+    flash:
+      success: Połączenie zostało pomyślnie utworzone.
+      error: Przepraszamy, wystąpił błąd podczas tworzenia połączenia.
+  edit_connection:
+    subtitle: Ustawienia
+    flash:
+      success: Połączenie zostało pomyślnie zaktualizowane.
+      error: Przepraszamy, wystąpił błąd podczas edycji połączenia.
+    image_uploader:
+      extension_not_allowed: Przepraszamy, ale plik który próbujesz przesłać, ma niedozwolone rozszerzenie.
+    credentials:
+      title: Dane uwierzytelniające
+      helper:
+        message: 'Oto poświadczenia do użycia w Twoim konektorze {{ label }}.'
+        link: Dowiedz się więcej...
+      wrong_credentials_combinations:
+        single: Zauważyliśmy, że dla tego połączenia używasz błędnego użytkownika - {{ wrong_username }} (ostatnio użyty {{ date }} o {{ time }}. Sugerujemy użycie poprawnego użytkownika - {{ good_username }}
+        link: Sprawdź dlaczego powinieneś go używać.
+        link_list: Sprawdź dlaczego zalecamy użycie tej nazwy użytkownika.
+        several: Zauważyliśmy, że nie używasz nazwy użytkownika {{ good_username }} do tego połączenia.
+        list: 'Oto lista nazw użytkowników, które były używane w ciągu ostatnich 7 dni:'
+        username_date: '{{ wrong_username }} dnia {{ date }} o {{ time }}'
+      password_helper:
+        message: Jeśli zapomniałeś hasła, możesz wygenerować nowe tutaj.
+        link: Więcej informacji...
+      clear_password_helper:
+        message: Upewnij się, że to hasło zostało zapisane, ponieważ nie pokażemy Ci go ponownie.
+        link: Więcej informacji...
+      action:
+        copy: Skopiuj do schowka
+        regenerate: Wygeneruj ponownie
+      flash:
+        copied: '{{ name }} skopiowane do schowka'
+    permissions:
+      title: Uprawnienia
+      helper:
+        message: 'W tej sekcji możesz zdefiniować uprawnienia dla połączenia {{ label }}.'
+        link: Dowiedz się więcej o uprawnieniach do połączenia...
+      user_role_helper:
+        message: Domyślna rola `{{ role }}` nie jest najlepszym wyborem dla Twojego połączenia. Zalecamy wybranie roli dostosowanej do potrzeb Twojego połączenia.
+        link: Więcej informacji tutaj...
+      user_group_helper:
+        message: Zalecamy wybranie grupy dostosowanej do potrzeb Twojego połączenia.
+        link: Więcej informacji tutaj...
+  regenerate_secret:
+    title: Potwierdź regenerację
+    description: Czy na pewno chcesz wygenerować ponownie hasło dla połączenia? Nie jesteś pewien co do skutków?
+    link: Oto co się stanie.
+    action:
+      regenerate: Wygeneruj ponownie
+    flash:
+      success: Wygenerowano ponownie hasło połączenia.
+      error: Przepraszamy, wystąpił błąd podczas regeneracji hasła połączenia.
+  regenerate_password:
+    title: Potwierdź regenerację
+    description: Czy na pewno chcesz wygenerować ponownie hasło dla połączenia? Nie jesteś pewien co do skutków?
+    link: Oto co się stanie.
+    action:
+      regenerate: Wygeneruj ponownie
+    flash:
+      success: Wygenerowano hasło połączenia.
+      error: Przepraszamy, wystąpił błąd podczas regeneracji hasła połączenia.
+  delete_connection:
+    title: Potwierdź usunięcie
+    description: Czy na pewno chcesz usunąć połączenie? Nie jesteś pewien co do skutków?
+    link: Oto co się stanie.
+    flash:
+      success: Połączenie pomyślnie usunięte.
+  helper:
+    title: '{0} Na razie nie masz połączenia z aplikacjami zewnętrznymi.|{1} Masz 1 połączenie PIM z aplikacjami zewnętrznymi. Dobra robota, w ten sposób PIM jest dobrze zintegrowany z ekosystemem.|]1,Inf] Masz {{ count }} połączeń PIM z aplikacjami zewnętrznymi. Dobra robota, w ten sposób PIM jest dobrze zintegrowany z ekosystemem.'
+    description: PIM bez integracji z innymi firmami nie jest bezużyteczny, prawda? Dzięki połączeniom możesz zadeklarować wszystkie przepływy danych, które zostaną przepchnięte i pobrane poza PIM.
+    link: Aby dowiedzieć się więcej o Połączeniach, sprawdź tę stronę
+  flow_type_helper:
+    message: Zastanawiasz się czym jest typ przepływu danych?
+    link: Możemy Ci pomóc tutaj!
+  auditable_helper:
+    message: Możesz śledzić tylko połączenia "Źródło" i "Docelowe".
+    link: Więcej informacji...
+  edit_image:
+    upload_helper: Zmień swój obraz, przeciągnij i upuść lub
+    remove_helper: Usuń obrazek
+    click_here: kliknij tutaj
+    flash:
+      extension_not_allowed: Przepraszamy, ale plik który próbujesz przesłać, ma niedozwolone rozszerzenie.
+  grid.wrong_credentials_combination_helper: Niektóre z poniższych połączeń nie używają swoich nazw użytkowników. Są one oznaczone za pomocą żółtego znaku ostrzegawczego.
+  dashboard:
+    helper:
+      title: '👋 Witamy w Przepływach danych!'
+      description: Tutaj możesz śledzić przepływ danych między PIM a rozwiązaniami zewnętrznymi.
+      link: Chcesz dowiedzieć się więcej o menu Połącz i przepływach danych? Prosimy bardzo!
+    user_survey:
+      title: Chcesz więcej danych na tym pulpicie?
+      content: Twoja opinia jest dla nas bardzo cenna. Pomóż nam wybrać następny widżet odpowiadając na jedno pytanie!
+      button: Zaczynajmy!
+    connection_selector:
+      title:
+        source: Połączenia danych
+        destination: Miejsca docelowe
+      all: Wszystkie
+    charts:
+      inbound: Przychodzące
+      outbound: Wychodzące
+      number_of_products_created: Utworzone produkty
+      number_of_products_updated: Uaktualnione produkty
+      number_of_products_sent: Wysłano produkty
+      legend:
+        during_the_last_seven_days: 'Łącznie w ciągu ostatnich 7 dni:'
+        today: Dzisiaj
+    error_management:
+      data_source_error_chart:
+        section:
+          title: Błędy w źródłach danych
+          helper: Tutaj możesz zobaczyć łączną liczbę błędów, w tym błędy biznesowe.
+        chart:
+          title: Licznik błędów dziennie
+      widget:
+        title: Błędy biznesowe według źródła danych
+        over_the_last_seven_days: W ciągu ostatnich 7 dni
+        business_errors: błędy biznesowe
+    no_connection:
+      title:
+        default: Chcesz zobaczyć kilka fajnych wykresów dotyczących twoich połączeń?
+        data_source: Chcesz zobaczyć kilka fantazyjnych wykresów dotyczących twoich połączeń źródłowych?
+        data_destination: Chcesz zobaczyć kilka fajnych wykresów dotyczących twoich połączeń?
+      message_with_permission:
+        message: Utwórz i zacznij śledzić swoje pierwsze połączenie
+        link: tutaj.
+      message_without_permission:
+        message: Poproś administratora o utworzenie.
+        link: Dowiedz się więcej o połączeniach tutaj...
+  webhook:
+    title: Subskrypcja zdarzeń
+    event_subscription: Subskrypcja zdarzeń
+    download_logs: Pobierz dziennik
+    helper:
+      message: W ramach PIM możesz otrzymywać powiadomienia o zdarzeniach dla produktów synchronizowanych z podłączoną aplikacją. Wystarczy zdefiniować adres URL.
+      link: Dowiedz się więcej o konfiguracji subskrypcji zdarzeń...
+      url.test_disabled: Aby przetestować adres URL, kliknij przycisk Zapisz.
+    form:
+      url: URL
+      secret: Sekret
+      enabled: Aktywacja subskrypcji zdarzeń
+      test: Test
+    error:
+      wrong_url: Ta wartość nie jest prawidłowym adresem URL.
+      required: To pole jest wymagane.
+      not_found: Próbujesz zaktualizować połączenie, które nie istnieje.
+      limit_reached: Osiągnięto limit aktywnych subskrypcji zdarzeń.
+      not_allowed_url: Ten adres URL jest niedozwolony.
+    flash:
+      success: Zaktualizowano subskrypcję zdarzeń.
+      error: Przepraszamy, wystąpił błąd podczas edycji subskrypcji zdarzeń.
+    regenerate_secret:
+      title: Potwierdź regenerację
+      description: Czy na pewno chcesz ponownie wygenerować sekret subskrypcji zdarzeń?
+      action:
+        regenerate: Wygeneruj ponownie
+      link: Oto co się stanie.
+      flash:
+        success: Ponownie wygenerowano sekret webhooka.
+        error: Przepraszamy, wystąpił błąd podczas ponownej generacji sekretu webhooka.
+    active_event_subscriptions_limit_reached:
+      message: 'Możesz maksymalnie zrealizować następującą liczbę połączeń: {{ limit }} z funkcją subskrypcji zdarzeń. Osiągnięto ten limit.'
+      link: Dowiedz się więcej o konfiguracji subskrypcji zdarzeń.
+    event_logs:
+      title: Dziennik zdarzeń
+      event_subscription_disabled:
+        title: Subskrypcja zdarzeń nie jest włączona dla tego połączenia.
+        link: Włącz subskrypcję zdarzeń
+      no_event_logs:
+        title: W tej chwili nie ma dziennika.
+      no_event_logs_with_those_filters:
+        title: Przepraszamy, dla tego wyszukiwania nie ma dziennika.
+        caption: Spróbuj ponownie, podając nowe kryteria wyszukiwania.
+      level:
+        info: Info
+        notice: Informacja
+        warning: Ostrzeżenie
+        error: Błąd
+      list:
+        search:
+          placeholder: Szukaj w wiadomościach
+          total: '{0} Brak wyników|{1} 1 wynik|[2,Inf] {{ total }} wyników'
+          level: Poziom
+          all: Wszystkie
+          none: Brak
+        date_range_filter:
+          label: Data i godzina
+          reset: Reset
+          from: Od
+          to: Do
+          all: Wszystkie
+        info:
+          title: Oto logi związane ze wszystkimi żądaniami zdarzeń wysłanymi do tego połączenia.
+          content: Ta strona wyświetla dziennik błędów i ostrzeżeń z ostatnich 72 godzin, a także ostatnie 100 informacji i logów powiadomień.
+          link: Więcej informacji o dzienniku zdarzeń.
+        headers:
+          datetime: Data i godzina
+          level: Poziom
+          message: Wiadomość
+  error_management:
+    connection_monitoring:
+      title: Monitorowanie błędu
+      helper:
+        title: '{0} Masz {{ count }} błąd |[1,Inf] Masz {{ count }} błędów'
+        description: Tutaj możesz zobaczyć szczegóły każdego błędu dla tego połączenia w ciągu ostatnich 7 dni. Liczba błędów jest ograniczona do 100 błędów.
+        link: Aby zrozumieć, jak to rozwiązać, odwiedź centrum pomocy API.
+      search_filter:
+        placeholder: Szukaj w komunikatach błędów
+        result_count: '{0} Brak wyników|{1} 1 wynik|[2,Inf] {{ count }} wyników'
+      error_list:
+        date_time_column:
+          title: Dzień i godzina
+        content_column:
+          title: Komunikat o błędzie biznesowym
+          product_name: Nazwa produktu
+          with_id: z ID
+        details_column:
+          title: Szczegóły
+          locale: Wersja językowa
+          channel: Kanał
+          family: Rodzina
+      no_error:
+        title: Wspaniale! Nie znaleziono błędu!
+      not_auditable:
+        title: Połączenie niemonitorowane
+        description:
+          1: Aby śledzić błędy w tym połączeniu,
+          2: aktywuj monitorowanie
+          3: w ustawieniach.
+      not_data_source:
+        title: Na razie strona monitorowania dostępna jest tylko dla połączenia źródłowego.
+  runtime_error:
+    error_message: Motyla noga! Mamy błąd...
+    reload_helper: Proszę odświeżyć stronę i spróbować ponownie
+    reload_button: Odśwież
+pim_permissions:
+  widget:
+    action:
+      all: Wszystkie
+      clear: Wyczyść
+    level:
+      own: Własne
+      edit: Edycja
+      view: Podgląd
+    all: Wszystkie

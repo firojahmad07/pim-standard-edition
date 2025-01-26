@@ -1,0 +1,4 @@
+akeneo_authentication:
+  acl:
+    sso:
+      title: Gestionar el Single Sign-On (SSO)

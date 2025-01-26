@@ -1,0 +1,201 @@
+parameters:
+    pimee_security.api.checker.query_parameters.class: Akeneo\Pim\Permission\Bundle\Api\QueryParametersChecker
+    pimee_security.api.access_denied_handler.class: Akeneo\Pim\Permission\Bundle\Api\AccessDeniedHandler
+
+services:
+    pimee_security.api.checker.query_parameters:
+        class: '%pimee_security.api.checker.query_parameters.class%'
+        decorates: pim_api.checker.query_parameters
+        decoration_inner_name: pim_api.checker.query_parameters.community
+        arguments:
+            - '@pim_api.checker.query_parameters.community'
+            - '@security.authorization_checker'
+            - '@pim_catalog.repository.cached_locale'
+            - '@pim_catalog.repository.cached_attribute'
+            - '@pim_catalog.repository.cached_category'
+        public: false
+
+    pimee_security.api.access_denied_handler:
+        class: '%pimee_security.api.access_denied_handler.class%'
+        decorates: pim_api.security.access_denied_handler
+        decoration_inner_name: pim_api.security.access_denied_handler.community
+        arguments:
+            - '@pim_api.security.access_denied_handler.community'
+
+    # Controllers
+    pim_api.controller.media_file:
+        class: '%pim_api.controller.media_file.class%'
+        public: true
+        arguments:
+            - '@pim_api.repository.media_file'
+            - '@pim_external_api_serializer'
+            - '@pim_api.pagination.parameter_validator'
+            - '@pim_api.pagination.offset_hal_paginator'
+            - '@akeneo_file_storage.file_storage.filesystem_provider'
+            - '@akeneo_file_storage.file_storage.file.streamed_file_fetcher'
+            - '@pimee_workflow.repository.delegating_product'
+            - '@pim_catalog.updater.product'
+            - '@pimee_workflow.saver.product_delegating'
+            - '@pim_catalog.validator.product'
+            - '@akeneo_file_storage.saver.file'
+            - '@akeneo_file_storage.file_storage.file.file_storer'
+            - '@akeneo_file_storage.remover.file'
+            - '@router'
+            - '@pim_catalog.repository.product_model'
+            - '@pimee_catalog.security.updater.granted_product_model'
+            - '@pim_catalog.saver.product_model'
+            - '@event_dispatcher'
+            - '%pim_api.configuration%'
+
+    pimee_security.api.warmup_query_cache.get_viewable_attribute_codes_for_user:
+        class: 'Akeneo\Pim\Permission\Bundle\Api\WarmupGetViewableAttributeCodesQuery'
+        arguments:
+            - '@pimee_security.query.get_viewable_attribute_codes_for_user'
+            - '@security.token_storage'
+            - '%api_input_buffer_size%'
+
+    pim_api.controller.product:
+        class: 'Akeneo\Pim\Enrichment\Bundle\Controller\ExternalApi\ProductController'
+        public: true
+        arguments:
+            - '@pim_external_api_serializer'
+            - '@pim_api.repository.channel'
+            - '@pim_api.repository.attribute'
+            - '@pimee_workflow.repository.delegating_product'
+            - '@pim_api.pagination.offset_hal_paginator'
+            - '@pim_api.pagination.search_after_hal_paginator'
+            - '@pim_catalog.validator.product'
+            - '@pim_catalog.builder.product'
+            - '@pim_catalog.remover.product'
+            - '@pim_catalog.updater.product'
+            - '@pimee_workflow.saver.product_delegating'
+            - '@pimee_workflow.router.proxy_product'
+            - '@pim_catalog.comparator.filter.product'
+            - '@pim_api.stream.product_partial_update_stream'
+            - '@pim_catalog.query.product_query_builder_from_size_factory'
+            - '@pim_catalog.builder.product'
+            - '@pimee_security.filter.granted_product_attribute_filter'
+            - '@pim_catalog.entity_with_family_variant.add_parent_to_product'
+            - '@pim_enrich.connector.use_cases.validator.list_products'
+            - '%pim_api.configuration%'
+            - '@pim_enrich.connector.use_cases.handler.list_products'
+            - '@pim_api.normalizer.connector_products'
+            - '@security.token_storage'
+            - '@akeneo.pim.enrichment.product.connector.get_product_from_identifiers'
+            - '@akeneo.pim.enrichment.product.connector.get_product_from_identifiers_with_options'
+            - '@pim_catalog.event_subscriber.product.on_save.api_aggregator_event_subscriber'
+            - '@pimee_security.api.warmup_query_cache.get_viewable_attribute_codes_for_user'
+            - '@event_dispatcher'
+            - '@pim_api.checker.duplicate_value'
+            - '@logger'
+            - '@akeneo.pim.enrichment.use_cases.get_products_with_quality_scores'
+            - '@pim_catalog.entity_with_family_variant.remove_parent_from_product'
+            - '@akeneo.pim.enrichment.use_cases.get_products_with_completenesses'
+            - '@monolog.logger.pim_api_acl'
+            - '@oro_security.security_facade'
+
+    pim_api.controller.product_model:
+        class: 'Akeneo\Pim\Enrichment\Bundle\Controller\ExternalApi\ProductModelController'
+        public: true
+        arguments:
+            - '@pim_catalog.query.product_model_query_builder_factory'
+            - '@pim_catalog.query.product_model_query_builder_search_after_size_factory'
+            - '@pim_external_api_serializer'
+            - '@pim_api.repository.channel'
+            - '@pim_api.pagination.offset_hal_paginator'
+            - '@pim_api.pagination.search_after_hal_paginator'
+            - '@pim_api.updater.product_model'
+            - '@pim_catalog.factory.product_model'
+            - '@pimee_workflow.saver.product_model_delegating'
+            - '@pimee_api.router.proxy_product_model'
+            - '@pim_catalog.validator.product_model'
+            - '@pimee_security.filter.granted_product_model_attribute_filter'
+            - '@pimee_workflow.repository.delegating_product_model'
+            - '@pim_api.stream.product_model_partial_update_stream'
+            - '@pim_enrich.connector.use_cases.validator.list_product_models'
+            - '@pim_enrich.connector.use_cases.handler.list_product_models'
+            - '@pim_api.normalizer.connector_product_models'
+            - '@akeneo.pim.enrichment.product.connector.get_product_models_from_codes'
+            - '@security.token_storage'
+            - '@pim_catalog.event_subscriber.product_model.on_save.api_aggregator_event_subscriber'
+            - '@pimee_security.api.warmup_query_cache.get_viewable_attribute_codes_for_user'
+            - '@logger'
+            - '%pim_api.configuration%'
+            - '@monolog.logger.pim_api_acl'
+            - '@oro_security.security_facade'
+            - '@Akeneo\Pim\Enrichment\Component\Product\Command\ProductModel\RemoveProductModelHandler'
+            - '@validator'
+
+    akeneo.pim.enrichment.use_cases.validator.validate_granted_search_locale:
+        class: Akeneo\Pim\Permission\Component\Api\UseCase\Validator\ValidateGrantedSearchLocale
+        arguments:
+            - '@pim_catalog.repository.cached_locale'
+            - '@pimee_security.cached_authorization_checker'
+
+    akeneo.pim.enrichment.use_cases.validator.validate_granted_locales:
+        class: Akeneo\Pim\Permission\Component\Api\UseCase\Validator\ValidateGrantedLocales
+        arguments:
+            - '@pim_catalog.repository.cached_locale'
+            - '@pimee_security.cached_authorization_checker'
+
+    akeneo.pim.enrichment.use_cases.validator.validate_granted_categories:
+        class: Akeneo\Pim\Permission\Component\Api\UseCase\Validator\ValidateGrantedCategories
+        arguments:
+            - '@pim_catalog.repository.cached_category'
+            - '@pimee_security.cached_authorization_checker'
+            -
+    akeneo.pim.enrichment.use_cases.validator.validate_granted_properties:
+        class: Akeneo\Pim\Permission\Component\Api\UseCase\Validator\ValidateGrantedProperties
+        arguments:
+            - '@pim_catalog.repository.cached_attribute'
+            - '@pimee_security.cached_authorization_checker'
+
+    akeneo.pim.enrichment.use_cases.validator.validate_granted_attributes:
+        class: Akeneo\Pim\Permission\Component\Api\UseCase\Validator\ValidateGrantedAttributes
+        arguments:
+            - '@pim_catalog.repository.cached_attribute'
+            - '@pimee_security.cached_authorization_checker'
+
+    akeneo.pim.enrichment.product.connector.get_product_from_identifiers_with_permissions:
+        class: Akeneo\Pim\Permission\Bundle\Enrichment\Storage\Sql\Product\SqlGetConnectorProductsWithPermissions
+        decorates: akeneo.pim.enrichment.product.connector.get_product_from_identifiers
+        decoration_inner_name: akeneo.pim.enrichment.product.connector.get_product_from_identifiers_without_permissions
+        arguments:
+            - '@akeneo.pim.enrichment.product.connector.get_product_from_identifiers_without_permissions'
+            - '@akeneo.pim.enrichment.category.get_viewable_category_codes'
+            - '@pimee_security.query.sql.get_viewable_attribute_codes_for_user'
+            - '@pimee_security.query.get_all_viewable_locales_for_user'
+            - '@akeneo.pim.permission.product.query.fetch_user_rights_on_product'
+            - '@akeneo.pim.permission.product.query.fetch_user_rights_on_product_model'
+            - '@pimee_workflow.query.get_workflow_status_from_product_identifiers'
+
+    akeneo.pim.enrichment.product.connector.get_product_model_from_codes_with_permissions:
+        class: Akeneo\Pim\Permission\Bundle\Enrichment\Storage\Sql\ProductModel\SqlGetConnectorProductModelsWithPermissions
+        decorates: akeneo.pim.enrichment.product.connector.get_product_models_from_codes
+        decoration_inner_name: akeneo.pim.enrichment.product.connector.get_product_models_from_codes_without_permissions
+        arguments:
+            - '@akeneo.pim.enrichment.product.connector.get_product_models_from_codes_without_permissions'
+            - '@akeneo.pim.enrichment.category.get_viewable_category_codes'
+            - '@pimee_security.query.sql.get_viewable_attribute_codes_for_user'
+            - '@pimee_security.query.get_all_viewable_locales_for_user'
+            - '@akeneo.pim.permission.product.query.fetch_user_rights_on_product'
+            - '@akeneo.pim.permission.product.query.fetch_user_rights_on_product_model'
+            - '@pimee_workflow.query.get_workflow_status_from_product_model_codes'
+
+    akeneo.pim.enrichment.use_cases.get_products_with_quality_scores_with_permissions:
+        class: Akeneo\Pim\Permission\Component\Connector\GetProductsWithQualityScoresWithPermissions
+        decorates: akeneo.pim.enrichment.use_cases.get_products_with_quality_scores
+        decoration_inner_name: akeneo.pim.enrichment.use_cases.get_products_with_quality_scores_without_permissions
+        arguments:
+            - '@akeneo.pim.enrichment.use_cases.get_products_with_quality_scores_without_permissions'
+            - '@pimee_security.query.get_all_viewable_locales_for_user'
+            - '@security.token_storage'
+
+    akeneo.pim.enrichment.use_cases.get_products_with_completenesses_with_permissions:
+        class: Akeneo\Pim\Permission\Component\Connector\GetProductsWithCompletenessesWithPermissions
+        decorates: akeneo.pim.enrichment.use_cases.get_products_with_completenesses
+        decoration_inner_name: akeneo.pim.enrichment.use_cases.get_products_with_completenesses_without_permissions
+        arguments:
+            - '@akeneo.pim.enrichment.use_cases.get_products_with_completenesses_without_permissions'
+            - '@pimee_security.query.get_all_viewable_locales_for_user'
+            - '@security.token_storage'

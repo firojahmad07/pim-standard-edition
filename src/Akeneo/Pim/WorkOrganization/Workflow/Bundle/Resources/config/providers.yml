@@ -1,0 +1,42 @@
+parameters:
+    pimee_workflow.provider.form.published_product.class:          Akeneo\Pim\WorkOrganization\Workflow\Bundle\Provider\Form\PublishedProductFormProvider
+    pimee_workflow.provider.product_draft_granted_attribute.class: Akeneo\Pim\WorkOrganization\Workflow\Bundle\Provider\ProductDraftGrantedAttributeProvider
+    pimee_workflow.provider.users_to_notify.class:                 Akeneo\Pim\WorkOrganization\Workflow\Bundle\Provider\UsersToNotifyProvider
+    pimee_workflow.provider.owner_groups.class:                    Akeneo\Pim\WorkOrganization\Workflow\Bundle\Provider\OwnerGroupsProvider
+
+services:
+    pimee_workflow.provider.form.published_product:
+        class: '%pimee_workflow.provider.form.published_product.class%'
+        tags:
+            - { name: pim_enrich.provider.form, priority: 80 }
+
+    pimee_workflow.provider.product_draft_granted_attribute:
+        class: '%pimee_workflow.provider.product_draft_granted_attribute.class%'
+        arguments:
+            - '@pim_catalog.repository.cached_attribute'
+            - '@pim_catalog.repository.cached_locale'
+            - '@security.authorization_checker'
+
+    pimee_workflow.provider.users_to_notify:
+        class: '%pimee_workflow.provider.users_to_notify.class%'
+        arguments:
+            - '@pim_user.repository.user'
+            - '@pimee_security.query.get_access_group_id_for_locale_code'
+
+    pimee_workflow.provider.owner_groups:
+        class: '%pimee_workflow.provider.owner_groups.class%'
+        arguments:
+            - '@pimee_security.repository.category_access'
+
+    pimee_workflow.provider.form.job_instance:
+        class: 'Akeneo\Platform\Bundle\ImportExportBundle\Provider\Form\JobInstanceFormProvider'
+        arguments:
+            -
+                csv_product_proposal_import: pim-job-instance-csv-product-import
+                csv_product_model_proposal_import: pim-job-instance-csv-product-model-import
+                csv_published_product_export: pim-job-instance-csv-published-product-export
+                xlsx_published_product_export: pim-job-instance-xlsx-published-product-export
+                xlsx_product_proposal_import: pim-job-instance-xlsx-product-import
+                xlsx_product_model_proposal_import: pim-job-instance-xlsx-product-model-import
+        tags:
+            - { name: pim_enrich.provider.form, priority: 100 }

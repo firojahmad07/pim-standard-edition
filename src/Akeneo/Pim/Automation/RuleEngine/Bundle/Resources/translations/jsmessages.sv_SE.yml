@@ -1,0 +1,76 @@
+pimee_catalog_rule:
+  execution_button: Utför regler
+  notification:
+    launched: Regelkörning har lanserats. Du meddelas när det är gjort.
+  attribute:
+    list:
+      code.label: Kod
+      condition.label: Villkor
+      action.label: Åtgärd
+  rule:
+    condition:
+      if.label: om
+    action:
+      then.label: sedan
+      set_value.label: är satt i
+      copy_value.label: kopieras till
+      set.label: är satt i
+      copy.label: kopieras till
+      add.label: läggs till i
+      remove.label: tas bort från
+  datagrid:
+    rule-grid:
+      actions:
+        execute:
+          confirm_content: Är du säker på att du vill köra regeln?
+      mass_action:
+        execute:
+          success: Regelkörning har lanserats. Du meddelas när det är gjort.
+          empty_selection: Inga regler har valts.
+        delete:
+          confirm_content: Är du säker på att du vill ta bort de valda reglerna?
+          success: Du lyckades ta bort reglerna.
+          empty_selection: Inga regler har valts.
+  form:
+    attribute:
+      tab:
+        rules:
+          title: Regler
+pim_enrich:
+  entity:
+    rule:
+      module:
+        delete:
+          confirm: Är du säker du vill ta bort denna regel? Det går inte att ångra åtgärden
+flash:
+  rule:
+    executed: Regelkörning har lanserats. Du meddelas när det är gjort.
+pim_dashboard.widget.last_operations.job_type.mass_edit_rule: Regelinställningar
+batch_jobs:
+  add_attribute_value:
+    execute_rules.label: Regler utföranden
+  default_steps:
+    execute_rules: Regler utföranden
+  rule_impacted_product_count:
+    perform.label: Räkna påverkade produkter
+  csv_product_import_with_rules:
+    label: Produkt import i CSV-filen med reglerna
+    import.label: Importera produkter
+  xlsx_product_import_with_rules:
+    label: Produkt import i XLSX med regler
+    import.label: Importera produkter
+pim_notification:
+  types:
+    rule: Regelinställningar
+    execute_rules: Regler utföranden
+pim_menu:
+  item:
+    rule: Regler
+pim_title:
+  pimee_catalog_rule_rule_index: Regler
+  pimee_catalog_rule_new: Regler
+pim_import_export:
+  widget:
+    last_operations:
+      job_type:
+        execute_rules: Regler utföranden

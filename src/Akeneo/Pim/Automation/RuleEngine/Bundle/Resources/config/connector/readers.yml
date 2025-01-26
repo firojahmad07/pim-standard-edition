@@ -1,0 +1,18 @@
+services:
+    # export rules
+    pimee_catalog_rule.reader.database.rule_definition:
+        class: '%pim_connector.reader.database.class%'
+        arguments:
+            - '@akeneo_rule_engine.repository.rule_definition'
+
+    pimee_catalog_rule.reader.file.xlsx_product_with_rule:
+        alias: pim_connector.reader.file.xlsx_product
+
+    pimee_catalog_rule.reader.file.xlsx_product_model_with_rule:
+        alias: pim_connector.reader.file.xlsx_product_model
+
+    pimee_catalog_rule.reader.file.csv_product_with_rule:
+        alias: pim_connector.reader.file.csv_product
+
+    pimee_catalog_rule.reader.file.csv_product_model_with_rule:
+        alias: pim_connector.reader.file.csv_product_model

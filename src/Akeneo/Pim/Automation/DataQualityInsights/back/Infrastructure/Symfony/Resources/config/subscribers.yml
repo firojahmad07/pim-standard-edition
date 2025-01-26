@@ -1,0 +1,108 @@
+services:
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Install\EventSubscriber\InitDataQualityInsightsDbSchemaSubscriber:
+        arguments:
+            - '@database_connection'
+        tags:
+            - { name: 'kernel.event_subscriber' }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Subscriber\Product\InitializeEvaluationOfAProductSubscriber:
+        arguments:
+            - '@akeneo.pim.automation.data_quality_insights.feature'
+            - '@akeneo.pim.automation.data_quality_insights.create_products_criteria_evaluations'
+            - '@logger'
+            - '@akeneo.pim.automation.data_quality_insights.evaluate_products_pending_criteria'
+            - '@Akeneo\Pim\Automation\DataQualityInsights\Application\Consolidation\ConsolidateProductScores'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Subscriber\ProductModel\InitializeEvaluationOfAProductModelSubscriber:
+        arguments:
+            - '@akeneo.pim.automation.data_quality_insights.feature'
+            - '@akeneo.pim.automation.data_quality_insights.create_product_models_criteria_evaluations'
+            - '@logger'
+            - '@akeneo.pim.automation.data_quality_insights.evaluate_product_models_pending_criteria'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Install\EventSubscriber\InitDataQualityInsightsJobsSubscriber:
+        arguments:
+            - '@Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Install\InitializeJobs'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Subscriber\AttributeGroup\UpdateAttributeGroupActivationSubscriber:
+        arguments:
+            - '@akeneo.pim.automation.data_quality_insights.feature'
+            - '@Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Persistence\Repository\AttributeGroupActivationRepository'
+            - '@Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Persistence\Query\Structure\GetAttributeGroupActivationQuery'
+            - '@logger'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Install\EventSubscriber\InitPimEnterpriseDataQualityInsightsDbSchemaSubscriber:
+        arguments:
+            - '@database_connection'
+        tags:
+            - { name: 'kernel.event_subscriber' }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Install\EventSubscriber\InstallAssetsSubscriber:
+        arguments:
+            - '@Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Install\EventSubscriber\FileSystemAssetsInstaller'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Install\EventSubscriber\FileSystemAssetsInstaller:
+        class: Akeneo\Platform\Bundle\InstallerBundle\Event\Subscriber\AssetsInstaller
+        arguments:
+            - '@filesystem'
+            - '%pim_ee_dev_src_folder_location%/src/Akeneo/Pim/Automation/DataQualityInsights/front/src'
+            - '%kernel.project_dir%/public/bundles/akeneodataqualityinsights-react'
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Subscriber\Product\CreateEvaluationCriteriaOnProductIgnoredWordSubscriber:
+        arguments:
+            $dataQualityInsightsFeature: '@akeneo.pim.automation.data_quality_insights.feature'
+            $createProductsCriteriaEvaluations: '@akeneo.pim.automation.data_quality_insights.create_products_criteria_evaluations'
+            $logger: '@logger'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Subscriber\Product\InitializePimEnterpriseEvaluationOfAProductSubscriber:
+        decorates: 'Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Subscriber\Product\InitializeEvaluationOfAProductSubscriber'
+        decoration_inner_name: 'Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Subscriber\Product\InitializeEvaluationOfAProductSubscriber.community'
+        arguments: ['@Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Subscriber\Product\InitializeEvaluationOfAProductSubscriber.community']
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Subscriber\ProductModel\CreateEvaluationCriteriaOnProductModelIgnoredWordSubscriber:
+        arguments:
+            - '@akeneo.pim.automation.data_quality_insights.feature'
+            - '@akeneo.pim.automation.data_quality_insights.create_product_models_criteria_evaluations'
+            - '@logger'
+            - '@Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Persistence\Query\ProductEnrichment\GetDescendantVariantProductIds'
+            - '@pim_catalog.query.descendant_product_model_ids'
+            - '@akeneo.pim.automation.data_quality_insights.create_products_criteria_evaluations'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Subscriber\Attribute\InitializeEvaluationSubscriber:
+        arguments:
+            $evaluateUpdatedAttributes: '@Akeneo\Pim\Automation\DataQualityInsights\Application\StructureEvaluation\EvaluateUpdatedAttributes'
+            $evaluateUpdatedAttributeOptions: '@Akeneo\Pim\Automation\DataQualityInsights\Application\StructureEvaluation\EvaluateUpdatedAttributeOptions'
+            $dataQualityInsightsFeature: '@akeneo.pim.automation.data_quality_insights.feature'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Subscriber\Attribute\UpdateAttributeQualitySubscriber:
+        arguments:
+            - '@Akeneo\Pim\Automation\DataQualityInsights\Application\StructureEvaluation\ConsolidateAttributeQuality'
+            - '@logger'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Subscriber\Locale\AddDefaultDictionaryWordsSubscriber:
+        arguments:
+            - '@akeneo.pim.automation.data_quality_insights.feature'
+            - '@Akeneo\Pim\Automation\DataQualityInsights\Infrastructure\Persistence\Repository\TextCheckerDictionaryRepository'
+            - '@Akeneo\Pim\Automation\DataQualityInsights\Application\Spellcheck\SupportedLocaleValidator'
+        tags:
+            - { name: kernel.event_subscriber }

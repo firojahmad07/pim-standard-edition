@@ -1,0 +1,33 @@
+pimee_catalog_rule:
+  datagrid:
+    rule-grid:
+      actions:
+        execute: Execute
+      title: Rules
+      mass_edit_action:
+        execute: Execute
+        delete: Delete
+  acl_group:
+    rule: Rules
+  acl:
+    rule:
+      view_permissions: View rules
+      delete_permissions: Delete rules
+      execute_permissions: Execute rules
+  attribute:
+    tab:
+      rule.title: Rules
+    grid:
+      is_smart.label: Smart
+    acl:
+      rule.view_permissions: View rules
+  product:
+    history: Applied rule "%rule%"
+  steps:
+    rules_execution.title: Rules execution
+btn:
+  Execute rules: Execute rules
+job_execution:
+  summary:
+    rule_calculated: Number of rules
+

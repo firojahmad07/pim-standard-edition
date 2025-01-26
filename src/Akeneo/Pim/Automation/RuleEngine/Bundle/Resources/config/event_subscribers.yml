@@ -1,0 +1,18 @@
+services:
+    pimee_catalog_rule.event_subscriber.rule_relation:
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\EventSubscriber\RuleRelationSubscriber'
+        arguments:
+            - '@pimee_catalog_rule.manager.rule_relation'
+            - '@pimee_catalog_rule.saver.rule_relation'
+            - '@pimee_catalog_rule.remover.rule_relation'
+            - '@akeneo_rule_engine.repository.rule_relation'
+            - '@pimee_catalog_rule.builder.product'
+        tags:
+            - { name: kernel.event_subscriber}
+
+    pimee_catalog_rule.event_subscriber.refresh_indexes_before_rule_selection:
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\EventSubscriber\RefreshIndexesBeforeRuleSelectionSubscriber'
+        arguments:
+            - '@akeneo_elasticsearch.client.product_and_product_model'
+        tags:
+            - { name: kernel.event_subscriber}

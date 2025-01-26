@@ -1,0 +1,17 @@
+{
+    "request": {
+        "method": "GET",
+        "route": "akeneo_asset_manager_assets_rest_connector_get",
+        "query": {
+            "assetFamilyIdentifier": "brand",
+            "search": "{\"complete\":{\"operator\":\"=\",\"value\":true,\"channel\":\"ecommerce\",\"locales\":[\"en_US\",\"fr_FR\"]}}"
+        }
+    },
+    "response": {
+        "status": 403,
+        "body": {
+            "code": 403,
+            "message": "Access forbidden. You are not allowed to list assets."
+        }
+    }
+}

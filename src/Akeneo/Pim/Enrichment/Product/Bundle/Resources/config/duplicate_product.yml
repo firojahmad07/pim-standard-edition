@@ -1,0 +1,47 @@
+services:
+    pimee_enrich.controller.duplicate_product:
+        public: true
+        class: 'Akeneo\Pim\Enrichment\Product\Bundle\Controller\InternalApi\DuplicateProductController'
+        arguments:
+            - '@pim_catalog.repository.product_without_permission'
+            - '@pimee_enrich.product.duplicate_product_handler'
+            - '@pim_enrich.normalizer.product_violation'
+            - '@pim_user.context.user'
+            - '@pim_internal_api_serializer'
+
+    pimee_enrich.product.duplicate_product_handler:
+        class: 'Akeneo\Pim\Enrichment\Product\Component\Product\UseCase\DuplicateProduct\DuplicateProductHandler'
+        arguments:
+            - '@pim_catalog.repository.product_without_permission'
+            - '@pim_catalog.repository.attribute'
+            - '@pimee_enrich.product.remove_unique_attribute_values'
+            - '@pim_catalog.builder.product'
+            - '@pim_catalog.normalizer.standard.product'
+            - '@pimee_enrich.duplicate.updater.product_without_permission'
+            - '@pim_catalog.validator.product'
+            - '@pim_catalog.saver.product_without_permission'
+            - '@oro_security.security_facade'
+            - '@akeneo.pim.permission.product.query.fetch_user_rights_on_product'
+
+    pimee_enrich.product.remove_unique_attribute_values:
+        class: 'Akeneo\Pim\Enrichment\Product\Component\Product\UseCase\DuplicateProduct\RemoveUniqueAttributeValues'
+        arguments:
+            - '@pimee_structure.product.query.sql_get_unique_attribute_codes'
+            - '@pim_catalog.repository.attribute'
+
+    # it's not possible to use "pim_catalog.updater.product_with_values_permission" as it uses a property setter using permissions
+    # therefore, we redefine our own updater that does not apply permissions
+    pimee_enrich.duplicate.updater.entity_with_values_without_permission:
+        class: '%pim_catalog.updater.entity_with_values.class%'
+        arguments:
+            - '@pim_catalog.updater.entity_with_values_property_setter_without_permission'
+
+    pimee_enrich.duplicate.updater.product_without_permission:
+        class: '%pim_catalog.updater.product.class%'
+        arguments:
+            - '@pim_catalog.updater.entity_with_values_property_setter_without_permission'
+            - '@pimee_enrich.duplicate.updater.entity_with_values_without_permission'
+            - '@pim_catalog.association.filter.parent_associations'
+            - '@pim_catalog.quantified_associations.quantified_associations_from_ancestors_filter'
+            - '@pim_catalog.updater.validator.quantified_associations_structure_validator'
+            - ['identifier', 'created', 'updated', 'parent_associations', 'metadata']

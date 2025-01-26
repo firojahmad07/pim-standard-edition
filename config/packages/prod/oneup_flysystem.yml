@@ -1,0 +1,31 @@
+oneup_flysystem:
+    adapters:
+        catalog_storage_adapter:
+            local:
+                location: '%kernel.project_dir%/var/file_storage/catalog'
+        jobs_storage_adapter:
+            local:
+                location: '%kernel.project_dir%/var/file_storage/jobs'
+        archivist_adapter:
+            local:
+                location: '%kernel.project_dir%/var/file_storage/archive'
+        asset_storage_adapter:
+            local:
+                location: '%kernel.project_dir%/var/file_storage/asset'
+            # custom:
+            #     service: 'akeneo_flysystem_adapter.googlecloudstorage.asset_storage_adapter'
+        # catalog_storage_adapter:
+        #     custom:
+        #         service: 'akeneo_flysystem_adapter.googlecloudstorage.catalog_storage_adapter'
+        # jobs_storage_adapter:
+        #     custom:
+        #         service: 'akeneo_flysystem_adapter.googlecloudstorage.jobs_storage_adapter'
+        # archivist_adapter:
+        #     custom:
+        #         service: 'akeneo_flysystem_adapter.googlecloudstorage.archivist_adapter'
+
+        data_quality_insights_shared_adapter:
+            local:
+                location: '%kernel.project_dir%/var/file_storage/data_quality_insights_shared'
+            # custom:
+            #     service: 'akeneo_flysystem_adapter.googlecloudstorage.data_quality_insights_shared_adapter'

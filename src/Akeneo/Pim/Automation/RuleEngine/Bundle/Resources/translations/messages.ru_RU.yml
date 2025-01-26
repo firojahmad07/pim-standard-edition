@@ -1,0 +1,33 @@
+pimee_catalog_rule:
+  datagrid:
+    rule-grid:
+      actions:
+        execute: Выполнить
+      title: Правила
+      mass_edit_action:
+        execute: Выполнить
+        delete: Удалить
+  acl_group:
+    rule: Правила
+  acl:
+    rule:
+      view_permissions: Просмотр правил
+      delete_permissions: Удалить правила
+      execute_permissions: Выполнить привила
+  attribute:
+    tab:
+      rule.title: Правила
+    grid:
+      is_smart.label: Умные
+    acl:
+      rule.view_permissions: Просмотр правил
+  product:
+    history: Применено правило "%rule%"
+  steps:
+    rules_execution.title: Выполнение правил
+btn:
+  Execute rules: Выполнить привила
+job_execution:
+  summary:
+    rule_calculated: Количество привил
+

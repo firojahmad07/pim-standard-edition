@@ -1,0 +1,4 @@
+akeneo_authentication:
+  acl:
+    sso:
+      title: 管理单一登录 (SSO)

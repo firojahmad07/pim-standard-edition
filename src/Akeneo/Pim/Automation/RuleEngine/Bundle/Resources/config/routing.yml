@@ -1,0 +1,100 @@
+pimee_catalog_rule_rule_index:
+    path: /configuration/rules
+    methods: [GET]
+
+pimee_catalog_rule_rule_delete:
+    path: /configuration/rules/{id}
+    defaults: { _controller: pimee_catalog_rule.controller.rule:deleteAction }
+    requirements:
+        id: '\d+'
+    methods: [DELETE]
+
+pimee_catalog_rule_rule_mass_impacted_product_count:
+    path: /configuration/rules/impacted-products
+    defaults: { _controller: pimee_catalog_rule.controller.rule:massImpactedProductCountAction }
+    methods: [GET]
+
+pimee_catalog_rule_rule_execute:
+    path: /configuration/rules/execute
+    defaults: { _controller: pimee_catalog_rule.controller.rule:executeRulesAction }
+
+pimee_enrich_rule_relation_get:
+    path: /rest/rule_relation/{relationType}
+    defaults: { _controller: pimee_enrich.controller.rule_relation:indexAction }
+    requirements:
+        relationType: '[a-z]+'
+    methods: [GET]
+
+pimee_enrich_family_attributes_rules_number:
+    path: /rest/family_attributes_rules
+    defaults: { _controller: Akeneo\Pim\Automation\RuleEngine\Bundle\Controller\InternalApi\GetAttributesRulesNumberController }
+    methods: [POST]
+
+pimee_catalog_rule_edit:
+    path: /configuration/rules/edit/{code}
+    requirements:
+        code: '[a-zA-Z0-9_]+'
+
+pimee_enrich_rule_definition_get:
+    path: /rest/rule_definition/{ruleCode}
+    defaults: { _controller: pimee_enrich.controller.rule_definition.get }
+    requirements:
+        ruleCode: '[a-zA-Z0-9_]+'
+    methods: [GET]
+
+pimee_enrich_rule_definition_create:
+    path: /rest/rule_definition
+    defaults: { _controller: pimee_enrich.controller.rule_definition.create }
+    methods: [POST]
+
+pimee_enrich_rule_definition_update:
+    path: /rest/rule_definition/{ruleDefinitionCode}
+    defaults: { _controller: pimee_enrich.controller.rule_definition.update }
+    requirements:
+        ruleDefinitionCode: '[a-zA-Z0-9_]+'
+    methods: [PUT]
+
+pimee_enrich_rule_definition_status_change:
+    path: /rest/rule_definition/{code}/status
+    defaults: { _controller: pimee_enrich.controller.rule_definition.change_status }
+    requirements:
+        ruleDefinitionCode: '[a-zA-Z0-9_]+'
+    methods: [PUT]
+
+pimee_enrich_rule_definition_duplicate:
+    path: /configuration/rules/duplicate/{originalRuleCode}
+    defaults: { _controller: pimee_enrich.controller.rule_definition.duplicate }
+    requirements:
+        originalRuleCode: '[a-zA-Z0-9_]+'
+    methods: [ POST ]
+
+pimee_enrich_rule_definition_get_impacted_product_count:
+    path: /rest/rule_definition_impacted_product_count
+    defaults: { _controller: pimee_enrich.controller.rule_definition.get_impacted_product_count }
+    methods: [GET]
+
+pimee_enrich_rule_definition_get_available_fields:
+    path: /rest/rule_definition_available_fields
+    defaults: { _controller: pimee_enrich.controller.rule_definition.get_available_fields }
+    methods: [GET]
+
+pimee_catalog_rule_new:
+    path: /configuration/rules/create/{originalRuleCode}
+    defaults: { originalRuleCode: ~ }
+
+pimee_enrich_rule_definition_get_category_tree:
+    path: /rest/rule_definition_get_category_tree/{categoryTreeId}
+    defaults: { _controller: pimee_enrich.controller.rule_definition.get_category_tree }
+    methods: [GET]
+    requirements:
+        categoryTreeId: '[a-z0-9_]+'
+
+pimee_enrich_rule_definition_get_categories:
+    path: /rest/rule_definition_get_categories
+    defaults: { _controller: pimee_enrich.controller.rule_definition.get_categories }
+    methods: [GET]
+
+pimee_enrich_rule_definition_search_products_and_product_models:
+    path: /rest/rule_definition_get_products_and_product_models
+    defaults: { _controller: pimee_enrich.controller.rule_definition.search_products_and_product_models }
+    methods: GET

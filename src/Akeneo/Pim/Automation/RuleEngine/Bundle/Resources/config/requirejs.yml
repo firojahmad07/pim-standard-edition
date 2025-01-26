@@ -1,0 +1,35 @@
+config:
+    config:
+        pim/controller-registry:
+            controllers:
+                pimee_catalog_rule_edit:
+                    module: pimee/attribute-edit-form/rules/edit-rules
+                pimee_catalog_rule_new:
+                    module: pimee/attribute-edit-form/rules/create-rules
+
+        pimee/attribute-edit-form/rules/edit-rules:
+            views:
+                pim_catalog_text: '@akeneopimruleengine/pages/EditRules/components/actions/attribute/TextValue'
+                pim_catalog_textarea: '@akeneopimruleengine/pages/EditRules/components/actions/attribute/TextAreaValue'
+                pim_catalog_date: '@akeneopimruleengine/pages/EditRules/components/actions/attribute/DateValue'
+                pim_catalog_simpleselect: '@akeneopimruleengine/pages/EditRules/components/actions/attribute/SimpleSelectValue'
+                pim_catalog_multiselect: '@akeneopimruleengine/pages/EditRules/components/actions/attribute/MultiSelectValue'
+                pim_catalog_number: '@akeneopimruleengine/pages/EditRules/components/actions/attribute/NumberValue'
+                pim_catalog_boolean: '@akeneopimruleengine/pages/EditRules/components/actions/attribute/BooleanValue'
+                pim_catalog_price_collection: '@akeneopimruleengine/pages/EditRules/components/actions/attribute/PriceCollectionValue'
+                pim_catalog_metric: '@akeneopimruleengine/pages/EditRules/components/actions/attribute/MeasurementValue'
+                pim_catalog_asset_collection: '@akeneopimruleengine/pages/EditRules/components/actions/attribute/AssetCollectionValue'
+                akeneo_reference_entity_collection: '@akeneopimruleengine/pages/EditRules/components/actions/attribute/MultiReferenceEntityValue'
+                akeneo_reference_entity: '@akeneopimruleengine/pages/EditRules/components/actions/attribute/SimpleReferenceEntityValue'
+
+    paths:
+        pimee/attribute-edit-form/rules/rules-grid: akeneopimruleengine/controllers/rules-grid
+        pimee/attribute-edit-form/rules/edit-rules: akeneopimruleengine/controllers/edit-rules
+        pimee/attribute-edit-form/rules/create-rules: akeneopimruleengine/controllers/create-rules
+        oro/datagrid/rules-action: akeneopimruleengine/datagrid/action/rules-action
+        oro/datagrid/delete-rule-action: akeneopimruleengine/datagrid/action/delete-rule-action
+        oro/datagrid/delete-rules-action: akeneopimruleengine/datagrid/action/delete-rules-action
+        oro/datagrid/tags-cell: akeneopimruleengine/datagrid/cell/tags-cell.tsx
+        oro/datagrid/execute-rule-action: akeneopimruleengine/datagrid/action/execute-rule-action
+        oro/datagrid/toggle-rule-status-action: akeneopimruleengine/datagrid/action/toggle-rule-status-action
+        pimee/rules/create-button: akeneopimruleengine/pages/IndexRules/create-button.ts

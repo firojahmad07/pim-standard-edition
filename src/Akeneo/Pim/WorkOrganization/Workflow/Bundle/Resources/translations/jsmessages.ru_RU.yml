@@ -1,0 +1,181 @@
+View the product: Посмотр продукта
+Unpublish the product: Снять продукт с публикации
+Approve: Одобрить
+Refuse: Отклонить
+Approve selected: Одобрить выделенное
+Refuse selected: Отклонить выбраннoе
+pim_datagrid:
+  no_entities:
+    proposal: Нет никаких предложений для рассмотрения.
+  no_results:
+    proposal: Нет никаких предложений для рассмотрения. Попробуйте изменить критерии поиска.
+  workflow:
+    status:
+      in_progress: В ходе выполнения
+      ready: В ожидании утверждения
+    status_message:
+      ready: В ожидании утверждения
+pimee_datagrid:
+  cells:
+    expand:
+      expand_text: Развернуть
+      collapse_text: Свернуть
+pimee_workflow:
+  entity:
+    published_product:
+      btn:
+        original_product: Редактировать рабочую копию
+    proposal:
+      modal.title: Оставить комментарий (255 символов макс.)
+  proposal:
+    mass_action_group:
+      review:
+        label: Массовое действие
+    approve:
+      title: Принять предложение
+      success: Предложение было успешно применено.
+      error: "Предложение не может быт применено из-за следующей ошибки: {{ error }}"
+    reject:
+      title: Отклонить предложение
+    remove:
+      title: Удалить предложение
+    partial_approve:
+      title: Частичнo oдобрить информацию
+      success: Это предложение было успешно частично одобренo
+    partial_reject:
+      title: Частично отклонить изменения
+      success: Изменения были успешно отклонены
+batch_jobs:
+  csv_published_product_export:
+    label: Экспорт опубликованных товаров в CSV
+    export.label: Экспорт опубликованных товаров
+  csv_product_proposal_import:
+    label: Импорт предложений из CSV
+    import.label: Импорт предложений
+  approve_product_draft:
+    label: Принять предложение
+    perform.label: Принять предложение
+  refuse_product_draft:
+    label: Отклонить предложения
+    perform.label: Отклонить предложения
+  xlsx_published_product_export:
+    label: Экспорт опубликованных товаров в XLSX
+    export.label: Экспорт опубликованных товаров
+  xlsx_product_proposal_import:
+    label: Импорт предложений из XLSX
+    import.label: Импорт предложений из XLSX
+  csv_published_product_quick_export:
+    export.label: Быстрый экспорт опубликованных товаров в CSV
+    perform.label: Быстрый экспорт опубликованных товаров в CSV
+  csv_published_product_grid_context_quick_export:
+    export.label: Быстрый экспорт контекста сетки опубликованных товаров в CSV
+    perform.label: Быстрый экспорт контекста сетки опубликованных товаров в CSV
+  xlsx_published_product_quick_export:
+    export.label: Быстрый экспорт опубликованных товаров в XLSX
+    perform.label: Быстрый экспорт опубликованных товаров в XLSX
+  xlsx_published_product_grid_context_quick_export:
+    export.label: Быстрый экспорт контекста сетки опубликованных товаров в XLSX
+    perform.label: Быстрый экспорт контекста сетки опубликованных товаров в XLSX
+  publish_product:
+    perform.label: Опубликовать продукты
+pim_notification:
+  types:
+    pimee_workflow_product_draft_notification_new_proposal: Новое предложение
+    pimee_workflow_import_notification_new_proposals: Новые предложения для импорта
+    pimee_workflow_product_draft_notification_partial_approve: Частичное одобрение предложения
+    pimee_workflow_product_draft_notification_partial_reject: Предложение частично одобрено
+    pimee_workflow_product_draft_notification_partial_remove: Предложение частично удалено
+    pimee_workflow_product_draft_notification_approve: Предложение одобрено
+    pimee_workflow_product_draft_notification_refuse: Предложение отклонено
+    pimee_workflow_product_draft_notification_remove: Предложение удаленo
+pimee_dashboard:
+  widget:
+    product_drafts:
+      date: Дата
+      author: Автор
+      product: Продукт
+      review: Обзор
+      empty: Нет предложений для обзора
+    header.view_all: Просмотреть все
+pimee_enrich.entity.product:
+  module:
+    history:
+      published: Опубликован
+      revert: Восстановить
+    meta:
+      published_version: Опубликованная версия
+      owner_groups: Владельцы группы
+      draft_status: Статус черновика
+      draft:
+        in_progress: В ходе выполнения
+        sent_for_approval: В ожидании утверждения
+        working_copy: Рабочая копия
+    revert:
+      title: Подтверждение восстановления
+      content: Вы уверены, что хотите вернуться к этой версии продукта?
+    publish:
+      title: Опубликовать этот продукт
+      content: Вы действительно хотите опубликовать этот продукт?
+    unpublish:
+      title: Снять продукт с публикации
+      content: Вы действительно хотите снять этот продукт с публикации?
+    copy:
+      working_copy: Рабочая копия
+      draft: Мои черновики
+      draft_of: "Черновики пользователя {{ author }}"
+    approval:
+      send: Отправить на утверждение
+      sent: Отправить на утверждение
+pimee_enrich.entity.published_product:
+  flash:
+    publish:
+      success: Продукт успешно опубликован
+      fail: Не удалось опубликовать этот продукт
+    unpublish:
+      success: Продукт успешно снят с публикации
+      fail: Не удалось снять с публикации этот продукт
+    revert:
+      success: Продукт успешно восстановлен
+  module:
+    publish:
+      label: Опубликовать
+      publish_this_version: Опубликовать эту версию
+    unpublish:
+      label: Отменить публикацию
+pimee_enrich.entity.product_draft:
+  flash:
+    update:
+      success: Черновик продукта успешно сохранен
+      fail: Не удалось обновить черновик продукта
+    create:
+      success: Черновик продукта отправлен на утверждение
+      fail: Невозможно отправить черновик на утверждение
+  module:
+    proposal:
+      comment_chars: знаков
+      confirm: Отправить
+      accept_selected: Принять выбранные предложения
+      reject_selected: Отклонить выбранные предложения
+    edit:
+      discard_changes: Несохраненные изменения будут потеряны. Вы уверены, что хотите отправить черновик для утверждения без несохраненных изменений?
+      discard_changes_title: Вы уверены, что вы хотите отправить этот черновик?
+pimee_enrich.mass_edit.product:
+  operation:
+    publish:
+      label: Опубликовать
+      description: Продукты будут опубликованы
+      warning: '{{ itemsCount }} выбранных продуктов будут опубликованы.'
+    unpublish:
+      label: Отменить публикацию
+      description: Продукты будут сняты с публикации
+      warning: Выбранные продукты {{ itemsCount }} будет сняты с публикации.
+pim_menu:
+  navigation:
+    published_products: Опубликованные товары
+  item:
+    proposal: Предложения
+    published_product: Опубликованные товары
+pim_title:
+  pimee_workflow_proposal_index: Предложения
+  pimee_workflow_published_product_index: Опубликованные товары
+  pimee_workflow_published_product_view: Опубликованные продукты {{ product.label }} | Просмотр

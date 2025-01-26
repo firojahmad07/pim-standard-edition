@@ -1,0 +1,253 @@
+table_attribute_template:
+  nutrition-europe:
+    average_nutritional_values:
+      label: Durchschnittliche Nährwerte
+      options:
+        energy: Energie
+        fat: Fett
+        saturated_fat: Gesättigte Fettsäuren
+        carbohydrate: Kohlenhydrate
+        sugars: Zucker
+        protein: Proteine
+        salt: Salz
+    per_100g:
+      label: 'Pro 100g'
+    per_serving:
+      label: 'Pro Portion (x g)'
+    percentage_reference_intake:
+      label: '% der Referenzaufnahme (pro 100g oder Servierung)'
+  nutrition-unitedstates:
+    nutrition_facts:
+      label: Nährwertangaben
+      options:
+        total_fat: Gesamtfett (g)
+        saturated_fat: Gesättigte Fettsäuren (g)
+        trans_fat: Transfette (g)
+        cholesterol: Cholesterin (g)
+        sodium: Natrium (g)
+        total_carbohydrate: Gesamtkohlenhydrate (g)
+        dietary_fiber: Ballaststoffe (g)
+        total_sugars: Summe Zucker (g)
+        included_added_sugars: Hinzugefügter Zucker (g)
+        protein: Proteine (g)
+    amount_per_serving:
+      label: Angaben pro Portion
+    percentage_daily_value:
+      label: '% Tageswert'
+  nutrition-unitedkingdom:
+    nutrition:
+      label: Nährwerte
+      options:
+        energy: Energie
+        fat: Fett
+        of_which_saturates: davon gesättigte Fettsäuren
+        carbohydrate: Kohlenhydrate
+        of_which_sugars: davon Zucker
+        fibre: Ballaststoffe
+        protein: Proteine
+        salt: Salz
+    per_100g:
+      label: Pro 100g
+    percentage_reference_intake:
+      label: '% Referenzmenge'
+    your_reference_intake:
+      label: 'Ihre Referenzmenge 8400 kJ 2000 kcal'
+  food_composition:
+    composition:
+      label: Zusammensetzung
+      options:
+        wheat_flour: Weizenmehl
+        butter: Butter
+        water: Wasser
+        sugar: Zucker
+    percentage:
+      label: '%'
+    allergen:
+      label: Allergen
+  clothing_composition:
+    composition:
+      label: Zusammensetzung
+      options:
+        cotton: Baumwolle
+        polyester: Polyester
+        elastane: Elastan
+    percentage:
+      label: '%'
+  dimensions-metric:
+    dimensions:
+      label: Abmessungen
+      options:
+        length: Länge (cm)
+        width: Breite (%)
+        height: Höhe (cm)
+        weight: Gewicht (kg)
+    value:
+      label: Wert
+  dimensions-imperial:
+    dimensions:
+      label: Abmessungen
+      options:
+        length: Länge (Zoll)
+        width: Breite (Zoll)
+        height: Höhe (Zoll)
+        weight: Gewicht (Pfund)
+    value:
+      label: Wert
+  packaging-metric:
+    parcel:
+      label: Paketdienst
+      options:
+        parcel1: Paketdienst 1
+        parcel2: Paketdienst 2
+        parcel3: Paketdienst 3
+        parcel4: Paketdienst 4
+    width:
+      label: Breite (%)
+    length:
+      label: Länge (cm)
+    height:
+      label: Höhe (cm)
+  packaging-imperial:
+    parcel:
+      label: Paketdienst
+      options:
+        parcel1: Paketdienst 1
+        parcel2: Paketdienst 2
+        parcel3: Paketdienst 3
+        parcel4: Paketdienst 4
+    width:
+      label: Breite (Zoll)
+    length:
+      label: Länge (Zoll)
+    height:
+      label: Höhe (Zoll)
+pim_table_attribute:
+  form:
+    attribute:
+      tab:
+        table_structure: Tabellenstruktur
+      table_attribute: Tabellenattribut
+      add_column: Neue Spalte hinzufügen
+      select_type: Wählen Sie eine Option
+      data_type: Spaltentyp
+      labels: Labelübersetzungen
+      column_management: Spaltenverwaltung
+      please_type: Bitte geben Sie "{{ text }}" ein
+      confirm_column_delete: Sind Sie sicher, dass Sie diese Spalte löschen möchten?
+      confirm_option_delete: Sind Sie sicher, dass Sie diese Option löschen möchten?
+      empty_title: Ihre Tabellenstruktur ist leer.
+      empty_subtitle: Der erste Schritt ist, Ihre Spalten zu definieren.
+      unique_title: Ihr Tabellenattribut ist fast fertig.
+      unique_subtitle: Definieren Sie mindestens 2 Spalten, um Ihre Tabelle zu verwenden.
+      new_option_placeholder: Schreiben Sie eine neue Optionsbezeichnung.
+      manage_options: Optionen verwalten
+      column_code: Spaltencode
+      properties_helper: Sie müssen die Tabellenstruktur und mindestens 2 Spalten definieren, bevor Sie Ihr Tabellenattribut speichern können
+      table_structure_helper_text: Ein Tabellenattribut muss mindestens 2 Spalten enthalten. Sobald Sie die erste Spalte erstellt haben, müssen Sie Optionen hinzufügen. Dazu klicken Sie auf „Optionen verwalten“ und fügen Sie {{ limit }} Optionen hinzu! Dann können Sie jede dieser Optionen als Zeilen in Ihren Produkttabellen verwenden.
+      table_structure_helper_text_with_reference_entity: Ein Tabellenattribut muss mindestens 2 Spalten enthalten. Sobald Sie die erste Spalte mit den Spaltentypen „Auswählen“ oder „Referenz-Entitäten“ erstellt haben, definieren und verwalten Sie Datensätze basierend auf Optionen oder Datensätzen.
+      table_structure_helper_link: Weitere Informationen finden Sie in unserem Hilfe-Center.
+      limit_option_reached: Sie haben das Limit von {{ limit }} Optionen erreicht.
+      template_label: Wählen Sie den Standard Ihrer "{{ templateLabel }}" Tabelle
+      delete_column_helper: Wenn Sie diese Spalte löschen, werden alle ihre Werte mit dem Attribut "{{ attributeLabel }}" aus allen Produkten entfernt.
+      delete_first_column_option_helper: Wenn Sie diese Option löschen, wird die gesamte Zeile für alle Produkte mit dem Attribut "{{ attributeLabel }}" gelöscht.
+      delete_other_column_option_helper: Wenn Sie diese Option löschen, wird der Zellenwert für alle Produkte mit dem Attribut "{{ attributeLabel }}" entfernt.
+      no_options_helper: Bitte fügen Sie Ihre erste Option hinzu.
+      no_options: Keine Optionen gefunden
+      please_try_again: Bitte versuche es noch einmal
+      first_column_type_helper: Die erste Spalte einer Tabelle ist immer ein Spaltentyp.
+      first_column_type_helper_with_reference_entity: Die erste Spalte einer Tabelle ist entweder ein Spaltentyp "Auswahl" oder "Referenz-Entität".
+      discard_changes: Wenn Sie die Seite verlassen, verlieren Sie die Änderungen an den Auswahloptionen.
+      completeness: Vollständigkeit
+      required_for_completeness: Erforderlich für die Vollständigkeit
+      completeness_helper_text: "Um herauszufinden, wie Vollständigkeit für ein Tabellenattribut funktioniert,"
+      completeness_helper_link: schauen Sie sich unser Hilfe-Center an.
+      reference_entity: Referenz-Entität
+    product:
+      items_per_page: Elemente pro Seite
+      current_items: "{{ minItem }}-{{ maxItem }} von {{ itemCount }}"
+      current_page: "Seite {{ currentPage }} / {{ pageCount }}"
+      no_search_result: "Leider gibt es keine Zeilen für Ihre Suche!"
+      no_rows_title: "Ihre {{ attributeLabel }} -Tabelle ist leer."
+      no_rows_subtitle: Füge Zeilen hinzu, um neue Eigenschaften zu definieren
+      no_rows_subtitle_no_permission: Um dieses Attribut bearbeiten zu können, gehen Sie auf die Attribut-Einstellungsseite oder wenden Sie sich an Ihren PIM-Administrator.
+      no_results: Es gibt keine Ergebnisse
+      no_options: Es gibt keine Optionen
+      no_records: Es gibt keine Datensätze
+      no_add_options_unallowed: Kontaktieren Sie Ihren PIM-Administrator, um die "{{ attributeLabel }}" Optionen zu verwalten
+      edit_records_unallowed: Kontaktieren Sie Ihren PIM-Administrator, um die "{{ referenceEntityLabel }}" Referenz-Entität zu verwalten
+      manage_records: Datensätze verwalten
+      actions:
+        delete_row: Diese Zeile löschen
+        clear_row: Diese Zeile leeren
+        move_first: An erste Position verschieben
+        move_last: An letzte Position verschieben
+      order: Sortierung
+      save_options_error: Beim Speichern der Optionen ist ein Fehler aufgetreten
+      save_options_success: Optionen erfolgreich aktualisiert
+  properties:
+    data_type:
+      text: Text
+      number: Nummer
+      boolean: Ja/Nein
+      select: Auswählen
+      reference_entity: Referenz-Entität
+  validations:
+    column_code_must_be_filled: Der Code muss ausgefüllt werden
+    not_available_code: Dieser Spaltencode ist nicht verfügbar
+    column_data_type_must_be_filled: Der Datentyp muss ausgefüllt werden
+    invalid_column_code: Der Spaltencode darf nur Buchstaben, Zahlen und Unterstriche enthalten
+    invalid_code: Der Code darf nur Buchstaben, Zahlen und Unterstriche enthalten
+    duplicated_column_code: Jede Spalte benötigt einen eindeutigen Code. {{ duplicateCode }} wird bereits verwendet
+    duplicated_select_code: Jeder Code benötigt einen eindeutigen Code
+    max_greater_than_min: Max muss mehr sein als Min
+    max_length: Maximale Anzahl an Zeichen (bis zu 100)
+    min: Minimalwert
+    max: Maximalwert
+    decimals_allowed: Dezimalwerte erlaubt
+    max_length_range: Bitte definieren Sie eine maximale Anzahl von Zeichen kleiner oder gleich {{ maximum }}
+  templates:
+    choose_template: Vorlage auswählen
+    choose_template_subtitle: Diese Vorlagen sind nur Beispiele. Sie können sie bearbeiten, bevor Sie Ihre Attributsstruktur speichern.
+    empty_table: Leere Tabelle
+    nutrition: Nährwerte
+    nutrition-unitedkingdom: Ernährung (Großbritannien)
+    nutrition-europe: Durchschnittliche Nährwerte (Europa)
+    nutrition-unitedstates: Ernährungsdaten (Vereinigte Staaten)
+    food_composition: Essenskomposition
+    clothing_composition: Kleidungskomposition
+    dimensions: Produktabmessungen
+    dimensions-metric: Abmessungen (Metrisches System)
+    dimensions-imperial: Abmessungen (Imperiales System)
+    packaging: Verpackungsgröße
+    packaging-metric: Verpackungsabmessungen (Metrisches System)
+    packaging-imperial: Verpackungsabmessungen (Imperiales System)
+  product_edit_form:
+    add_rows: Zeilen hinzufügen
+    search: Suche
+  datagrid:
+    placeholder: Vorschau nicht verfügbar, öffnen Sie die Produktseite, um auf die Tabellenattributwerte zuzugreifen
+    any: Jeder
+    select_your_column: Spalte auswählen
+    select_your_row: Wählen Sie Ihre Zeile
+    select_your_operator: Operator auswählen
+    select_your_value: Wählen Sie Ihren Wert
+    any_row: Jede Zeile
+pim_enrich:
+  entity:
+    attribute:
+      property:
+        type:
+          pim_catalog_table: Tabelle
+batch_jobs:
+  csv_table_attribute_options_export.label: Tabellen-Attribut-Auswahloptionen Export in CSV
+  xlsx_table_attribute_options_export.label: Tabellen-Attribut-Auswahloptionen Export in XLSX
+  csv_table_attribute_options_import.label: Tabellenattribut-Auswahloptionen importieren in CSV
+  xlsx_table_attribute_options_import.label: Tabellen-Attribut-Auswahloptionen importieren in XLSX
+  csv_product_table_values_export.label: Produkttabellen-Werte als CSV-Export
+  xlsx_product_table_values_export.label: Produkttabellen-Werte exportieren in XLSX
+  csv_product_model_table_values_export.label: Produktmodelltabellenwerte als CSV-Export
+  xlsx_product_model_table_values_export.label: Produktmodelltabellenwerte exportieren in XLSX
+  csv_product_table_values_import.label: Produkttabellen-Werte importieren in CSV
+  xlsx_product_table_values_import.label: Produkttabellen-Werte aus XLSX-Datei importieren
+  csv_product_model_table_values_import.label: Werte der Produktmodelltabelle als CSV-Datei importieren
+  xlsx_product_model_table_values_import.label: Werte der Produktmodelltabelle in XLSX importieren

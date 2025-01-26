@@ -1,0 +1,190 @@
+services:
+    akeneo_assetmanager.command.installer.fixtures_installer:
+        class: Akeneo\AssetManager\Infrastructure\Symfony\Command\Installer\FixturesInstaller
+        arguments:
+            - '@doctrine.dbal.default_connection'
+            - '@akeneo_file_storage.file_storage.file.file_storer'
+            - '@akeneo_assetmanager.client.asset'
+            - '@pim_catalog.command_launcher'
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.asset_family'
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.attribute'
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.asset'
+            - '@akeneo_assetmanager.infrastructure.persistence.asset.hydrator.value'
+            - '@akeneo_assetmanager.common.helper.fixtures_loader'
+
+    akeneo_assetmanager.command.installer.assets_installer:
+        class: Akeneo\Platform\Bundle\InstallerBundle\Event\Subscriber\AssetsInstaller
+        arguments:
+            - '@filesystem'
+            - '%pim_ee_dev_src_folder_location%/src/Akeneo/AssetManager/front'
+            - '%kernel.project_dir%/public/bundles/akeneoassetmanager'
+
+    akeneo_assetmanager.event_subscriber.installer:
+        class: Akeneo\AssetManager\Infrastructure\Symfony\Command\InstallerCommand
+        arguments:
+            - '@akeneo_assetmanager.command.installer.fixtures_installer'
+            - '@akeneo_assetmanager.command.installer.assets_installer'
+            - '%should_load_assets_fixtures%'
+        tags:
+            - { name: kernel.event_subscriber }
+            - { name: 'console.command'}
+
+    akeneo_assetmanager.command.refresh_assets:
+        class: Akeneo\AssetManager\Infrastructure\Persistence\Sql\CLI\RefreshAssetsCommand
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.persistence.cli.all_assets_identifiers'
+            - '@akeneo_assetmanager.infrastructure.persistence.sql.asset.refresh_assets.refresh_asset'
+            - '@akeneo_assetmanager.infrastructure.search.elasticsearch.asset.query.count_assets'
+        tags:
+            - { name: 'console.command'}
+
+    akeneo_assetmanager.event_subscriber.remove_user_group:
+        class: Akeneo\AssetManager\Infrastructure\EventSubscriber\RemoveUserGroupSubscriber
+        arguments:
+            - '@akeneoassetmanager.infrastructure.persistence.query.find_asset_family_where_user_group_is_last_to_have_edit_right'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    akeneo_assetmanager.updater.adder.asset_collection:
+        class: Akeneo\Pim\Enrichment\AssetManager\Component\Updater\Adder\AssetCollectionAdder
+        arguments:
+            - '@pim_catalog.builder.entity_with_values'
+            - ['pim_catalog_asset_collection']
+        tags:
+            - { name: 'pim_catalog.updater.adder' }
+
+    akeneo_assetmanager.application.attribute.subscribers.set_default_attributes_on_asset_family_creation_subscriber:
+        class: Akeneo\AssetManager\Application\Attribute\Subscribers\SetDefaultAttributesOnAssetFamilyCreationSubscriber
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.asset_family'
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.attribute'
+            - '@akeneo_assetmanager.application.attribute.create_attribute_handler'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    akeneo_assetmanager.application.asset_family.subscribers.set_null_on_default_attributes_deletion_subscriber:
+        class: Akeneo\AssetManager\Application\AssetFamily\Subscribers\SetNullOnDefaultAttributesDeletionSubscriber
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.asset_family'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    akeneo_assetmanager.infrastructure.asset_family.subscribers.refresh_asset_subscriber:
+        class: Akeneo\AssetManager\Infrastructure\Persistence\Sql\Subscribers\RefreshAssetsSubscriber
+        arguments:
+            - '@pim_catalog.command_launcher'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    akeneo_assetmanager.application.asset.subscribers.compute_asset_transformation_event_aggregator:
+        class: Akeneo\AssetManager\Application\Asset\Subscribers\ComputeAssetTransformationEventAggregator
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.job.compute_transformations_from_asset_identifiers_launcher'
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.asset'
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.asset_family'
+            - '@akeneo_assetmanager.infrastructure.transformation.get_outdated_variation_source'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    akeneo_assetmanager.common.helper.fixtures_loader:
+        class: Akeneo\AssetManager\Infrastructure\Symfony\Command\Installer\FixturesLoader
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.asset_family'
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.attribute'
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.asset'
+            - '@akeneo_assetmanager.infrastructure.persistence.asset.hydrator.value'
+
+    Akeneo\AssetManager\Infrastructure\Symfony\Command\IndexAssetsCommand:
+        arguments:
+            - '@akeneo_assetmanager.client.asset'
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.asset_family'
+            - '@akeneo_assetmanager.infrastructure.search.elasticsearch.asset_indexer'
+            - '@akeneo_assetmanager.infrastructure.persistence.query.asset_family_exists'
+            - '%asset_index_name%'
+        tags:
+            - { name: console.command }
+
+    Akeneo\AssetManager\Infrastructure\Symfony\Command\ClearThumbnailCacheCommand:
+        arguments:
+            - '@liip_imagine.cache.manager'
+            - '@liip_imagine.filter.configuration'
+        tags:
+            - { name: console.command }
+
+    Akeneo\AssetManager\Infrastructure\Symfony\Command\PurgeOrphanAssetsCommand:
+        arguments:
+            - '@doctrine.dbal.default_connection'
+            - '@akeneo_file_storage.file_storage.filesystem_provider'
+        tags:
+            - { name: console.command }
+
+    pim_enrich.controller.file:
+        public: true
+        class: 'Akeneo\Pim\Enrichment\Bundle\Controller\Ui\FileController'
+        arguments:
+            - '@liip_imagine.controller'
+            - '@akeneo_file_storage.file_storage.filesystem_provider'
+            - '@akeneo_file_storage.repository.file_info'
+            - '@pim_enrich.guesser.file_type'
+            - '@pim_enrich.provider.default_image'
+            - ['catalogStorage', 'assetStorage']
+
+    # asset transformation factories
+    Akeneo\AssetManager\Domain\Model\AssetFamily\Transformation\TransformationCollectionFactory:
+        arguments:
+            - '@Akeneo\AssetManager\Domain\Model\AssetFamily\Transformation\OperationFactory'
+
+    Akeneo\AssetManager\Domain\Model\AssetFamily\Transformation\OperationFactory:
+        arguments:
+            - '%asset_manager_transformation_operation%'
+
+    # Clock
+    Akeneo\AssetManager\Infrastructure\Clock: ~
+
+    akeneo_assetmanager.updater.copier.asset_collection:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Component\Updater\Copier\AssetCollectionAttributeCopier'
+        parent: pim_catalog.updater.copier.abstract
+        arguments:
+            - ['pim_catalog_asset_collection']
+            - ['pim_catalog_asset_collection']
+        tags:
+            - { name: 'pim_catalog.updater.copier' }
+
+    Akeneo\Pim\Enrichment\AssetManager\Component\Updater\Remover\AssetCollectionAttributeRemover:
+        arguments:
+            - '@pim_catalog.validator.helper.attribute'
+            - '@pim_catalog.builder.entity_with_values'
+        tags:
+            - { name: 'pim_catalog.updater.remover' }
+
+    Akeneo\AssetManager\Application\Asset\ExecuteNamingConvention\ExecuteNamingConvention:
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.asset'
+            - '@Akeneo\AssetManager\Application\Asset\ExecuteNamingConvention\EditAssetCommandFactory'
+            - '@akeneo_assetmanager.application.asset.edit_asset_handler'
+            - '@validator'
+
+    Akeneo\AssetManager\Infrastructure\EventSubscriber\CleanAssetFamilyIdentifierOnAttributeCreationSubscriber:
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.persistence.repository.asset_family'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    akeneo_assetmanager.factory.mass_operation_notification:
+        class: 'Akeneo\Platform\Bundle\ImportExportBundle\Factory\MassEditNotificationFactory'
+        arguments:
+            - ['asset_manager_mass_delete_assets', 'asset_manager_mass_edit_assets']
+            - '%pim_notification.entity.notification.class%'
+        tags:
+            - { name: pim_notification.factory.notification }
+
+    # Network
+    Akeneo\AssetManager\Infrastructure\Network\DnsLookup: ~
+    Akeneo\AssetManager\Infrastructure\Network\IpMatcher: ~
+
+    Akeneo\AssetManager\Infrastructure\Network\UrlChecker:
+        arguments:
+            - '%allowed_media_link_protocols%'
+            - '@Akeneo\AssetManager\Infrastructure\Network\DnsLookup'
+            - '@Akeneo\AssetManager\Infrastructure\Network\IpMatcher'
+            - '%env(string:ALLOWED_NETWORK_ASSETS_WHITELIST)%'

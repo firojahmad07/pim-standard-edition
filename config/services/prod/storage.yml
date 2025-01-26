@@ -1,0 +1,41 @@
+services:
+    Google\Cloud\Storage\StorageClient:
+        arguments:
+            - projectId: '%env(GOOGLE_CLOUD_PROJECT)%'
+              keyFilePath: '%env(SRNT_GOOGLE_APPLICATION_CREDENTIALS)%'
+
+    Google\Cloud\Storage\Bucket:
+        class: 'Google\Cloud\Storage\Bucket'
+        factory: ['@Google\Cloud\Storage\StorageClient', 'bucket']
+        arguments:
+            - '%env(SRNT_GOOGLE_BUCKET_NAME)%'
+
+    akeneo_flysystem_adapter.googlecloudstorage.asset_storage_adapter:
+        class: 'League\Flysystem\GoogleCloudStorage\GoogleCloudStorageAdapter'
+        arguments:
+            $bucket: '@Google\Cloud\Storage\Bucket'
+            $prefix: 'asset_storage'
+
+    akeneo_flysystem_adapter.googlecloudstorage.jobs_storage_adapter:
+        class: 'League\Flysystem\GoogleCloudStorage\GoogleCloudStorageAdapter'
+        arguments:
+            $bucket: '@Google\Cloud\Storage\Bucket'
+            $prefix: 'jobs_storage'
+
+    akeneo_flysystem_adapter.googlecloudstorage.archivist_adapter:
+        class: 'League\Flysystem\GoogleCloudStorage\GoogleCloudStorageAdapter'
+        arguments:
+            $bucket: '@Google\Cloud\Storage\Bucket'
+            $prefix: 'archivist'
+
+    akeneo_flysystem_adapter.googlecloudstorage.catalog_storage_adapter:
+        class: 'League\Flysystem\GoogleCloudStorage\GoogleCloudStorageAdapter'
+        arguments:
+            $bucket: '@Google\Cloud\Storage\Bucket'
+            $prefix: 'catalog_storage'
+
+    akeneo_flysystem_adapter.googlecloudstorage.data_quality_insights_shared_adapter:
+        class: 'League\Flysystem\GoogleCloudStorage\GoogleCloudStorageAdapter'
+        arguments:
+            $bucket: '@Google\Cloud\Storage\Bucket'
+            $prefix: 'data_quality_insights'

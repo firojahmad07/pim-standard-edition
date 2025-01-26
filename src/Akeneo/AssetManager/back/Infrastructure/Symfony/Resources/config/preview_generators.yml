@@ -1,0 +1,119 @@
+services:
+    akeneo_assetmanager.infrastructure.registry.preview_generator:
+        class: Akeneo\AssetManager\Infrastructure\Filesystem\PreviewGenerator\PreviewGeneratorRegistry
+
+    akeneo_assetmanager.infrastructure.generator.binary_image_generator:
+        class: Akeneo\AssetManager\Infrastructure\Filesystem\PreviewGenerator\BinaryImageGenerator
+        arguments:
+            - '@liip_imagine.data.manager'
+            - '@liip_imagine.cache.manager'
+            - '@liip_imagine.filter.manager'
+            - '@pim_asset.provider.default_image'
+            - '@logger'
+            - '%supported_image_mime_types%'
+        tags:
+            - { name: akeneo_assetmanager.preview_generator }
+
+    akeneo_assetmanager.infrastructure.generator.binary_pdf_generator:
+        class: Akeneo\AssetManager\Infrastructure\Filesystem\PreviewGenerator\BinaryPdfGenerator
+        arguments:
+            - '@liip_imagine.data.manager'
+            - '@liip_imagine.cache.manager'
+            - '@liip_imagine.filter.manager'
+            - '@pim_asset.provider.default_image'
+            - '@logger'
+            - '%supported_pdf_mime_types%'
+        tags:
+            - { name: akeneo_assetmanager.preview_generator }
+
+    akeneo_assetmanager.infrastructure.generator.media_link_pdf_generator:
+        class: Akeneo\AssetManager\Infrastructure\Filesystem\PreviewGenerator\MediaLinkPdfGenerator
+        arguments:
+            - '@liip_imagine.data.manager'
+            - '@liip_imagine.cache.manager'
+            - '@liip_imagine.filter.manager'
+            - '@pim_asset.provider.default_image'
+            - '@logger'
+            - '%supported_pdf_mime_types%'
+        tags:
+            - { name: akeneo_assetmanager.preview_generator }
+
+    akeneo_assetmanager.infrastructure.generator.media_link_youtube_generator:
+        class: Akeneo\AssetManager\Infrastructure\Filesystem\PreviewGenerator\MediaLinkYoutubeGenerator
+        arguments:
+            - '@liip_imagine.data.manager'
+            - '@liip_imagine.cache.manager'
+            - '@liip_imagine.filter.manager'
+            - '@pim_asset.provider.default_image'
+            - '@logger'
+        tags:
+            - { name: akeneo_assetmanager.preview_generator }
+
+    akeneo_assetmanager.infrastructure.generator.media_link_vimeo_generator:
+        class: Akeneo\AssetManager\Infrastructure\Filesystem\PreviewGenerator\MediaLinkVimeoGenerator
+        arguments:
+            - '@liip_imagine.data.manager'
+            - '@liip_imagine.cache.manager'
+            - '@liip_imagine.filter.manager'
+            - '@pim_asset.provider.default_image'
+            - '@logger'
+        tags:
+            - { name: akeneo_assetmanager.preview_generator }
+
+    akeneo_assetmanager.infrastructure.generator.media_link_image_generator:
+        class: Akeneo\AssetManager\Infrastructure\Filesystem\PreviewGenerator\MediaLinkImageGenerator
+        arguments:
+            - '@liip_imagine.data.manager'
+            - '@liip_imagine.cache.manager'
+            - '@liip_imagine.filter.manager'
+            - '@pim_asset.provider.default_image'
+            - '@logger'
+            - '%supported_image_mime_types%'
+        tags:
+            - { name: akeneo_assetmanager.preview_generator }
+
+    akeneo_assetmanager.infrastructure.generator.other_generator:
+        class: Akeneo\AssetManager\Infrastructure\Filesystem\PreviewGenerator\OtherGenerator
+        arguments:
+            - '@pim_asset.provider.default_image'
+        tags:
+            - { name: akeneo_assetmanager.preview_generator }
+
+    akeneo_assetmanager.infrastructure.loader.stream_pdf_loader:
+        class: Akeneo\AssetManager\Infrastructure\Filesystem\Loader\PdfLoader
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.loader.restricted_protocol_stream_loader'
+            - '@pim_asset.provider.default_image'
+        tags:
+            - { name: liip_imagine.binary.loader, loader: stream_pdf_loader }
+
+    akeneo_assetmanager.infrastructure.loader.flysystem_pdf_loader:
+        class: Akeneo\AssetManager\Infrastructure\Filesystem\Loader\PdfLoader
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.loader.flysystem_loader'
+            - '@pim_asset.provider.default_image'
+        tags:
+            - { name: liip_imagine.binary.loader, loader: flysystem_pdf_loader }
+
+    akeneo_assetmanager.infrastructure.loader.restricted_protocol_stream_loader:
+        class: 'Akeneo\AssetManager\Infrastructure\Filesystem\Loader\RestrictedProtocolStreamLoader'
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.loader.reject_invalid_redirection_stream_loader'
+            - '%allowed_media_link_protocols%'
+        tags:
+            - { name: liip_imagine.binary.loader, loader: stream_data_loader }
+
+    akeneo_assetmanager.infrastructure.loader.reject_invalid_redirection_stream_loader:
+        class: 'Akeneo\AssetManager\Infrastructure\Filesystem\Loader\RejectInvalidRedirectionStreamLoader'
+        arguments:
+            - '@Akeneo\AssetManager\Infrastructure\Network\UrlChecker'
+        tags:
+            - { name: liip_imagine.binary.loader, loader: stream_data_loader }
+
+    akeneo_assetmanager.infrastructure.loader.flysystem_loader:
+        class: 'Akeneo\AssetManager\Infrastructure\Filesystem\Loader\ImageLoader'
+        arguments:
+            - '@liip_imagine.extension_guesser'
+            - '@oneup_flysystem.asset_storage_filesystem'
+        tags:
+            - { name: liip_imagine.binary.loader, loader: flysystem_asset_manager_data_loader }

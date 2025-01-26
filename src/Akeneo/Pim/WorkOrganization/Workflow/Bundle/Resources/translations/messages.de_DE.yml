@@ -1,0 +1,148 @@
+pimee_workflow:
+  product_draft:
+    author: Autor
+    source: Quelle
+    created: Vorgeschlagen am
+    changes: Änderungen
+    locale: Gebietsschemakontext
+    product:
+      label: Produktbezeichnung
+    attribute:
+      label: Attribut
+    status:
+      label: Status
+      working_copy: Arbeitskopie
+    notification:
+      partial_approve: '%owner% hat Wert(e) für %attributes% für das Produkt %product% akzeptiert'
+      partial_approve_number: '%owner% hat Werte für %attributes_count% Attribute, für das Produkt %product% akzeptiert'
+      partial_reject: '%owner% hat Wert(e) für %attributes% für das Produkt %product% abgelehnt'
+      partial_reject_number: '%owner% hat Werte für %attributes_count% Attribute, für das Produkt %product% abgelehnt'
+      partial_remove: '%owner% hat Wert(e) für %attributes% für das Produkt %product% gelöscht'
+      partial_remove_number: '%owner% hat Werte für %attributes_count% Attribute, für das Produkt %product% gelöscht'
+      approve: '%owner% hat Ihren Vorschlag für das Produkt %product% akzeptiert'
+      refuse: '%owner% hat Ihren Vorschlag für das Produkt %product% abgelehnt'
+      remove: '%owner% hat Ihren Vorschlag für das Produkt %product% gelöscht'
+      mass_edit_sent_for_approval: 'Massenbearbeitung <strong>%jobLabel%</strong> fertig: %sentForApprovalCount% Vorschläge aus %readProductsCount% Produkten generiert'
+    mass_review_action:
+      approve: Alle ausgewählten genehmigen
+      refuse: Alle ausgewählten ablehnen
+      error:
+        draft_not_ready: Dieser Vorschlag ist noch nicht bereit um genehmigt zu werden
+        not_product_owner: Sie besitzen das Produkt welches zu diesem Vorschlag gehört nicht
+        cannot_edit_attributes: Sie können die Attribute, welche durch diesen Vorschlag geändert wurden, nicht bearbeiten
+        invalid_draft: Der Vorschlag kann aufgrund des folgenden Fehlers nicht freigegeben werden. %error%
+  proposal:
+    to_review: '%author.firstname% %author.lastname% hat einen Vorschlag für das Produkt %product.label% übermittelt'
+    individual_import: '%author.firstname% %author.lastname% hat Vorschläge aus Job-Import zur Überprüfung geschickt'
+    generic_import: Sie haben Vorschläge aus Job-Import zum Prüfen
+    original_value: Original
+  published_product:
+    index: Veröffentlichte Produkte
+    title: Veröffentlichtes Produkt
+  acl.published_product:
+    index: Veröffentlichte Produkte verwalten
+  product:
+    permission:
+      own: Überprüfung / Veröffentlichen
+      edit: Bearbeiten
+      view: Ansehen
+  steps:
+    product_draft_processor.title: Vorschlag-Prozessor
+    approve.title: Vorschlag freigeben
+    refuse.title: Vorschlag ablehnen
+  mass_edit_action:
+    published:
+      page_title: Veröffentlichte Produkte
+      page_subtitle: Massenbearbeitung (1 veröffentlichtes Produkt)|Massenbearbeitung (%count% veröffentlichte Produkte)
+      title: Aktion auswählen
+      subtitle: Wählen Sie die Aktion aus, die Sie auf das ausgewählte, veröffentlichte Produkt anwenden wollen|Wählen Sie die Aktion aus, die Sie auf die ausgewählten, %count% veröffentlichten Produkt anwenden wollen
+      confirm: Sie sind dabei, ein veröffentlichtes Produkt mit den folgenden Informationen zu aktualisieren, bitte bestätigen Sie das.|Sie sind dabei, %count% veröffentlichte Produkte mit den folgenden Informationen zu aktualisieren, bitte bestätigen Sie das.
+      steps:
+        first: Veröffentlichte Produkte auswählen
+        second: Aktion auswählen
+        third: Konfigurieren
+        fourth: Bestätigen
+  check_removal:
+    product_error: Ein veröffentlichtes Produkt kann nicht entfernt werden
+    entity_error: Entitäten, die mit veröffentlichten Produkten verbunden sind, können nicht entfernt werden.
+btn:
+  publish: Veröffentlichen
+  unpublish: Veröffentlichung entziehen
+  save working copy: Arbeitskopie speichern
+  save working copy and next: Arbeitskopie speichern und weiter
+  save working copy and finish: Arbeitskopie speichern und fertigstellen
+  send for approval: Zur Genehmigung senden
+  sent for approval: Zur Freigabe gesendet
+  editworkingcopy: Arbeitskopie bearbeiten
+flash:
+  product:
+    updated: Die Arbeitskopie des Produktes wurde aktualisiert
+    published: Das Produkt wurde erfolgreich veröffentlicht.
+    unpublished: Die Veröffentlichung des Produktes wurde erfolgreich entzogen.
+  product_draft:
+    updated: Entwurf erfolgreich gespeichert
+    approve:
+      success: Der Vorschlag wurde erfolgreich freigegeben.
+      error: Der Vorschlag kann aufgrund des folgenden Fehlers nicht freigegeben werden. %error%
+    refuse:
+      success: Der Vorschlag wurde abgelehnt.
+    remove:
+      success: Der Vorschlag wurde entfernt.
+pim_menu:
+  item:
+    published_product: Veröffentlichte Produkte
+    proposal: Vorschläge
+confirmation:
+  product:
+    publish: Sind Sie sicher, dass Sie dieses Produkt veröffentlichen möchten?
+    unpublish: Sind Sie sicher, dass Sie diesem Produkt die Veröffentlichung entziehen möchten?
+Attributes.title: Attribute
+Completeness.title: Vollständigkeit
+publish_product.steps.publish_product_tasklet.title: Produkte veröffentlichen
+unpublish_product.steps.unpublish_product_tasklet.title: Produktveröffentlichungen entziehen
+approve_product_draft.steps.approve.title: Vorschlag freigeben
+approve_product_draft.steps.refuse.title: Vorschlag ablehnen
+job_execution.summary:
+  approved: Freigegeben
+  refused: Abgelehnt
+  mass_published: Produkt veröffentlicht
+  mass_unpublished: Produktveröffentlichung zurückgezogen
+  proposal: Vorschlag erstellt
+  proposal_deleted: Vorschlag gelöscht
+  proposal_updated: Vorschlag aktualisiert
+  proposal_created: Vorschlag erstellt
+  proposal_skipped: Übersprungener Vorschlag (keine Unterschiede)
+published products: Veröffentlichte Produkte
+pim_analytics:
+  info_type:
+    nb_published_products: Anzahl der veröffentlichten Produkte
+    nb_product_drafts: Anzahl der Produktentwürfe
+pimee_dashboard:
+  widget:
+    product_drafts:
+      title: Zu prüfende Vorschläge
+      date: Datum
+      author: Autor
+      product: Produkt
+      review: Überprüfung
+      empty: Keine Produktentwürfe zu überprüfen
+pim_enrich:
+  mass_edit_action:
+    publish:
+      label: Veröffentlichen
+      description: Die ausgewählten Produkte veröffentlichen, dabei werden die aktuell veröffentlichten Daten von der aktuellen Arbeitskopie überschrieben.
+      success_flash: Die ausgewählten Produkte wurden erfolgreich veröffentlicht.
+      launched_flash: Der Produkt/e-Veröffentlichen Job läuft im Moment.
+      message:
+        info: Die %nbProducts% ausgewählten Produkte werden veröffentlicht.
+    unpublish:
+      label: Veröffentlichung entziehen
+      description: Die Veröffentlichung den ausgewählten Produkten entziehen, die aktuell veröffentlichten Daten werden gelöscht.
+      success_flash: Die Veröffentlichung der ausgewählten Produkte wurde erfolgreich entzogen.
+      launched_flash: Das Entziehen der Produktveröffentlichung wird derzeit ausgeführt.
+      message:
+        info: Den %nbProducts% ausgewählten Produkten wird die Veröffentlichung entzogen.
+pimee_enrich:
+  product:
+    tab:
+      proposal.title: Vorschläge

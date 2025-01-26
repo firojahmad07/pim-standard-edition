@@ -1,0 +1,3 @@
+flash.version.revert.product: Successrig genoprettelse af produktet til en tidligere version
+flash.error.revert.product: Denne version kan ikke genoprettes. Der opstod fejl i forbindelse med valideringen.
+pimee_versioning.acl.product_version.revert: Genoprette et produkt

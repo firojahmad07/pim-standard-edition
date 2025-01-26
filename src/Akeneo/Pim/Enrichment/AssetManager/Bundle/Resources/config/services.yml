@@ -1,0 +1,64 @@
+services:
+    akeneo_assetmanager.validator.constraint.limited_assets_in_value:
+        class: Akeneo\Pim\Enrichment\AssetManager\Component\Validator\Constraints\ThereShouldBeLessAssetsInValueThanLimitValidator
+        arguments:
+            - '%enrich_max_asset_in_asset_collection%'
+        tags:
+            - { name: validator.constraint_validator, alias: limited_assets_in_value }
+
+    akeneo_assetmanager.validator.constraint.asset_should_exist:
+        class: Akeneo\Pim\Enrichment\AssetManager\Component\Validator\Constraints\AssetShouldExistValidator
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.persistence.query.asset_exists'
+        tags:
+            - { name: validator.constraint_validator, alias: pim_enrichment_asset_should_exist }
+
+    akeneo_assetmanager.validator.constraint.assets_should_belong_to_asset_family:
+        class: Akeneo\Pim\Enrichment\AssetManager\Component\Validator\Constraints\AssetsShouldBelongToAssetFamilyValidator
+        arguments:
+            - '@akeneo_assetmanager.infrastructure.persistence.query.asset_exists'
+            - '@akeneo.pim.structure.query.get_attributes'
+        tags:
+            - { name: validator.constraint_validator, alias: pim_enrichment_assets_should_belong_to_asset_family }
+
+    akeneo_assetmanager.validator.constraint_guesser.asset_multiple_link:
+        public: false
+        class: Akeneo\Pim\Enrichment\AssetManager\Component\Validator\ConstraintGuesser\AssetMultipleLinkGuesser
+        tags:
+            - { name: pim_catalog.constraint_guesser.attribute }
+
+    pim_enrich.normalizer.image:
+        class: 'Akeneo\Pim\Enrichment\AssetManager\Component\Normalizer\InternalApi\ImageNormalizer'
+        arguments:
+            - '@pim_enrich.normalizer.file'
+            - '@pim_catalog.repository.cached_attribute'
+            - '@pimee.asset_manager.enrichment.asset_preview_generator'
+
+    # form providers
+    akeneo_assetmanager.provider.form.job_instance:
+        class: 'Akeneo\Platform\Bundle\ImportExportBundle\Provider\Form\JobInstanceFormProvider'
+        arguments:
+            -
+                asset_manager_csv_asset_export: pim-job-instance-csv-asset-export
+                asset_manager_xlsx_asset_export: pim-job-instance-xlsx-asset-export
+                asset_manager_csv_asset_import: pim-job-instance-csv-asset-import
+                asset_manager_xlsx_asset_import: pim-job-instance-xlsx-asset-import
+        tags:
+            - { name: pim_enrich.provider.form, priority: 100 }
+
+    # event subscribers
+    Akeneo\Pim\Enrichment\AssetManager\Bundle\EventSubscriber\RemoveNonExistentAssetValuesSubscriber:
+        arguments:
+            - '@security.token_storage'
+            - '@akeneo_batch.job.job_instance_repository'
+            - '@akeneo_batch_queue.launcher.queue_job_launcher'
+            - '@Akeneo\Tool\Bundle\BatchBundle\Persistence\Sql\SqlCreateJobInstance'
+            - '@database_connection'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    Akeneo\Pim\Enrichment\AssetManager\Bundle\Command\CleanAssetFamilyIdentifiersInAssetCollectionAttributes:
+        arguments:
+            - '@database_connection'
+        tags:
+            - { name: console.command }

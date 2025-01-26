@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "GET",
+    "route": "akeneo_reference_entities_reference_entity_attribute_option_rest_connector_get",
+    "query": {
+      "referenceEntityIdentifier": "brand_2",
+      "attributeCode": "nationality",
+      "optionCode": "french"
+    }
+  },
+  "response": {
+    "status": 403,
+    "body": {
+      "code": 403,
+      "message": "Access forbidden. You are not allowed to list reference entities."
+    }
+  }
+}

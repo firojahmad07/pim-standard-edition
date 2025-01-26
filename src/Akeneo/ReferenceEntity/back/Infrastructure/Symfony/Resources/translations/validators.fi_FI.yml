@@ -1,0 +1,47 @@
+pim_reference_entity:
+  reference_entity:
+    validation:
+      code:
+        pattern: 'Tämä kenttä voi sisältää vain kirjaimia, numeroita ja alaviivoja.'
+      reference_entity_permissions:
+        at_least_one_user_group_should_have_edit_permission: 'Vähintään yhdellä käyttäjäryhmällä on oltava muokkausoikeudet tähän viitetietoon'
+  record:
+    validation:
+      code:
+        pattern: 'Tämä kenttä voi sisältää vain kirjaimia, numeroita ja alaviivoja.'
+      record:
+        should_not_be_used_as_product_variant_axis: 'Et voi poistaa tätä tietuetta, koska sitä käytetään varianttiulottuvuutena yhdessä tuotevariantissa'
+      record_collection:
+        should_not_be_used_as_product_variant_axis: 'Et voi poistaa näitä tietueita, koska niitä käytetään varianttiulottuvuutena yhdessä tai useammassa tuotevariantissa'
+      channel:
+        is_expected: 'Viittaustiedon  "%reference_entity_identifier%" attribuutti "%attribute_code%" edellyttää yhtä arvoa kanavaa kohden.'
+      locale:
+        is_expected: 'Viittaustiedon  "%reference_entity_identifier%" attribuutti "%attribute_code%" edellyttää yhtä arvoa lokaalia kohden.'
+      channel_and_locale:
+        are_expected: 'Viittaustiedon  "%reference_entity_identifier%" attribuutti "%attribute_code%" edellyttää yhtä arvoa kanavaa ja lokaalia kohden.'
+      number:
+        should_be_string: 'Arvon on oltava merkkijono'
+        should_be_integer: 'Arvon on oltava kokonaisluku'
+        integer_too_long: 'Kokonaisluku on liian suuri'
+        should_be_numeric: 'Arvon on oltava numero, jossa on oikea desimaalierotin'
+  attribute:
+    validation:
+      options:
+        code:
+          pattern: 'Tämä kenttä voi sisältää vain kirjaimia, numeroita ja alaviivoja.'
+      max_file_size:
+        should_be_a_number: 'Arvon on oltava numero.'
+      min_value:
+        should_be_a_number: 'Arvon on oltava numero, jossa on oikea desimaalierotin.'
+        cannot_be_greater_than_max: 'Minimiarvo ei voi olla suurempi kuin maksimiarvo'
+      max_value:
+        should_be_a_number: 'Arvon on oltava numero, jossa on oikea desimaalierotin.'
+        cannot_be_lower_than_min: 'Maksimiarvo ei voi olla pienempi kuin minimiarvo'
+      code:
+        pattern: 'Tämä kenttä voi sisältää vain kirjaimia, numeroita ja alaviivoja.'
+      prefix:
+        should_not_be_empty: 'Etuliite ei voi olla tyhjä merkkijono.'
+      suffix:
+        should_not_be_empty: 'Jälkiliite ei voi olla tyhjä merkkijono.'
+      media_type:
+        not_expected: 'Media-assetin tyyppi ei vastaa odotettua (%supported_media_types%).'

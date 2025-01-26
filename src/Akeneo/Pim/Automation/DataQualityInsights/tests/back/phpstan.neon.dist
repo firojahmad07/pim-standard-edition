@@ -1,0 +1,10 @@
+includes:
+    - %rootDir%/../../../vendor/phpstan/phpstan-webmozart-assert/extension.neon
+parameters:
+    level: 5
+    paths:
+        - %rootDir%/../../../src/Akeneo/Pim/Automation/DataQualityInsights/back
+        - %rootDir%/../../../vendor/akeneo/pim-community-dev/src/Akeneo/Pim/Automation/DataQualityInsights/back
+    treatPhpDocTypesAsCertain: false
+    ignoreErrors:
+        - '#Parameter \#1 \$separator of function explode expects non-empty-string, string given.#'

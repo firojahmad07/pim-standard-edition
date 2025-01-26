@@ -1,0 +1,215 @@
+batch_jobs.xlsx_tailored_product_export.label: Individueller Produktexport in XLSX
+batch_jobs.xlsx_tailored_product_model_export.label: Individueller Produktmodell-Export in XLSX
+batch_jobs.csv_tailored_product_export.label: Individueller Produktexport in CSV
+batch_jobs.csv_tailored_product_model_export.label: Individueller Produktmodell-Export in CSV
+pim_common:
+  quality_score: Qualitätspunktzahl
+akeneo.tailored_export:
+  filters:
+    completeness:
+      locales:
+        label: Definieren Sie die Gebietsschemen für die Vollständigkeit
+        placeholder: Gebietsschema auswählen
+        remove: Gebietsschema entfernen
+    quality_score:
+      score:
+        remove: Qualitätswert entfernen
+      locales:
+        placeholder: Gebietsschema auswählen
+        label: Definieren Sie die Gebietsschema für die Qualitätswert
+        remove: Gebietsschema entfernen
+  form:
+    job_instance:
+      tab:
+        content:
+          title: Produktauswahl
+        column:
+          title: Struktur exportieren
+        filters:
+          title: Definieren Sie Ihre Produktauswahl
+      edit:
+        title: Überprüfen Sie Ihre Berechtigungen mit Ihrem PIM-Administrator.
+      launch:
+        title: Um zu exportieren, überprüfen Sie Ihre Berechtigungen mit Ihrem PIM-Administrator.
+  column_list:
+    title: Spalten
+    header:
+      column_name: Spaltenname
+      source_data: Spalteninhalt
+    column_row:
+      target_placeholder: Definieren Sie hier Ihren Spaltennamen
+      placeholder_helper: Sie können alle Spaltennamen aus einer Tabelle kopieren, um Ihre Spalten automatisch zu erstellen.
+      remove: Spalte entfernen
+      no_source: Inhaltsquelle definieren
+    no_column_selection:
+      title: Ihr Exportprofil ist leer.
+      subtitle: Klicken Sie auf 'Erste Spalte hinzufügen', um mit dem Erstellen Ihrer Exporttabelle zu beginnen.
+      link: Weitere Informationen finden Sie in unserem Hilfe-Center.
+      add_column: Erste Spalte hinzufügen
+  column_details:
+    sources:
+      title: Quellen
+      add: Quelle hinzufügen
+      no_result: Leider gibt es keine Ergebnisse.
+      locale_specific: Dieses Attribut ist gebietsschemaspezifisch.
+      remove:
+        title: Quelle
+        text: Sind Sie sicher, dass Sie diese Quelle entfernen möchten?
+        button: Diese Quelle entfernen
+      invalid_source:
+        attribute: Dieses Attribut wurde gelöscht und mit einem anderen Typ erstellt, bitte entferne diese Quelle und füge sie erneut hinzu.
+        association_type: Dieser Verbindungstyp wurde gelöscht und mit einem anderen Typ erstellt, bitte entferne diese Quelle und füge sie erneut hinzu.
+        property: Diese Eigenschaft ist ungültig. Bitte entfernen Sie diese Quelle und fügen Sie sie erneut hinzu.
+        asset_collection_main_media: Die Hauptmedien der vom Attribut verwendeten Sammlung wurden nicht gefunden, bitte überprüfen Sie die Asset-Familien-Einstellung.
+      no_source_configuration:
+        title: Für diese Quelle sind keine Operationen verfügbar. Ihr Wert wird wie exportiert.
+      deleted_attribute:
+        title: Dieses Attribut wurde gelöscht. Sie können es nicht mehr als Quelle verwenden.
+      deleted_association_type:
+        title: Dieser Verbindungstyp wurde gelöscht. Sie können ihn nicht mehr als Quelle verwenden.
+      no_source_selected:
+        title: Klicken Sie auf 'Quelle hinzufügen', um den Inhalt der Spalte zu definieren.
+        link: Weitere Informationen finden Sie in unserem Hilfe-Center.
+      no_column_selected:
+        title: Sobald Ihre erste Spalte definiert ist, können Sie Ihre erste Quelle auswählen.
+      selection:
+        title: Auswahl
+        collection_separator:
+          title: Trennzeichen
+          comma: Komma (,)
+          semicolon: Semikolon (;)
+          pipe: Pipe (|)
+        type:
+          amount: Anzahl
+          currency: Währung
+          main_media: Hauptmedien
+          key: Dateischlüssel
+          path: Pfad
+          name: Dateiname
+        asset_collection:
+          property: Eigenschaft
+          with_prefix_and_suffix: Präfix & Suffix hinzufügen
+        format: Format
+        parent:
+          information:
+            locale: Wenn das Attribut als Label einen Wert pro Gebietsschema hat, können Sie ein bestimmtes Gebietsschema auswählen.
+            channel: Wenn das Attribut als Label einen Wert pro Kanal hat, können Sie einen bestimmten Kanal auswählen.
+        measurement:
+          information: Für dieses Attribut können Sie entweder den Wert, den Einheitscode, das Einheitsetikett oder den Wert und das Einheitslabel exportieren.
+          value: Wert
+          unit_locale: Gebietsschema
+          unit_code: Einheit
+          unit_label: Einheitslabel
+          value_and_unit_label: Wert und Einheiten-Label
+        price:
+          currency_code: Währungscode
+          currency_label: Währungsbezeichnung
+          currency_locale: Währung Gebietsschema
+          information: Für dieses Attribut können Sie entweder den Währungscode, das Währungslabel oder den Betrag exportieren.
+          currencies: Währungen auswählen
+          all_currencies: Alle
+        file:
+          information: Für dieses Attribut können Sie entweder den Pfad, den Dateischlüssel oder den Dateinamen exportieren.
+        decimal_separator:
+          title: Dezimaltrennzeichen
+          comma: Komma (,)
+          dot: Punkt (.)
+          arabic_comma: Arabisches Dezimaltrennzeichen (,)
+        quantified_association:
+          quantity: Quantität
+        association:
+          entity_type: Entitätstyp
+          information:
+            locale: Wenn das Attribut als Label einen Wert pro Gebietsschema hat, können Sie ein bestimmtes Gebietsschema auswählen.
+            channel: Wenn das Attribut als Label einen Wert pro Kanal hat, können Sie einen bestimmten Kanal auswählen.
+      operation:
+        header: Operationen
+        measurement_conversion:
+          title: Konvertierung
+          placeholder: Keine Konvertierung
+          target_unit_code.label: Konvertiere in
+        replacement:
+          title: Wert ersetzen
+          placeholder: Ersetzungswert festlegen
+          enabled: Ersetzungswert aktiviert
+          disabled: Ersetzungswert deaktiviert
+          yes: Ersetzungswert für Ja
+          no: Ersetzungswert für Nein
+          edit_mapping: Ersetzungswerte bearbeiten
+          modal:
+            records: Datensätze verwalten
+            options: Optionen verwalten
+            subtitle: Ersetzen
+            no_result:
+              title: Leider gibt es keinen Wert in diesem Attribut
+            empty_result:
+              title: Für Ihre Suche wurden leider keine passenden Treffer gefunden.
+              text: Wiederholen Sie Ihre Suche mit anderen Suchkriterien
+            filters:
+              mapped:
+                label: Ansicht
+                unmapped: Alle Werte ohne Ersatz
+                mapped: Alle Werte mit Ersatz
+                all: Jeden Wert
+            table:
+              header:
+                values: Werte
+                replacement: Ersetzungswerte
+              field:
+                to_placeholder: Ersetzungswert festlegen
+            validation_error: Einige Ersatzwerte sind ungültig, bitte lesen Sie die Fehlermeldungen unter jedem Feld.
+        default_value:
+          title: Standardwert verwenden, wenn leer
+          label: Standardwert
+          placeholder: Wert definieren
+        clean_html_tags:
+          title: HTML Tags bereinigen
+          label: HTML-Tags automatisch bereinigen
+    concatenation:
+      title: Verkettung
+      preview: Vorschau
+      space_between: Leerzeichen zwischen den Quellen hinzufügen
+      add_text: Text hinzufügen
+      text_placeholder: Text definieren
+  column:
+    delete_message: Sind Sie sicher, dass Sie diese Spalte entfernen möchten?
+  validation:
+    required: Die Eingabe dieses Wertes ist erforderlich.
+    max_length_reached: Dieser Wert ist zu lang. Er sollte {{ limit }} oder weniger Zeichen enthalten.
+    columns:
+      max_column_count_reached: Sie haben das Limit von {{ limit }} Spalten erreicht, Sie können keine Spalten mehr zu Ihrem Export hinzufügen.
+      target:
+        should_not_be_blank: Bitte geben Sie einen Spaltennamen an.
+        max_length_reached: Der Spaltenname ist zu lang. Er sollte {{ limit }} oder weniger Zeichen enthalten.
+        should_be_unique: Dieser Spaltenname existiert bereits, bitte geben Sie einen neuen ein.
+    sources:
+      max_source_count_reached: Sie haben das Limit von {{ limit }} Quellen erreicht, Sie können keine Quellen mehr zu dieser Spalte hinzufügen.
+      association_type_should_exist: Der Verbindungstyp {{ association_type_code }} existiert nicht. Bitte erstellen Sie ihn oder wählen Sie eine andere Quelle.
+    concatenation:
+      max_text_count_reached: Sie haben die Grenze von {{ limit }} Textelementen erreicht. Sie können keinen Text mehr hinzufügen.
+    locale:
+      should_be_active: Das Gebietsschema {{ locale_code }} wurde deaktiviert. Reaktivieren Sie es oder wählen Sie ein anderes Gebietsschema.
+      should_be_bound_to_channel: Die Gebietsschema {{ locale_code }} wurde für den Kanal {{ channel_code }}deaktiviert. Reaktivieren Sie ihn oder wählen Sie ein anderes Gebietsschema.
+    channel:
+      should_exist: Der Kanal {{ channel_code }} wurde gelöscht. Bitte wählen Sie einen anderen Kanal.
+    attribute:
+      should_exist: Das Attribut {{ attribute_code }} existiert nicht. Bitte erstellen Sie es oder wählen Sie eine andere Quelle.
+      locale_should_not_be_blank: Das Attribut {{ attribute_code }} hat jetzt einen Wert pro Gebietsschema. Bitte erstellen Sie es oder wählen Sie eine andere Quelle.
+      channel_should_not_be_blank: Das Attribut {{ attribute_code }} hat jetzt einen Wert pro Kanal. Bitte erstellen Sie es oder wählen Sie eine andere Quelle.
+      locale_should_be_blank: Das Attribut {{ attribute_code }} hat keinen Wert pro Gebietsschema. Bitte erstellen Sie es oder wählen Sie eine andere Quelle.
+      channel_should_be_blank: Das Attribut {{ attribute_code }} hat keinen Wert pro Kanal mehr. Bitte erstellen Sie es oder wählen Sie eine andere Quelle.
+      invalid_specific_locale: Das Attribut {{ attribute_code }} ist gebietsschemaspezifisch. Bitte wählen Sie ein anderes Gebietsschema.
+    asset_collection:
+      locale_should_not_be_blank: Das Haupt-Medienattribut der Asset-Familie {{ asset_family_code }} hat jetzt einen Wert pro Gebietsschema. Bitte erstellen Sie es oder wählen Sie eine andere Quelle.
+      channel_should_not_be_blank: Das Haupt-Medienattribut der Asset-Familie {{ asset_family_code }} hat jetzt einen Wert pro Kanal. Bitte erstellen Sie es oder wählen Sie eine andere Quelle.
+      locale_should_be_blank: Das Medienattribut der Asset-Familie {{ asset_family_code }} hat keinen Wert pro Gebietsschema mehr. Bitte erstellen Sie es oder wählen Sie eine andere Quelle.
+      channel_should_be_blank: Das Hauptmedien-Attribut der Asset-Familie {{ asset_family_code }} hat keinen Wert pro Kanal mehr. Bitte erstellen Sie es oder wählen Sie eine andere Quelle.
+      invalid_type: Der Medien-Attribut Typ der Assetfamilie {{ asset_family_code }} wurde geändert. Bitte erstellen Sie ihn oder wählen Sie eine andere Quelle.
+    measurement:
+      family:
+        does_not_exist: Die Messfamilie {{ measurement_family_code }} existiert nicht.
+      unit:
+        does_not_exist: Die Einheit {{ unit_code }} existiert nicht in der Messfamilie {{ measurement_family_code }}.
+    currency:
+      should_be_active: '{0} Die Währungen "{{ currency_codes }}" sind mit keinem Kanal verknüpft.|{1} Die Währung "{{ currency_codes }}" ist mit keinem Kanal verknüpft.|]1,Inf] Die Währungen "{{ currency_codes }}" sind mit keinem Kanal verknüpft.'
+      should_be_active_on_channel: '{0} Die Währungen "{{ currency_codes }}" sind mit keinem Kanal verknüpft.|{1} Die Währung "{{ currency_codes }}" ist mit keinem Kanal verknüpft.|]1,Inf] Die Währungen "{{ currency_codes }}" sind mit keinem Kanal verknüpft.'

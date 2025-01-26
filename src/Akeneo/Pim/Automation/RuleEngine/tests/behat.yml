@@ -1,0 +1,57 @@
+acceptance:
+    suites:
+        rule_engine_acceptance:
+            paths:
+                - '%paths.base%/features'
+            contexts:
+                - test.locale.context
+                - test.channel.context
+                - Akeneo\Test\Pim\Automation\RuleEngine\Acceptance\Context\DataFixturesContext
+                - Akeneo\Test\Pim\Automation\RuleEngine\Acceptance\Context\UserContext
+                - Akeneo\Test\Pim\Automation\RuleEngine\Common\Context\ExceptionContext
+                - Akeneo\Test\Pim\Automation\RuleEngine\Acceptance\Context\EventSubscriberContext
+                - Akeneo\Test\Pim\Automation\RuleEngine\Acceptance\Context\ImportRuleContext
+                - Akeneo\Test\Pim\Automation\RuleEngine\Acceptance\Context\ExportRuleContext
+                - Akeneo\Test\Pim\Automation\RuleEngine\Acceptance\Context\ExecuteRuleContext
+            filters:
+                tags: '@acceptance-back'
+    extensions:
+        Pim\Behat\Extension\PimFormatter\PimFormatterExtension: ~
+        FriendsOfBehat\SymfonyExtension:
+            kernel:
+                path: src/Kernel.php
+                class: Kernel
+                environment: test_fake
+                debug: false
+
+integration:
+    suites:
+        rule_engine_integration:
+            paths:
+                - '%paths.base%/features'
+            contexts:
+                - 'Akeneo\Test\Pim\Automation\RuleEngine\Integration\Context\AssociationContext'
+                - 'Akeneo\Test\Pim\Automation\RuleEngine\Integration\Context\CatalogConfigurationContext'
+                - 'Akeneo\Test\Pim\Automation\RuleEngine\Integration\Context\DataFixturesContext'
+                - 'Akeneo\Test\Pim\Automation\RuleEngine\Integration\Context\ExecuteRuleContext'
+                - 'Akeneo\Test\Pim\Automation\RuleEngine\Integration\Context\ExportRuleContext'
+                - 'Akeneo\Test\Pim\Automation\RuleEngine\Integration\Context\ImportRuleContext'
+                - 'Akeneo\Test\Pim\Automation\RuleEngine\Integration\Context\VersionContext'
+                - 'Akeneo\Test\Pim\Automation\RuleEngine\Integration\Context\MassActionContext'
+                - 'Akeneo\Test\Pim\Automation\RuleEngine\Integration\Context\ImportProfilesContext'
+                - 'Akeneo\Test\Pim\Automation\RuleEngine\Integration\Context\JobContext'
+                - 'Akeneo\Test\Pim\Automation\RuleEngine\Common\Context\ExceptionContext'
+                - 'Context\ConnectivityContext'
+
+            filters:
+                tags: '@integration-back'
+    extensions:
+        FriendsOfBehat\SymfonyExtension:
+            bootstrap: config/bootstrap.php
+            kernel:
+                path: src/Kernel.php
+                class: Kernel
+                environment: test
+                debug: false
+        Pim\Behat\Extension\PimFormatter\PimFormatterExtension: ~
+        Liuggio\Fastest\Behat\ListFeaturesExtension\Extension: ~

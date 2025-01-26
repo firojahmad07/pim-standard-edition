@@ -1,0 +1,4 @@
+akeneo_authentication:
+  acl:
+    sso:
+      title: Single Sign-On(SSO) 관리

@@ -1,0 +1,3 @@
+flash.version.revert.product: Предыдущaя версия продуктa успешно восстaновленa
+flash.error.revert.product: Эта версия не может быть восстановлена. Произошли некоторые ошибки во время проверки.
+pimee_versioning.acl.product_version.revert: Восстановление продукта

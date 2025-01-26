@@ -1,0 +1,84 @@
+akeneo_assetmanager:
+  acl_group:
+    asset_manager: Gestionnaire de ressources
+  acl:
+    asset_family:
+      create: Créer une famille d'assets
+      edit: Editer les propriétés de la famille de ressources
+      delete: Supprimer une famille de ressources
+      manage_permission: Gérer les autorisations de la famille de ressources
+      manage_transformation: Gérer les transformations de la famille de ressources
+      manage_product_link_rule: Gérer les règles de rattachement aux produits de la famille de ressources
+      execute_product_link_rule: Exécuter les règles de rattachement aux produits sur toutes les ressources d'une famille
+      execute_naming_conventions: Exécuter les conventions de nommage sur les ressources
+    asset:
+      create: Créer une ressource
+      edit: Editer les ressources
+      delete: Supprimer les ressources
+      list_product: Lister les produits liés à la ressource
+      execute_naming_conventions: Exécuter les conventions de nommage
+    attribute:
+      create: Ajouter un attribut à une famille de ressources
+      edit: Modifier un attribut d'une famille de ressources
+      delete: Supprimer un attribut d'une famille de ressources
+    option:
+      edit: Modifier les options
+      delete: Supprimer une option
+  jobs:
+    asset_manager_execute_naming_convention:
+      error: 'L''exécution de la convention de nommage a échoué sur la ressource "{{ asset }}"'
+    asset_manager_mass_delete:
+      error: 'La suppression en masse a échoué pour la/les ressources(s) "{{ assets }}" à cause de l''erreur suivante : "{{ error }}"'
+    asset_manager_mass_edit:
+      error: 'L''édition en masse a échoué pour la/les ressources(s) "{{ assets }}" à cause de l''erreur suivante : "{{ error }}"'
+pim_analytics:
+  info_type:
+    api_connection: Nombre de connexions API
+    nb_asset_families: Nombre de familles de ressources
+    max_number_of_assets_per_asset_family: Nombre maximum de ressources par famille de ressources
+    average_number_of_values_per_assets: Nombre moyen de valeurs par ressource
+    average_number_of_assets_per_asset_family: Nombre moyen de ressources par famille de ressources
+    max_number_of_attributes_per_asset_family: Nombre maximum d'attributs par famille de ressources
+    average_number_of_attributes_per_asset_family: Nombre moyen d'attributs par famille de ressources
+    data_source:
+      tracked: Destination des données suivies
+      untracked: Destination des données non suivies
+    data_destination:
+      tracked: Source de données suivie
+      untracked: Source de données non suivie
+    other:
+      tracked: Autres suivis
+      untracked: Autres non suivis
+#average_percentage_localizable_only_attributes: Average percentage of localizable only attributes per asset family
+#average_percentage_scopable_only_attributes: Average percentage of scopable only attributes per asset family
+#average_percentage_scopable_and_localizable_attributes: Average percentage of localizable and scopable attributes per asset family
+pim_catalog_asset_collection: Collection de ressources
+batch_jobs:
+  default_steps:
+    execute_naming_convention: Exécuter la convention de nommage pour toutes les ressources de la famille
+    link_assets_to_products: Lier les ressources aux produits
+    compute_transformations: Calculer les transformations de ressource
+job_execution:
+  summary:
+    assets: Ressources
+    transformations: Transformations de ressources
+    skipped: Ignoré(s)
+pim_mass_edit.notification.asset_manager_mass_delete_assets:
+  warning: Les ressources ont bien été supprimées, mais avec des avertissements
+  success: Ressources supprimées avec succès
+  error: La suppression des ressources a échoué
+pim_mass_edit.notification.asset_manager_mass_edit_assets:
+  warning: Les ressources ont bien été éditées, mais avec des avertissements
+  success: Ressources éditées avec succès
+  error: L'édition des ressources a échoué
+pim_api:
+  acl:
+    asset_family:
+      create: Créer et mettre à jour des familles de ressources
+      list: Lister les familles de ressources
+    asset:
+      create: Créer et mettre à jour les ressources
+      list: Lister les ressources
+      remove: Supprimer les ressources
+  acl_group:
+    asset: Ressources

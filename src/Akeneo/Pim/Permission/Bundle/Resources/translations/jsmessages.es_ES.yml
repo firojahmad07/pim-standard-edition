@@ -1,0 +1,87 @@
+pim_enrich:
+  entity:
+    attribute:
+      property:
+        is_read_only: Sólo lectura
+pimee_import_export:
+  entity:
+    job_instance:
+      flash:
+        update:
+          fail_empty_permission: Debe seleccionar al menos uno permitido para editar el trabajo
+pimee_enrich.entity.category:
+  module:
+    permissions:
+      grant: El grupo <strong>{{ group }}</strong> será <strong> {{ permission }}</strong> en esta categoría
+      revoke: El grupo <strong>{{ group }}</strong> no será <strong> {{ permission }}</strong> en esta categoría
+pimee_enrich.entity.locale:
+  module:
+    permissions:
+      grant: El grupo <strong>{{ group }}</strong> será <strong> {{ permission }}</strong> en este local
+      revoke: El grupo <strong>{{ group }}</strong> no será <strong> {{ permission }}</strong> en este local
+pimee_enrich.entity.attribute group:
+  module:
+    permissions:
+      grant: El grupo <strong>{{ group }}</strong> será <strong> {{ permission }}</strong> de este grupo de atributos
+      revoke: El grupo <strong>{{ group }}</strong> no será <strong> {{ permission }}</strong> de este grupo de atributos
+pimee_enrich.entity.attribute_group:
+  module:
+    permissions:
+      added: El grupo {{ group }} será autorizado a {{ permission }} grupo de atributos
+      view: Autorizado a ver los atributos
+      edit: Autorizado a editar los atributos
+      removed: El grupo {{ group }} no será autorizado a {{ permission }} grupo de atributos
+pimee_enrich.entity.job_instance:
+  module:
+    permissions:
+      added: El grupo {{ group }} será autorizado a {{ permission }} el perfil de trabajo
+      execute: Autorizado a ejecutar el perfil de trabajo
+      edit: Autorizado a editar el perfil de trabajo
+      removed: El grupo {{ group }} no será autorizado a {{ permission }} el perfil de trabajo
+batch_jobs:
+  add_product_value_with_permission_and_rules:
+    label: Agregar el valor de producto con verificación de permisos y aplicación de reglas
+    perform.label: Agregar un valor de producto
+  update_product_value_with_permission_and_rules:
+    label: Actualizar el valor de producto con verificación de permisos y aplicación de reglas
+    perform.label: Actualizar el valor del producto
+  remove_product_value_with_permission_and_rules:
+    label: Quitar el valor del producto con verificación de permisos y aplicación de reglas
+    perform.label: Quitar el valor del producto
+  edit_common_attributes_with_permission_and_rules:
+    label: Editar atributos con verificación de permisos y aplicación de reglas
+    perform.label: Editar atributos
+    cleaner.label: Eliminar archivos temporales
+  default_steps:
+    send_for_approval: Enviar para su aprobación
+pim_title:
+  pimee_enrich_locale_edit: Local | Editar
+pim_analytics:
+  info_type:
+    nb_custom_locale_accesses: Número de configuraciones regionales con accesos personalizados
+    nb_custom_category_accesses: Número de categorías con accesos personalizados
+    nb_custom_attribute_group_accesses: Número de grupo de atributos con accesos personalizados
+category.permissions:
+  view.label: Autorizado a ver los productos
+  edit.label: Autorizado a editar los productos
+  own.label: Autorizado a administrar productos
+  own.help: Revisar, publicar, despublicar, clasificar y asociar productos
+  no_access_to_products: Usted no tiene acceso a productos en ningún árbol. Contacte con su administrador
+  apply_on_children.label: Aplicar cambios en secundarios
+  apply_on_children.help: Se mantienen los permisos existentes en secundarios
+pim_permissions:
+  widget:
+    entity:
+      attribute_group:
+        label: Grupos de atributos
+        help: Si quiere que su aplicación pueda modificar todos los datos de sus productos, elija la opción Todo en el nivel de Edición. De lo contrario, seleccione solo los grupos de atributos que su aplicación podrá ver o modificar según el nivel.
+      category:
+        label: Árboles de categorías
+        help: Si quiere que su aplicación pueda modificar sus productos sin utilizar las propuestas PIM, elija el nivel Administrar. En caso contrario, elija el nivel Editar.
+      locale:
+        label: Configuraciones regionales
+        help: Si quiere que su aplicación pueda editar sus productos en todos los idiomas, elija la opción Todos en el nivel de edición. De lo contrario, seleccione solo los idiomas que su aplicación podrá ver o modificar según el nivel.
+      not_granted_warning: Esta sección solo es accesible para los usuarios con el {{ permission }}. Póngase en contacto con su administrador. Con el permiso adecuado, podrá volver a la configuración de la aplicación y editarla.
+pimee_enrich.acl.category.edit_permissions: Administrar permisos de categoría
+pimee_enrich.acl.attribute_group.edit_permissions: Administrar permisos de atributos de grupo
+pimee_enrich.acl.locale.edit_permissions: Administrar permisos de configuración regional

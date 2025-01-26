@@ -1,0 +1,71 @@
+@import './public/bundles/akeneopimruleengine/less/variables';
+
+.AknBadgedSelector {
+  margin-bottom: 5px;
+  position: relative;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+  color: @AknGrey140;
+  padding-left: 14px;
+
+  &-helper {
+    text-transform: uppercase;
+    position: absolute;
+    right: 36px;
+    border: 1px solid @AknGrey;
+    font-size: 11px;
+    height: 18px;
+    line-height: 16px;
+    border-radius: 2px;
+    top: 10px;
+    padding: 0 3px;
+    color: @AknSlateGrey;
+  }
+
+  &--selected {
+    border-color: @AknBlue;
+  }
+
+  &--selected &-helper {
+    border-color: @AknBlue;
+    color: @AknBlue140;
+  }
+
+  &-delete {
+    background-image: url('/bundles/pimui/images/icon-remove.svg') !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+    background-size: 100%;
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  &-new {
+    max-width: 300px;
+  }
+
+  &-item {
+    max-width: 400px;
+    min-height: 45px;
+
+    &--quantified {
+      display: flex;
+
+      .AknNumberField {
+        margin-left: 10px;
+        flex-basis: 150px;
+      }
+    }
+  }
+}
+
+.category-container-error .category-artifact {
+  border: 1px solid @AknRed100;
+  border-radius: 3px;
+}

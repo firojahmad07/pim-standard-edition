@@ -1,0 +1,9 @@
+batch_jobs:
+  add_product_value_with_permission_and_rules:
+    label: Tilføj produktværdi med tilladelse tjek & regler anvendelse
+  update_product_value_with_permission_and_rules:
+    label: Tilføj produktværdi med tilladelse tjek & regler anvendelse
+  remove_product_value_with_permission_and_rules:
+    label: Tilføj produktværdi med tilladelse tjek & regler anvendelse
+  edit_common_attributes_with_permission_and_rules:
+    label: Rediger fælles attributter med tilladelse kontrol & regel anvendelse

@@ -1,0 +1,43 @@
+teamwork_assistant:
+  project:
+    required: Dieser Wert sollte nicht leer sein.
+    label_maxlength: Dieser Wert ist zu lang. Er sollte {{ max }} oder weniger Zeichen haben.
+    project_identifier: Das Projekt {{ project }} existiert nicht.
+    project_locale: Das Gebietsschema {{ locale }} wird vom Kanal {{ channel }} nicht unterstützt.
+    project_due_date: Sie können kein Datum in der Vergangenheit auswählen.
+  notification:
+    project_calculation:
+      error: Kalkulation für Projekt <strong>%project_label%</strong> ist fehlgeschlagen
+      warning: Kalkulation für Projekt <strong>%project_label%</strong> abgeschlossen mit Warnungen
+      success: Das Projekt <strong>%project_label%</strong> ist fertig und die Mitarbeiter wurden benachrichtigt. Los gehts!
+      start: Start
+    message: Es müssen neue Produkte angereichert werden für "%project_label%". Das Fälligkeitsdatum ist "%due_date%".
+    project_finished:
+      contributor: Glückwunsch! Sie haben 100% vollständige Produkte in %project_label%.
+      owner: 'Das für den <strong>%due_date%</strong> fällige Projekt <strong>%project_label%</strong> ist beendet.'
+      show: Anzeigen
+    due_date:
+      contributor: Sie haben %percent%% der Produkte in %project_label% vollständig. Vergessen Sie nicht, die fehlenden Produkte bis zum %due_date% zu vervollständigen.
+      owner: 'Das für den <strong>%due_date%</strong> fällige Projekt <strong>%project_label%</strong> ist nicht 100% erledigt.'
+      start: Start
+  datagrid:
+    project_completeness: Projektfortschritt
+    contributor_todo: ToDo
+    contributor_in_progress: In Bearbeitung
+    contributor_done: Fertig
+    owner_todo: Todo (Projektübersicht)
+    owner_in_progress: In Bearbeitung (Projektübersicht)
+    owner_done: Erledigt (Projektübersicht)
+  user:
+    deletion:
+      user_linked_to_project: Dieser Benutzer ist noch mit einem oder mehrere(n) Projekte(n) verknüpft. Bitte entfernen Sie die Gruppen, mit denen er in seinem Benutzerkonto verknüpft ist
+      user_is_project_owner: Dieser Benutzer ist noch Eigentümer eines oder mehrerer Projekte. Bitte löschen Sie alle Projekte dieses Benutzers.
+  user_group:
+    deletion:
+      group_linked_to_project: Diese Benutzergruppe wird in einem Teamwork Assistant Projekt verwendet, sie kann nicht gelöscht werden
+job_execution:
+  summary:
+    processed_products: Bearbeitete Produkte
+pim_analytics:
+  info_type:
+    nb_projects: Anzahl der Projekte

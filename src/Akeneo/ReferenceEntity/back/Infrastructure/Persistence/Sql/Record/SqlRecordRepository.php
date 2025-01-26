@@ -1,0 +1,368 @@
+<?php
+
+declare(strict_types=1);
+
+/*
+ * This file is part of the Akeneo PIM Enterprise Edition.
+ *
+ * (c) 2018 Akeneo SAS (https://www.akeneo.com)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Akeneo\ReferenceEntity\Infrastructure\Persistence\Sql\Record;
+
+use Akeneo\ReferenceEntity\Domain\Event\RecordDeletedEvent;
+use Akeneo\ReferenceEntity\Domain\Event\RecordUpdatedEvent;
+use Akeneo\ReferenceEntity\Domain\Model\Attribute\RecordAttribute;
+use Akeneo\ReferenceEntity\Domain\Model\Attribute\RecordCollectionAttribute;
+use Akeneo\ReferenceEntity\Domain\Model\Record\Record;
+use Akeneo\ReferenceEntity\Domain\Model\Record\RecordCode;
+use Akeneo\ReferenceEntity\Domain\Model\Record\RecordIdentifier;
+use Akeneo\ReferenceEntity\Domain\Model\ReferenceEntity\ReferenceEntityIdentifier;
+use Akeneo\ReferenceEntity\Domain\Query\Attribute\FindAttributesIndexedByIdentifierInterface;
+use Akeneo\ReferenceEntity\Domain\Query\Attribute\FindValueKeyCollectionInterface;
+use Akeneo\ReferenceEntity\Domain\Query\Attribute\FindValueKeysByAttributeTypeInterface;
+use Akeneo\ReferenceEntity\Domain\Query\Record\FindIdentifiersByReferenceEntityAndCodesInterface;
+use Akeneo\ReferenceEntity\Domain\Repository\RecordNotFoundException;
+use Akeneo\ReferenceEntity\Domain\Repository\RecordRepositoryInterface;
+use Akeneo\ReferenceEntity\Infrastructure\Persistence\Sql\Record\Hydrator\RecordHydratorInterface;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Types\Type;
+use Doctrine\DBAL\Types\Types;
+use Ramsey\Uuid\Uuid;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+
+/**
+ * @author    Samir Boulil <samir.boulil@akeneo.com>
+ * @copyright 2018 Akeneo SAS (https://www.akeneo.com)
+ */
+class SqlRecordRepository implements RecordRepositoryInterface
+{
+    public function __construct(
+        private Connection $sqlConnection,
+        private RecordHydratorInterface $recordHydrator,
+        private FindValueKeyCollectionInterface $findValueKeyCollection,
+        private FindAttributesIndexedByIdentifierInterface $findAttributesIndexedByIdentifier,
+        private EventDispatcherInterface $eventDispatcher,
+        private FindIdentifiersByReferenceEntityAndCodesInterface $findIdentifiersByReferenceEntityAndCodes,
+        private FindValueKeysByAttributeTypeInterface $findValueKeysByAttributeType
+    ) {
+    }
+
+    public function count(): int
+    {
+        $sql = 'SELECT COUNT(*) FROM akeneo_reference_entity_record';
+        $statement = $this->sqlConnection->executeQuery($sql);
+
+        return (int) $statement->fetchOne();
+    }
+
+    public function create(Record $record): void
+    {
+        $valueCollection = $this->replaceCodesByIdentifiers(
+            $record->getValues()->normalize(),
+            $record->getReferenceEntityIdentifier()
+        );
+
+        $insert = <<<SQL
+        INSERT INTO akeneo_reference_entity_record
+            (identifier, code, reference_entity_identifier, value_collection)
+        VALUES (:identifier, :code, :reference_entity_identifier, :value_collection);
+SQL;
+        $affectedRows = $this->sqlConnection->executeUpdate(
+            $insert,
+            [
+                'identifier' => (string) $record->getIdentifier(),
+                'code' => (string) $record->getCode(),
+                'reference_entity_identifier' => (string) $record->getReferenceEntityIdentifier(),
+                'value_collection' => $valueCollection,
+                'created_at' => $record->getCreatedAt(),
+                'updated_at' => $record->getUpdatedAt(),
+            ],
+            [
+                'value_collection' => Types::JSON,
+                'created_at' => Types::DATETIME_IMMUTABLE,
+                'updated_at' => Types::DATETIME_IMMUTABLE,
+            ]
+        );
+        if ($affectedRows > 1) {
+            throw new \RuntimeException(
+                sprintf('Expected to create one record, but %d rows were affected', $affectedRows)
+            );
+        }
+
+        $this->eventDispatcher->dispatch(
+            new RecordUpdatedEvent(
+                $record->getIdentifier(),
+                $record->getCode(),
+                $record->getReferenceEntityIdentifier()
+            ),
+            RecordUpdatedEvent::class
+        );
+    }
+
+    public function update(Record $record): void
+    {
+        $valueCollection = $this->replaceCodesByIdentifiers(
+            $record->getValues()->normalize(),
+            $record->getReferenceEntityIdentifier()
+        );
+
+        $update = <<<SQL
+        UPDATE akeneo_reference_entity_record
+        SET value_collection = :value_collection, updated_at = :updated_at
+        WHERE identifier = :identifier;
+SQL;
+        $affectedRows = $this->sqlConnection->executeUpdate(
+            $update,
+            [
+                'identifier' => $record->getIdentifier(),
+                'value_collection' => $valueCollection,
+                'updated_at' => $record->getUpdatedAt(),
+            ],
+            [
+                'value_collection' => Types::JSON,
+                'updated_at' => Types::DATETIME_IMMUTABLE
+            ]
+        );
+
+        if ($affectedRows > 1) {
+            throw new \RuntimeException(
+                sprintf('Expected to update one record, but %d rows were affected', $affectedRows)
+            );
+        }
+
+        $this->eventDispatcher->dispatch(
+            new RecordUpdatedEvent(
+                $record->getIdentifier(),
+                $record->getCode(),
+                $record->getReferenceEntityIdentifier()
+            ),
+            RecordUpdatedEvent::class
+        );
+    }
+
+    public function getByReferenceEntityAndCode(
+        ReferenceEntityIdentifier $referenceEntityIdentifier,
+        RecordCode $code
+    ): Record {
+        $fetch = <<<SQL
+        SELECT identifier, code, reference_entity_identifier, value_collection, created_at, updated_at
+        FROM akeneo_reference_entity_record
+        WHERE code = :code AND reference_entity_identifier = :reference_entity_identifier;
+SQL;
+        $statement = $this->sqlConnection->executeQuery(
+            $fetch,
+            [
+                'code' => (string) $code,
+                'reference_entity_identifier' => (string) $referenceEntityIdentifier,
+            ]
+        );
+        $result = $statement->fetchAssociative();
+
+        if (!$result) {
+            throw RecordNotFoundException::withReferenceEntityAndCode($referenceEntityIdentifier, $code);
+        }
+
+        return $this->hydrateRecord($result);
+    }
+
+    public function getByIdentifier(RecordIdentifier $identifier): Record
+    {
+        $fetch = <<<SQL
+        SELECT 
+            record.identifier,
+            record.code,
+            record.reference_entity_identifier,
+            record.value_collection,
+            reference.attribute_as_label,
+            reference.attribute_as_image,
+            created_at,
+            updated_at
+        FROM akeneo_reference_entity_record AS record
+        INNER JOIN akeneo_reference_entity_reference_entity AS reference
+            ON reference.identifier = record.reference_entity_identifier
+        WHERE record.identifier = :record_identifier;
+SQL;
+        $statement = $this->sqlConnection->executeQuery(
+            $fetch,
+            [
+                'record_identifier' => (string) $identifier,
+            ]
+        );
+        $result = $statement->fetchAssociative();
+
+        if (!$result) {
+            throw RecordNotFoundException::withIdentifier($identifier);
+        }
+
+        return $this->hydrateRecord($result);
+    }
+
+    public function deleteByReferenceEntityAndCodes(
+        ReferenceEntityIdentifier $referenceEntityIdentifier,
+        array $recordCodes
+    ): void {
+        $identifiers = $this->findIdentifiersByReferenceEntityAndCodes->find($referenceEntityIdentifier, $recordCodes);
+
+        $sql = <<<SQL
+        DELETE FROM akeneo_reference_entity_record
+        WHERE code IN (:codes) AND reference_entity_identifier = :reference_entity_identifier;
+SQL;
+        $this->sqlConnection->executeUpdate(
+            $sql,
+            [
+                'codes' => $recordCodes,
+                'reference_entity_identifier' => (string) $referenceEntityIdentifier,
+            ],
+            [
+                'codes' => Connection::PARAM_STR_ARRAY
+            ]
+        );
+
+        foreach ($recordCodes as $recordCode) {
+            if (!array_key_exists($recordCode->normalize(), $identifiers)) {
+                continue;
+            }
+
+            $this->eventDispatcher->dispatch(
+                new RecordDeletedEvent(
+                    $identifiers[$recordCode->normalize()],
+                    $recordCode,
+                    $referenceEntityIdentifier
+                ),
+                RecordDeletedEvent::class
+            );
+        }
+    }
+
+    public function deleteByReferenceEntityAndCode(
+        ReferenceEntityIdentifier $referenceEntityIdentifier,
+        RecordCode $code
+    ): void {
+        $identifiers = $this->findIdentifiersByReferenceEntityAndCodes->find($referenceEntityIdentifier, [$code]);
+
+        $sql = <<<SQL
+        DELETE FROM akeneo_reference_entity_record
+        WHERE code = :code AND reference_entity_identifier = :reference_entity_identifier;
+SQL;
+        $affectedRowsCount = $this->sqlConnection->executeUpdate(
+            $sql,
+            [
+                'code' => (string) $code,
+                'reference_entity_identifier' => (string) $referenceEntityIdentifier,
+            ]
+        );
+
+        if (0 === $affectedRowsCount) {
+            throw new RecordNotFoundException();
+        }
+
+        $this->eventDispatcher->dispatch(
+            new RecordDeletedEvent(
+                $identifiers[$code->normalize()],
+                $code,
+                $referenceEntityIdentifier
+            ),
+            RecordDeletedEvent::class
+        );
+    }
+
+    public function nextIdentifier(
+        ReferenceEntityIdentifier $referenceEntityIdentifier,
+        RecordCode $code
+    ): RecordIdentifier {
+        return RecordIdentifier::create(
+            (string) $referenceEntityIdentifier,
+            (string) $code,
+            Uuid::uuid4()->toString()
+        );
+    }
+
+    public function countByReferenceEntity(ReferenceEntityIdentifier $referenceEntityIdentifier): int
+    {
+        $fetch = <<<SQL
+        SELECT COUNT(*)
+        FROM akeneo_reference_entity_record
+        WHERE reference_entity_identifier = :reference_entity_identifier;
+SQL;
+        $statement = $this->sqlConnection->executeQuery(
+            $fetch,
+            ['reference_entity_identifier' => $referenceEntityIdentifier,]
+        );
+        $count = $statement->fetchOne();
+
+        return (int) $count;
+    }
+
+    private function getReferenceEntityIdentifier($result): ReferenceEntityIdentifier
+    {
+        if (!isset($result['reference_entity_identifier'])) {
+            throw new \LogicException('The record should have a reference entity identifier');
+        }
+        $normalizedReferenceEntityIdentifier = Type::getType(Types::STRING)->convertToPHPValue(
+            $result['reference_entity_identifier'],
+            $this->sqlConnection->getDatabasePlatform()
+        );
+
+        return ReferenceEntityIdentifier::fromString($normalizedReferenceEntityIdentifier);
+    }
+
+    private function hydrateRecord($result): Record
+    {
+        $referenceEntityIdentifier = $this->getReferenceEntityIdentifier($result);
+        $valueKeyCollection = $this->findValueKeyCollection->find($referenceEntityIdentifier);
+        $attributesIndexedByIdentifier = $this->findAttributesIndexedByIdentifier->find($referenceEntityIdentifier);
+
+        return $this->recordHydrator->hydrate(
+            $result,
+            $valueKeyCollection,
+            $attributesIndexedByIdentifier
+        );
+    }
+
+    private function replaceCodesByIdentifiers(
+        array $valueCollection,
+        ReferenceEntityIdentifier $referenceEntityIdentifier
+    ): array {
+        $recordsValueKeys = $this->findValueKeysByAttributeType->find(
+            $referenceEntityIdentifier,
+            ['record', 'record_collection']
+        );
+
+        if (empty($recordsValueKeys)) {
+            return $valueCollection;
+        }
+
+        $onlyRecordsValues = array_intersect_key($valueCollection, array_flip($recordsValueKeys));
+
+        if (empty($onlyRecordsValues)) {
+            return $valueCollection;
+        }
+
+        $attributesIndexedByIdentifier = $this->findAttributesIndexedByIdentifier->find($referenceEntityIdentifier);
+
+        // Replace codes by identifiers in the value collection
+        foreach ($onlyRecordsValues as $valueKey => $value) {
+            /** @var RecordAttribute|RecordCollectionAttribute $attribute */
+            $attribute = $attributesIndexedByIdentifier[$value['attribute']];
+
+            $indexedIdentifiers = $this->findIdentifiersByReferenceEntityAndCodes->find(
+                $attribute->getRecordType(),
+                is_array($value['data']) ? $value['data'] : [$value['data']]
+            );
+
+            if (is_array($value['data'])) {
+                $value['data'] = array_map(static fn ($code) => (string) $indexedIdentifiers[$code], $value['data']);
+            } else {
+                $value['data'] = (string) $indexedIdentifiers[$value['data']];
+            }
+
+            $valueCollection[$valueKey] = $value;
+        }
+
+        return $valueCollection;
+    }
+}

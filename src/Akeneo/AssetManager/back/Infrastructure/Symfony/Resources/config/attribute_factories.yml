@@ -1,0 +1,33 @@
+services:
+    akeneo_assetmanager.application.registry.attribute_factory:
+        class: Akeneo\AssetManager\Application\Attribute\CreateAttribute\AttributeFactory\AttributeFactoryRegistry
+
+    akeneo_assetmanager.application.factory.text_attribute_factory:
+        class: Akeneo\AssetManager\Application\Attribute\CreateAttribute\AttributeFactory\TextAttributeFactory
+        tags:
+            - { name: akeneo_assetmanager.attribute_factory }
+
+    akeneo_assetmanager.application.factory.media_file_attribute_factory:
+        class: Akeneo\AssetManager\Application\Attribute\CreateAttribute\AttributeFactory\MediaFileAttributeFactory
+        tags:
+            - { name: akeneo_assetmanager.attribute_factory }
+
+    akeneo_assetmanager.application.factory.option_attribute_factory:
+        class: Akeneo\AssetManager\Application\Attribute\CreateAttribute\AttributeFactory\OptionAttributeFactory
+        tags:
+            - { name: akeneo_assetmanager.attribute_factory }
+
+    akeneo_assetmanager.application.factory.option_collection_attribute_factory:
+        class: Akeneo\AssetManager\Application\Attribute\CreateAttribute\AttributeFactory\OptionCollectionAttributeFactory
+        tags:
+            - { name: akeneo_assetmanager.attribute_factory }
+
+    akeneo_assetmanager.application.factory.number_attribute_factory:
+        class: Akeneo\AssetManager\Application\Attribute\CreateAttribute\AttributeFactory\NumberAttributeFactory
+        tags:
+            - { name: akeneo_assetmanager.attribute_factory }
+
+    akeneo_assetmanager.application.factory.media_link_attribute_factory:
+        class: Akeneo\AssetManager\Application\Attribute\CreateAttribute\AttributeFactory\MediaLinkAttributeFactory
+        tags:
+            - { name: akeneo_assetmanager.attribute_factory }

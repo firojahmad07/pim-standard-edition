@@ -1,0 +1,4 @@
+akeneo_authentication:
+  acl:
+    sso:
+      title: Gestisti il Single Sign-On (SSO)

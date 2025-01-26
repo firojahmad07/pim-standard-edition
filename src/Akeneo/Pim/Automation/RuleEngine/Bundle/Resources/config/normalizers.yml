@@ -1,0 +1,7 @@
+services:
+    pimee_enrich.serializer.normalizer.rule_relation:
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\Normalizer\RuleRelationNormalizer'
+        arguments:
+            - '@doctrine'
+        tags:
+            - { name: pim_internal_api_serializer.normalizer, priority: 100 }

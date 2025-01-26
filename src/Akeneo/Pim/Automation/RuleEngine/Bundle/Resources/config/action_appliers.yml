@@ -1,0 +1,150 @@
+parameters:
+    pimee_catalog_rule.action_applier.setter.class:  Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\SetterActionApplier
+    pimee_catalog_rule.action_applier.copier.class:  Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\CopierActionApplier
+    pimee_catalog_rule.action_applier.adder.class:   Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\AdderActionApplier
+    pimee_catalog_rule.action_applier.remover.class: Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\RemoverActionApplier
+    pimee_catalog_rule.action_applier.concatenate.class: Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\ConcatenateActionApplier
+    pimee_catalog_rule.action_applier.calculate.class: Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\CalculateActionApplier
+
+services:
+    pimee_catalog_rule.action_applier.setter:
+        class: '%pimee_catalog_rule.action_applier.setter.class%'
+        arguments:
+            - '@pim_catalog.updater.entity_with_values_property_setter_without_permission'
+            - '@akeneo.pim.structure.query.get_attributes'
+            - '@event_dispatcher'
+        tags:
+            - { name: akeneo_rule_engine.action_applier, priority: 100 }
+
+    pimee_catalog_rule.action_applier.copier:
+        class: '%pimee_catalog_rule.action_applier.copier.class%'
+        arguments:
+            - '@pim_catalog.updater.property_copier'
+            - '@akeneo.pim.structure.query.get_attributes'
+            - '@event_dispatcher'
+        tags:
+            - { name: akeneo_rule_engine.action_applier, priority: 100 }
+
+    pimee_catalog_rule.action_applier.adder:
+        class: '%pimee_catalog_rule.action_applier.adder.class%'
+        arguments:
+            - '@pim_catalog.updater.property_adder'
+            - '@akeneo.pim.structure.query.get_attributes'
+            - '@event_dispatcher'
+        tags:
+            - { name: akeneo_rule_engine.action_applier, priority: 100 }
+
+    pimee_catalog_rule.action_applier.remover:
+        class: '%pimee_catalog_rule.action_applier.remover.class%'
+        arguments:
+            - '@pim_catalog.updater.property_remover'
+            - '@akeneo.pim.structure.query.get_attributes'
+            - '@pim_catalog.repository.category'
+            - '@event_dispatcher'
+        tags:
+            - { name: akeneo_rule_engine.action_applier, priority: 100 }
+
+    pimee_catalog_rule.action_applier.clearer:
+        class: 'Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\ClearerActionApplier'
+        arguments:
+            - '@pim_catalog.updater.property_clearer'
+            - '@akeneo.pim.structure.query.get_attributes'
+            - '@event_dispatcher'
+        tags:
+            - { name: akeneo_rule_engine.action_applier, priority: 100 }
+
+    pimee_catalog_rule.action_applier.concatenate:
+        class: '%pimee_catalog_rule.action_applier.concatenate.class%'
+        arguments:
+            - '@pim_catalog.updater.entity_with_values_property_setter_without_permission'
+            - '@Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\Concatenate\ValueStringifierRegistry'
+            - '@pim_catalog.repository.cached_attribute'
+            - '@akeneo.pim.structure.query.get_attributes'
+            - '@event_dispatcher'
+        tags:
+            - { name: akeneo_rule_engine.action_applier, priority: 100 }
+
+    pimee_catalog_rule.action_applier.calculate:
+        class: '%pimee_catalog_rule.action_applier.calculate.class%'
+        arguments:
+            - '@akeneo.pim.structure.query.get_attributes'
+            - '@Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\Calculate\GetOperandValue'
+            - '@pim_standard_format_serializer'
+            - '@pim_catalog.updater.entity_with_values_property_setter_without_permission'
+            - '@event_dispatcher'
+        tags:
+            - { name: akeneo_rule_engine.action_applier, priority: 100 }
+
+    # Concatenate extractors
+    Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\Concatenate\ValueStringifierRegistry:
+        arguments:
+            - !tagged akeneo_rule_engine.concatenate_applier.stringifier
+
+    Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\Concatenate\DefaultValueStringifier:
+        arguments:
+            -
+                - 'pim_catalog_identifier'
+                - 'pim_catalog_text'
+        tags:
+            - { name: akeneo_rule_engine.concatenate_applier.stringifier }
+
+    Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\Concatenate\NumberValueStringifier:
+        arguments:
+            -
+                - 'pim_catalog_number'
+        tags:
+            - { name: akeneo_rule_engine.concatenate_applier.stringifier }
+
+    Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\Concatenate\DateValueStringifier:
+        arguments:
+            -
+                - 'pim_catalog_date'
+        tags:
+            - { name: akeneo_rule_engine.concatenate_applier.stringifier }
+
+    Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\Concatenate\MetricValueStringifier:
+        arguments:
+            - '@akeneo_measurement.public_api.get_unit_translations'
+            -
+                - 'pim_catalog_metric'
+        tags:
+            - { name: akeneo_rule_engine.concatenate_applier.stringifier }
+
+    Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\Concatenate\PriceCollectionValueStringifier:
+        arguments:
+            -
+                - 'pim_catalog_price_collection'
+        tags:
+            - { name: akeneo_rule_engine.concatenate_applier.stringifier }
+
+    Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\Concatenate\TextareaValueStringifier:
+        arguments:
+            - '@pim_catalog.repository.attribute'
+            -
+                - 'pim_catalog_textarea'
+        tags:
+            - { name: akeneo_rule_engine.concatenate_applier.stringifier }
+
+    Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\Concatenate\OptionValueStringifier:
+        arguments:
+            - '@akeneo.pim.structure.query.get_existing_attribute_options_with_values'
+            -
+                - 'pim_catalog_simpleselect'
+                - 'pim_catalog_multiselect'
+        tags:
+            - { name: akeneo_rule_engine.concatenate_applier.stringifier }
+
+    Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\Concatenate\ReferenceEntityValueStringifier:
+        arguments:
+            - '@akeneo_referenceentity.infrastructure.persistence.query.find_record_details'
+            - '@akeneo.pim.structure.query.get_attributes'
+            -
+                - 'akeneo_reference_entity'
+                - 'akeneo_reference_entity_collection'
+        tags:
+            - { name: akeneo_rule_engine.concatenate_applier.stringifier }
+
+    Akeneo\Pim\Automation\RuleEngine\Component\ActionApplier\Calculate\GetOperandValue:
+        arguments:
+            - '@akeneo.pim.structure.query.get_attributes'
+            - '@akeneo_measure.measure_converter'

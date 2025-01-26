@@ -1,0 +1,79 @@
+akeneo_assetmanager:
+  acl_group:
+    asset_manager: Assettien hallinta
+  acl:
+    asset_family:
+      create: Luo assettiperhe
+      edit: Muokkaa assettiperheen ominaisuuksia
+      delete: Poista assettiperhe
+      manage_permission: Hallinnoi assettiperheen käyttöoikeuksia
+      manage_transformation: Hallitse assettiperheen muutoksia
+      manage_product_link_rule: Hallinnoi assettiperheen tuotelinkityssääntöjä
+      execute_product_link_rule: Suorita tuotteiden linkityssäännöt kaikille assettiperheen asseteille
+    asset:
+      create: Luo assetti
+      edit: Muokkaa assettia
+      delete: Poista assetteja
+      list_product: Listaa assettiin linkitetyt tuotteet
+    attribute:
+      create: Lisää attribuutti assettiperheeseen
+      edit: Muokkaa assettiperheen attribuuttia
+      delete: Poista attribuutti assettiperheestä
+    option:
+      edit: Muokkaa valintoja
+      delete: Poista valinta
+  jobs:
+    asset_manager_mass_delete:
+      error: 'Massapoisto epäonnistui asseteilla "{{ assets }}" seuraavan virheen vuoksi: {{ error }}'
+    asset_manager_mass_edit:
+      error: 'Massamuokkaus epäonnistui asseteilla "{{ assets }}" seuraavan virheen vuoksi: {{ error }}'
+pim_analytics:
+  info_type:
+    api_connection: API-yhteyksien määrä
+    nb_asset_families: Assettiperheiden lukumäärä
+    max_number_of_assets_per_asset_family: Assettien enimmäismäärä kutakin assettiperhettä kohden
+    average_number_of_values_per_assets: Keskimääräinen arvojen määrä kutakin assettia kohden
+    average_number_of_assets_per_asset_family: Assettien keskimääräinen määrä kutakin assettiperhettä kohden
+    max_number_of_attributes_per_asset_family: Attribuuttien enimmäismäärä kutakin assettiperhettä kohden
+    average_number_of_attributes_per_asset_family: Attribuuttien keskimääräinen määrä attribuuttiperhettä kohden
+    data_source:
+      tracked: Seurattava tiedon kohde
+      untracked: Ei-seurattava tiedon kohde
+    data_destination:
+      tracked: Seurattava tiedon lähde
+      untracked: Ei-seurattava tiedon lähde
+    other:
+      tracked: Muut seurattavat
+      untracked: Muut ei-seurattavat
+#average_percentage_localizable_only_attributes: Average percentage of localizable only attributes per asset family
+#average_percentage_scopable_only_attributes: Average percentage of scopable only attributes per asset family
+#average_percentage_scopable_and_localizable_attributes: Average percentage of localizable and scopable attributes per asset family
+pim_catalog_asset_collection: Assetit
+batch_jobs:
+  default_steps:
+    link_assets_to_products: Linkitä assetit tuotteisiin
+    compute_transformations: Laske assettien muunnokset
+job_execution:
+  summary:
+    assets: Assetit
+    transformations: Assettien muunnokset
+    skipped: Ohitettu
+pim_mass_edit.notification.asset_manager_mass_delete_assets:
+  warning: Assetit poistettu varoituksin
+  success: Assetit poistettu onnistuneesti
+  error: Asettien poistaminen epäonnistui
+pim_mass_edit.notification.asset_manager_mass_edit_assets:
+  warning: Assetit muokattu varoituksin
+  success: Assetit muokattu onnistuneesti
+  error: Asettien muokkaus epäonnistui
+pim_api:
+  acl:
+    asset_family:
+      create: Luo ja päivitä assettiperheitä
+      list: Listaa assettiperheet
+    asset:
+      create: Luo ja päivitä assetteja
+      list: Listaa assetit
+      remove: Poista assetteja
+  acl_group:
+    asset: Assetit

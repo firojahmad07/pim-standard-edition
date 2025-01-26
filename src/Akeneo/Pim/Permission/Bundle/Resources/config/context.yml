@@ -1,0 +1,18 @@
+parameters:
+    pimee_security.context.user.class: Akeneo\Pim\Permission\Bundle\User\UserContext
+
+services:
+    pim_user.context.user:
+        public: true
+        class: '%pimee_security.context.user.class%'
+        arguments:
+            - '@security.token_storage'
+            - '@pim_catalog.repository.locale'
+            - '@pim_catalog.repository.channel'
+            - '@pim_catalog.repository.category'
+            - '@request_stack'
+            - '@security.authorization_checker'
+            - '@pimee_security.repository.category_access'
+            - '%env(APP_DEFAULT_LOCALE)%'
+            - 'defaultTree'
+            - '@security.firewall.map'

@@ -1,0 +1,246 @@
+View the product: Produkt anzeigen
+Unpublish the product: Die Veröffentlichung des Produktes entziehen
+Approve: Genehmigen
+Refuse: Ablehnen
+Approve selected: Ausgewählte freigeben
+Refuse selected: Ausgewählte ablehnen
+pim_datagrid:
+  no_entities:
+    proposal: Es gibt keinen Vorschlag zu prüfen.
+    product_draft: Es gibt keinen Produktentwurf zu überprüfen.
+  no_entities.published product: Kein veröffentlichtes Produkt gefunden
+  no_results:
+    proposal: Es gibt keinen Vorschlag zu prüfen. Versuchen Sie, Ihre Suchkriterien zu ändern.
+    product_draft: Es gibt keinen Produktentwurf zum überprüfen. Versuchen Sie, Ihre Suchkriterien zu ändern.
+  no_results.published product: Leider gibt es kein veröffentlichtes Produkt für Ihre Suche.
+  workflow:
+    partial_approve: Änderungen am Attribut {{ attribute }} des Produkts {{ product }} genehmigen
+    partial_reject: Änderungen am Attribut {{ attribute }} des Produkts {{ product }} ablehnen
+    by: von
+    at: um
+    status:
+      in_progress: In Bearbeitung
+      ready: Auf Genehmigung wartend
+      can_be_partially_reviewed: Kann teilweise überprüft werden
+      can_not_be_approved: Kann nicht überprüft werden
+      can_not_be_deleted: Kann nicht gelöscht werden
+    status_message:
+      ready: Auf Genehmigung wartend
+      in_progress: Dieser Vorschlag ist in Bearbeitung und ist noch nicht übermittelt worden.
+      can_be_partially_reviewed: Sie können diesen Vorschlag nur teilweise überprüfen, da einige Änderungen Werte betreffen, die Sie nicht bearbeiten können. Bitte wenden Sie sich an Ihren Administrator um Ihre Rechte anzupassen.
+      can_not_be_approved: Sie können nicht diesen Vorschlag überprüfen, weil alle Änderungen Werte betreffen, die Sie nicht bearbeiten können. Bitte kontaktieren Sie Ihren Administrator, um Ihre Rechte zu ändern.
+      can_not_be_deleted: Dieser Vorschlag kann nicht gelöscht werden, da alle Änderungen Werte betreffen, die Sie nicht bearbeiten können. Bitte kontaktieren Sie Ihren Administrator, um Ihre Rechte zu ändern.
+    draft_in_progress: Ein Entwurf wird von {{ author }} für dieses Produkt erstellt.
+    no_diff: Der Wert "{{ value }}" ist derselbe zwischen dem Vorschlag und der Arbeitskopie.
+    new_value: 'Neuer Wert:'
+    old_value: 'Alter Wert:'
+    see_more: Mehr sehen
+    actions:
+      approve_all: Alle genehmigen
+      refuse_all: Alle ablehnen
+pimee_datagrid:
+  cells:
+    expand:
+      expand_text: Aufklappen
+      collapse_text: Zuklappen
+pimee_workflow:
+  entity:
+    published_product:
+      btn:
+        original_product: Arbeitskopie bearbeiten
+    proposal:
+      modal.title: Kommentar hinterlassen (optional - max. 255 Zeichen)
+    removing_error: Entitäten, die mit veröffentlichten Produkten verbunden sind, können nicht entfernt werden.
+  proposal:
+    overview: "] -Inf, 1] {{ count }} Vorschlag|] 1, Inf [{{ count }} Vorschläge"
+    selected: "]-Inf, 1]{{ count }} Vorschlag ausgewählt|]1, Inf[{{ count }} Vorschläge ausgewählt"
+    mass_action_group:
+      review:
+        label: Massenbearbeitung
+    approve:
+      title: Vorschlag freigeben
+      success: Der Vorschlag wurde erfolgreich freigegeben.
+      error: "Der Vorschlag kann aufgrund des folgenden Fehlers nicht freigegeben werden: {{ error }}"
+    reject:
+      title: Vorschlag ablehnen
+      success: Der Vorschlag wurde abgelehnt
+      error: "Der Vorschlag kann aufgrund des folgenden Fehlers nicht abgelehnt werden: {{ error }}"
+    remove:
+      title: Vorschlag entfernen
+      success: Der Vorschlag wurde entfernt
+      error: "Der Vorschlag kann aufgrund des folgenden Fehlers nicht entfernt werden: {{ error }}"
+    partial_approve:
+      title: Teilinformationen genehmigen
+      success: Der Vorschlag wurde erfolgreich teilweise überprüft
+      error: "Der Vorschlag kann aufgrund des folgenden Fehlers nicht teilweise angenommen werden: {{ error }}"
+    partial_reject:
+      title: Änderungen teilweise ablehnen
+      success: Die Änderungen wurden erfolgreich abgelehnt
+      error: "Der Vorschlag kann aufgrund des folgenden Fehlers nicht teilweise abgelehnt werden: {{ error }}"
+batch_jobs:
+  csv_published_product_export:
+    label: Export veröffentlichter Produkte als CSV
+    export.label: Export veröffentlichter Produkte
+  csv_product_proposal_import:
+    label: Produktvorschläge in CSV-Datei importieren
+    import.label: Produktvorschlag-Import
+  csv_product_model_proposal_import:
+    label: Produktmodell-Vorschlag Import in CSV
+    import.label: Produktmodell-Vorschlag Import in CSV
+  approve_product_draft:
+    label: Vorschlag freigeben
+    perform.label: Vorschlag freigeben
+  refuse_product_draft:
+    label: Vorschläge verweigern
+    perform.label: Vorschläge verweigern
+  xlsx_published_product_export:
+    label: Export veröffentlichter Produkte als XLSX
+    export.label: Export veröffentlichter Produkte
+  xlsx_product_proposal_import:
+    label: Produktvorschlag-Import aus XLSX
+    import.label: Produktvorschlag-Import aus XLSX
+  xlsx_product_model_proposal_import:
+    label: Produktmodell-Vorschlag Import in XLSX
+    import.label: Produktmodell-Vorschlag Import in XLSX
+  csv_published_product_quick_export:
+    export.label: Schnellexport veröffentlichter Produkte als CSV
+    perform.label: Schnellexport veröffentlichter Produkte als CSV
+  csv_published_product_grid_context_quick_export:
+    export.label: Kontextbezogener Schnellexport veröffentlichter Produkte als CSV
+    perform.label: Kontextbezogener Schnellexport veröffentlichter Produkte als CSV
+  xlsx_published_product_quick_export:
+    export.label: Schnellexport veröffentlichter Produkte als XLSX
+    perform.label: Schnellexport veröffentlichter Produkte als XLSX
+  xlsx_published_product_grid_context_quick_export:
+    export.label: Kontextbezogener Schnellexport veröffentlichter Produkte als XLSX
+    perform.label: Kontextbezogener Schnellexport veröffentlichter Produkte als XLSX
+  publish_product:
+    perform.label: Produkte veröffentlichen
+  unpublish_product:
+    perform.label: Produktveröffentlichungen entziehen
+  default_steps:
+    clean_attribute:
+      clean_draft: Bereinigungsvorschläge
+pim_notification:
+  types:
+    pimee_workflow_product_draft_notification_new_proposal: Neuer Vorschlag
+    pimee_workflow_import_notification_new_proposals: Neue Vorschläge aus Import
+    pimee_workflow_product_draft_notification_partial_approve: Vorschlag teilweise genehmigt
+    pimee_workflow_product_draft_notification_partial_reject: Vorschlag teilweise abgelehnt
+    pimee_workflow_product_draft_notification_partial_remove: Vorschlag teilweise gelöscht
+    pimee_workflow_product_draft_notification_approve: Vorschlag genehmigt
+    pimee_workflow_product_draft_notification_refuse: Vorschlag abgelehnt
+    pimee_workflow_product_draft_notification_remove: Vorschlag gelöscht
+    pimee_workflow_product_draft_notification_sent: Vorschläge gesendet
+pimee_dashboard:
+  widget:
+    product_drafts:
+      date: Datum
+      author: Autor
+      product: Produkt
+      review: Überprüfung
+      empty: Keine zu überprüfende Vorschläge
+      title: Zu prüfende Vorschläge
+      view_all: Alle Vorschläge anzeigen
+    header.view_all: Alle anzeigen
+pimee_enrich.entity.product:
+  module:
+    history:
+      published: Veröffentlicht
+      revert: Wiederherstellen
+    attribute:
+      can_be_updated_by_rules: "]-Inf, 1]Dieses Attribut kann durch <span>eine Regel</span> aktualisiert werden|]1, +Inf[Dieses Attribut kann durch <span>{{ count }} Regeln</span> aktualisiert werden"
+      can_be_updated_by_rules_readonly: "]-Inf, 1]Dieses Attribut kann durch eine Regel aktualisiert werden|]1, +Inf[Dieses Attribut kann durch {{ count }} Regeln aktualisiert werden"
+      value_updated: Dieser Wert wird durch den aktuellen Entwurf aktualisiert.
+    meta:
+      published_version: Veröffentlichte Version
+      owner_groups: Eigentümer-Gruppen
+      draft_status: Entwurfsstatus
+      draft:
+        in_progress: In Bearbeitung
+        sent_for_approval: Auf Genehmigung wartend
+        working_copy: Arbeitskopie
+    revert:
+      title: Wiederherstellen der Bestätigung
+      content: Sind Sie sicher, dass Sie das Produkt auf diese Version zurücksetzen möchten?
+    publish:
+      title: Dieses Produkt veröffentlichen
+      content: Sind Sie sicher, dass Sie dieses Produkt veröffentlichen möchten?
+    unpublish:
+      title: Die Veröffentlichung des Produktes entziehen
+      content: Sind Sie sicher, dass Sie diesem Produkt die Veröffentlichung entziehen möchten?
+    copy:
+      working_copy: Arbeitskopie
+      draft: Mein Entwurf
+      draft_of: "Entwurf von {{ author }}"
+    approval:
+      send: Zur Genehmigung senden
+      sent: Zur Freigabe gesendet
+      send_and_next: Senden und weiter
+      send_and_finish: Senden und beenden
+pimee_enrich.entity.published_product:
+  flash:
+    publish:
+      success: Produkt erfolgreich veröffentlicht
+      fail: Fehler beim Veröffentlichen des Produkts
+    unpublish:
+      success: Veröffentlichung für das Produkt erfolgreich entzogen
+      fail: Fehler beim Entziehen der Veröffentlichung für dieses Produkt
+    revert:
+      success: Produkt erfolgreich wiederhergestellt
+  page_title:
+    index: "] -Inf, 1] {{ count }} veröffentlichtes Produkt|] 1, Inf [{{ count }} veröffentlichte Produkte"
+  module:
+    publish:
+      label: Veröffentlichen
+      publish_this_version: Diese Version veröffentlichen
+    unpublish:
+      label: Veröffentlichung entziehen
+pimee_enrich.entity.product_draft:
+  flash:
+    update:
+      success: Produktentwurf wurde erfolgreich gespeichert
+      fail: Produktentwurf konnte nicht aktualisiert werden
+    create:
+      success: Produktentwurf zur Freigabe gesendet
+      fail: Sie können diesen Produktentwurf nicht zur Freigabe senden
+      skip: Produktentwurf wurde nicht zur Genehmigung gesendet, da kein Wert bearbeitet wurde
+  module:
+    proposal:
+      comment_chars: Zeichen.
+      confirm: Senden
+      accept_selected: Ausgewählte Vorschläge akzeptieren
+      reject_selected: Ausgewählte Vorschläge ablehnen
+    edit:
+      discard_changes: Ungespeicherte Änderungen gehen verloren. Sind Sie sicher, dass Sie den Produktentwurf mit den ungespeicherten Anpassungen zur Freigabe senden möchten?
+      discard_changes_title: Sind Sie sicher, dass Sie diesen Produktentwurf absenden möchten?
+pimee_enrich.mass_edit.product:
+  operation:
+    publish:
+      label: Veröffentlichen
+      label_count: "{1}Veröffentlichen <span class=\"AknFullPage-title--highlight\">1 Produkt</span>|]1, Inf[Publish <span class=\"AknFullPage-title--highlight\">{{ itemsCount }} Produkte</span>"
+      description: Die Produkte werden veröffentlicht
+      warning: '{{ itemsCount }} gewählte Produkte werden veröffentlicht.'
+    unpublish:
+      label: Veröffentlichung entziehen
+      label_count: "{1}1 Produkt <span class=\"AknFullPage-title--highlight\">nicht Veröffentlichen</span>|] 1, Inf [Unpublish <span class=\"AknFullPage-title--highlight\">{{ itemsCount }} Produkte</span>"
+      description: Die Veröffentlichung der Produkte wird entzogen
+      warning: '{{ itemsCount }} Produkten wird die Veröffentlichung entzogen.'
+pimee_enrich.entity.category:
+  flash:
+    remove:
+      error_linked: Eine mit einem veröffentlichten Produkt verknüpfte Kategorie kann nicht gelöscht werden.
+pim_menu:
+  navigation:
+    published_products: Veröffentlichte Produkte
+  item:
+    proposal: Vorschläge
+    published_product: Veröffentlichte Produkte
+pim_title:
+  pimee_workflow_proposal_index: Vorschläge
+  pimee_workflow_published_product_index: Veröffentlichte Produkte
+  pimee_workflow_published_product_view: Veröffentlichtes Produkt {{ product.label }} | Anzeigen
+pim_analytics:
+  info_type:
+    nb_published_products: Anzahl der veröffentlichten Produkte
+    nb_product_drafts: Anzahl der Produktentwürfe

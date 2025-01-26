@@ -1,0 +1,61 @@
+akeneo_referenceentity:
+  acl_group:
+    reference_entity: Entités référentielles
+  acl:
+    reference_entity:
+      create: Créer une entité
+      edit: Modifier les propriétés de l'entité
+      delete: Supprimer une entité
+      manage_permission: Gérer les permissions d’entité référentielle
+    record:
+      create: Créer un enregistrement
+      edit: Modifier les enregistrements
+      delete: Supprimer les enregistrements
+      list_product: Liste des produits liés à l'enregistrement
+    attribute:
+      create: Ajouter un attribut à une entité référentielle
+      edit: Modifier un attribut d'une entité référentielle
+      delete: Supprimer un attribut d'une entité référentielle
+    option:
+      edit: Modifier les options
+      delete: Supprimer une option
+  jobs:
+    reference_entity_mass_delete:
+      error: 'La suppression en masse a échoué pour la/les enregistrement(s) "{{ records }}" à cause de l''erreur suivante : "{{ error }}"'
+      used_as_product_variant_axis: 'Vous ne pouvez pas supprimer ces enregistrements car ils sont utilisés comme axe de variation dans un ou plusieurs produits variants'
+pim_analytics:
+  info_type:
+    nb_reference_entities: Nombre d'entités de référence
+    max_number_of_records_per_reference_entity: Nombre maximum d'enregistrements par entité de référence
+    average_number_of_values_per_records: Nombre moyen de valeurs par enregistrement sur toutes les entités de référence
+    average_number_of_records_per_reference_entity: Nombre moyen d'enregistrements par entité de référence
+    max_number_of_attributes_per_reference_entity: Nombre maximum d’attributs par entité de référence
+    average_number_of_attributes_per_reference_entity: Nombre moyen d’attributs par entité de référence
+    average_percentage_localizable_only_attributes: Pourcentage moyen d’attributs uniquement localisables par entité de référence
+    average_percentage_scopable_only_attributes: Pourcentage moyen d’attributs uniquement scopables par entité de référence
+    average_percentage_scopable_and_localizable_attributes: Pourcentage moyen d’attributs scopables et localisables par entité de référence
+job_execution:
+  summary:
+    records: Enregistrements
+pim_notification:
+  types:
+    reference_entity_mass_delete_records: Suppression massive des enregistrements
+pim_mass_edit:
+  notification:
+    reference_entity_mass_delete_records:
+      warning: Les enregistrements ont bien été supprimés, mais avec des avertissements
+      success: Enregistrements supprimé avec succès
+      error: ' Échec de la suppression de l''enregistrement'
+akeneo_reference_entity: Lien simple vers une entité référentielle
+akeneo_reference_entity_collection: Lien multiple vers une entité référentielle
+pim_api:
+  acl:
+    reference_entity:
+      create: Créer et mettre à jour les entités référentielles
+      list: Lister les entités référentielles
+    record:
+      create: Créer et mettre à jour les enregistrements de l'entité référentielle
+      list: Lister les enregistrements de l'entité référentielle
+      remove: Supprimer les enregistrements de l'entité référentielle
+  acl_group:
+    reference_entity: Entités référentielles

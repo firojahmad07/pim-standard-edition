@@ -1,0 +1,28 @@
+parameters:
+    pimee_security.renderer.product_pdf.class: Akeneo\Pim\Permission\Bundle\Pdf\ProductPdfRenderer
+
+services:
+    pim_pdf_generator.builder.dompdf:
+        class: 'Akeneo\Pim\Enrichment\Bundle\PdfGeneration\Builder\DompdfBuilder'
+        arguments:
+            - '%pim_ce_dev_src_folder_location%/src'
+            - '%kernel.project_dir%/public'
+            - '@Akeneo\Pim\Enrichment\Bundle\PdfGeneration\HtmlFormatter\ArabicHtmlFormatter'
+
+    pimee_security.renderer.product_pdf:
+        class: '%pimee_security.renderer.product_pdf.class%'
+        arguments:
+            - '@twig'
+            - '@pim_pdf_generator.builder.dompdf'
+            - '@pimee_workflow.helper.filter_product_values'
+            - '@liip_imagine.data.manager'
+            - '@liip_imagine.cache.manager'
+            - '@liip_imagine.filter.manager'
+            - '@pim_catalog.repository.cached_attribute'
+            - '@pim_catalog.repository.channel'
+            - '@pim_catalog.repository.locale'
+            - '@@AkeneoPimEnrichment/Product/renderPdf.html.twig'
+            - '@security.authorization_checker'
+            - '%pim_pdf_generator_font%'
+        tags:
+            - { name: pim_pdf_generator.renderer, priority: 100 }

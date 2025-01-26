@@ -1,0 +1,117 @@
+akeneo_data_quality_insights:
+  product_evaluation:
+    criteria:
+      consistency_textarea_uppercase_words:
+        recommendation: Attributes with uppercase issues
+      consistency_textarea_lowercase_words:
+        recommendation: Attributes with lowercase issues
+      consistency_spelling:
+        recommendation: Attributes with spelling issues
+      consistency_attribute_spelling:
+        recommendation: Attribute labels with spelling mistakes
+      consistency_attribute_option_spelling:
+        recommendation: Attribute option(s) with typos
+    axis:
+      consistency:
+        title: Consistency
+        attributes_link: Display all improvable attributes
+        success: Your product data is fully consistent. Congratulations!
+    messages:
+      add_image_attribute_recommendation: An image is worth a thousand words. You should add an asset collection or an image attribute to improve the data quality of this product.
+  product_edit_form:
+    attribute_filter:
+      all_improvable_attributes: All improvable attributes
+    spellcheck_popover:
+      title: Corrections
+      original_text_title: Original
+      suggestions_title: Proposals
+      ignore_all_suggestions_button_label: Ignore
+  attribute_grid:
+    quality:
+      to_improve: To improve
+      good: Good
+      in_progress: Processing
+      n_a: N/A
+  attribute_edit_form:
+    quality_summary: By enhancing this attribute you will improve the overall quality of {{ count }} products.
+  spellcheck:
+    popover:
+      default_aria_label: Spelling suggestions
+      aria_label: "Spelling suggestions for: {{ mistake }}"
+  dqi_dashboard:
+    key_indicators:
+      attributes_to_work_on: '{1}You have <button>1 attribute</button> to work on.|]1, 200[You have <button>{{ count }} attributes</button> to work on.|[200, Inf[You have more than <button>{{ count }} attributes</button> to work on.'
+      list:
+        has_image:
+          no_data: Your asset collections and image attributes seem to be empty, you should upload images for this key indicator to highlight the quality of your products.
+        attributes_perfect_spelling:
+          title: Attributes properly labelled
+          no_data: Your attribute and option labels seem to be empty, you should enrich them for this key indicator to highlight the quality of your attributes.
+          messages:
+            first_step:
+              message1: You are having a hard time with attribute and option labels? How about going back to basics <a href="{{ link }}" target="_blank">here</a>?
+            second_step:
+              message1: Take a closer look at your attributes and options labels. Your products will look even better afterwards.
+              message2: It looks like you got lost somewhere along the way! Some of your labels still need work.
+            third_step:
+              message1: You are so close! Just a few final touches and you'll be all set.
+              message2: Some of your attributes and labels still need a little work but you are on the right track.
+            perfect_score_step:
+              message1: Your catalog is readier than ever! You did a great job!
+              message2: Great work on attribute and option labels!
+        values_perfect_spelling:
+          title: Products with perfect spelling in text product values
+          no_data: Your text areas seem to be empty, you should enrich them for this key indicator to highlight the quality of your products.
+          messages:
+            first_step:
+              message1: Your products deserve to be described properly. Check out the spelling!
+              message2: You are your products best advocate, take a closer look at the spelling.
+              message3: Your product descriptions are the image of your company, let's get rid of those typos! First impressions matter.
+              message4: The more mistakes you have, the worst impression you give. Pay extra attention to your spelling.
+            second_step:
+              message1: You already have great products, now you just need great spelling!
+              message2: A spelling mistake might keep a customer away, be thorough!
+              message3: Some of your products need a little help to be perfect. Watch out for typos!
+            third_step:
+              message1: Great spelling actually makes a difference, you're not that far!
+              message2: Almost there, you are so close to perfect spelling!
+              message3: You are a couple of spelling mistakes away from perfect product values.
+              message4: Just a little more efforts to reach a spotless product description!
+            perfect_score_step:
+              message1: Perfect spelling all over your catalog. Well done!
+              message2: "That's impressive: your products are spotless!"
+              message3: You did an amazing work getting rid of 100% of the spelling mistakes. Congratulations!
+  product_grid:
+    filter_label:
+      spelling_quality: Spelling quality
+  dictionary:
+    helper:
+      content: The dictionary allows you to register words that will be ignored by Data Quality Insights.
+      link_label: More info on our helpcenter.
+    words: Words
+    searchPlaceholder: Search a word
+    add_words: Add words here
+    no_search_results:
+      title: No results for your search
+      subtitle: Try again with new search criteria.
+    no_data:
+      title: No words yet
+      subtitle: Add the first one above, click on "Add" or press Enter.
+pimee_enrich.entity.locale:
+  grid:
+    columns:
+      dictionary_words_count:
+        title: Number of words
+        label: "]-Inf, 1]{{ count }} word|]1, Inf[{{ count }} words"
+        not_available: Not available
+    add_words: Add words
+    items_selected: "{1}1 item selected|[2, Inf[{{ count }} items selected"
+    modal:
+      title: Add words to {{ count }} locales
+      subtitle: Type your words below. They will be added to all the selected locales.
+      locales_added_notification:
+        title: Words added to {{ count }} locales
+        content: The new words have been added to the dictionaries of selected locales.
+      no_supported_locales:
+        title: The selected locales cannot be spell-checked by Data Quality Insights.
+        content: To know the list of supported locales, please check our <a href="{{ link }}" target="_blank">Help Center</a>

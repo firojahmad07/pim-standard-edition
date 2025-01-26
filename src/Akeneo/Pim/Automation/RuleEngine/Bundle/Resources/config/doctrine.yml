@@ -1,0 +1,14 @@
+services:
+    pimee_catalog_rule.saver.rule_relation:
+        class: '%akeneo_storage_utils.saver.base.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@event_dispatcher'
+            - '%akeneo_rule_engine.model.rule_relation.class%'
+
+    pimee_catalog_rule.remover.rule_relation:
+        class: '%akeneo_storage_utils.remover.base.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@event_dispatcher'
+            - '%akeneo_rule_engine.model.rule_relation.class%'

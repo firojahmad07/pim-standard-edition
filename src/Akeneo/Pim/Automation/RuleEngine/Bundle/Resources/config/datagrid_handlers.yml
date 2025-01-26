@@ -1,0 +1,29 @@
+parameters:
+    pimee_catalog_rule.datagrid.extension.mass_action.execute_mass_action_handler.class: Akeneo\Pim\Automation\RuleEngine\Bundle\Datagrid\Extension\MassAction\ExecuteMassActionHandler
+
+services:
+    pim_catalog_rule.extension.mass_action.handler.mass_delete_rule:
+        class: '%pim_datagrid.extension.mass_action.handler.delete.class%'
+        arguments:
+            - '@pim_datagrid.datasource.result_record.hydrator.orm.object_id'
+            - '@translator'
+            - '@event_dispatcher'
+        tags:
+            - { name: pim_datagrid.extension.mass_action.handler, alias: mass_delete_rule }
+
+    pimee_catalog_rule.datagrid.extension.mass_action.execute_mass_action_handler:
+        class: '%pimee_catalog_rule.datagrid.extension.mass_action.execute_mass_action_handler.class%'
+        arguments:
+            - '@akeneo_batch_queue.launcher.queue_job_launcher'
+            - '@security.token_storage'
+            - '@akeneo_batch.job.job_instance_repository'
+        tags:
+            - { name: pim_datagrid.extension.mass_action.handler, alias: mass_execute_rule }
+
+    pim_datagrid.extension.mass_action.handler.rule_impacted_product_count:
+        class: 'Akeneo\Pim\Automation\RuleEngine\Bundle\Datagrid\Extension\MassAction\RuleImpactedProductCountActionHandler'
+        arguments:
+            - '@pim_datagrid.datasource.result_record.hydrator.orm.object_id'
+            - '@event_dispatcher'
+        tags:
+            - { name: pim_datagrid.extension.mass_action.handler, alias: rule_impacted_product_count }

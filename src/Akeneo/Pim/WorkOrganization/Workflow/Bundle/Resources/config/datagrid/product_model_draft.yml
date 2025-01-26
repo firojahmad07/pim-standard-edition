@@ -1,0 +1,40 @@
+datagrid:
+    product-model-draft-grid:
+        options:
+            entityHint: product_model_draft
+            requireJSModules:
+                - oro/datafilter-builder
+                - oro/datagrid/pagination-input
+        source:
+            type: pimee_datasource_product_model_draft
+            entity: '%pimee_workflow.model.product_model_draft.class%'
+            repository_method: createDatagridQueryBuilder
+        columns:
+            formatted_changes:
+                label: pimee_workflow.product_draft.created
+                type: field
+                frontend_type: proposal
+        properties:
+            id: ~
+            proposal_id: ~
+            document_type: ~
+            document_id: ~
+            document_label: ~
+            author_label: ~
+            author_code: ~
+            createdAt: ~
+        filters:
+            columns:
+                attribute:
+                    type:        product_draft_attribute_choice
+                    data_name:   changes.values
+                    label:       pimee_workflow.product_draft.attribute.label
+                    options:
+                        field_options:
+                            multiple: true
+        sorters:
+            columns:
+                formatted_changes:
+                    data_name: createdAt
+            default:
+                formatted_changes: '%oro_datagrid.extension.orm_sorter.class%::DIRECTION_DESC'

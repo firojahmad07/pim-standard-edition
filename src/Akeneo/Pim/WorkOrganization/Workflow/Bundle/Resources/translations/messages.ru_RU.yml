@@ -1,0 +1,144 @@
+pimee_workflow:
+  product_draft:
+    author: Автор
+    source: Источник
+    created: Дата предложения
+    changes: Изменения
+    locale: Контекст локали
+    product:
+      label: Ярлык продукта
+    attribute:
+      label: Атрибут
+    status:
+      label: Статус
+      working_copy: Рабочая копия
+    notification:
+      partial_approve: '%owner% принял значения для %attributes% продукта %product%'
+      partial_approve_number: '%owner% принял значения %attributes_count% атрибутов для продукта %product%'
+      partial_reject: '%owner% отклонил значения для %attributes% продукта %product%'
+      partial_reject_number: '%owner% отклонил значения %attributes_count% атрибутов для продукта %product%'
+      partial_remove: '%owner% удалил значения для %attributes% продукта %product%'
+      partial_remove_number: '%owner% удалил значения %attributes_count% атрибутов для продукта %product%'
+      approve: '%owner% принял Ваше предложение %product%'
+      refuse: '%owner% отклонил Ваше предложение %product%'
+      remove: '%owner% удалил Ваше предложение %product%'
+    mass_review_action:
+      approve: Подтвердите все выбранное
+      refuse: Отклонить все выбранное
+      error:
+        draft_not_ready: Это предложение не готово быть принятым
+        not_product_owner: Вы не являетесь владельцем продукта, относяющемуся к этому предложению
+        cannot_edit_attributes: Нельзя редактировать атрибуты изменяемые этим предложением
+        invalid_draft: Это предложение не может быть применено из-за следующей ошибки. %error%
+  proposal:
+    to_review: '%author.firstname% %author.lastname% направил предложение о пересмотре для %product.label% продукта'
+    individual_import: '%author.firstname% %author.lastname% отправил предложения на рассмотр через импорт'
+    generic_import: Имеются предложения на рассмотр через импорт
+    original_value: Исходное
+  published_product:
+    index: Опубликованные продукты
+    title: Опубликованный продукт
+  acl.published_product:
+    index: Управление опубликованными продуктами
+  product:
+    permission:
+      own: Обзор / публикация
+      edit: Изменить
+      view: Представление
+  steps:
+    product_draft_processor.title: Процессор предложений
+    approve.title: Принять предложение
+    refuse.title: Отклонить предложение
+  mass_edit_action:
+    published:
+      page_title: Опубликованные товары
+      page_subtitle: Массовое редактирование (1 опубликованный продукт)|Массовое редактирование (%count% опубликованных продуктов)
+      title: Выберите операцию
+      subtitle: Выберите операцию, которую вы хотите выполнить над выбранным опубликованным продуктом|Выберите операцию, которую вы хотите выполнить над %count% выбранными опубликованными продуктами
+      confirm: Вы собираетесь обновить опубликованный продукт со следующей информацией, пожалуйста, подтвердите.|Вы собираетесь обновить %count% опубликованных продуктов со следующей информацией, пожалуйста, подтвердите.
+      steps:
+        first: Выбор опубликованных продуктов
+        second: Выберите операцию
+        third: Настроить
+        fourth: Подтверждение
+btn:
+  publish: Опубликовать
+  unpublish: Отменить публикацию
+  save working copy: Сохранить рабочую копию
+  save working copy and next: Сохранить рабочую копию и перейти к следующему
+  save working copy and finish: Сохранить рабочую копию и закончить
+  send for approval: Отправить на утверждение
+  sent for approval: Отправить на утверждение
+  editworkingcopy: Редактировать рабочую копию
+flash:
+  product:
+    updated: Рабочая копия продукта была обновлена
+    published: Продукт был успешно опубликован.
+    unpublished: Продукт был успешно снят с публикации.
+  product_draft:
+    updated: Черновик был успешно сохранен
+    approve:
+      success: Предложение было успешно применено.
+      error: Это предложение нельзя применить из-за следующей ошибки. %error%
+    refuse:
+      success: Это предложение было отклонено.
+    remove:
+      success: Предложение было удалено.
+pim_menu:
+  item:
+    published_product: Опубликованные товары
+    proposal: Предложения
+confirmation:
+  product:
+    publish: Вы уверены, что хотите опубликовать этот продукт?
+    unpublish: Вы уверены, что хотите снять этот продукт с публикации?
+Attributes.title: Атрибуты
+Completeness.title: Степень заполненности
+publish_product.steps.publish_product_tasklet.title: Опубликовать продукт
+unpublish_product.steps.unpublish_product_tasklet.title: Снять продукт с публикации
+approve_product_draft.steps.approve.title: Принять предложение
+approve_product_draft.steps.refuse.title: Отклонить предложение
+job_execution.summary:
+  approved: принятo
+  refused: отклонено
+  mass_published: Продукт опубликован
+  mass_unpublished: Продукт снят с публикации
+  proposal: Предложение создано
+  proposal_deleted: удаленных предложений
+  proposal_updated: обновленных предложений
+  proposal_created: созданных предложений
+  proposal_skipped: пропущенных предложений (без изменений)
+published products: Опубликованные товары
+pim_analytics:
+  info_type:
+    nb_published_products: Количество опубликованных продуктов
+    nb_product_drafts: Количество черновиков продуктов
+pimee_dashboard:
+  widget:
+    product_drafts:
+      title: Предложения на рассмотрение
+      date: Дата
+      author: Автор
+      product: Продукт
+      review: Обзор
+      empty: Нет черновиков для рассмотрения
+pim_enrich:
+  mass_edit_action:
+    publish:
+      label: Опубликовать
+      description: Опубликовать выбранные продукты, при этом текущие опубликованные данные будут перезаписаны текущей рабочей копией.
+      success_flash: Выбранные продукты были успешно опубликованы.
+      launched_flash: Процесс публикации товара(ов) выполняется в данный момент.
+      message:
+        info: '%nbProducts% выбранных продуктов будет опубликовано.'
+    unpublish:
+      label: Отменить публикацию
+      description: Снять выбранные продукты с публикации, текущий опубликованные данные будут удалены.
+      success_flash: Выбранные продукты были успешно сняты с публикации.
+      launched_flash: Процесс снятия товара(ов) с публикации выполняется в данный момент.
+      message:
+        info: '%nbProducts% выбранных продуктов будет снят с публикации.'
+pimee_enrich:
+  product:
+    tab:
+      proposal.title: Предложения

@@ -1,0 +1,48 @@
+parameters:
+    akeneo.pim.database_inspector.class: 'Akeneo\Tool\Component\DatabaseMetadata\DatabaseInspector'
+    akeneo.pim.database_introspect.command.class: 'Akeneo\Tool\Bundle\DatabaseMetadataBundle\Command\IntrospectDatabaseCommand'
+    akeneo.pim.database_diff.command: 'Akeneo\Tool\Bundle\DatabaseMetadataBundle\Command\DatabaseSchemaDiffCommand'
+
+services:
+    _defaults: 
+        public: false
+    akeneo.pim.database_inspector.service:
+        class: '%akeneo.pim.database_inspector.class%'
+        arguments:
+            - '@doctrine.dbal.default_connection'
+    akeneo.pim.database_inspector.command:
+        class: '%akeneo.pim.database_introspect.command.class%'
+        arguments:
+            - '@akeneo.pim.database_inspector.service'
+        tags: 
+            - { name: console.command }
+    akeneo.pim.database_diff.command:
+        class: '%akeneo.pim.database_diff.command%'
+        tags: 
+            - { name: console.command }
+
+    akeneo.tool.component.database_metadata.batch_job_entity_validator:
+        class: Akeneo\Tool\Component\DatabaseMetadata\BatchEntityValidator
+        public: true
+        arguments:
+            - '@akeneo_batch.job.job_instance_repository'
+            - ['\Akeneo\Tool\Bundle\BatchBundle\Validator\Constraints\JobInstance']
+            - '@pim_catalog.validator.product'
+        tags:
+            - {name: 'batch.validation'}
+
+    akeneo.pim.database_batch_validator.command:
+        public: true
+        autoconfigure: true
+        class: Akeneo\Tool\Bundle\DatabaseMetadataBundle\Command\DatabaseBatchValidatorCommand
+        arguments:
+            - !tagged_iterator 'batch.validation'
+            - '@monolog.logger'
+            - '@akeneo_tool_bundle_database_metadata.services.entity_context_provider'
+        tags:
+            - { name: console.command }
+
+    akeneo_tool_bundle_database_metadata.services.entity_context_provider:
+        class: Akeneo\Tool\Bundle\DatabaseMetadataBundle\Services\EntityContextProvider
+        arguments:
+            - '@doctrine.orm.default_entity_manager'

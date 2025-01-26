@@ -1,0 +1,470 @@
+pimee_catalog_rule:
+  overview: "] -Inf, 1] {{ count }} Regel|] 1, Inf [{{ count }} Regeln"
+  execution_button: Regeln anwenden
+  selected: "]-Inf, 1]{{ count }} Regel ausgewählt|]1, Inf[{{ count }} Regeln ausgewählt"
+  dropdown:
+    title: Weitere Aktionen
+  popin:
+    execute_rules:
+      confirm_title: Ausführung bestätigen
+      confirm_content: Sind Sie sicher, dass Sie die Regeln ausführen möchten? (Es könnte eine Weile dauern)
+  notification:
+    fail: Die Aktion wurde nicht ausgeführt
+    launched: Die Anwendung der Regeln wurde gestartet. Sie werden benachrichtigt, sobald der Vorgang abgeschlossen ist.
+  attribute:
+    list:
+      code.label: Code
+      condition.label: Bedingung
+      action.label: Aktion
+      no_rule_yet.label: Bisher keine Regeln vorhanden
+  rule:
+    value: Wert
+    include_children: Kinder einbeziehen
+    condition:
+      if.label: wenn
+    action:
+      then.label: dann
+      set_value.label: wird gesetzt in
+      copy_value.label: wird kopiert nach
+      set.label: wird gesetzt in
+      copy.label: wird kopiert nach
+      add.label: wird hinzugefügt zu
+      remove.label: wurde entfernt von
+  datagrid:
+    rule-grid:
+      actions:
+        execute:
+          confirm_title: Ausführung bestätigen
+          confirm_content: Sind Sie sicher, dass Sie die Regel anwenden möchten?
+      mass_edit_action:
+        confirm_title: Kalkulation bestätigen
+        confirm_content: Sind Sie sicher, dass Sie die Anzahl der von den Regeln betroffenen Produkte berechnen möchten?
+      mass_action:
+        execute:
+          confirm_title: Ausführung bestätigen
+          confirm_content: Sind Sie sicher, dass Sie die Regeln ausführen möchten? (Es könnte eine Weile dauern)
+          success: Die Anwendung der Regeln wurde gestartet. Sie werden benachrichtigt, sobald der Vorgang abgeschlossen ist.
+          error: Beim Anwenden der Regeln ist ein Fehler aufgetreten.
+          empty_selection: Keine Regeln ausgewählt.
+        delete:
+          confirm_title: Ausführung bestätigen
+          confirm_content: Sind Sie sicher, dass Sie die ausgewählten Regeln löschen möchten?
+          success: Die Regeln wurden erfolgreich gelöscht.
+          error: Beim Löschen der Regeln ist ein Fehler aufgetreten.
+          empty_selection: Keine Regeln ausgewählt.
+      tags:
+        set: Festlegen
+        add: Hinzufügen
+        calculate: Berechnen
+        clear: Löschen
+        concatenate: Verketten
+        copy: Kopieren
+        remove: Entfernen
+  form:
+    category:
+      catalog: Katalog
+      select: Wähle eine Kategorie
+      open_tree: Kategoriebaum öffnen
+      tree: Kategoriebaum
+      menu: Kategoriebaum wählen
+      folder:
+        selected: Ordner gewählt
+        not_selected: Ordner
+      folders:
+        selected: Ordner gewählt
+        not_selected: Ordner
+      arrow:
+        open: Branchenkategorie öffnen
+        close: Branchenkategorie schließen
+    tab:
+      list: Regelersteller und Eigenschaften-Tabs
+      rule_builder: Regel Ersteller
+    attribute:
+      tab:
+        rules:
+          title: Regeln
+    creation:
+      helper: Die Regel-Engine kann Ihre Produktivität im PIM radikal steigern, indem Sie Aktionen automatisieren,
+      english_flag: Bezeichnung für Englisch
+      title: Neue Regel erstellen
+      notification:
+        success: Die Regel wurde erfolgreich aktualisiert
+        failed: Regelerstellung fehlgeschlagen
+      constraint:
+        code:
+          required: Regelcode ist erforderlich.
+          too_short: "Der Regelcode ist zu kurz. Er benötigt {{ characterLimit }} oder mehr."
+          allowed_characters: Regelcode kann nur alphanumerische Zeichen und Unterstriche enthalten.
+          unique: Dieser Code wird bereits verwendet.
+      cross_link: Erstellungsregel verlassen
+    edit:
+      header:
+        welcome: Willkommen in Ihrem neuen Regel-Engine-Bereich!
+        description: Um eine Regel zu erstellen, müssen Sie Ihre Produktauswahl definieren und dann eine oder mehrere Aktionen hinzufügen.
+        documentation_link: Klicken Sie hier, um den vollen Umfang der Regelengine-Fähigkeiten zu erfahren.
+      properties:
+        section:
+          general: Allgemeine Parameter
+          labels: Labelübersetzungen
+      character_left: "]-Inf, 1]{{ count }} Zeichen übrig|]1, +Inf[{{ count }} Zeichen übrig"
+      priority:
+        label: Priorität
+      status:
+        label: Status
+        enabled: Aktiviert
+        disabled: Deaktiviert
+      add_to_category: Zu Kategorie hinzufügen
+      add_conditions: Füge Bedingungen hinzu
+      products_count:
+        products: "]-Inf, 1]{{ count }} Produkt|]1, +Inf[{{ count }} Produkte"
+        product_models: "]-Inf, 1]{{ count }} Produktmodell|]1, +Inf[{{ count }} Produktmodelle"
+        products_and_product_models: "{{ products }} und {{ product_models }}"
+        pending: Berechne Produkte und Produktmodelle
+        error: Berechnung von Produkten und Produktmodellen nicht möglich
+      product_selection: Produktauswahl
+      preview: Vorschau
+      fields:
+        family: Produktfamilie
+        family_variant: Varianten der Produktfamilien
+        category: Kategorie
+        identifier: Identifikator
+        attribute: Attribut
+        groups: Gruppen
+        parent: Eltern
+        measurement_unit: Maßeinheit
+        measurement_default_unit: "Standardeinheit ({{ unit }})"
+        currency: Währung
+        operator: Operator
+        entity_type:
+          label: Entitätstyp
+          placeholder: Bitte einen Entitätstyp auswählen
+      execute:
+        button: Speichern und ausführen
+        title: Speichern und die Regel ausführen
+        description: Sie speichern die aktuelle Regel und führen sie im Hintergrund aus. Wenn sie abgeschlossen ist, werden Sie benachrichtigt.
+      duplicate:
+        button: Speichern und duplizieren
+        title: Die "{{ originalRuleCode }}" Regel duplizieren
+      actions:
+        add_action: Aktion hinzufügen
+        add_category:
+          title: Kategorien HINZUFÜGEN
+          helper: Um Ihre Produktauswahl zu einer oder mehreren Kategorien hinzuzufügen, wählen Sie bitte zuerst Ihre Kategoriebäume und dann Ihre Kategorien aus
+        add_groups:
+          title: Produkten zu Gruppen HINZUFÜGEN
+          helper: Um Produkte zu Gruppen hinzuzufügen, wählen Sie bitte eine oder mehrere Gruppen
+          subtitle: Gruppen auswählen
+        set_groups:
+          title: Produktgruppen SETZEN
+          helper: Um die Produktgruppen festzulegen, wählen Sie bitte eine oder mehrere Gruppen
+          subtitle: Gruppen auswählen
+        set_category:
+          title: Kategorien FESTLEGEN
+          helper: Um Ihre Produktauswahl auf eine oder mehrere Kategorien zu setzen, wählen Sie bitte zuerst Ihre Kategoriebäume und dann Ihre Kategorien aus
+        category:
+          select_category_trees: Kategoriebäume wählen
+          select_category_tree: Kategoriebaum wählen
+          select_categories: Kategorien auswählen
+          select_category: Kategorie wählen
+          category_tree: Kategoriebaum
+          categories_selected: "]-Inf, 1]{{ count }} Kategorie ausgewählt|]1, +Inf[{{ count }} Kategorien ausgewählt"
+          no_category_tree: Bitte wähle zuerst einen Kategoriebaum aus
+          remove_unknown_category: "Hier klicken, um dieses Kategorie zu entfernen"
+        set_family:
+          title: Familie SETZEN
+          subtitle: Familie wählen
+        set_attribute:
+          title: SETZE Attributwert
+          helper: Um Werte auf Ihr Attribut zu setzen, wählen Sie bitte zuerst Ihr Zielattribut und dann den Wert, den Sie setzen möchten
+          target_subtitle: Ziel wählen
+          value_subtitle: Wert definieren
+          attribute_label: Attribut
+          attribute_placeholder: Wähle ein Zielattribut
+          select_reference_entity: Wählen Sie Ihre Referenz-Entität
+          select_asset: Wählen Sie Ihre Assets
+          select_measurement_unit: Wählen Sie Ihre Einheit
+          table_attribute_helper: Die früheren Werte dieses Attributs werden in all Ihrer Produktauswahl ersetzt
+        set_quantified_associations:
+          title: WÄHLE Quantifizierte Verbindungen
+          helper: Um quantifizierte Verbindungen festzulegen, wählen Sie bitte Ihren Verbindungstyp aus und dann die Produkte, Produktmodelle oder Gruppen, die Sie Ihrer Produktauswahl zuordnen möchten.
+        set_associations:
+          title: WÄHLE Verbindungen
+          helper: Um Verbindungen festzulegen, wählen Sie bitte Ihren Verbandstyp aus und dann die Produkte, Produktmodelle oder Gruppen, die Sie Ihrer Produktauswahl zuordnen möchten.
+          select_association_type: Wählen Sie Ihren Verbindungstyp
+          association_types: Verbindungstypen
+          add_group: Neue Gruppe
+          add_product: Produkt hinzufügen
+          add_product_model: Produktmodell hinzufügen
+          add_association_type: Verbindungstyp hinzufügen
+          select_title:
+            products: Wählen Sie Ihre Produkte
+            product_models: Wählen Sie Ihre Produktmodelle
+            groups: Gruppen auswählen
+          select:
+            products: Produkte
+            product_models: Produktmodelle
+            groups: Gruppen
+          counts:
+            products: ']-Inf, 1]{{ count }} Produkt|]1, +Inf[{{ count }} Produkte'
+            product_models: ']-Inf, 1]{{ count }} Produktmodell|]1, +Inf[{{ count }} Produktmodelle'
+            groups: ']-Inf, 1]{{ count }} Gruppe|]1, +Inf[{{ count }} Gruppen'
+        add_associations:
+          title: Verbindungen HINZUFÜGEN
+          helper: Um Verbindungen hinzuzufügen, wählen Sie bitte Ihren Verbindungstyp aus und dann die Produkte, Produktmodelle oder Gruppen, die Sie Ihrer Produktauswahl zuordnen möchten.
+        clear_attribute:
+          title: LÖSCHE Attributwert
+          subtitle: Attribut zum Löschen auswählen
+          attribute_label: Attribut
+        clear_associations:
+          title: Verknüpfungen LÖSCHEN
+          helper: Alle Verbindungen für die ausgewählten Produkte werden gelöscht.
+        clear_quantified_associations:
+          title: LÖSCHE Quantifizierte Verbindungen
+          helper: Alle quantifizierten Verbindungen für die ausgewählten Produkte werden gelöscht.
+        clear_categories:
+          title: LÖSCHE Kategorien
+        clear_groups:
+          title: LÖSCHE Gruppen
+        remove_category:
+          title: Kategorien ENTFERNEN
+          helper: Um Ihre Produktauswahl aus einer oder mehreren Kategorien zu entfernen, wählen Sie bitte zuerst Ihre Kategoriebäume und dann Ihre Kategorien aus
+        remove_attribute_value:
+          title: Attributwert ENTFERNEN
+          helper: Um Werte aus Ihrem Attribut zu entfernen, wählen Sie bitte zuerst Ihr Zielattribut aus und dann die Werte, die Sie entfernen möchten.
+          value_subtitle: Definieren Sie Ihre Werte zum Entfernen
+        add_attribute_value:
+          title: Attributwert HINZUFÜGEN
+          helper: Um Werte zu Ihrem Attribut hinzuzufügen, wählen Sie bitte zuerst Ihr Zielattribut und dann die Werte aus, die Sie hinzufügen möchten.
+          value_subtitle: Definieren Sie Ihre Werte zum Hinzufügen
+        copy:
+          title: Attributwert KOPIEREN
+          helper: Um Werte von einem Attribut zu einem anderen zu kopieren, wählen Sie bitte zuerst Ihr Quellattribut und dann Ihr Zielattribut aus.
+          select_source: Eine Quelle auswählen
+          select_target: Ziel wählen
+          no_source: Bitte wählen Sie zuerst Ihr Quellattribut aus
+        delete:
+          label: Aktion entfernen
+          description: Sind Sie sicher, dass Sie diese Aktion entfernen möchten?
+        set_status:
+          title: Status SETZEN
+          subtitle: Status definieren
+          helper: Um einen Status auf Produkte zu setzen, wählen Sie bitte einen Status in der Liste unten
+          placeholder: Wähle deinen Status
+        remove_groups:
+          title: Produkte aus Gruppen ENTFERNEN
+          helper: Um Produkte aus Gruppen zu entfernen, wählen Sie bitte eine oder mehrere Gruppen
+          subtitle: Gruppen auswählen
+        calculate:
+          title: BERECHNE Werte
+          helper: Um numerische Attributwerte zu berechnen, wählen Sie bitte Attribut(e) und/oder Wert(e) und wählen Sie dann das Zielattribut aus, in das das Ergebnis eingefügt werden soll. Bei Bedarf können Sie auch das Endergebnis abrunden.
+          add_value: Wert hinzufügen
+          add_attribute: Attribut hinzufügen
+          select_target: Ziel wählen
+          attribute_placeholder: Wähle ein Zielattribut
+          round_precision: Rundungsgenauigkeit
+          operator:
+            add: Hinzufügen
+            subtract: Subtrahieren
+            multiply: Multiplizieren
+            divide: Teilen
+            choose: Operator auswählen
+        concatenate:
+          title: VERKETTE Werte
+          helper: Um Attributwerte zu verketten, fügen Sie bitte die Attribute hinzu und wählen Sie dann das Zielattribut aus.
+          select_target: Ziel wählen
+          attribute_placeholder: Wähle ein Zielattribut
+          add_text: Text hinzufügen
+          add_attribute: Attribut hinzufügen
+          add_new_line: Zeilenumbruch hinzufügen
+          line_break: Zeilenumbruch
+          date_format: 'Wähle das Datumsformat:'
+          label_locale: Label Gebietsschema
+          unit_label_locale: Gebietsschema
+          remove_new_line_confirm:
+            label: Zeilenumbruch von der Liste entfernen
+            description: Das neue Ziel-Attribut akzeptiert keine Zeilenumbrüche. Diese Änderung wird alle Zeilenumbrüche entfernen.
+      conditions:
+        delete:
+          label: Bedingung entfernen
+          description: Sind Sie sicher, dass Sie diese Bedingung löschen wollen?
+        operators:
+          "STARTS WITH": beginnt mit
+          "ENDS WITH": endet mit
+          "CONTAINS": enthält
+          "DOES NOT CONTAIN": enthält nicht
+          "EMPTY": ist leer
+          "NOT EMPTY": ist nicht leer
+          "IN": in
+          "NOT IN": nicht in
+          "IN CHILDREN": in Kindelementen
+          "NOT IN CHILDREN": nicht in Kindelementen
+          "UNCLASSIFIED": ist unklassifiziert
+          "IN OR UNCLASSIFIED": ist unklassifiziert oder in
+          "BETWEEN": zwischen
+          "NOT BETWEEN": nicht zwischen
+          "=": ist gleich
+          "!=": ist nicht gleich
+          ">": größer als
+          ">=": gleich oder größer als
+          "<": kleiner als
+          "<=": gleich oder kleiner als
+      notification:
+        success: Die Regel wurde erfolgreich aktualisiert
+        failed: Regelerstellung fehlgeschlagen
+        execute_success: Regel erfolgreich aktualisiert und ausgeführt
+        execute_failed: Die Regel wurde gespeichert, aber es gab einen Fehler während der Ausführung
+      discard_changes: Ihre Änderungen gehen verloren, wenn Sie die Seite verlassen.
+      please_select_attribute: Bitte wählen Sie zuerst ein Zielattribut aus.
+      unhandled_attribute_type: Entschuldigung, dieser Attributtyp wird noch nicht verwaltet. Bitte verwenden Sie den Regel-Import.
+      empty_section:
+        set_up_action: Gut gemacht! Sie haben Ihre Produktauswahl definiert. Jetzt ist es an der Zeit, Ihre Aktion einzurichten.
+        set_up_condition: Wenn Sie Ihren gesamten Katalog nicht beeinflussen möchten, fügen Sie bitte mindestens eine Bedingung hinzu.
+        add_action: Und dann fügen Sie eine oder mehrere Aktionen für Ihre Produkte/Produktmodelle hinzu.
+        doc: Sie wissen nicht, was eine Aktion ist?
+        doc_link: Dieser Artikel kann Ihnen helfen.
+    delete:
+      description: Sind Sie sicher, dass Sie diese Regel löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.
+      notification:
+        failed: Regellöschung fehlgeschlagen
+        success: Regel erfolgreich gelöscht
+    helper:
+      add_to_category: Um Ihre Produktauswahl zu einer oder mehreren Kategorien hinzuzufügen, wählen Sie bitte zuerst Ihre Kategoriebäume und dann Ihre Kategorien.
+      clear_attribute: Um den Attributwert zu löschen, wählen Sie bitte das zu löschende Attribut aus.
+      clear_categories: Alle Kategorien für die ausgewählten Produkte werden gelöscht.
+      clear_groups: Alle Gruppen für die ausgewählten Produkte werden gelöscht.
+      product_selection: "Sie müssen Ihre Produktauswahl definieren, um Ihre Regel zu erstellen. Wenn Sie nicht wissen, wie,"
+      product_selection_doc_link: werfen Sie einen Blick auf diesen Artikel.
+      set_attribute_info_clear: Sie müssen den zu setzenden Wert definieren. Wenn Sie den Attributwert löschen möchten, verwenden Sie bitte die Aktion Attribut Wert löschen.
+    legend:
+      add_to_category: Neue Aktion erstellen
+      product_selection: Bedingung erstellen
+    tree:
+      item:
+        selected: Element ausgewählt
+        not_selected: Element auswählen
+    date:
+      operators:
+        specific_date: Bestimmtes Datum
+      label:
+        date_type: Datumstyp auswählen
+        operator: Operator auswählen
+        date: Datum auswählen
+        relative_date: Datum auswählen
+        locale: Gebietsschema auswählen
+        scope: Gültigkeitsbereich auswählen
+        period: Zeiteinheit auswählen
+        open_period: Öffne Zeiteinheiten-Menü
+        date_from: Startdatum auswählen
+        date_to: Enddatum wählen
+        date_past: Datum in der Vergangenheit
+        date_future: Datum in der Zukunft
+        date_present: Jetzt
+      day: "]-Inf, 1] Tag|]1, +Inf[ Tage"
+      week: "]-Inf, 1] Woche|]1, +Inf[ Wochen"
+      month: "]-Inf, 1] Monat|]1, +Inf[ Monate"
+      year: "]-Inf, 1] Jahr|]1, +Inf[ Jahre"
+      hour: "]-Inf, 1] Stunden|]1, +Inf[ Stunden"
+      minute: "]-Inf, 1] Minute|]1, +Inf[ Minuten"
+  exceptions:
+    loading: Beim Laden der Regeldefinition ist ein Fehler aufgetreten.
+    required: Dieses Feld ist erforderlich
+    required_attribute: Ein Attribut ist erforderlich
+    required_locale: Ein Gebietsschema ist erforderlich für das Attribut {{ attributeLabel }}
+    required_scope: Ein Kanal ist erforderlich für das Attribut {{ attributeLabel }}
+    required_currency: Für das Attribut {{ attributeLabel }} ist eine Währung erforderlich
+    required_locale_completeness: Ein Gebietsschema ist erforderlich für die Vollständigkeit
+    required_scope_completeness: Für die Vollständigkeit ist ein Kanal erforderlich
+    required_value: Für diese Aktion ist ein Wert erforderlich
+    required_categories: Mindestens eine Kategorie ist für diese Aktion erforderlich
+    required_constant_for_operation: Für diesen Vorgang ist ein konstanter Wert erforderlich
+    required_operator_for_operation: Für diesen Vorgang ist ein Operator erforderlich
+    required_unit: Eine Maßeinheit ist erforderlich
+    identifier_or_quantity_missing: Ein Bezeichner und eine Menge sind für jedes Element erforderlich
+    required_item: Mindestens ein Element ist für diese Aktion erforderlich
+    division_by_zero: Teilungen durch Null sind nicht möglich
+    two_operations_are_required: Die Operationsliste sollte mindestens 2 Operationen enthalten.
+    two_items_are_required: Die Liste sollte mindestens 2 Einträge enthalten.
+    unknown_or_inactive_locale: 'Die "{{ localeCode }}" Gebietsschema existiert nicht oder ist nicht aktiviert'
+    unknown_or_inactive_currency: 'Die "{{ currencyCode }}" Währung existiert nicht oder ist nicht aktiviert'
+    unbound_locale: 'Die "{{ localeCode }}" Gebietsschema ist im "{{ channelCode }}" Kanal nicht aktiviert'
+    unbound_currency: 'Die "{{ currencyCode }}" Währung ist im "{{ channelCode }}" Kanal nicht aktiviert'
+    locale_on_unlocalizable_attribute: Dieses Attribut ist nicht lokalisierbar. Bitte entfernen Sie das Gebietsschema, bevor Sie fortfahren.
+    unknown_scope: 'Der "{{ scopeCode }}" Ausgabekanal existiert nicht'
+    scope_on_unscopable_attribute: Dieses Attribut ist nicht skopierbar. Bitte entfernen Sie das Gebietsschema, bevor Sie fortfahren.
+    unknown_families: "{1}Die {{ familyCodes }} Familie existiert nicht|]1,+Inf[Die {{ familyCodes }} Familien existieren nicht"
+    unknown_family_variants: "{1}Die {{ familyVariantCodes }} Familienvariante existiert nicht|]1,+Inf[Die {{ familyVariantCodes }} Familienvarianten existieren nicht"
+    unknown_attribute_options: "{1}Die {{ attributeOptionCodes }} Option existiert nicht|]1,+Inf[Die {{ attributeOptionCodes }} Optionen existieren nicht"
+    unknown_attribute_code: "Das Attribut {{ attributeCode }} existiert nicht"
+    unknown_categories: "{1}Die Kategorie {{ categoryCodes }} existiert nicht.|]1, +Inf[Die Kategorien {{ categoryCodes }} existieren nicht"
+    unknown_attribute: "Dieses Attribut existiert nicht."
+    unknown_groups: "{1} Die Gruppe {{ groupCodes }} existiert nicht|]1, +Inf[Die folgenden Gruppen existieren nicht: {{ groupCodes }}"
+    select_another_attribute_or_remove_action: "Wählen Sie ein anderes Attribut oder entfernen Sie diese Aktion."
+    select_another_attribute: "Wählen Sie ein anderes Attribut"
+    or: oder
+    create_attribute_link: hier klicken, um das Attribut zu erstellen
+    edit_unauthorize: Sie sind nicht berechtigt, Regeln zu bearbeiten
+    wrong_date_timespan: Um eine gültige Zeitspanne zu definieren, stellen Sie bitte sicher, dass Ihr Enddatum nicht vor dem Startdatum festgelegt ist.
+    measurement_family_not_found: Die "{{ measurement_code }}" Messfamilie existiert nicht
+    unit_not_found: Die "{{ unitCode }}" Einheit wurde nicht in der "{{ measurement_code }}" Messfamilie gefunden
+    empty_association_warning: Wenn Sie diese Liste leer lassen, wird diese Regel diesen Verbindungstyp löschen.
+pim_enrich:
+  entity:
+    rule:
+      module:
+        delete:
+          confirm: Sind Sie sicher, dass Sie diese Regel löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden
+      flash:
+        delete:
+          success: Regel erfolgreich gelöscht
+flash:
+  rule:
+    impacted_product_count: Die Massen-Aktion zur Berechnung der Anzahl der betroffenen Produkte wurde gestartet. Sie werden benachrichtigt, sobald diese erledigt ist.
+    executed: Die Anwendung der Regeln wurde gestartet. Sie werden benachrichtigt, sobald der Vorgang abgeschlossen ist.
+    enabled: Die Regel wurde aktiviert
+    disabled: Die Regel wurde deaktiviert
+batch_jobs:
+  add_attribute_value:
+    execute_rules.label: Regel-Ausführung
+  default_steps:
+    export_rules: Regel-Export
+    import_rules: Regel-Import
+    calculate_affected_products: Berechne betroffene Produkte
+    execute_rules: Regel-Ausführung
+  yml_rule_import:
+    label: Regel-Import in YAML
+    import.label: Regel-Import
+  yml_rule_export:
+    label: Regel-Export in YAML
+    export.label: Regel-Export
+  rule_impacted_product_count:
+    label: Anzahl der betroffenen Produkte
+    perform.label: Anzahl der betroffenen Produkte
+  csv_product_import_with_rules:
+    label: Produktimport in CSV mit Regeln
+    import.label: Produkt-Import
+  csv_product_model_import_with_rules:
+    label: Produktmodell-Import in CSV mit Regeln
+  xlsx_product_import_with_rules:
+    label: Produktimport in XLSX mit Regeln
+    import.label: Produkt-Import
+  xlsx_product_model_import_with_rules:
+    label: Produktmodell-Import in XLSX mit Regeln
+pim_notification:
+  types:
+    rule: Regeleinstellungen
+    mass_edit_rule: Massenbearbeitung Regel
+    execute_rules: Regel-Ausführung
+pim_menu:
+  navigation:
+    settings:
+      automation: Automatisierung
+  item:
+    rule: Regeln
+pim_title:
+  pimee_catalog_rule_rule_index: Regeln
+  pimee_catalog_rule_edit: Regel bearbeiten
+  pimee_catalog_rule_new: Regeln
+akeneo_job_process_tracker:
+  type_filter:
+    mass_edit_rule: Massenbearbeitung Regel
+    execute_rules: Regel-Ausführung

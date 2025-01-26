@@ -1,0 +1,33 @@
+Akeneo\Pim\Automation\RuleEngine\Component\Command\DTO\ProductSource:
+    constraints:
+        - \Akeneo\Pim\Automation\RuleEngine\Component\Validator\Constraint\ProductSourceKeys: ~
+        - \Akeneo\Pim\Automation\RuleEngine\Component\Validator\Constraint\IsValidAttribute:
+              attributeProperty: field
+              channelProperty: scope
+              localeProperty: locale
+        - \Akeneo\Pim\Automation\RuleEngine\Component\Validator\Constraint\ProductSourceOptions:
+    properties:
+        field:
+            - Type: string
+            - NotBlank:
+                  allowNull: true
+            - Akeneo\Pim\Automation\RuleEngine\Component\Validator\Constraint\IsAttribute: ~
+            - Akeneo\Pim\Automation\RuleEngine\Component\Validator\Constraint\IsValidSource: ~
+        scope:
+            - Type: string
+        locale:
+            - Type: string
+        labelLocale:
+            - Type: string
+            - \Akeneo\Pim\Automation\RuleEngine\Component\Validator\Constraint\LocaleShouldBeActive: ~
+        unitLabelLocale:
+            - Type: string
+            - Akeneo\Channel\Component\Validator\Constraint\Locale: ~
+        format:
+            - Type: string
+        currency:
+            - Type: string
+            - \Akeneo\Pim\Automation\RuleEngine\Component\Validator\Constraint\ActiveCurrency: ~
+        text:
+            - Type: string
+        new_line: ~
