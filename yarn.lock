@@ -10,10 +10,6 @@
 "@akeneo-pim-community/shared@link:front-packages/shared":
   version "1.0.0"
 
-"@akeneo-pim-community/shared@link:vendor/akeneo/pim-community-dev/front-packages/shared":
-  version "0.0.0"
-  uid ""
-
 "@ampproject/remapping@^2.2.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.3.0.tgz#ed441b6fa600072520ce18b43d2c8cc8caecc7f4"
@@ -2611,9 +2607,6 @@ ajv@^8.0.1:
 "akeneo-design-system@link:front-packages/akeneo-design-system":
   version "0.0.0"
   uid ""
-
-"akeneo-design-system@link:vendor/akeneo/pim-community-dev/front-packages/akeneo-design-system":
-  version "0.0.0"
 
 alphanum-sort@^1.0.0:
   version "1.0.2"

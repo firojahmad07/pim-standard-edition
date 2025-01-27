@@ -28,9 +28,9 @@ services:
       - php
     networks:
       - pim
-      
-  mysql:
-    image: 'mysql:8.0.26'
+
+  database:
+    image: mysql:8.0.39
     container_name: pim-mysql
     command: '--default-authentication-plugin=mysql_native_password'
     environment:
@@ -38,12 +38,12 @@ services:
       MYSQL_USER: '${APP_DATABASE_USER}'
       MYSQL_DATABASE: '${APP_DATABASE_NAME}'
       MYSQL_PASSWORD: '${APP_DATABASE_PASSWORD}'
-    volumes:
-      - db_data:/var/lib/mysql
     ports:
       - '${DOCKER_PORT_MYSQL:-33006}:3306'
+    volumes:
+      - db_data:/var/lib/mysql
     networks:
-      - 'pim'
+      - pim
 
   adminer:
     image: adminer
@@ -51,7 +51,7 @@ services:
     ports:
       - "8081:8080"
     depends_on:
-      - mysql
+      - database
     networks:
       - pim
 
@@ -64,29 +64,11 @@ services:
     ports:
       - '${DOCKER_PORT_ELASTICSEARCH:-9210}:9200'
     networks:
-      - 'pim'
-
-###> doctrine/doctrine-bundle ###
-  database:
-    image: postgres:${POSTGRES_VERSION:-16}-alpine
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB:-app}
-      # You should definitely change the password in production
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
-      POSTGRES_USER: ${POSTGRES_USER:-app}
-    volumes:
-      - database_data:/var/lib/postgresql/data:rw
-      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
-      # - ./docker/db/data:/var/lib/postgresql/data:rw
-###< doctrine/doctrine-bundle ###
+      - pim
 
 volumes:
-
-###> doctrine/doctrine-bundle ###
-  database_data:
-###< doctrine/doctrine-bundle ###
   db_data:
-  
+
 networks:
   pim:
     driver: bridge
