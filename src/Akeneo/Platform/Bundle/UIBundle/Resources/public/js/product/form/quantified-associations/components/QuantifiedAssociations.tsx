@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useCallback, useRef} from 'react';
 import styled from 'styled-components';
-import {BrokenLinkIcon, AssociationTypesIllustration, Helper, Button, Search, useAutoFocus} from 'akeneo-design-system';
+import {BrokenLinkIcon, AssociationTypesIllustration, Helper, Button, Search, useAutoFocus} from '@akeneo-pim-community/akeneo-design-system';
 import {
   NoDataSection,
   NoDataTitle,

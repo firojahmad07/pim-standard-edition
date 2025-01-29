@@ -1,4 +1,4 @@
-import {arrayUnique} from 'akeneo-design-system';
+import {arrayUnique} from '@akeneo-pim-community/akeneo-design-system';
 import {
   Locale,
   LocaleCode,

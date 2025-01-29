@@ -4,7 +4,7 @@ import useFetchFamilies from '../../../../infrastructure/hooks/Dashboard/useFetc
 import {debounce} from 'lodash';
 import {useDashboardContext} from '../../../context/DashboardContext';
 import {useTranslate, useUserContext} from '@akeneo-pim-community/shared';
-import {ArrowDownIcon} from 'akeneo-design-system';
+import {ArrowDownIcon} from '@akeneo-pim-community/akeneo-design-system';
 
 type Labels = {
   [localeCode: string]: string;

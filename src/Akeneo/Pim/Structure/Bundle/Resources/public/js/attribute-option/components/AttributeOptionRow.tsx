@@ -1,7 +1,7 @@
 import React, {memo, useCallback} from 'react';
 import {useTranslate, useUserContext} from '@akeneo-pim-community/shared';
 import {AttributeOption} from '../model';
-import {AkeneoThemedProps, CloseIcon, getColor, IconButton, RowIcon, Table} from 'akeneo-design-system';
+import {AkeneoThemedProps, CloseIcon, getColor, IconButton, RowIcon, Table} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 import AttributeOptionQualityBadge from './AttributeOptionQualityBadge';
 

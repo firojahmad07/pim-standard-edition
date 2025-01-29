@@ -1,6 +1,6 @@
 import React, {ReactNode} from 'react';
 import styled from 'styled-components';
-import {AkeneoIcon, CommonStyle, getColor} from 'akeneo-design-system';
+import {AkeneoIcon, CommonStyle, getColor} from '@akeneo-pim-community/akeneo-design-system';
 
 type Props = {
   children?: ReactNode;

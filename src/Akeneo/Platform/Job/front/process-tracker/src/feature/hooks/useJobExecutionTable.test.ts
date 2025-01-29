@@ -9,7 +9,7 @@ const expectedFetchedJobExecutionTable: JobExecutionTable = {
 };
 
 let mockedDocumentVisibility = true;
-jest.mock('@akeneo-pim-community/shared/lib/hooks/useDocumentVisibility', () => ({
+jest.mock('@akeneo-pim-community/shared/hooks/useDocumentVisibility', () => ({
   useDocumentVisibility: (): boolean => mockedDocumentVisibility,
 }));
 

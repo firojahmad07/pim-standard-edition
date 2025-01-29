@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import {ArrowLeftIcon, ArrowRightIcon, Button, EditIcon, getColor, Key, Modal, useShortcut} from 'akeneo-design-system';
+import {ArrowLeftIcon, ArrowRightIcon, Button, EditIcon, getColor, Key, Modal, useShortcut} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useTranslate} from '@akeneo-pim-community/shared';
 import {ProductIdentifier} from 'akeneopimenrichmentassetmanager/assets-collection/reducer/product';
 import {ContextState} from 'akeneopimenrichmentassetmanager/assets-collection/reducer/context';

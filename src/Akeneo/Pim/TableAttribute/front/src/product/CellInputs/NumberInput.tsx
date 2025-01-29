@@ -1,4 +1,4 @@
-import {TableInput} from 'akeneo-design-system';
+import {TableInput} from '@akeneo-pim-community/akeneo-design-system';
 import React from 'react';
 import {NumberColumnValidation} from '../../models';
 import {CellInput} from './index';

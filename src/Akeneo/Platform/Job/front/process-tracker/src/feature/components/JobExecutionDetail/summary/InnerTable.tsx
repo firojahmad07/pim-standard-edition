@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {getColor, Table} from 'akeneo-design-system';
+import {getColor, Table} from '@akeneo-pim-community/akeneo-design-system';
 
 const TableContainer = styled(Table)`
   tr:last-child {

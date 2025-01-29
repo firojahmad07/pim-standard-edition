@@ -2,7 +2,7 @@ import React from 'react';
 import {ManageOptionsModal as OriginalManageOptionsModal} from '../attribute';
 import {ColumnCode, SelectColumnDefinition, SelectOption} from '../models';
 import {useAttributeContext} from '../contexts';
-import {useBooleanState} from 'akeneo-design-system';
+import {useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {SelectOptionRepository} from '../repositories';
 import {NotificationLevel, useNotify, useRouter, useTranslate} from '@akeneo-pim-community/shared';
 

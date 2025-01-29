@@ -1,5 +1,5 @@
 import React from 'react';
-import {Breadcrumb} from 'akeneo-design-system';
+import {Breadcrumb} from '@akeneo-pim-community/akeneo-design-system';
 import {PageHeader, useTranslate, useUserContext, PimView} from '@akeneo-pim-community/shared';
 import {generateRandomNumber} from '../helpers';
 

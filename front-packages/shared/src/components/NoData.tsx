@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {getColor, getFontSize} from 'akeneo-design-system';
+import {getColor, getFontSize} from '@akeneo-pim-community/akeneo-design-system';
 
 const NoDataSection = styled.div`
   text-align: center;

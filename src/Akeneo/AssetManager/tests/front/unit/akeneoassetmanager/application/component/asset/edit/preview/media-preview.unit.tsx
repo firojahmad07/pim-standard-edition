@@ -40,7 +40,7 @@ const mediaFileData = {
 const mediaLinkData = 'pim';
 const otherData = {some: 'thing'};
 
-jest.mock('@akeneo-pim-community/shared/lib/hooks/useRouter', () => ({
+jest.mock('@akeneo-pim-community/shared/hooks/useRouter', () => ({
   useRouter: () => {
     return {
       redirect: jest.fn(),

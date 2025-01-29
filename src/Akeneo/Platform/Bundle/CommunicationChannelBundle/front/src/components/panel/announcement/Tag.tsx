@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {AkeneoThemedProps} from 'akeneo-design-system';
+import {AkeneoThemedProps} from '@akeneo-pim-community/akeneo-design-system';
 
 type Tag = 'new' | 'update' | 'announcement';
 type TagProps = {

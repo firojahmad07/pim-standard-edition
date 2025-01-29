@@ -1,5 +1,5 @@
 import React, {FC, useContext, useEffect, useState} from 'react';
-import {Breadcrumb, ChannelsIllustration} from 'akeneo-design-system';
+import {Breadcrumb, ChannelsIllustration} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../../shared/translate';
 import {PageHeader} from '../../common';
 import {UserButtons} from '../../shared/user';

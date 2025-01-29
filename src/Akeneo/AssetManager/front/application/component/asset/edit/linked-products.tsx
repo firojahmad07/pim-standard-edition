@@ -10,7 +10,7 @@ import {
   SectionTitle,
   SwitcherButton,
   useBooleanState,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {Section, useTranslate} from '@akeneo-pim-community/shared';
 import {EditState} from 'akeneoassetmanager/application/reducer/asset/edit';
 import {NormalizedProduct} from 'akeneoassetmanager/domain/model/product/product';

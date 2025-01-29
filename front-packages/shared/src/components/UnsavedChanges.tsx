@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {DangerPlainIcon, getColor} from 'akeneo-design-system';
+import {DangerPlainIcon, getColor} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../hooks';
 
 const Container = styled.div`

@@ -11,7 +11,7 @@ import {
   IconButton,
   Dropdown,
   MoreIcon,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {
   useTranslate,
   ValidationError,
@@ -21,28 +21,28 @@ import {
   PageContent,
   Section,
 } from '@akeneo-pim-community/shared';
-import {AssetFamilyBreadcrumb} from 'akeneoassetmanager/application/component/app/breadcrumb';
-import {AssetFamily, getAssetFamilyLabel} from 'akeneoassetmanager/domain/model/asset-family/asset-family';
-import {EditState} from 'akeneoassetmanager/application/reducer/asset-family/edit';
-import NamingConvention from 'akeneoassetmanager/domain/model/asset-family/naming-convention';
-import ProductLinkRuleCollection from 'akeneoassetmanager/domain/model/asset-family/product-link-rule-collection';
+import {AssetFamilyBreadcrumb} from '../../../../application/component/app/breadcrumb';
+import {AssetFamily, getAssetFamilyLabel} from '../../../../domain/model/asset-family/asset-family';
+import {EditState} from '../../../../application/reducer/asset-family/edit';
+import NamingConvention from '../../../../domain/model/asset-family/naming-convention';
+import ProductLinkRuleCollection from '../../../../domain/model/asset-family/product-link-rule-collection';
 import {
   assetFamilyNamingConventionUpdated,
   assetFamilyProductLinkRulesUpdated,
   saveAssetFamily,
-} from 'akeneoassetmanager/application/action/asset-family/edit';
+} from '../../../../application/action/asset-family/edit';
 import {
   executeNamingConvention,
   executeProductLinkRules,
-} from 'akeneoassetmanager/application/action/asset-family/product-link-rule';
-import {canEditAssetFamily} from 'akeneoassetmanager/application/reducer/right';
+} from '../../../../application/action/asset-family/product-link-rule';
+import {canEditAssetFamily} from '../../../../application/reducer/right';
 import Ajv from 'ajv';
-import {getErrorsViewStartedWith} from 'akeneoassetmanager/application/component/app/validation-error';
-import {EditionFormState} from 'akeneoassetmanager/application/reducer/asset-family/edit/form';
-import {ConfirmModal} from 'akeneoassetmanager/application/component/app/modal';
-import namingConventionSchema from 'akeneoassetmanager/infrastructure/model/asset-family/naming-convention.schema.json';
-import productLinkRulesSchema from 'akeneoassetmanager/infrastructure/model/asset-family/product-link-rules.schema.json';
-import {UserNavigation} from 'akeneoassetmanager/application/component/app/user-navigation';
+import {getErrorsViewStartedWith} from '../../../../application/component/app/validation-error';
+import {EditionFormState} from '../../../../application/reducer/asset-family/edit/form';
+import {ConfirmModal} from '../../../../application/component/app/modal';
+import namingConventionSchema from '../../../../infrastructure/model/asset-family/naming-convention.schema.json';
+import productLinkRulesSchema from '../../../../infrastructure/model/asset-family/product-link-rules.schema.json';
+import {UserNavigation} from '../../../../application/component/app/user-navigation';
 
 const ajv = new Ajv({allErrors: true, verbose: true});
 

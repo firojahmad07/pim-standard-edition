@@ -1,5 +1,5 @@
 import {ReactElement, ReactNode} from 'react';
-import {IconProps} from 'akeneo-design-system';
+import {IconProps} from '@akeneo-pim-community/akeneo-design-system';
 
 enum NotificationLevel {
   INFO = 'info',

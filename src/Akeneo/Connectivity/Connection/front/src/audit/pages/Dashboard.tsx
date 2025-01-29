@@ -8,7 +8,7 @@ import {DashboardContent} from '../components/DashboardContent';
 import {useDashboardDispatch} from '../dashboard-context';
 import {useConnections} from '../hooks/api/use-connections';
 import {useFetchConnectionsAuditData} from '../hooks/api/use-fetch-connections-audit-data';
-import {Breadcrumb} from 'akeneo-design-system';
+import {Breadcrumb} from '@akeneo-pim-community/akeneo-design-system';
 import {UserButtons} from '../../shared/user';
 import {useFeatureFlags} from '../../shared/feature-flags';
 

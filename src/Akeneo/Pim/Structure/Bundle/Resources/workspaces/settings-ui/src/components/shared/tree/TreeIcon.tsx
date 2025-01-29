@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-import {FolderIcon, FolderPlainIcon, FoldersIcon, FoldersPlainIcon, getColor, LoaderIcon} from 'akeneo-design-system';
+import {FolderIcon, FolderPlainIcon, FoldersIcon, FoldersPlainIcon, getColor, LoaderIcon} from '@akeneo-pim-community/akeneo-design-system';
 
 const folderIconCss = css`
   vertical-align: middle;

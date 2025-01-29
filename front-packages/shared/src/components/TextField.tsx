@@ -1,5 +1,5 @@
 import React, {Ref} from 'react';
-import {FieldProps, TextInputProps, Field, TextInput, Helper} from 'akeneo-design-system';
+import {FieldProps, TextInputProps, Field, TextInput, Helper} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../hooks';
 import {ValidationError, formatParameters} from '../models';
 

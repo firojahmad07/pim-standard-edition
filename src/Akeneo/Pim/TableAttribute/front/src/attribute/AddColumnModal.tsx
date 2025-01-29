@@ -1,4 +1,4 @@
-import {AttributesIllustration, Button, Field, Helper, Modal, SelectInput, TextInput} from 'akeneo-design-system';
+import {AttributesIllustration, Button, Field, Helper, Modal, SelectInput, TextInput} from '@akeneo-pim-community/akeneo-design-system';
 import React from 'react';
 import {ColumnCode, ColumnDefinition, DataType, isColumnCodeNotAvailable} from '../models';
 import {LabelCollection, useTranslate, useUserContext} from '@akeneo-pim-community/shared';

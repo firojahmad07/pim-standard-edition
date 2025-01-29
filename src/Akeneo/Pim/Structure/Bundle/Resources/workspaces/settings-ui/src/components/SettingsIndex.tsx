@@ -29,7 +29,7 @@ import {
   TagIcon,
   useTheme,
   ValueIcon,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 import {CountEntities, useCountEntities} from '../hooks/settings';
 

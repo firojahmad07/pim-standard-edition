@@ -1,5 +1,5 @@
 import React, {FC, useCallback, useRef, useState} from 'react';
-import {Table, IconButton, CloseIcon, Pagination, useAutoFocus} from 'akeneo-design-system';
+import {Table, IconButton, CloseIcon, Pagination, useAutoFocus} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 import {Word} from '../../../../domain';
 import {useDebounceCallback, useTranslate} from '@akeneo-pim-community/shared';

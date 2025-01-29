@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, IconButton, useBooleanState, CheckIcon, CloseIcon} from 'akeneo-design-system';
+import {Button, IconButton, useBooleanState, CheckIcon, CloseIcon} from '@akeneo-pim-community/akeneo-design-system';
 import {LocaleCode, useMediator, useRouter, useTranslate} from '@akeneo-pim-community/shared';
 import {ProposalModal} from './ProposalModal';
 

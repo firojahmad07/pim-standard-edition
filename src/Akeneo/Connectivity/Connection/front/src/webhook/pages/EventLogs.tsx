@@ -1,4 +1,4 @@
-import {Breadcrumb} from 'akeneo-design-system';
+import {Breadcrumb} from '@akeneo-pim-community/akeneo-design-system';
 import React, {FC, useEffect} from 'react';
 import {useHistory, useParams} from 'react-router-dom';
 import {Loading, PageContent, PageHeader} from '../../common';

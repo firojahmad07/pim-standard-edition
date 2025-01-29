@@ -7,7 +7,7 @@ import {ConnectionErrors} from '../components/ConnectionErrors';
 import {NotAuditableConnection} from '../components/NotAuditableConnection';
 import {NotDataSourceConnection} from '../components/NotDataSourceConnection';
 import {useConnection} from '../hooks/api/use-connection';
-import {Breadcrumb} from 'akeneo-design-system';
+import {Breadcrumb} from '@akeneo-pim-community/akeneo-design-system';
 import {UserButtons} from '../../shared/user';
 import {useRouter} from '../../shared/router/use-router';
 

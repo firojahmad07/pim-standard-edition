@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Breadcrumb} from 'akeneo-design-system';
+import {Breadcrumb} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../../../shared/translate';
 import styled, {keyframes} from 'styled-components';
 import {PageContent, PageHeader} from '../../../common';

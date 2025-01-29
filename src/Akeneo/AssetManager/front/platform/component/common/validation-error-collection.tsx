@@ -2,7 +2,7 @@ import React from 'react';
 import {AttributeCode} from 'akeneoassetmanager/platform/model/structure/attribute';
 import {ValidationError, getValidationErrorsForAttribute} from 'akeneoassetmanager/platform/model/validation-error';
 import {Context} from 'akeneoassetmanager/domain/model/context';
-import {Helper} from 'akeneo-design-system';
+import {Helper} from '@akeneo-pim-community/akeneo-design-system';
 
 type ValidationErrorCollectionProps = {
   attributeCode: AttributeCode;

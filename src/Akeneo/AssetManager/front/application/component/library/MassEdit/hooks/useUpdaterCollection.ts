@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {NormalizedAttribute} from 'akeneoassetmanager/domain/model/attribute/attribute';
 import {Context} from 'akeneoassetmanager/domain/model/context';
-import {arrayUnique, uuid} from 'akeneo-design-system';
+import {arrayUnique, uuid} from '@akeneo-pim-community/akeneo-design-system';
 import {Updater} from 'akeneoassetmanager/application/component/library/MassEdit/model/updater';
 
 const useUpdaterCollection = () => {

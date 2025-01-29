@@ -1,6 +1,6 @@
 import React, {FC, useRef} from 'react';
 import MarketplaceHelper from './MarketplaceHelper';
-import {ArrowSimpleUpIcon, getColor, IconButton} from 'akeneo-design-system';
+import {ArrowSimpleUpIcon, getColor, IconButton} from '@akeneo-pim-community/akeneo-design-system';
 import {MarketplaceCard} from './MarketplaceCard';
 import {Extension, Extensions} from '../../model/extension';
 import {useTranslate} from '../../shared/translate';

@@ -1,6 +1,6 @@
 import React from 'react';
 import {getLabel, useTranslate, useUserContext} from '@akeneo-pim-community/shared';
-import {SelectInput} from 'akeneo-design-system';
+import {SelectInput} from '@akeneo-pim-community/akeneo-design-system';
 import {ColumnCode, ColumnDefinition} from '../models';
 import {useAttributeContext} from '../contexts';
 

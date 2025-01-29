@@ -1,6 +1,6 @@
 import React from 'react';
 import {ValidationError} from '@akeneo-pim-community/shared';
-import {Helper} from 'akeneo-design-system';
+import {Helper} from '@akeneo-pim-community/akeneo-design-system';
 import translate from 'akeneoassetmanager/tools/translator';
 
 const equalsFilter = (field: string) => (error: ValidationError) => field === error.propertyPath;

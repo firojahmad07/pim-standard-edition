@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Level, ProgressBar, ProgressBarPercent} from 'akeneo-design-system';
+import {Level, ProgressBar, ProgressBarPercent} from '@akeneo-pim-community/akeneo-design-system';
 import {StepExecutionTracking} from '../../models/JobExecutionDetail';
 import {Translate, useTranslate} from '@akeneo-pim-community/shared';
 import {formatSecondsIntl} from '../../tools/intl-duration';

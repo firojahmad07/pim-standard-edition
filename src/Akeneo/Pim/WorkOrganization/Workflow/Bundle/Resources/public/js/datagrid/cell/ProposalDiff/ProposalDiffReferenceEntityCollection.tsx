@@ -6,7 +6,7 @@ import {createValue} from 'akeneoreferenceentity/domain/model/record/value';
 import {denormalize as denormalizeRecordAttribute} from 'akeneoreferenceentity/domain/model/attribute/type/record';
 import {denormalize as denormalizeRecordData} from 'akeneoreferenceentity/domain/model/record/data/record';
 import styled from 'styled-components';
-import {AkeneoThemedProps, getColor} from 'akeneo-design-system';
+import {AkeneoThemedProps, getColor} from '@akeneo-pim-community/akeneo-design-system';
 import {ProposalChangeAccessor} from '../ProposalChange';
 const UserContext = require('pim/user-context');
 

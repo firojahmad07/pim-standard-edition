@@ -5,7 +5,7 @@ import {ValueSelector} from './ValueSelector';
 import React, {useState} from 'react';
 import styled, {css} from 'styled-components';
 import {ColumnDefinition, FilterOperator, FilterValue, PendingTableFilterValue, SelectOption} from '../models';
-import {AkeneoThemedProps} from 'akeneo-design-system';
+import {AkeneoThemedProps} from '@akeneo-pim-community/akeneo-design-system';
 
 const FilterSelectorListContainer = styled.div<{inline: boolean} & AkeneoThemedProps>`
   ${({inline}) =>

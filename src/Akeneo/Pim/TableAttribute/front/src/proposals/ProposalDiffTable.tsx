@@ -1,5 +1,5 @@
 import React from 'react';
-import {Badge, LoaderIcon, TableInput} from 'akeneo-design-system';
+import {Badge, LoaderIcon, TableInput} from '@akeneo-pim-community/akeneo-design-system';
 import {getLabel, useRouter, useTranslate, useUserContext} from '@akeneo-pim-community/shared';
 import {diffChars} from 'diff';
 import styled from 'styled-components';

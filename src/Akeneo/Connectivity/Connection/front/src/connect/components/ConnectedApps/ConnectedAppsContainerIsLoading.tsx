@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {SectionTitle} from 'akeneo-design-system';
+import {SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../../../shared/translate';
 import styled, {keyframes} from 'styled-components';
 

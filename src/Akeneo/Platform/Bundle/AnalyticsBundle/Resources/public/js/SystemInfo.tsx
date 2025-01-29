@@ -1,6 +1,6 @@
 import React, {ReactElement} from 'react';
 import styled from 'styled-components';
-import {Breadcrumb, Table, Button} from 'akeneo-design-system';
+import {Breadcrumb, Table, Button} from '@akeneo-pim-community/akeneo-design-system';
 import {PageContent, PageHeader, useRoute, useTranslate, PimView} from '@akeneo-pim-community/shared';
 import {useSystemInfo} from './SystemInfoHook';
 

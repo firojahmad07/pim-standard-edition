@@ -2,7 +2,7 @@ import React, {PropsWithChildren, ReactElement, RefObject} from 'react';
 import {TableCell} from '../layouts/tables';
 import {useDataGridState} from '../../../hooks';
 import {AfterDropRowHandler} from '../providers';
-import {RowIcon} from 'akeneo-design-system';
+import {RowIcon} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 
 type Props<T> = {

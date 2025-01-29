@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {FlattenSimpleInterpolation} from 'styled-components';
-import {ImportIllustration, getColor} from 'akeneo-design-system';
+import {ImportIllustration, getColor} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 
 const Container = styled.div`

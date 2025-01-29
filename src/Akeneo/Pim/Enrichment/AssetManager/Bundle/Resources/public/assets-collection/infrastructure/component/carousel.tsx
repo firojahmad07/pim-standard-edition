@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {AkeneoThemedProps, getColor, SectionTitle} from 'akeneo-design-system';
+import {AkeneoThemedProps, getColor, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useTranslate} from '@akeneo-pim-community/shared';
 import AssetCode from 'akeneoassetmanager/domain/model/asset/code';
 import {Attribute, getAttributeLabel} from 'akeneoassetmanager/platform/model/structure/attribute';

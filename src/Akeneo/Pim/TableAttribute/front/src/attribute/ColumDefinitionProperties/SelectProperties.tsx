@@ -1,4 +1,4 @@
-import {Button, useBooleanState} from 'akeneo-design-system';
+import {Button, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {ManageOptionsModal} from '../ManageOptionsModal';
 import React from 'react';
 import styled from 'styled-components';

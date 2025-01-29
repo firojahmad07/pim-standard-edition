@@ -1,5 +1,5 @@
 import React, {ReactNode, useContext} from 'react';
-import {useBooleanState} from 'akeneo-design-system';
+import {useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 
 type ReloadPreviewValue = [boolean, () => void];
 

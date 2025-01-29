@@ -1,7 +1,7 @@
 import React from 'react';
 import {LocaleCode, useRouter, useTranslate} from '@akeneo-pim-community/shared';
 import styled from 'styled-components';
-import {AkeneoThemedProps, Badge, getColor, getFontSize} from 'akeneo-design-system';
+import {AkeneoThemedProps, Badge, getColor, getFontSize} from '@akeneo-pim-community/akeneo-design-system';
 import {ApproveAllButton, ApproveButton, RejectAllButton, RejectButton, RemoveAllButton} from './proposalActions';
 import {ScopeLabel} from './ScopeLabel';
 import {LocaleLabel} from './LocaleLabel';

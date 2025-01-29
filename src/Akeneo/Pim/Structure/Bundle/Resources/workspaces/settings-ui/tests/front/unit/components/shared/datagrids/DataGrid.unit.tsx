@@ -2,7 +2,7 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import {render} from '@testing-library/react';
 import {DataGrid} from '@akeneo-pim-community/settings-ui/src/components/shared/datagrids';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {ThemeProvider} from 'styled-components';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 

@@ -1,8 +1,7 @@
 # Use the official PHP image as the base
 FROM php:8.0-fpm
 
-# Set working directory and User
-# USER www-data
+# Set working directory
 WORKDIR /var/www/html
 
 # Environment variables
@@ -12,7 +11,9 @@ ENV PHP_CONF_DATE_TIMEZONE=UTC \
     PHP_CONF_OPCACHE_VALIDATE_TIMESTAMP=0 \
     PHP_CONF_MAX_INPUT_VARS=1000 \
     PHP_CONF_UPLOAD_LIMIT=40M \
-    PHP_CONF_MAX_POST_SIZE=40M
+    PHP_CONF_MAX_POST_SIZE=40M \
+    YARN_GLOBAL_FOLDER=/var/www/.yarn/global \
+    YARN_CACHE_FOLDER=/var/www/.yarn/cache
 
 # Update and install PHP extensions and system dependencies
 RUN apt-get update && \
@@ -57,8 +58,8 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Set memory limit
-RUN echo "memory_limit=512M" > /usr/local/etc/php/conf.d/memory-limit.ini
+# Set PHP memory limit
+RUN echo "memory_limit=${PHP_CONF_MEMORY_LIMIT}" > /usr/local/etc/php/conf.d/memory-limit.ini
 
 # Install MySQL client
 RUN apt-get update && apt-get install -y default-mysql-client && apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -71,14 +72,22 @@ RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && \
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# Configure Yarn global and cache folders
+RUN mkdir -p $YARN_GLOBAL_FOLDER $YARN_CACHE_FOLDER && \
+    chown -R www-data:www-data $YARN_GLOBAL_FOLDER $YARN_CACHE_FOLDER && \
+    chmod -R 775 $YARN_GLOBAL_FOLDER $YARN_CACHE_FOLDER && \
+    yarn config set global-folder $YARN_GLOBAL_FOLDER && \
+    yarn config set cache-folder $YARN_CACHE_FOLDER
 
-# Ensure writable permissions for cache and logs directories
-RUN chown -R www-data:www-data /var/www/html/ /var/www/html/ && \
-    chmod -R 775 /var/www/html/ /var/www/html/
+# Set writable permissions for application and temporary directories
+RUN chown -R www-data:www-data /var/www/html /tmp && \
+    chmod -R 775 /var/www/html /tmp
 
-# Copy the existing application directory contents
+# Copy application files
 COPY . .
 
-# Expose port 9000 and start php-fpm server
+# Expose PHP-FPM port
 EXPOSE 9000
+
+# Start PHP-FPM server
 CMD ["php-fpm"]

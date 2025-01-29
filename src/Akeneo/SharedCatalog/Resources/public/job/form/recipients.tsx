@@ -18,7 +18,7 @@ import {
   SurveyIllustration,
   Key,
   useShortcut,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 
 const MAX_RECIPIENT_COUNT = 500;
 

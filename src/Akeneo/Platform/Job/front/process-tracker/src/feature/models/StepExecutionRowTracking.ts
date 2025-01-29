@@ -1,4 +1,4 @@
-import {Level, ProgressBarPercent} from 'akeneo-design-system';
+import {Level, ProgressBarPercent} from '@akeneo-pim-community/akeneo-design-system';
 import {StepStatus} from './StepStatus';
 
 type StepExecutionRowTracking = {

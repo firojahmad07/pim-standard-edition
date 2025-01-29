@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Link} from 'akeneo-design-system';
+import {Link} from '@akeneo-pim-community/akeneo-design-system';
 
 const translate = require('oro/translator');
 

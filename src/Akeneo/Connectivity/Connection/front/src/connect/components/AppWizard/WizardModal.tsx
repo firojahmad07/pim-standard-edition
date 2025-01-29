@@ -1,4 +1,4 @@
-import {Button, Modal, ProgressIndicator} from 'akeneo-design-system';
+import {Button, Modal, ProgressIndicator} from '@akeneo-pim-community/akeneo-design-system';
 import React from 'react';
 import styled from 'styled-components';
 import {useTranslate} from '../../../shared/translate';

@@ -16,7 +16,7 @@ const asset = {
 };
 jest.mock('akeneoassetmanager/tools/image-loader');
 
-jest.mock('@akeneo-pim-community/shared/lib/hooks/useRouter', () => ({
+jest.mock('@akeneo-pim-community/shared/hooks/useRouter', () => ({
   useRouter: () => {
     return {
       redirect: jest.fn(),

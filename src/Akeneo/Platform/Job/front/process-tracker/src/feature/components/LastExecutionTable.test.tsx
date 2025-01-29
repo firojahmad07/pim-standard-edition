@@ -57,14 +57,14 @@ const rows: JobExecutionRow[] = [
 ];
 
 let mockedGrantedAcl = ['pim_importexport_export_execution_show', 'pim_importexport_stop_job'];
-jest.mock('@akeneo-pim-community/shared/lib/hooks/useSecurity', () => ({
+jest.mock('@akeneo-pim-community/shared/hooks/useSecurity', () => ({
   useSecurity: () => ({
     isGranted: (acl: string) => mockedGrantedAcl.includes(acl),
   }),
 }));
 
 const mockRedirect = jest.fn();
-jest.mock('@akeneo-pim-community/shared/lib/hooks/useRouter', () => ({
+jest.mock('@akeneo-pim-community/shared/hooks/useRouter', () => ({
   useRouter: () => ({
     generate: (route: string) => route,
     redirect: mockRedirect,

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Locale as LocaleFlag, SelectInput} from 'akeneo-design-system';
+import {Locale as LocaleFlag, SelectInput} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate, LocaleCode, Locale, LocaleReference} from '@akeneo-pim-community/shared';
 
 type LocaleDropdownProps = {

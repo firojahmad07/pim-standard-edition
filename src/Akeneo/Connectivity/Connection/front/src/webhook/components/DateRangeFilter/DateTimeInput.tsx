@@ -1,4 +1,4 @@
-import {TextInput} from 'akeneo-design-system';
+import {TextInput} from '@akeneo-pim-community/akeneo-design-system';
 import {DateTime} from 'luxon';
 import React, {FC, useEffect, useState} from 'react';
 import styled from 'styled-components';

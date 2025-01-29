@@ -2,7 +2,7 @@ import {createQuery, addSelection} from 'akeneoassetmanager/application/hooks/gr
 import {Filter} from 'akeneoassetmanager/application/reducer/grid';
 import AssetCode from 'akeneoassetmanager/domain/model/asset/code';
 import {Context} from 'akeneoassetmanager/domain/model/context';
-import {Selection} from 'akeneo-design-system';
+import {Selection} from '@akeneo-pim-community/akeneo-design-system';
 
 const useSelectionQuery = (
   currentAssetFamilyIdentifier: string | null,

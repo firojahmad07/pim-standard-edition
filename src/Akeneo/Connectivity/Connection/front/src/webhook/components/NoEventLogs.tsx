@@ -1,4 +1,4 @@
-import {GraphIllustration} from 'akeneo-design-system';
+import {GraphIllustration} from '@akeneo-pim-community/akeneo-design-system';
 import React, {FC} from 'react';
 import {EmptyState} from '../../common';
 import {useTranslate} from '../../shared/translate';

@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react';
 import styled from 'styled-components';
-import {Field, TextInput, useAutoFocus} from 'akeneo-design-system';
+import {Field, TextInput, useAutoFocus} from '@akeneo-pim-community/akeneo-design-system';
 import {DeleteModal, useTranslate} from '@akeneo-pim-community/shared';
 import ReferenceEntityIdentifier from 'akeneoreferenceentity/domain/model/identifier';
 

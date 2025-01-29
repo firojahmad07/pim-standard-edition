@@ -1,6 +1,6 @@
 import React, {isValidElement, ReactNode, useEffect, useCallback, useState} from 'react';
 import styled from 'styled-components';
-import {Checkbox, Toolbar, Button, useSelection, useBooleanState, Dropdown, ArrowDownIcon} from 'akeneo-design-system';
+import {Checkbox, Toolbar, Button, useSelection, useBooleanState, Dropdown, ArrowDownIcon} from '@akeneo-pim-community/akeneo-design-system';
 import {useNotify, NotificationLevel, useTranslate, getLabel, PageHeader} from '@akeneo-pim-community/shared';
 import {SearchBar} from 'akeneoassetmanager/application/component/asset/list/search-bar';
 import Mosaic from 'akeneoassetmanager/application/component/asset/list/mosaic';

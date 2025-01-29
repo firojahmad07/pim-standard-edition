@@ -7,10 +7,10 @@ import {
   SubNavigationPanel,
   Tag,
   useBooleanState,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useTranslate} from '../../hooks';
 import {SubNavigationDropdown} from './SubNavigationDropdown';
-import {useTheme} from 'akeneo-design-system';
+import {useTheme} from '@akeneo-pim-community/akeneo-design-system';
 
 type SubNavigationType = {
   title?: string;

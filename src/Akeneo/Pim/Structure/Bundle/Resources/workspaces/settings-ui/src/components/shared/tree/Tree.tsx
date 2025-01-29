@@ -9,7 +9,7 @@ import React, {
   useState,
 } from 'react';
 import styled, {css} from 'styled-components';
-import {AkeneoThemedProps, getColor, RowIcon} from 'akeneo-design-system';
+import {AkeneoThemedProps, getColor, RowIcon} from '@akeneo-pim-community/akeneo-design-system';
 import {PlaceholderPosition, TreeNode} from '../../../models';
 import {ArrowButton, DragInitiator, RowActionsContainer, RowInnerContainer, TreeArrowIcon, TreeRow} from './TreeRow';
 import {TreeActions} from './TreeActions';

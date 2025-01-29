@@ -1,6 +1,6 @@
 import React from 'react';
 import {ParentCategoryTree, CategoryTreeModel} from './CategoryTree';
-import {Tree} from 'akeneo-design-system/lib/components/Tree/Tree';
+import {Tree} from '@akeneo-pim-community/akeneo-design-system/src/components/Tree/Tree';
 
 type CategoryValue = {
   id: number;

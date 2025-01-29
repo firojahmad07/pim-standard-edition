@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import {Button, getColor, getFontSize, useSelection, Modal, useBooleanState} from 'akeneo-design-system';
+import {Button, getColor, getFontSize, useSelection, Modal, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate, LocaleCode, ChannelCode, Channel} from '@akeneo-pim-community/shared';
 import {Context} from 'akeneoassetmanager/domain/model/context';
 import {Filter} from 'akeneoassetmanager/application/reducer/grid';

@@ -1,6 +1,6 @@
 import React, {ReactNode} from 'react';
 import styled from 'styled-components';
-import {getColor, getFontSize, SubNavigationPanel} from 'akeneo-design-system';
+import {getColor, getFontSize, SubNavigationPanel} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {useStoredState} from 'akeneoassetmanager/application/hooks/state';
 

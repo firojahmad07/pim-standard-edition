@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {TreeNode, useDragTreeNode} from '../../../../../src';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 import {ThemeProvider} from 'styled-components';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {renderHook} from '@testing-library/react-hooks';
 import {OrderableTreeProvider} from '../../../../../src/components/shared/providers/OrderableTreeProvider';
 import {aTreeNode} from '../../../utils/provideTreeNodeHelper';

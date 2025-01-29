@@ -27,7 +27,7 @@ import thunkMiddleware from 'redux-thunk';
 import {LegacyValue} from 'akeneopimenrichmentassetmanager/enrich/domain/model/product';
 import {isValidErrorCollection, denormalizeErrorCollection} from 'akeneoassetmanager/platform/model/validation-error';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import assetFamilyFetcher from 'akeneoassetmanager/infrastructure/fetcher/asset-family';
 import {fetchChannels} from 'akeneoassetmanager/infrastructure/fetcher/channel';
 import AssetFamilyIdentifier from 'akeneoassetmanager/domain/model/asset-family/identifier';

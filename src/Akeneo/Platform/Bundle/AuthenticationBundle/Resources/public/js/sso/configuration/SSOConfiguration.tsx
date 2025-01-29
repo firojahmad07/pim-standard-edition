@@ -8,7 +8,7 @@ import {
   SectionTitle,
   TextInput,
   TextAreaInput,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useTranslate, PageContent, PageHeader, PimView} from '@akeneo-pim-community/shared';
 import styled from 'styled-components';
 import {

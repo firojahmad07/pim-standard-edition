@@ -1,5 +1,5 @@
 import React from 'react';
-import {NumberInput} from 'akeneo-design-system';
+import {NumberInput} from '@akeneo-pim-community/akeneo-design-system';
 import {FilteredValueRenderer, TableFilterValueRenderer} from './index';
 import {useTranslate} from '@akeneo-pim-community/shared';
 

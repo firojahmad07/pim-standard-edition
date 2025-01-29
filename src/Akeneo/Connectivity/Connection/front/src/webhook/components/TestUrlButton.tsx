@@ -2,7 +2,7 @@ import React, {FC, SyntheticEvent} from 'react';
 import {GhostButton} from '../../common';
 import styled from '../../common/styled-with-theme';
 import {Translate} from '../../shared/translate';
-import {LoaderIcon} from 'akeneo-design-system';
+import {LoaderIcon} from '@akeneo-pim-community/akeneo-design-system';
 
 type Props = {
     onClick: (event: SyntheticEvent) => void;

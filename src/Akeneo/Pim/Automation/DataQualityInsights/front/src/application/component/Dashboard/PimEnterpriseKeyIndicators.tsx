@@ -9,7 +9,7 @@ import {
   redirectToAttributeGridFilteredByKeyIndicator,
   useGetSpellcheckSupportedLocales,
 } from '../../../infrastructure';
-import {AssetCollectionIcon, EditIcon, SettingsIcon} from 'akeneo-design-system';
+import {AssetCollectionIcon, EditIcon, SettingsIcon} from '@akeneo-pim-community/akeneo-design-system';
 import {KeyIndicatorExtraData} from '@akeneo-pim-community/data-quality-insights/src/domain';
 
 type Props = {

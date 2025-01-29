@@ -2,7 +2,7 @@ import React from 'react';
 import {render, screen} from '@testing-library/react';
 import {fireEvent} from '@testing-library/dom';
 import {ThemeProvider} from 'styled-components';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {PermissionFormWidget} from './PermissionFormWidget';
 
 jest.mock('../dependencies/translate', () => ({

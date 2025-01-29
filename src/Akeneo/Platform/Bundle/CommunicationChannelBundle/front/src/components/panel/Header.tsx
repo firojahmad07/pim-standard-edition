@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {AkeneoThemedProps, useTheme, CloseIcon, MegaphoneIcon} from 'akeneo-design-system';
+import {AkeneoThemedProps, useTheme, CloseIcon, MegaphoneIcon} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 
 const Container = styled.div`

@@ -8,7 +8,7 @@ import {Credential, CredentialList} from './credentials/Credential';
 import {RegenerateButton} from './RegenerateButton';
 import {WrongCredentialsCombination} from '../../model/wrong-credentials-combinations';
 import {WrongCombinationsWarning} from './wrong-credentials/WrongCombinationsWarning';
-import {Helper, Link, SectionTitle} from 'akeneo-design-system';
+import {Helper, Link, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 
 type Props = {
     code: string;

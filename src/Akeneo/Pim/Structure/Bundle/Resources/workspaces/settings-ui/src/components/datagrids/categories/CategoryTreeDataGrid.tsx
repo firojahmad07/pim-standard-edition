@@ -1,5 +1,5 @@
 import React, {FC, useCallback, useEffect, useState} from 'react';
-import {Button, Search, Table, useBooleanState} from 'akeneo-design-system';
+import {Button, Search, Table, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {
   NotificationLevel,
   useDebounceCallback,

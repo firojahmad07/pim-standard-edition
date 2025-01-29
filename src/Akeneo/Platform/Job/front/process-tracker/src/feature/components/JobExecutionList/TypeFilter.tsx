@@ -1,5 +1,5 @@
 import React from 'react';
-import {Checkbox, Dropdown, SwitcherButton, useBooleanState} from 'akeneo-design-system';
+import {Checkbox, Dropdown, SwitcherButton, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate, Translate} from '@akeneo-pim-community/shared';
 import {useJobExecutionTypes} from '../../hooks/useJobExecutionTypes';
 

@@ -2,7 +2,7 @@ import BaseView = require('pimui/js/view/base');
 import ReactDOM from 'react-dom';
 import React from 'react';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {ThemeProvider} from 'styled-components';
 import {AttributeData, CreateAttributeButtonApp} from '../../../attribute/form/CreateAttributeButtonApp';
 const translate = require('oro/translator');

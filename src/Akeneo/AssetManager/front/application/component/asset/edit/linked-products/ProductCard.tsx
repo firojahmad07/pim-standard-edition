@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, Link} from 'akeneo-design-system';
+import {Card, Link} from '@akeneo-pim-community/akeneo-design-system';
 import {Router, useRouter} from '@akeneo-pim-community/shared';
 import {isProductModel, NormalizedProduct} from 'akeneoassetmanager/domain/model/product/product';
 import Completeness from 'akeneoassetmanager/domain/model/product/completeness';

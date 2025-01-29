@@ -15,7 +15,7 @@ import {
   ButtonProps,
   IconButtonProps,
   Button,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useTranslate} from '@akeneo-pim-community/shared';
 import {useReloadPreview} from 'akeneoassetmanager/application/hooks/useReloadPreview';
 

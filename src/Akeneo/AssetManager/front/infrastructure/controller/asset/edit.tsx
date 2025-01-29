@@ -24,7 +24,7 @@ import {LocalePermission} from 'akeneoassetmanager/domain/model/permission/local
 import {updateAttributeList} from 'akeneoassetmanager/application/action/product/attribute';
 import {denormalizeAssetFamilyIdentifier} from 'akeneoassetmanager/domain/model/asset-family/identifier';
 import {ThemeProvider} from 'styled-components';
-import {pimTheme, Key} from 'akeneo-design-system';
+import {pimTheme, Key} from '@akeneo-pim-community/akeneo-design-system';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 import {getValueConfig} from 'akeneoassetmanager/application/configuration/value';
 import {ConfigProvider} from 'akeneoassetmanager/application/hooks/useConfig';

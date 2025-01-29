@@ -16,7 +16,7 @@ define([
   'pim/template/channel/tab/properties/conversion-unit',
   'pim/user-context',
   'pim/i18n',
-  'akeneo-design-system',
+  '@akeneo-pim-community/akeneo-design-system',
   'jquery.select2',
 ], function ($, _, __, BaseForm, FetcherRegistry, template, UserContext, i18n, {Helper}) {
   return BaseForm.extend({

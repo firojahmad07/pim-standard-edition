@@ -6,7 +6,7 @@ const mockTranslate = jest.fn((key: string, parameters: any, count: number) => {
   return key;
 });
 
-jest.mock('@akeneo-pim-community/shared/lib/hooks/useTranslate', () => ({
+jest.mock('@akeneo-pim-community/shared/hooks/useTranslate', () => ({
   useTranslate: () => mockTranslate,
 }));
 

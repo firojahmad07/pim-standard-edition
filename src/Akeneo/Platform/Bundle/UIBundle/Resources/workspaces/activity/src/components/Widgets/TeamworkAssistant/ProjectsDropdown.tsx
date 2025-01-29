@@ -1,11 +1,11 @@
 import React, {FC, UIEvent, useEffect, useRef} from 'react';
-import {Badge, Dropdown, SwitcherButton, useBooleanState, Search} from 'akeneo-design-system';
+import {Badge, Dropdown, SwitcherButton, useBooleanState, Search} from '@akeneo-pim-community/akeneo-design-system';
 import {Project} from '../../../domain';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {useSearchProjects} from '../../../hooks';
 import {SearchingPlaceholder} from './SearchingPlaceholder';
 import styled from 'styled-components';
-import {GroupsIllustration} from 'akeneo-design-system';
+import {GroupsIllustration} from '@akeneo-pim-community/akeneo-design-system';
 
 const loadNextPageThreshold = 100; //value in pixels
 const projectsPerPage = 20;

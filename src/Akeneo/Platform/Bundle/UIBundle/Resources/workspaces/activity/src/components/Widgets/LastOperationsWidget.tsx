@@ -1,8 +1,8 @@
 import React from 'react';
-import {Badge, Button, SectionTitle, SettingsIllustration, Table} from 'akeneo-design-system';
+import {Badge, Button, SectionTitle, SettingsIllustration, Table} from '@akeneo-pim-community/akeneo-design-system';
 import {NoDataSection, NoDataText, useRouter, useTranslate} from '@akeneo-pim-community/shared';
-import {useDashboardLastOperations} from '../../hooks';
-import {Operation} from '../../domain';
+import {useDashboardLastOperations} from '../../hooks/useDashboardLastOperations';
+import {Operation} from '../../domain/operation';
 import styled from 'styled-components';
 
 const JOB_STARTING = '2';
@@ -78,7 +78,7 @@ const LastOperationsWidget = () => {
                         ` ${operation.tracking.currentStep}/${operation.tracking.totalSteps}`}
                     </Badge>
                   </Table.Cell>
-                  <Table.Cell>{counter > 0 ? counter : '-'}</Table.Cell>
+                  <Table.Cell>{counter > "0" ? counter : '-'}</Table.Cell>
                   <TableActionCell>
                     {operation.canSeeReport && (
                       <Button

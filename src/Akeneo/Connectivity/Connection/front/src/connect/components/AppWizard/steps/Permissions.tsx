@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import styled from 'styled-components';
-import {getColor, getFontSize, Link} from 'akeneo-design-system';
+import {getColor, getFontSize, Link} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/connectivity-connection/src/shared/translate';
 import {PermissionFormProvider} from '../../../../shared/permission-form-registry';
 import {PermissionsByProviderKey} from '../../../../model/Apps/permissions-by-provider-key';

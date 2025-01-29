@@ -16,7 +16,7 @@ import {
     AssetsIcon,
     AkeneoThemedProps,
     FontSize,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import ScopeMessage from '../../model/Apps/scope-message';
 
 export const ScopeItem = styled.li.attrs((props: {fontSize?: keyof FontSize} & AkeneoThemedProps) => ({

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Button, Table, ProgressIndicator} from 'akeneo-design-system';
+import {Button, Table, ProgressIndicator} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {RightLevel, PermissionCollection, lowerLevel} from 'akeneoassetmanager/domain/model/asset-family/permission';
 

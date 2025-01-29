@@ -2,7 +2,7 @@ import React, {FC, useLayoutEffect, useRef, useState} from 'react';
 import {Project, ProjectCompletenessType} from '../../../domain';
 import styled from 'styled-components';
 import {useRouter, useTranslate, useUserContext} from '@akeneo-pim-community/shared';
-import {Link, Locale, getColor, getFontSize} from 'akeneo-design-system';
+import {Link, Locale, getColor, getFontSize} from '@akeneo-pim-community/akeneo-design-system';
 
 const DateFormatter = require('pim/formatter/date');
 const DateContext = require('pim/date-context');

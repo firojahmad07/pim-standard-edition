@@ -1,6 +1,6 @@
 import React, {FC, useEffect, useState} from 'react';
 import {ConnectedApp} from '../../../model/Apps/connected-app';
-import {CheckRoundIcon, getColor, getFontSize, Helper, SectionTitle} from 'akeneo-design-system';
+import {CheckRoundIcon, getColor, getFontSize, Helper, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../../../shared/translate';
 import {useFeatureFlags} from '../../../shared/feature-flags';
 import {useFetchConnectedAppScopeMessages} from '../../hooks/use-fetch-connected-app-scope-messages';

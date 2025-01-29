@@ -1,6 +1,6 @@
 import {ColumnCode, SelectOptionCode} from '../models';
 import {TableRowWithId, TableValueWithId} from './TableFieldApp';
-import {uuid} from 'akeneo-design-system';
+import {uuid} from '@akeneo-pim-community/akeneo-design-system';
 import React from 'react';
 import {UNIQUE_ID_KEY} from './useUniqueIds';
 

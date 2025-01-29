@@ -1,6 +1,6 @@
 import React, {memo, useCallback} from 'react';
 import styled from 'styled-components';
-import {Checkbox, getColor} from 'akeneo-design-system';
+import {Checkbox, getColor} from '@akeneo-pim-community/akeneo-design-system';
 import {NormalizedItemRecord} from 'akeneoreferenceentity/domain/model/record/record';
 import {getImageShowUrl} from 'akeneoreferenceentity/tools/media-url-generator';
 import {denormalizeFile} from 'akeneoreferenceentity/domain/model/file';

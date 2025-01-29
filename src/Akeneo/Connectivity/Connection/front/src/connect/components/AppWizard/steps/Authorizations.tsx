@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import styled from 'styled-components';
-import {getColor, getFontSize} from 'akeneo-design-system';
+import {getColor, getFontSize} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../../../../shared/translate';
 import {ScopeListContainer} from '../ScopeListContainer';
 

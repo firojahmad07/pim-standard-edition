@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {SkeletonPlaceholder} from 'akeneo-design-system';
+import {SkeletonPlaceholder} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 
 const Container = styled.div<{noTextTransform: boolean}>`

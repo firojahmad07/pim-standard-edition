@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react';
-import {Dropdown, SwitcherButton, useBooleanState} from 'akeneo-design-system';
+import {Dropdown, SwitcherButton, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {DATA_QUALITY_INSIGHTS_DASHBOARD_CHANGE_TIME_PERIOD} from '../../../constant';
 

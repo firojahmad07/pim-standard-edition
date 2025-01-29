@@ -11,7 +11,7 @@ jest.mock('pim/security-context', () => ({
 
 const redirect = jest.fn();
 
-jest.mock('@akeneo-pim-community/shared/lib/hooks/useRouter', () => ({
+jest.mock('@akeneo-pim-community/shared/hooks/useRouter', () => ({
   useRouter: () => {
     return {
       redirect,
@@ -20,7 +20,7 @@ jest.mock('@akeneo-pim-community/shared/lib/hooks/useRouter', () => ({
   },
 }));
 
-jest.mock('@akeneo-pim-community/shared/lib/hooks/useTranslate', () => ({
+jest.mock('@akeneo-pim-community/shared/hooks/useTranslate', () => ({
   useTranslate: () => {
     return jest.fn((key: string, params: any, count: number) => {
       switch (key) {

@@ -1,4 +1,4 @@
-import {FileInfo} from 'akeneo-design-system';
+import {FileInfo} from '@akeneo-pim-community/akeneo-design-system';
 import {NotificationLevel, Notify, Translate, ValidationError} from '@akeneo-pim-community/shared';
 import {createLineFromFilename} from 'akeneoassetmanager/application/asset-upload/utils/line-factory';
 import Line from 'akeneoassetmanager/application/asset-upload/model/line';

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {AssetsIllustration, getColor, getFontSize, Button} from 'akeneo-design-system';
+import {AssetsIllustration, getColor, getFontSize, Button} from '@akeneo-pim-community/akeneo-design-system';
 import {Context} from 'akeneoassetmanager/domain/model/context';
 import AssetItem from 'akeneopimenrichmentassetmanager/assets-collection/infrastructure/component/asset-picker/basket/asset-item';
 import AssetFamilyIdentifier from 'akeneoassetmanager/domain/model/asset-family/identifier';

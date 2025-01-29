@@ -2,7 +2,7 @@ import React, {FC, useEffect} from 'react';
 import {PageContent, PageHeader, PimView, useRoute, useSecurity, useTranslate} from '@akeneo-pim-community/shared';
 import {useLocalesIndexState} from '@akeneo-pim-community/settings-ui';
 import styled from 'styled-components';
-import {Breadcrumb, getColor, Helper as BaseHelper} from 'akeneo-design-system';
+import {Breadcrumb, getColor, Helper as BaseHelper} from '@akeneo-pim-community/akeneo-design-system';
 import {followEditLocale} from '../user-actions';
 import {LocalesEEDataGrid} from '../components';
 import {LocaleToolbar} from '../components/toolbars';

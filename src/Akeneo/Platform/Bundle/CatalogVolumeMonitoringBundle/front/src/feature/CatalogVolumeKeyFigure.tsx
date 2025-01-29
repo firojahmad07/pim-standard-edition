@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {KeyFigure} from 'akeneo-design-system';
+import {KeyFigure} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate, useUserContext} from '@akeneo-pim-community/shared';
 import {CatalogVolume} from './model/catalog-volume';
 import {useCatalogVolumeIcon} from './hooks/useCatalogVolumeIcon';

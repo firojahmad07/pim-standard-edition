@@ -6,7 +6,7 @@ import {
   SwitcherButton,
   useAutoFocus,
   useBooleanState,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate, getLabel, LocaleCode} from '@akeneo-pim-community/shared';
 import {AssetFamilyListItem} from 'akeneoassetmanager/domain/model/asset-family/list';
 import AssetFamilyIdentifier from 'akeneoassetmanager/domain/model/asset-family/identifier';

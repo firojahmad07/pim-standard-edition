@@ -1,6 +1,6 @@
 import React, {FC, ReactElement} from 'react';
 import {ThemeProvider} from 'styled-components';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 import {Provider} from 'react-redux';
 import {render} from '@testing-library/react';

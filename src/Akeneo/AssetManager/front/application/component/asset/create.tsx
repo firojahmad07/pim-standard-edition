@@ -1,5 +1,5 @@
 import React, {useCallback, useRef, useState} from 'react';
-import {AssetsIllustration, Checkbox, Button, Modal, useAutoFocus} from 'akeneo-design-system';
+import {AssetsIllustration, Checkbox, Button, Modal, useAutoFocus} from '@akeneo-pim-community/akeneo-design-system';
 import {
   useTranslate,
   getErrorsForPath,

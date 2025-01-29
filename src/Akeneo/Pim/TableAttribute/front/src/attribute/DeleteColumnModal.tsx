@@ -1,4 +1,4 @@
-import {Button, DeleteIllustration, Field, Helper, Modal, TextInput} from 'akeneo-design-system';
+import {Button, DeleteIllustration, Field, Helper, Modal, TextInput} from '@akeneo-pim-community/akeneo-design-system';
 import React from 'react';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {ColumnCode} from '../models';

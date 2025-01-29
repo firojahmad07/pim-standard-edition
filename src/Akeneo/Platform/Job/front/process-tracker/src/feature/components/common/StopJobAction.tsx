@@ -1,5 +1,5 @@
 import React, {SyntheticEvent} from 'react';
-import {Button, ButtonProps, ExportIllustration, Helper, Link, Modal, useBooleanState} from 'akeneo-design-system';
+import {Button, ButtonProps, ExportIllustration, Helper, Link, Modal, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {useRoute, useSecurity, useTranslate} from '@akeneo-pim-community/shared';
 
 type StopJobActionProps = {

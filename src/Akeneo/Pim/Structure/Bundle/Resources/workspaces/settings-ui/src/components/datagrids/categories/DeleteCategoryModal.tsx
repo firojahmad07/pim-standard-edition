@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Button, DeleteIllustration, getFontSize, Modal} from 'akeneo-design-system';
+import {Button, DeleteIllustration, getFontSize, Modal} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import styled from 'styled-components';
 

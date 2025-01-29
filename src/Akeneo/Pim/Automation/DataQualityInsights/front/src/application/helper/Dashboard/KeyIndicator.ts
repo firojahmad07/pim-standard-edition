@@ -1,4 +1,4 @@
-import {Level} from 'akeneo-design-system';
+import {Level} from '@akeneo-pim-community/akeneo-design-system';
 import {Tip, KeyIndicatorTips} from '../../../domain';
 
 const getProgressBarLevel = (ratio: number): Level => {

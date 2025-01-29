@@ -1,8 +1,8 @@
 import React from 'react';
-import {SectionTitle} from 'akeneo-design-system';
+import {SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate, useUserContext} from '@akeneo-pim-community/shared';
 import styled from 'styled-components';
-import {useDashboardCompleteness} from '../../hooks';
+import {useDashboardCompleteness} from '../../hooks/useDashboardCompleteness';
 import {ChannelsLocalesCompleteness, ChannelsLocalesCompletenessRatios} from '@akeneo-pim-community/enrichment';
 
 const CompletenessWidget = () => {

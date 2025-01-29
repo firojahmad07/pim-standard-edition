@@ -1,7 +1,7 @@
 import React from 'react';
-import {AddAttributeIcon, IconProps, Modal, Tile, Tiles} from 'akeneo-design-system';
+import {AddAttributeIcon, IconProps, Modal, Tile, Tiles} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useTranslate} from '@akeneo-pim-community/shared';
-import * as icons from 'akeneo-design-system/lib/icons';
+import * as icons from '@akeneo-pim-community/akeneo-design-system/src/icons';
 import styled from 'styled-components';
 import {CreateAttributeButtonStepProps} from './CreateAttributeButtonApp';
 

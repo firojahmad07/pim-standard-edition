@@ -22,7 +22,7 @@ import {httpDelete} from '../../fetch';
 import {NotificationLevel, Security} from '../../dependenciesTools';
 import {Dropdown} from '../../components/Dropdown';
 import {AlertDialog} from '../../components/AlertDialog/AlertDialog';
-import {Breadcrumb, pimTheme} from 'akeneo-design-system';
+import {Breadcrumb, pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {dependencies} from '../../dependenciesTools/provider/dependencies';
 
 const Illustration = styled.div`

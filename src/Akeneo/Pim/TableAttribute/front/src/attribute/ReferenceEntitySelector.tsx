@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import {SelectInput} from 'akeneo-design-system';
+import {SelectInput} from '@akeneo-pim-community/akeneo-design-system';
 import {ReferenceEntityRepository} from '../repositories';
 import {getLabel, useRouter, useUserContext} from '@akeneo-pim-community/shared';
 import {ReferenceEntity, ReferenceEntityIdentifierOrCode} from '../models';

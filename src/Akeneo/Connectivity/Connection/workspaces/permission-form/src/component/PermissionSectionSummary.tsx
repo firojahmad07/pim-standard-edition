@@ -1,6 +1,6 @@
 import React, {FC, PropsWithChildren, ReactElement} from 'react';
 import styled from 'styled-components';
-import {getColor, getFontSize, SectionTitle} from 'akeneo-design-system';
+import {getColor, getFontSize, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import translate from '../dependencies/translate';
 
 const H3 = styled.h3`

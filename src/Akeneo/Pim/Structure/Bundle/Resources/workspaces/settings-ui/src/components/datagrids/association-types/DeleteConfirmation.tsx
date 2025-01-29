@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Modal, DeleteIllustration} from 'akeneo-design-system';
+import {Button, Modal, DeleteIllustration} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 
 interface DeleteConfirmationProps {

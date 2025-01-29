@@ -12,7 +12,7 @@ import {
   LoaderIcon,
   getColor,
   useDebounce,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {getLabel, useSecurity, useTranslate, useUserContext} from '@akeneo-pim-community/shared';
 import {RecordColumnDefinition, SelectOptionCode} from '../models';
 import {useAttributeContext} from '../contexts';

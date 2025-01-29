@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {ThemeProvider} from 'styled-components';
-import {pimTheme, Tags, Tag} from 'akeneo-design-system';
+import {pimTheme, Tags, Tag} from '@akeneo-pim-community/akeneo-design-system';
 const StringCell = require('oro/datagrid/string-cell');
 const translate = require('oro/translator');
 

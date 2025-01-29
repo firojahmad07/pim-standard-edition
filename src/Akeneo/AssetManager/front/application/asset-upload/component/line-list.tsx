@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-import {AssetsIllustration, Button, getColor, SectionTitle} from 'akeneo-design-system';
+import {AssetsIllustration, Button, getColor, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate, LocaleCode} from '@akeneo-pim-community/shared';
 import {Spacer} from 'akeneoassetmanager/application/component/app/spacer';
 import Line from 'akeneoassetmanager/application/asset-upload/model/line';

@@ -1,0 +1,57 @@
+parameters:
+    akeneo.tailored_export.connector.name: Akeneo Tailored Export
+    akeneo.tailored_export.connector.xlsx_product.code: 'xlsx_tailored_product_export'
+    akeneo.tailored_export.connector.csv_product.code: 'csv_tailored_product_export'
+    akeneo.tailored_export.connector.xlsx_product_model.code: 'xlsx_tailored_product_model_export'
+    akeneo.tailored_export.connector.csv_product_model.code: 'csv_tailored_product_model_export'
+
+services:
+    _defaults:
+        public: true
+
+    Akeneo\Pim\Tailored\Infrastructure\Query\DummyFindMediaFileInfoCollection: ~
+
+    akeneo.tailored_export.provider.form.job_instance:
+        class: 'Akeneo\Platform\Bundle\ImportExportBundle\Provider\Form\JobInstanceFormProvider'
+        arguments:
+            -
+                xlsx_tailored_product_export: pim-job-instance-xlsx-tailored-product-export
+                csv_tailored_product_export: pim-job-instance-csv-tailored-product-export
+                xlsx_tailored_product_model_export: pim-job-instance-xlsx-tailored-product-model-export
+                csv_tailored_product_model_export: pim-job-instance-csv-tailored-product-model-export
+        tags:
+            - { name: pim_enrich.provider.form }
+
+    Akeneo\Pim\Tailored\Application\MapValues\MapValuesQueryHandler:
+        arguments:
+            - '@Akeneo\Pim\Tailored\Application\MapValues\OperationApplier\OperationApplier'
+            - '@Akeneo\Pim\Tailored\Application\MapValues\SelectionApplier\SelectionApplier'
+            - '@Akeneo\Pim\Tailored\Application\MapValues\FormatApplier\FormatApplier'
+
+    Akeneo\Pim\Tailored\Application\ExtractMedia\ExtractMediaQueryHandler:
+        arguments:
+            - '@Akeneo\Pim\Tailored\Infrastructure\Query\DummyFindMediaFileInfoCollection'
+            - '@Akeneo\Pim\Tailored\Infrastructure\Connector\Writer\File\MediaPathGenerator'
+        public: false
+
+    akeneo.tailored_export.voter.job_profile:
+        decorates: pimee_security.voter.job_profile
+        decoration_priority: 10 # Arbitrary value to be able to add decorator before and after
+        decoration_on_invalid: ignore
+        class: 'Akeneo\Pim\Tailored\Infrastructure\Voter\JobProfileVoter'
+        arguments:
+            - '@akeneo.tailored_export.voter.job_profile.inner'
+            - '@Akeneo\Pim\Tailored\Infrastructure\Voter\CanEditTailoredExport'
+            -
+                - '%akeneo.tailored_export.connector.xlsx_product.code%'
+                - '%akeneo.tailored_export.connector.csv_product.code%'
+                - '%akeneo.tailored_export.connector.xlsx_product_model.code%'
+                - '%akeneo.tailored_export.connector.csv_product_model.code%'
+
+    Akeneo\Pim\Tailored\Infrastructure\Voter\CanEditTailoredExport:
+        arguments:
+            - '@pimee_security.query.get_all_viewable_locales_for_user' # this service is in CE and overridden in EE
+            - '@pimee_security.query.get_viewable_attribute_codes_for_user' # this service is in CE and overridden in EE
+            - '@akeneo.pim.structure.query.get_attributes'
+
+    Akeneo\Pim\Tailored\Infrastructure\Connector\Writer\File\MediaPathGenerator: ~

@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {useAutoFocus, useDebounce, Search} from 'akeneo-design-system';
+import {useAutoFocus, useDebounce, Search} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {TypeFilter} from './TypeFilter';
 import {StatusFilter} from './StatusFilter';

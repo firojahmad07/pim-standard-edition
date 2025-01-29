@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Search, useAutoFocus} from 'akeneo-design-system';
+import {Search, useAutoFocus} from '@akeneo-pim-community/akeneo-design-system';
 import {
   LocaleSelector,
   useDebounce,

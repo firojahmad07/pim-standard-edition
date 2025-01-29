@@ -11,7 +11,7 @@ import {
 import {findByIdentifiers, findLoadedDescendantsIdentifiers, findOneByIdentifier, update} from '../../helpers';
 import {useFetch, useRoute} from '@akeneo-pim-community/shared';
 import {moveCategory} from '../../infrastructure/savers';
-import {arrayUnique, useBooleanState} from 'akeneo-design-system';
+import {arrayUnique, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 
 type Move = {
   identifier: number;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, useBooleanState} from 'akeneo-design-system';
+import {Button, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import AssetFamilyIdentifier from 'akeneoassetmanager/domain/model/asset-family/identifier';
 import {useAssetFamily} from 'akeneoassetmanager/application/hooks/asset-family';
 import {useChannels, ChannelFetcher} from 'akeneoassetmanager/application/hooks/channel';

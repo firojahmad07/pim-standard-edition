@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Breadcrumb} from 'akeneo-design-system';
+import {Breadcrumb} from '@akeneo-pim-community/akeneo-design-system';
 import {PimView} from '@akeneo-pim-community/shared';
 import __ from 'akeneoreferenceentity/tools/translator';
 import Table from 'akeneoreferenceentity/application/component/reference-entity/index/table';

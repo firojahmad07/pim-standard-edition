@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import styled from 'styled-components';
-import {Search, useAutoFocus} from 'akeneo-design-system';
+import {Search, useAutoFocus} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 
 const AssociationTypesSearchBarContainer = styled(Search)`

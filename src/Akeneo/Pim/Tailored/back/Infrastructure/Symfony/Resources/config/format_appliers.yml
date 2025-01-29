@@ -1,0 +1,6 @@
+services:
+  Akeneo\Pim\Tailored\Application\MapValues\FormatApplier\FormatApplier:
+    arguments:
+      - '@Akeneo\Pim\Tailored\Application\MapValues\FormatApplier\ConcatFormatApplier'
+
+  Akeneo\Pim\Tailored\Application\MapValues\FormatApplier\ConcatFormatApplier:

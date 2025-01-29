@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {getColor, Modal} from 'akeneo-design-system';
+import {getColor, Modal} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {MediaPreview} from 'akeneoassetmanager/application/component/asset/edit/preview/media-preview';
 import {NormalizedAttribute} from 'akeneoassetmanager/domain/model/attribute/attribute';

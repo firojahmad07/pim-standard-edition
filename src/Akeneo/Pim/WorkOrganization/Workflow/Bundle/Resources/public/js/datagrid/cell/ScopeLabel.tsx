@@ -1,5 +1,5 @@
 import React from 'react';
-import {LoaderIcon} from 'akeneo-design-system';
+import {LoaderIcon} from '@akeneo-pim-community/akeneo-design-system';
 import {LabelCollection, Locale, useIsMounted} from '@akeneo-pim-community/shared';
 import {getLabel} from 'pimui/js/i18n';
 const FetcherRegistry = require('pim/fetcher-registry');

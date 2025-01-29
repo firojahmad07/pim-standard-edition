@@ -6,7 +6,7 @@ import {MEDIA_LINK_ATTRIBUTE_TYPE} from 'akeneoassetmanager/domain/model/attribu
 import {MEDIA_FILE_ATTRIBUTE_TYPE} from 'akeneoassetmanager/domain/model/attribute/type/media-file';
 import {renderWithAssetManagerProviders} from '../../../../../../../../../../AssetManager/tests/front/unit/akeneoassetmanager/tools';
 
-jest.mock('@akeneo-pim-community/shared/lib/hooks/useSecurity', () => ({
+jest.mock('@akeneo-pim-community/shared/hooks/useSecurity', () => ({
   useSecurity: () => ({
     isGranted: (_permission: string) => true,
   }),

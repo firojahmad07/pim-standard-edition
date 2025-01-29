@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {useSecurity} from '../../shared/security';
 import {useTranslate} from '../../shared/translate';
-import {Button} from 'akeneo-design-system';
+import {Button} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter} from '../../shared/router/use-router';
 
 export const ActivateAppButton: FC<{id: string; isConnected: boolean}> = ({id, isConnected}) => {

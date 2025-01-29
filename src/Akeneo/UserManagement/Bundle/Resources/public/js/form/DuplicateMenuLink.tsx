@@ -1,5 +1,5 @@
 import React from 'react';
-import {useBooleanState} from 'akeneo-design-system';
+import {useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {DuplicateUserApp} from '@akeneo-pim-community/user-ui';
 
 const Router = require('pim/router');

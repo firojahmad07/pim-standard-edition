@@ -1,5 +1,5 @@
 import React, {ReactNode, useRef} from 'react';
-import {Button, DeleteIllustration, Modal, useAutoFocus} from 'akeneo-design-system';
+import {Button, DeleteIllustration, Modal, useAutoFocus} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../hooks';
 
 type DeleteModalProps = {

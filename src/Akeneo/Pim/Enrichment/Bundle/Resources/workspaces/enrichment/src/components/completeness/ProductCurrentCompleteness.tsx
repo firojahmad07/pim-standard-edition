@@ -9,7 +9,7 @@ import {
   ProgressBar,
   SwitcherButton,
   useBooleanState,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useTranslate, useUserContext} from '@akeneo-pim-community/shared';
 import styled from 'styled-components';
 import {useScrollToAttribute} from '../../hooks';

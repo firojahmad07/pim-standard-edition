@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import styled, {FlattenSimpleInterpolation} from 'styled-components';
-import {DeleteIcon, Key, Checkbox, SectionTitle} from 'akeneo-design-system';
+import {DeleteIcon, Key, Checkbox, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {DeleteModal} from '@akeneo-pim-community/shared';
 import __ from 'akeneoreferenceentity/tools/translator';
 import ValidationError from 'akeneoreferenceentity/domain/model/validation-error';

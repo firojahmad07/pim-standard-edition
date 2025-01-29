@@ -1,6 +1,6 @@
 import React, {FC, useEffect, useState} from 'react';
 import {useTranslate} from '../../shared/translate';
-import {AkeneoThemedProps, Field, getColor, getFontSize, Helper, Link, SelectInput} from 'akeneo-design-system';
+import {AkeneoThemedProps, Field, getColor, getFontSize, Helper, Link, SelectInput} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 import {useFetchUserProfiles} from '../hooks/use-fetch-user-profiles';
 

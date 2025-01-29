@@ -1,6 +1,6 @@
 import React from 'react';
 import {CreateAttributeModal} from '@akeneo-pim-community/settings-ui/src/pages/CreateAttributeModal';
-import {Field, SelectInput} from 'akeneo-design-system';
+import {Field, SelectInput} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {Template, TEMPLATES} from '../models';
 

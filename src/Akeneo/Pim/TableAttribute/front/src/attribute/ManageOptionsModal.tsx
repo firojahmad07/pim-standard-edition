@@ -15,7 +15,7 @@ import {
   TextInput,
   useBooleanState,
   uuid,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {getLabel, Locale, LocaleCode, useRouter, useTranslate, useUserContext} from '@akeneo-pim-community/shared';
 import {SelectColumnDefinition, SelectOption, TableAttribute} from '../models';
 import {TwoColumnsLayout} from './TwoColumnsLayout';

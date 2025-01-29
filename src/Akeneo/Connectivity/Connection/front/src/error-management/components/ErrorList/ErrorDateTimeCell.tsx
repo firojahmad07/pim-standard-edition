@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {css} from 'styled-components';
 import styled from '../../../common/styled-with-theme';
 import {useDateFormatter} from '../../../shared/formatter/use-date-formatter';
-import {ClockIcon, DateIcon, getColor} from 'akeneo-design-system';
+import {ClockIcon, DateIcon, getColor} from '@akeneo-pim-community/akeneo-design-system';
 
 type Props = {
     timestamp: number;

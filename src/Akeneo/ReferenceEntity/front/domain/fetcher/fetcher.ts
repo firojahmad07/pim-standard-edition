@@ -1,4 +1,4 @@
-import {Selection} from 'akeneo-design-system';
+import {Selection} from '@akeneo-pim-community/akeneo-design-system';
 
 interface Filter {
   field: string;

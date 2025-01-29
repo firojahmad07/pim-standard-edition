@@ -2,7 +2,7 @@ import React, {FC, useEffect, useRef, useState} from 'react';
 import {useFilteredLocales} from '../../../hooks';
 import {Locale} from '../../../models';
 import {useDebounceCallback, useTranslate} from '@akeneo-pim-community/shared';
-import {Search, Table, useAutoFocus} from 'akeneo-design-system';
+import {Search, Table, useAutoFocus} from '@akeneo-pim-community/akeneo-design-system';
 import {NoResults} from '../../shared';
 import styled from 'styled-components';
 import {FollowLocaleHandler} from '../../../user-actions';

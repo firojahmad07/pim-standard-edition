@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {ArrowLeftIcon, ArrowRightIcon, CloseIcon, EditIcon, AkeneoThemedProps, getColor} from 'akeneo-design-system';
+import {ArrowLeftIcon, ArrowRightIcon, CloseIcon, EditIcon, AkeneoThemedProps, getColor} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useTranslate} from '@akeneo-pim-community/shared';
 import {ContextState} from 'akeneopimenrichmentassetmanager/assets-collection/reducer/context';
 import {TransparentButton} from 'akeneoassetmanager/application/component/app/button';

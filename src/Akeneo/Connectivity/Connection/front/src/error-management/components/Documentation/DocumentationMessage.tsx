@@ -3,7 +3,7 @@ import {Typography} from '../../../common';
 import styled from '../../../common/styled-with-theme';
 import {Documentation, DocumentationStyleInformation, HrefType, RouteType} from '../../model/ConnectionError';
 import {RouteDocumentationMessageParameter} from './RouteDocumentationMessageParameter';
-import {InfoRoundIcon, getColor} from 'akeneo-design-system';
+import {InfoRoundIcon, getColor} from '@akeneo-pim-community/akeneo-design-system';
 
 type Props = {
     documentation: Documentation;

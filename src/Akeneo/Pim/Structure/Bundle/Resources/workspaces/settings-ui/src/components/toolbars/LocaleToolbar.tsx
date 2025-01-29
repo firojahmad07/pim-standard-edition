@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {ArrowDownIcon, Button, Checkbox, Dropdown, IconButton, Toolbar, useBooleanState} from 'akeneo-design-system';
+import {ArrowDownIcon, Button, Checkbox, Dropdown, IconButton, Toolbar, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {AddWordsModal} from '../modals/AddWordsModal';
 import styled from 'styled-components';

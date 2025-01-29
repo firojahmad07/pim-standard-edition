@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {AppIllustration, getColor, getFontSize} from 'akeneo-design-system';
+import {AppIllustration, getColor, getFontSize} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../../../shared/translate';
 import styled from '../../../common/styled-with-theme';
 import {useRouter} from '../../../shared/router/use-router';

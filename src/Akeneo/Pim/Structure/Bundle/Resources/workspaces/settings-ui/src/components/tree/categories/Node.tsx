@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Button} from 'akeneo-design-system';
+import {Button} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {Tree} from '../../shared';
 import {CategoryTreeModel as CategoryTreeModel} from '../../../models';

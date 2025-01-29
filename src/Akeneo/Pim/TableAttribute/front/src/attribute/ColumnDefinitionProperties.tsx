@@ -1,5 +1,5 @@
 import React from 'react';
-import {Checkbox, Field, Helper, SectionTitle, TextInput, Link} from 'akeneo-design-system';
+import {Checkbox, Field, Helper, SectionTitle, TextInput, Link} from '@akeneo-pim-community/akeneo-design-system';
 import {getLabel, Locale, LocaleCode, useTranslate} from '@akeneo-pim-community/shared';
 import {ColumnCode, ColumnDefinition, TableAttribute} from '../models';
 import {ColumnDefinitionWithId} from './TableStructureApp';

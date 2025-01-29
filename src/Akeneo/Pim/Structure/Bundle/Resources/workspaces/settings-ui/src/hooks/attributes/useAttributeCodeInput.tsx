@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useTranslate, useRouter} from '@akeneo-pim-community/shared';
-import {Field, Helper, TextInput} from 'akeneo-design-system';
+import {Field, Helper, TextInput} from '@akeneo-pim-community/akeneo-design-system';
 
 type useCodeInputProps = {
   defaultCode?: string;

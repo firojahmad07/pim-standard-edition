@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
 import styled from 'styled-components';
-import {AnimateMessageBar, FlashMessage, MessageBar} from 'akeneo-design-system';
+import {AnimateMessageBar, FlashMessage, MessageBar} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../hooks';
 
 const Container = styled.div`

@@ -1,4 +1,4 @@
-import {Helper, Link, SelectInput} from 'akeneo-design-system';
+import {Helper, Link, SelectInput} from '@akeneo-pim-community/akeneo-design-system';
 import React, {FC, useEffect, useState} from 'react';
 import {FormGroup} from '../../../common';
 import {Translate} from '../../../shared/translate';

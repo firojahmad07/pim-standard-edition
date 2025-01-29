@@ -9,7 +9,7 @@ import {
   ProgressIndicator,
   SectionTitle,
   useProgress,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {
   getErrorsForPath,
   NotificationLevel,

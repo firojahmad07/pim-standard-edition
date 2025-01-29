@@ -3,7 +3,7 @@ import {useTranslate, useStorageState} from '@akeneo-pim-community/shared';
 import {Form, FormValue} from './Form';
 import {Select} from './Select';
 import {Option} from './Option';
-import {FileXlsxIcon, FileCsvIcon, Modal, Button, useBooleanState} from 'akeneo-design-system';
+import {FileXlsxIcon, FileCsvIcon, Modal, Button, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 
 type QuickExportConfiguratorProps = {
   showWithLabelsSelect: boolean;

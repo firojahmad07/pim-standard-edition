@@ -1,5 +1,5 @@
 import React, {FC, useEffect, useState} from 'react';
-import {Breadcrumb, getColor, Helper as BaseHelper} from 'akeneo-design-system';
+import {Breadcrumb, getColor, Helper as BaseHelper} from '@akeneo-pim-community/akeneo-design-system';
 import {PageContent, PageHeader, useRoute, useTranslate, PimView} from '@akeneo-pim-community/shared';
 import {LocalesDataGrid} from '../components';
 import {useLocalesIndexState} from '../hooks';

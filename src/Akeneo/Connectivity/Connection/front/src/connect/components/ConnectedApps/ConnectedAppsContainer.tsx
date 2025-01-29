@@ -1,5 +1,5 @@
 import React, {FC, useRef} from 'react';
-import {ArrowSimpleUpIcon, getColor, IconButton, SectionTitle} from 'akeneo-design-system';
+import {ArrowSimpleUpIcon, getColor, IconButton, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../../../shared/translate';
 import styled from 'styled-components';
 import {useDisplayScrollTopButton} from '../../../shared/scroll/hooks/useDisplayScrollTopButton';

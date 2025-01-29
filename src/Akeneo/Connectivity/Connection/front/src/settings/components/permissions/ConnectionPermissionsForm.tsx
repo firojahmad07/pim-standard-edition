@@ -6,7 +6,7 @@ import {Translate} from '../../../shared/translate';
 import {FormValues} from '../../pages/EditConnection';
 import {UserGroupSelect} from './UserGroupSelect';
 import {UserRoleSelect} from './UserRoleSelect';
-import {SectionTitle} from 'akeneo-design-system';
+import {SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 
 type Props = {
     label: string;

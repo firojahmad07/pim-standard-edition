@@ -93,7 +93,7 @@ for (let i = 1; i <= 51; i++) {
   });
 }
 
-jest.mock('@akeneo-pim-community/shared/lib/components/PimView', () => ({
+jest.mock('@akeneo-pim-community/shared/components/PimView', () => ({
   PimView: () => <></>,
 }));
 

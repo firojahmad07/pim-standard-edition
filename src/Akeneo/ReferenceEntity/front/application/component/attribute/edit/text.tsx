@@ -12,7 +12,7 @@ import {
 import {IsRichTextEditor} from 'akeneoreferenceentity/domain/model/attribute/type/text/is-rich-text-editor';
 import {IsTextarea} from 'akeneoreferenceentity/domain/model/attribute/type/text/is-textarea';
 import {MaxLength} from 'akeneoreferenceentity/domain/model/attribute/type/text/max-length';
-import {Checkbox, Key} from 'akeneo-design-system';
+import {Checkbox, Key} from '@akeneo-pim-community/akeneo-design-system';
 
 const AttributeValidationRuleItemView = ({
   isOpen,

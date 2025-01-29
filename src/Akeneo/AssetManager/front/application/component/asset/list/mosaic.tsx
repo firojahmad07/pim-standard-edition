@@ -1,6 +1,6 @@
 import React, {RefObject, useRef} from 'react';
 import styled from 'styled-components';
-import {AssetsIllustration, CardGrid, Helper, Information} from 'akeneo-design-system';
+import {AssetsIllustration, CardGrid, Helper, Information} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {Context} from 'akeneoassetmanager/domain/model/context';
 import AssetCard from 'akeneoassetmanager/application/component/asset/list/mosaic/asset-card';

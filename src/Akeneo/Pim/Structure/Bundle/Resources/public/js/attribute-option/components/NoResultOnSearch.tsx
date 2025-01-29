@@ -1,6 +1,6 @@
 import React from 'react';
 import {useTranslate} from '@akeneo-pim-community/shared';
-import {getColor, NoResultsIllustration} from 'akeneo-design-system';
+import {getColor, NoResultsIllustration} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 
 const NoResultOnSearch = () => {

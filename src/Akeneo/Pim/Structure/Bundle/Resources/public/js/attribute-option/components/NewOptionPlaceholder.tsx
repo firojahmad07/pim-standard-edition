@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {useScrollIntoView} from '../hooks/useScrollIntoView';
-import {CloseIcon, getColor, IconButton, RowIcon, Table} from 'akeneo-design-system';
+import {CloseIcon, getColor, IconButton, RowIcon, Table} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 
 interface newOptionPlaceholderProps {

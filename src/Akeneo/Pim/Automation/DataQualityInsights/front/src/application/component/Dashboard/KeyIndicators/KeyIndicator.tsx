@@ -9,7 +9,7 @@ import {
 import {Tip, KeyIndicatorTips, KeyIndicatorExtraData} from '../../../../domain';
 import {useGetKeyIndicatorTips} from '../../../../infrastructure/hooks/Dashboard/UseKeyIndicatorTips';
 import {useDashboardContext} from '../../../context/DashboardContext';
-import {ProgressBar} from 'akeneo-design-system';
+import {ProgressBar} from '@akeneo-pim-community/akeneo-design-system';
 import {FollowKeyIndicatorResultHandler} from '../../../user-actions';
 
 type Props = {

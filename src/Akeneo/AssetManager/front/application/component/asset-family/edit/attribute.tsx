@@ -1,6 +1,6 @@
 import React, {memo, useRef} from 'react';
 import {connect} from 'react-redux';
-import {Key, Button, SectionTitle, useAutoFocus} from 'akeneo-design-system';
+import {Key, Button, SectionTitle, useAutoFocus} from '@akeneo-pim-community/akeneo-design-system';
 import {
   useTranslate,
   Translate,

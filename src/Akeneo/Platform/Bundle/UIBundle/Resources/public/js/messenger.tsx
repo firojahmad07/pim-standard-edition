@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {ThemeProvider} from 'styled-components';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 import {IdentifiableFlashMessage, Notifications} from '@akeneo-pim-community/shared';
-import {FlashMessage, IconProps, MessageBarLevel, pimTheme, uuid} from 'akeneo-design-system';
+import {FlashMessage, IconProps, MessageBarLevel, pimTheme, uuid} from '@akeneo-pim-community/akeneo-design-system';
 
 let notifications: IdentifiableFlashMessage[] = [];
 

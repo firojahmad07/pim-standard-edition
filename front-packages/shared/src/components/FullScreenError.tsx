@@ -1,5 +1,5 @@
 import React from 'react';
-import {ClientErrorIllustration, ServerErrorIllustration} from 'akeneo-design-system';
+import {ClientErrorIllustration, ServerErrorIllustration} from '@akeneo-pim-community/akeneo-design-system';
 
 type FullScreenErrorProps = {
   title: string;

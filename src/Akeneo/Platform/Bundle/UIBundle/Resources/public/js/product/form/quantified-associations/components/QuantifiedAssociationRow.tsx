@@ -1,7 +1,7 @@
 import React, {ChangeEvent} from 'react';
 import styled, {css} from 'styled-components';
 import {filterErrors, formatParameters, useTranslate, useSecurity, useRoute} from '@akeneo-pim-community/shared';
-import {BrokenLinkIcon, EditIcon, CloseIcon, useTheme, Helper, Badge} from 'akeneo-design-system';
+import {BrokenLinkIcon, EditIcon, CloseIcon, useTheme, Helper, Badge} from '@akeneo-pim-community/akeneo-design-system';
 import {ProductType, Row, QuantifiedLink, MAX_QUANTITY} from '../models';
 import {useProductThumbnail} from '../hooks';
 

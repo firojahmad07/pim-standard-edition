@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {getColor} from 'akeneo-design-system';
+import {getColor} from '@akeneo-pim-community/akeneo-design-system';
 
 export const IconButton = styled.button`
     background-color: transparent;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {AkeneoThemedProps, Badge, getColor} from 'akeneo-design-system';
+import {AkeneoThemedProps, Badge, getColor} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {LineStatus} from 'akeneoassetmanager/application/asset-upload/model/line';
 

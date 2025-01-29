@@ -1,7 +1,7 @@
 import React from 'react';
 import SelectAttributeType from './SelectAttributeType';
-import {Button, useBooleanState} from 'akeneo-design-system';
-import {Modal} from 'akeneo-design-system';
+import {Button, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
+import {Modal} from '@akeneo-pim-community/akeneo-design-system';
 
 export type CreateAttributeButtonStepProps = {
   onClose: () => void;

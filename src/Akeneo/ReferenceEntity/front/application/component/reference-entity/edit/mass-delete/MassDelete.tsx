@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
 import {useTranslate, useNotify, NotificationLevel} from '@akeneo-pim-community/shared';
-import {Button, useBooleanState} from 'akeneo-design-system';
+import {Button, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {Query} from 'akeneoreferenceentity/domain/fetcher/fetcher';
 import ReferenceEntity from 'akeneoreferenceentity/domain/model/reference-entity/reference-entity';
 import recordRemover from 'akeneoreferenceentity/infrastructure/remover/record';

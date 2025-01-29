@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {AssetsIllustration, getColor, getFontSize} from 'akeneo-design-system';
+import {AssetsIllustration, getColor, getFontSize} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 
 const EmptyContainer = styled.div`

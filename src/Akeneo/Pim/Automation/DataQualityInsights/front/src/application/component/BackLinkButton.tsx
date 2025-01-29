@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Button} from 'akeneo-design-system';
+import {Button} from '@akeneo-pim-community/akeneo-design-system';
 
 const Router = require('pim/router');
 

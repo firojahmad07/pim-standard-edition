@@ -2,7 +2,7 @@ import React, {FC, useMemo} from 'react';
 import styled, {css} from 'styled-components';
 import {PimView} from '../PimView';
 import {useRouter, useTranslate} from '../../hooks';
-import {IconProps, LockIcon, MainNavigationItem, Tag, useTheme} from 'akeneo-design-system';
+import {IconProps, LockIcon, MainNavigationItem, Tag, useTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {SubNavigation, SubNavigationEntry, SubNavigationType} from './SubNavigation';
 import {useAnalytics} from '../../hooks';
 

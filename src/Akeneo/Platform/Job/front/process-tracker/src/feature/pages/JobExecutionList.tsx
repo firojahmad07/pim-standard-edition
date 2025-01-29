@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {AttributesIllustration, Breadcrumb, Helper, Pagination} from 'akeneo-design-system';
+import {AttributesIllustration, Breadcrumb, Helper, Pagination} from '@akeneo-pim-community/akeneo-design-system';
 import {
   useTranslate,
   useRoute,

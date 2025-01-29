@@ -3,7 +3,7 @@ import styled, {ThemeProvider} from 'styled-components';
 import {useTranslate, useFeatureFlags} from '@akeneo-pim-community/shared';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 import {ImageUploader} from './ImageUploader';
-import {pimTheme, ColorInput, Field, Helper, sharedCatalogsTheme} from 'akeneo-design-system';
+import {pimTheme, ColorInput, Field, Helper, sharedCatalogsTheme} from '@akeneo-pim-community/akeneo-design-system';
 
 const FieldContainer = styled.div`
   margin-top: 40px;

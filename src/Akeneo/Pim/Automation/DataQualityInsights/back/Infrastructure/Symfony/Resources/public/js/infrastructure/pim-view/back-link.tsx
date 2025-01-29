@@ -2,7 +2,7 @@ import BaseView = require('pimui/js/view/base');
 import ReactDOM from 'react-dom';
 import React from 'react';
 import {BACK_LINK_SESSION_STORAGE_KEY, BackLinkButton} from '@akeneo-pim-community/data-quality-insights';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {ThemeProvider} from 'styled-components';
 
 const mediator = require('oro/mediator');

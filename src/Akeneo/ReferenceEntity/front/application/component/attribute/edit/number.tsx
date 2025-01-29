@@ -1,5 +1,5 @@
 import React from 'react';
-import {Checkbox, Key} from 'akeneo-design-system';
+import {Checkbox, Key} from '@akeneo-pim-community/akeneo-design-system';
 import __ from 'akeneoreferenceentity/tools/translator';
 import ValidationError from 'akeneoreferenceentity/domain/model/validation-error';
 import {getErrorsView} from 'akeneoreferenceentity/application/component/app/validation-error';

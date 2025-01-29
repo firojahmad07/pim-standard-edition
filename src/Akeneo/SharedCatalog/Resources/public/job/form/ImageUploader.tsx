@@ -1,5 +1,5 @@
 import React, {ReactElement} from 'react';
-import {MediaFileInput, FileInfo, Field, Helper, HelperProps} from 'akeneo-design-system';
+import {MediaFileInput, FileInfo, Field, Helper, HelperProps} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 
 const ALLOWED_EXTENSIONS = ['jpg', 'jpeg', 'png'];

@@ -183,7 +183,8 @@
     /** @property {String} jqueryVersion current jQuery version string  */
     jqueryVersion: parseFloat($.fn.jquery),
     isSupportAmd: isSupportAmd,
-    hasCodeMirror: isSupportAmd ? require.specified('CodeMirror') : !!window.CodeMirror,
+    hasCodeMirror: false,
+    // hasCodeMirror: isSupportAmd ? require.specified('CodeMirror') : !!window.CodeMirror,
     isFontInstalled: isFontInstalled,
     isW3CRangeSupport: !!document.createRange
   };
@@ -4897,9 +4898,9 @@
   var CodeMirror;
   if (agent.hasCodeMirror) {
     if (agent.isSupportAmd) {
-      require(['CodeMirror'], function (cm) {
-        CodeMirror = cm;
-      });
+      // require(['CodeMirror'], function (cm) {
+      //   CodeMirror = cm;
+      // });
     } else {
       CodeMirror = window.CodeMirror;
     }

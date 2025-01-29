@@ -1,6 +1,6 @@
 import React from 'react';
 import {EmptyDataPlaceholder} from './EmptyDataPlaceholder';
-import {NoResultsIllustration} from 'akeneo-design-system';
+import {NoResultsIllustration} from '@akeneo-pim-community/akeneo-design-system';
 
 const NoSearchResults = () => {
   return (

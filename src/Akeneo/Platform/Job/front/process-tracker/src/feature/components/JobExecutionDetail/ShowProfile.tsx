@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'akeneo-design-system';
+import {Link} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useTranslate} from '@akeneo-pim-community/shared';
 import {JobInstance} from '../../models';
 

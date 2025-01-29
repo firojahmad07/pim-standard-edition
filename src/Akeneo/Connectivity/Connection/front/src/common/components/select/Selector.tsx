@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import styled from '../../styled-with-theme';
-import {ArrowDownIcon, getColor} from 'akeneo-design-system';
+import {ArrowDownIcon, getColor} from '@akeneo-pim-community/akeneo-design-system';
 
 type Props = {
     children: string;

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {AddingValueIllustration, Button, Dropdown, Placeholder, TableInput} from 'akeneo-design-system';
+import {AddingValueIllustration, Button, Dropdown, Placeholder, TableInput} from '@akeneo-pim-community/akeneo-design-system';
 import {ColumnCode, SelectOption, SelectOptionCode, TableAttribute} from '../../models';
 import {getLabel, useSecurity, useTranslate, useUserContext} from '@akeneo-pim-community/shared';
 import styled from 'styled-components';

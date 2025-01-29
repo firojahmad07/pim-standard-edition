@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {keyIndicatorMap} from '../../../../domain';
 import {SectionTitle} from './SectionTitle';
 import {EmptyKeyIndicators} from './EmptyKeyIndicators';
-import {Helper, LockIcon, useTheme} from 'akeneo-design-system';
+import {Helper, LockIcon, useTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 
 const featureFlags = require('pim/feature-flags');

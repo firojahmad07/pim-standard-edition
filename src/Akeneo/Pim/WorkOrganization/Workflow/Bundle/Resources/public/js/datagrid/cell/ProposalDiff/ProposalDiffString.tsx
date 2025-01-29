@@ -3,7 +3,7 @@ import {diffChars, Change} from 'diff';
 import {ProposalChangeAccessor} from '../ProposalChange';
 import styled from 'styled-components';
 import {useTranslate} from '@akeneo-pim-community/shared';
-import {ArrowDownIcon, LoaderIcon} from 'akeneo-design-system';
+import {ArrowDownIcon, LoaderIcon} from '@akeneo-pim-community/akeneo-design-system';
 
 const CHAR_LIMIT = 512;
 

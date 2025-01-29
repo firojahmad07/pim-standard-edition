@@ -1,4 +1,4 @@
-import {SelectInput} from 'akeneo-design-system';
+import {SelectInput} from '@akeneo-pim-community/akeneo-design-system';
 import React, {FC, useContext} from 'react';
 import {FlowType} from '../../model/flow-type.enum';
 import {TranslateContext} from '../../shared/translate';

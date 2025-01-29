@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-import {Checkbox, Toolbar, useSelection} from 'akeneo-design-system';
+import {Checkbox, Toolbar, useSelection} from '@akeneo-pim-community/akeneo-design-system';
 import {DeleteModal, useTranslate} from '@akeneo-pim-community/shared';
 import {Table} from 'akeneoreferenceentity/application/component/record/index/table';
 import {NormalizedItemRecord} from 'akeneoreferenceentity/domain/model/record/record';

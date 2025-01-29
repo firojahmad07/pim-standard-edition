@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {Field, SelectInput, useAutoFocus} from 'akeneo-design-system';
+import {Field, SelectInput, useAutoFocus} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate, getErrorsForPath, TextField, ValidationError, getLabel} from '@akeneo-pim-community/shared';
 import {AssetFamily, getAssetFamilyLabel} from 'akeneoassetmanager/domain/model/asset-family/asset-family';
 import {getErrorsView} from 'akeneoassetmanager/application/component/app/validation-error';

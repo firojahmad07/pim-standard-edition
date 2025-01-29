@@ -7,7 +7,7 @@ import {RuleDefinition} from '../../models';
 import {useInitEditRules} from './hooks';
 import {AkeneoSpinner} from '../../components';
 import {useSecurity} from '../../dependenciesTools/hooks/useSecurity';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 
 type Props = {
   ruleDefinitionCode: string;

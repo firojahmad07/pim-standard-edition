@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-import {getColor} from 'akeneo-design-system';
+import {getColor} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate, PimView} from '@akeneo-pim-community/shared';
 import EditState from 'akeneoreferenceentity/application/component/app/edit-state';
 import LocaleSwitcher from 'akeneoreferenceentity/application/component/app/locale-switcher';

@@ -1,7 +1,7 @@
 import BaseView = require('pimui/js/view/base');
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Helper, pimTheme} from 'akeneo-design-system';
+import {Helper, pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {ThemeProvider} from 'styled-components';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const translate = require('oro/translator');

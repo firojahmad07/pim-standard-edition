@@ -8,7 +8,7 @@ import {
   MoreVerticalIcon,
   Placeholder,
   TableInput,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {ColumnCode, ColumnDefinition, TableCell} from '../models';
 import {TableFooter} from './TableFooter';
 import styled from 'styled-components';

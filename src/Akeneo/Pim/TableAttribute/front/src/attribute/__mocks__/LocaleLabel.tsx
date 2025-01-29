@@ -1,6 +1,6 @@
 import React from 'react';
 import {LocaleCode} from '@akeneo-pim-community/shared';
-import {Locale as LocaleWithFlag} from 'akeneo-design-system';
+import {Locale as LocaleWithFlag} from '@akeneo-pim-community/akeneo-design-system';
 
 type LocaleProps = {
   localeCode: LocaleCode;

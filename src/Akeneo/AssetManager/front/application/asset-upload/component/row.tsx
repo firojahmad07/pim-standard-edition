@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-import {CloseIcon, RefreshIcon, DangerIcon, getColor, IconButton} from 'akeneo-design-system';
+import {CloseIcon, RefreshIcon, DangerIcon, getColor, IconButton} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate, LocaleCode, getLocalesFromChannel} from '@akeneo-pim-community/shared';
 import Line, {LineStatus} from 'akeneoassetmanager/application/asset-upload/model/line';
 import RowStatus from 'akeneoassetmanager/application/asset-upload/component/row-status';

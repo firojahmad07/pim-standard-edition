@@ -1,4 +1,4 @@
-import {Checkbox, Dropdown, SwitcherButton} from 'akeneo-design-system';
+import {Checkbox, Dropdown, SwitcherButton} from '@akeneo-pim-community/akeneo-design-system';
 import React, {FC, useCallback} from 'react';
 import {useTranslate} from '../../shared/translate';
 import {EventSubscriptionLogLevel} from '../model/EventSubscriptionLogLevel';

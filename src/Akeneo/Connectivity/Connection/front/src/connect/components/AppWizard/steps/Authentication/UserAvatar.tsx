@@ -1,4 +1,4 @@
-import {getFontSize} from 'akeneo-design-system';
+import {getFontSize} from '@akeneo-pim-community/akeneo-design-system';
 import React from 'react';
 import styled from 'styled-components';
 import {useAvatar} from '../../../../../shared/user';

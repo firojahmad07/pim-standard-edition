@@ -2,7 +2,7 @@ import React, {FC, useEffect, useState} from 'react';
 import {PageContent, PageHeader, useRoute, useTranslate, PimView} from '@akeneo-pim-community/shared';
 import {AttributeGroupsCreateButton, AttributeGroupsDataGrid} from '../components';
 import {useAttributeGroupsIndexState} from '../hooks';
-import {Breadcrumb} from 'akeneo-design-system';
+import {Breadcrumb} from '@akeneo-pim-community/akeneo-design-system';
 
 const AttributeGroupsIndex: FC = () => {
   const {groups, load, isPending} = useAttributeGroupsIndexState();

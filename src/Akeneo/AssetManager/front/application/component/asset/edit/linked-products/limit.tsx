@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {UsingIllustration, Button, getFontSize, getColor} from 'akeneo-design-system';
+import {UsingIllustration, Button, getFontSize, getColor} from '@akeneo-pim-community/akeneo-design-system';
 import {NormalizedAttribute} from 'akeneoassetmanager/domain/model/product/attribute';
 import {updateDatagridStateWithFilterOnAssetCode} from 'akeneoassetmanager/tools/datagridstate';
 import {useRoute, useTranslate} from '@akeneo-pim-community/shared';

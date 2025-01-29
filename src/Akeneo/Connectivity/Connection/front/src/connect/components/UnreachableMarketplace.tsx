@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {ClientErrorIllustration} from 'akeneo-design-system';
+import {ClientErrorIllustration} from '@akeneo-pim-community/akeneo-design-system';
 import {Translate} from '../../shared/translate';
 import styled from '../../common/styled-with-theme';
 

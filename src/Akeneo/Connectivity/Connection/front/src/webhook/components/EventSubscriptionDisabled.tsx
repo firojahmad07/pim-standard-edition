@@ -1,4 +1,4 @@
-import {ApiIllustration, Link} from 'akeneo-design-system';
+import {ApiIllustration, Link} from '@akeneo-pim-community/akeneo-design-system';
 import React, {FC} from 'react';
 import {generatePath, useHistory} from 'react-router-dom';
 import {EmptyState} from '../../common';

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Badge} from 'akeneo-design-system';
+import {Badge} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 
 type Props = {

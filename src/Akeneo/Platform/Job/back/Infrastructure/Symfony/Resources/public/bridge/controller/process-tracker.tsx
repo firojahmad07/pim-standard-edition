@@ -1,8 +1,8 @@
 import React from 'react';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {ReactController} from '@akeneo-pim-community/legacy-bridge/src/bridge/react';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
-import {ProcessTrackerApp} from '@akeneo-pim-community/process-tracker';
+import {ProcessTrackerApp} from '@akeneo-pim-community/process-tracker/src';
 import {ThemeProvider} from 'styled-components';
 
 const mediator = require('oro/mediator');

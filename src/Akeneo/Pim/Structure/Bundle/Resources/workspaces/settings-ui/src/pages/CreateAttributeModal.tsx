@@ -1,7 +1,7 @@
 import React, {FunctionComponentElement} from 'react';
 import {useTranslate, useUserContext} from '@akeneo-pim-community/shared';
 import {useAttributeCodeInput} from '../hooks/attributes/useAttributeCodeInput';
-import {AttributesIllustration, Button, Field, Locale, Modal, TextInput, useAutoFocus} from 'akeneo-design-system';
+import {AttributesIllustration, Button, Field, Locale, Modal, TextInput, useAutoFocus} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 
 const FieldSet = styled.div`

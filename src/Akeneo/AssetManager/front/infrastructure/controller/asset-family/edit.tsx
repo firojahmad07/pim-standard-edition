@@ -31,7 +31,7 @@ import {denormalizeAssetFamilyIdentifier} from 'akeneoassetmanager/domain/model/
 import {ThemeProvider} from 'styled-components';
 import {attributeListUpdated} from 'akeneoassetmanager/domain/event/attribute/list';
 import {getAssetFamilyLabel} from 'akeneoassetmanager/domain/model/asset-family/asset-family';
-import {pimTheme, Key} from 'akeneo-design-system';
+import {pimTheme, Key} from '@akeneo-pim-community/akeneo-design-system';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 import {getValueConfig} from 'akeneoassetmanager/application/configuration/value';
 import {ConfigProvider} from 'akeneoassetmanager/application/hooks/useConfig';

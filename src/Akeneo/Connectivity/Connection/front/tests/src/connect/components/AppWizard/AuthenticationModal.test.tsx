@@ -3,7 +3,7 @@ import {NotificationLevel, NotifyContext} from '@src/shared/notify';
 import '@testing-library/jest-dom/extend-expect';
 import {act, render, screen, waitFor} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import React from 'react';
 import {ThemeProvider} from 'styled-components';
 import {historyMock, mockFetchResponses, renderWithProviders} from '../../../../test-utils';

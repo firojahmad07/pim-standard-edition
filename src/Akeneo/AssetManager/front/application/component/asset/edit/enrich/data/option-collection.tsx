@@ -5,7 +5,7 @@ import {
   optionCollectionDataFromArray,
 } from 'akeneoassetmanager/domain/model/asset/data/option-collection';
 import {isOptionCollectionAttribute} from 'akeneoassetmanager/domain/model/attribute/type/option-collection';
-import {MultiSelectInput} from 'akeneo-design-system';
+import {MultiSelectInput} from '@akeneo-pim-community/akeneo-design-system';
 import {getOptionLabel} from 'akeneoassetmanager/domain/model/attribute/type/option/option';
 import {ViewGeneratorProps} from 'akeneoassetmanager/application/configuration/value';
 import {setValueData} from 'akeneoassetmanager/domain/model/asset/value';

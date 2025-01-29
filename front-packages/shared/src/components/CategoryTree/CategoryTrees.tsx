@@ -1,7 +1,7 @@
 import React from 'react';
 import {CategoryTree, CategoryTreeModel, ParentCategoryTree} from './CategoryTree';
-import {BooleanInput} from 'akeneo-design-system/lib/components/Input/BooleanInput/BooleanInput';
-import {Tree, getColor} from 'akeneo-design-system';
+import {BooleanInput} from '@akeneo-pim-community/akeneo-design-system/src/components/Input/BooleanInput/BooleanInput';
+import {Tree, getColor} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../../hooks';
 import {CategoryTreeSwitcher} from './CategoryTreeSwitcher';
 import styled from 'styled-components';

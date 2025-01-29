@@ -8,7 +8,7 @@ import {
   IconButton,
   SwitcherButton,
   useBooleanState,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {TABLE_VALUE_ITEMS_PER_PAGE} from './TableInputValue';
 import styled from 'styled-components';
 import {useTranslate} from '@akeneo-pim-community/shared';

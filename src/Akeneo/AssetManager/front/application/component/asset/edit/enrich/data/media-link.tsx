@@ -8,7 +8,7 @@ import {
   RefreshIcon,
   useBooleanState,
   useInModal,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useTranslate} from '@akeneo-pim-community/shared';
 import {canCopyToClipboard, copyToClipboard, getMediaPreviewUrl} from 'akeneoassetmanager/tools/media-url-generator';
 import {

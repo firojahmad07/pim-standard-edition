@@ -1,6 +1,6 @@
 import React, {FC, ReactElement, useEffect, useState} from 'react';
 import styled from 'styled-components';
-import {SectionTitle} from 'akeneo-design-system';
+import {SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {QualityScore} from '../../QualityScore';
 import {QualityScoreEvolutionChart} from './QualityScoreEvolutionChart';

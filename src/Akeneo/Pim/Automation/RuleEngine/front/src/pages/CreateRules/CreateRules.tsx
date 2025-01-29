@@ -17,7 +17,7 @@ import {httpPost} from '../../fetch';
 import {AkeneoSpinner} from '../../components';
 import {Payload} from '../../rules.types';
 import {LocaleCode} from '../../models';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {dependencies} from '../../dependenciesTools/provider/dependencies';
 
 const transformFormData = (

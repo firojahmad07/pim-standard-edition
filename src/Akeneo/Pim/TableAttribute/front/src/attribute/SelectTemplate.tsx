@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Modal, Tile, Tiles} from 'akeneo-design-system';
+import {Button, Modal, Tile, Tiles} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {TEMPLATES} from '../models';
 import styled from 'styled-components';

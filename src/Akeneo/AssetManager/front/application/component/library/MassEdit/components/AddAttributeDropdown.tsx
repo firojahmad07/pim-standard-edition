@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-import {AkeneoThemedProps, ArrowDownIcon, Button, Dropdown, getColor, useBooleanState} from 'akeneo-design-system';
+import {AkeneoThemedProps, ArrowDownIcon, Button, Dropdown, getColor, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate, getLabel, LocaleCode} from '@akeneo-pim-community/shared';
 import {NormalizedAttribute} from 'akeneoassetmanager/domain/model/attribute/attribute';
 

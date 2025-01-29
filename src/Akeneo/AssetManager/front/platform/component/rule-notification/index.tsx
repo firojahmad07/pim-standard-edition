@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {getColor, Helper} from 'akeneo-design-system';
+import {getColor, Helper} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useSecurity, useTranslate} from '@akeneo-pim-community/shared';
 import {AttributeCode} from 'akeneoassetmanager/platform/model/structure/attribute';
 import {getRulesForAttribute} from 'akeneoassetmanager/platform/model/structure/rule-relation';

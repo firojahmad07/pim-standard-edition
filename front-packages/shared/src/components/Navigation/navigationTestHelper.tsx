@@ -1,7 +1,7 @@
 import React from 'react';
 import {SubNavigationEntry, SubNavigationSection} from './SubNavigation';
 import {NavigationEntry} from './PimNavigation';
-import {CardIcon} from 'akeneo-design-system';
+import {CardIcon} from '@akeneo-pim-community/akeneo-design-system';
 
 const subNavigationEntries: SubNavigationEntry[] = [
   {

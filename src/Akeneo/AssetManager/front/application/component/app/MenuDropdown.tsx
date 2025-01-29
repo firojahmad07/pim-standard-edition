@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Dropdown, IconButton, MoreVerticalIcon, useBooleanState} from 'akeneo-design-system';
+import {Dropdown, IconButton, MoreVerticalIcon, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {Tab} from 'akeneoassetmanager/application/configuration/sidebar';
 

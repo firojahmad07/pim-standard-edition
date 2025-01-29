@@ -1,8 +1,8 @@
 import React from 'react';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {ReactController} from '@akeneo-pim-community/legacy-bridge/src/bridge/react';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
-import {MeasurementApp, ConfigContext, UnsavedChangesContext} from '@akeneo-pim-community/measurement';
+import {MeasurementApp, ConfigContext, UnsavedChangesContext} from '@akeneo-pim-community/measurement/src';
 import {measurementsDependencies} from '../dependencies';
 import {ThemeProvider} from 'styled-components';
 
@@ -46,4 +46,4 @@ class SettingsController extends ReactController {
   }
 }
 
-export = SettingsController;
+export default SettingsController;

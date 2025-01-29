@@ -1,5 +1,5 @@
 import React, {Children, FC} from 'react';
-import {AppIllustration, getColor, getFontSize, SectionTitle} from 'akeneo-design-system';
+import {AppIllustration, getColor, getFontSize, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 
 const CardGrid = styled.section`

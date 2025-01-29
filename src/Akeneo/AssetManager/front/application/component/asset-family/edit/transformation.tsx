@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {JsonEditor as Editor} from 'jsoneditor-react';
 import 'jsoneditor-react/es/editor.min.css';
-import {Link, Button, Helper, SectionTitle} from 'akeneo-design-system';
+import {Link, Button, Helper, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {
   PageContent,
   PageHeader,

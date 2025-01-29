@@ -17,7 +17,7 @@ import {
     useWrongCredentialsCombinationsDispatch,
     useWrongCredentialsCombinationsState,
 } from '../wrong-credentials-combinations-context';
-import {Breadcrumb} from 'akeneo-design-system';
+import {Breadcrumb} from '@akeneo-pim-community/akeneo-design-system';
 import {UserButtons} from '../../shared/user';
 import {useRouter} from '../../shared/router/use-router';
 

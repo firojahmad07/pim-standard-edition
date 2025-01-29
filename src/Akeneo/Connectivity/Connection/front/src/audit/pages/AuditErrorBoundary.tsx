@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {PageContent, PageHeader, RuntimeError} from '../../common/components';
 import {useRoute} from '../../shared/router';
 import {Translate} from '../../shared/translate';
-import {Breadcrumb} from 'akeneo-design-system';
+import {Breadcrumb} from '@akeneo-pim-community/akeneo-design-system';
 import {UserButtons} from '../../shared/user';
 
 const AuditBreadcrumb = () => {

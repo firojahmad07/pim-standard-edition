@@ -1,6 +1,6 @@
 import React from 'react';
 import {CategoryValue, RecursiveCategoryTree} from './RecursiveCategoryTree';
-import {Tree} from 'akeneo-design-system/lib/components/Tree/Tree';
+import {Tree} from '@akeneo-pim-community/akeneo-design-system/src/components/Tree/Tree';
 
 type ParentCategoryTree = {
   code: string;

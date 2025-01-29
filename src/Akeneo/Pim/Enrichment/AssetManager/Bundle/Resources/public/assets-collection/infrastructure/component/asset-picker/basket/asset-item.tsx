@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {CloseIcon, getColor, getFontSize, IconButton} from 'akeneo-design-system';
+import {CloseIcon, getColor, getFontSize, IconButton} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useTranslate} from '@akeneo-pim-community/shared';
 import {Context} from 'akeneoassetmanager/domain/model/context';
 import {getMediaPreviewUrl} from 'akeneoassetmanager/tools/media-url-generator';

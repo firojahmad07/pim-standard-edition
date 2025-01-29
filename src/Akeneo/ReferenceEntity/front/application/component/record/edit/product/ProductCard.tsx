@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, Link} from 'akeneo-design-system';
+import {Card, Link} from '@akeneo-pim-community/akeneo-design-system';
 import {useRoute} from '@akeneo-pim-community/shared';
 import Product, {isProductModel} from 'akeneoreferenceentity/domain/model/product/product';
 import {getImageShowUrl} from 'akeneoreferenceentity/tools/media-url-generator';

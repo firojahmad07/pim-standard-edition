@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import {useTranslate} from '@akeneo-pim-community/shared';
-import {Field, TextInput} from 'akeneo-design-system';
+import {Field, TextInput} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 
 interface NewProps {

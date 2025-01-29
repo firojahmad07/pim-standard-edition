@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import {CardIcon, CommonStyle, DownloadIcon, getColor, MainNavigationItem} from 'akeneo-design-system';
+import {CardIcon, CommonStyle, DownloadIcon, getColor, MainNavigationItem} from '@akeneo-pim-community/akeneo-design-system';
 import {ProcessTrackerApp} from './feature/ProcessTrackerApp';
 import {JobInstanceDetail} from './feature/pages/JobInstanceDetail';
 

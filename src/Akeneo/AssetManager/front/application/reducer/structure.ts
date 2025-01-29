@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import {arrayUnique} from 'akeneo-design-system';
+import {arrayUnique} from '@akeneo-pim-community/akeneo-design-system';
 import {Channel, ChannelCode, Locale, LocaleCode} from '@akeneo-pim-community/shared';
 
 export interface StructureState {

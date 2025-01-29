@@ -3,7 +3,7 @@ import {useTranslate} from '@akeneo-pim-community/shared';
 import {isOptionAttribute} from 'akeneoassetmanager/domain/model/attribute/type/option';
 import OptionData from 'akeneoassetmanager/domain/model/asset/data/option';
 import {ViewGeneratorProps} from 'akeneoassetmanager/application/configuration/value';
-import {SelectInput} from 'akeneo-design-system';
+import {SelectInput} from '@akeneo-pim-community/akeneo-design-system';
 import {isOptionData} from 'akeneoassetmanager/domain/model/asset/data/option';
 import {getOptionLabel} from 'akeneoassetmanager/domain/model/attribute/type/option/option';
 import {setValueData} from 'akeneoassetmanager/domain/model/asset/value';

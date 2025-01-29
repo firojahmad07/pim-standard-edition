@@ -8,7 +8,7 @@ import {
   SwitcherButton,
   getFontSize,
   Pill,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import styled, {css} from 'styled-components';
 import {useTranslate} from '../hooks';
 import {Locale, LocaleCode} from '../models';

@@ -1,4 +1,4 @@
-import {Field, Helper, NumberInput} from 'akeneo-design-system';
+import {Field, Helper, NumberInput} from '@akeneo-pim-community/akeneo-design-system';
 import React from 'react';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {ColumnValidation, TextColumnDefinition} from '../../models';

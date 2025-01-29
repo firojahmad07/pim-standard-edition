@@ -7,9 +7,9 @@ import {
   IconButton,
   MediaFileInput,
   useBooleanState,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
-import {FullscreenPreview} from 'akeneo-design-system/lib/storybook';
+import {FullscreenPreview} from '@akeneo-pim-community/akeneo-design-system/src/storybook';
 import styled from 'styled-components';
 
 const AddedClassName = 'ImageCard--added';

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Card, CardGrid, SkeletonPlaceholder} from 'akeneo-design-system';
+import {Card, CardGrid, SkeletonPlaceholder} from '@akeneo-pim-community/akeneo-design-system';
 import {AssetFamily} from 'akeneoassetmanager/domain/model/asset-family/asset-family';
 
 const SearchBarPlaceholder = styled(SkeletonPlaceholder)`

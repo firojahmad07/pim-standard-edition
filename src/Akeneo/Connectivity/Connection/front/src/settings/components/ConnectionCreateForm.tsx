@@ -1,4 +1,4 @@
-import {Helper} from 'akeneo-design-system';
+import {Helper} from '@akeneo-pim-community/akeneo-design-system';
 import React, {ChangeEvent, Dispatch, RefObject, useEffect, useReducer, useRef} from 'react';
 import {useHistory} from 'react-router-dom';
 import {ApplyButton, Form, FormGroup, FormInput} from '../../common';

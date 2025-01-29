@@ -4,7 +4,7 @@ import {
   numberDataFromString,
   areNumberDataEqual,
 } from 'akeneoassetmanager/domain/model/asset/data/number';
-import {NumberInput} from 'akeneo-design-system';
+import {NumberInput} from '@akeneo-pim-community/akeneo-design-system';
 import {unformatNumber, formatNumberForUILocale} from 'akeneoassetmanager/tools/format-number';
 import {isNumberData} from 'akeneoassetmanager/domain/model/asset/data/number';
 import {isNumberAttribute} from 'akeneoassetmanager/domain/model/attribute/type/number';

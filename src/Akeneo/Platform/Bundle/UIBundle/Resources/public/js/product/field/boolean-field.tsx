@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BooleanInput, pimTheme} from 'akeneo-design-system';
+import {BooleanInput, pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {ThemeProvider} from 'styled-components';
 
 const Field = require('pim/field');

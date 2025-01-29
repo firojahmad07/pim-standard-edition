@@ -2,7 +2,7 @@ import $ from 'jquery';
 import React from 'react';
 import {render, screen} from '@testing-library/react';
 import {MultiSelectInputWithDynamicOptions} from './MultiSelectInputWithDynamicOptions';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {ThemeProvider} from 'styled-components';
 
 // @ts-ignore

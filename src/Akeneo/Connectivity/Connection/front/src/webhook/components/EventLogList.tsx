@@ -6,7 +6,7 @@ import {
     Link,
     Table,
     getColor,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import React, {FC, useContext, useRef, useState} from 'react';
 import styled, {keyframes} from 'styled-components';
 import ExpandableTableRow, {IsExpanded} from '../../common/components/ExpandableTableRow';

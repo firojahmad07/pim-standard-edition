@@ -1,4 +1,4 @@
-import {FileInfo} from 'akeneo-design-system';
+import {FileInfo} from '@akeneo-pim-community/akeneo-design-system';
 
 export type FilePath = string;
 export type File = FileInfo | null;

@@ -1,6 +1,6 @@
 import React from 'react';
 import {FilteredValueRenderer, TableFilterValueRenderer} from './index';
-import {MultiSelectInput} from 'akeneo-design-system';
+import {MultiSelectInput} from '@akeneo-pim-community/akeneo-design-system';
 import {useFetchOptions} from '../../product';
 import {getLabel, useTranslate, useUserContext} from '@akeneo-pim-community/shared';
 import {SelectOptionCode} from '../../models';

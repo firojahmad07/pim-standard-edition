@@ -5,7 +5,7 @@ import Permission, {
   lowerLevel,
 } from 'akeneoreferenceentity/domain/model/reference-entity/permission';
 import __ from 'akeneoreferenceentity/tools/translator';
-import {CheckIcon, pimTheme, Key} from 'akeneo-design-system';
+import {CheckIcon, pimTheme, Key} from '@akeneo-pim-community/akeneo-design-system';
 
 type GroupName = string;
 

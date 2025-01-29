@@ -14,7 +14,7 @@ import {
 } from 'akeneoreferenceentity/domain/event/user';
 import {ThemeProvider} from 'styled-components';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 
 const BaseController = require('pim/controller/base');
 const mediator = require('oro/mediator');

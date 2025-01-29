@@ -1,6 +1,6 @@
 import React from 'react';
 import {FilteredValueRenderer, TableFilterValueRenderer} from './index';
-import {SelectInput} from 'akeneo-design-system';
+import {SelectInput} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 
 const BooleanFilterValue: TableFilterValueRenderer = ({value, onChange}) => {

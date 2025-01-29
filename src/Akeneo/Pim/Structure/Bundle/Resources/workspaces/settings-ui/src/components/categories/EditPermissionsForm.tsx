@@ -2,7 +2,7 @@ import React from 'react';
 import {EditCategoryForm} from '../../hooks';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import styled from 'styled-components';
-import {BooleanInput, Field, Helper, MultiSelectInput} from 'akeneo-design-system';
+import {BooleanInput, Field, Helper, MultiSelectInput} from '@akeneo-pim-community/akeneo-design-system';
 
 const FormContainer = styled.div`
   margin-top: 20px;

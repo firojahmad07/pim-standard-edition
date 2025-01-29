@@ -1,12 +1,12 @@
-import productLinkRulesExecutor from 'akeneoassetmanager/infrastructure/product-link-rules-executor';
-import namingConventionExecutor from 'akeneoassetmanager/infrastructure/naming-convention-executor';
-import {EditState} from 'akeneoassetmanager/application/reducer/asset-family/edit';
+import productLinkRulesExecutor from '../../../infrastructure/product-link-rules-executor';
+import namingConventionExecutor from '../../../infrastructure/naming-convention-executor';
+import {EditState} from '../../../application/reducer/asset-family/edit';
 import {
   notifyExecuteProductLinkRulesFailed,
   notifyExecuteProductLinkRulesSucceeded,
   notifyExecuteNamingConventionFailed,
   notifyExecuteNamingConventionSucceeded,
-} from 'akeneoassetmanager/application/action/asset-family/notify';
+} from '../../../application/action/asset-family/notify';
 
 export const executeProductLinkRules = () => async (dispatch: any, getState: () => EditState): Promise<void> => {
   const assetFamily = getState().form.data;

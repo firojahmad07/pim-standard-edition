@@ -1,6 +1,6 @@
 import React, {MutableRefObject} from 'react';
 import {SelectOptionWithId} from './ManageOptionsModal';
-import {Helper, IconButton, Table, TextInput, CloseIcon, Key} from 'akeneo-design-system';
+import {Helper, IconButton, Table, TextInput, CloseIcon, Key} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 import {LocaleCode, useTranslate} from '@akeneo-pim-community/shared';
 

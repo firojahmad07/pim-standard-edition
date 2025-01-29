@@ -7,7 +7,7 @@ import assetFetcher from 'akeneoassetmanager/infrastructure/fetcher/asset';
 import {fetchChannels} from 'akeneoassetmanager/infrastructure/fetcher/channel';
 import assetFamilyFetcher from 'akeneoassetmanager/infrastructure/fetcher/asset-family';
 import assetAttributeFetcher from 'akeneoassetmanager/infrastructure/fetcher/attribute';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 import {getValueConfig} from 'akeneoassetmanager/application/configuration/value';
 import {ConfigProvider} from 'akeneoassetmanager/application/hooks/useConfig';

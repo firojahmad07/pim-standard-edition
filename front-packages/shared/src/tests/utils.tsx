@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {ThemeProvider} from 'styled-components';
 import {render} from '@testing-library/react';
 import {renderHook} from '@testing-library/react-hooks';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {DependenciesContext} from '../DependenciesContext';
 import {mockedDependencies} from './mockedDependencies';
 

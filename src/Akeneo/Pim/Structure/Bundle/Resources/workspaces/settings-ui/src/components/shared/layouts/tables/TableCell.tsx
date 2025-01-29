@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import {AkeneoThemedProps, getColor} from 'akeneo-design-system';
+import {AkeneoThemedProps, getColor} from '@akeneo-pim-community/akeneo-design-system';
 
 type Props = AkeneoThemedProps & {
   width?: number;

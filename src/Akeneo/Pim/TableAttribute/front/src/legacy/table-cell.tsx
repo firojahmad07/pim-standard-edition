@@ -5,7 +5,7 @@ const translate = require('oro/translator');
 import ReactDOM from 'react-dom';
 import React from 'react';
 import styled from 'styled-components';
-import {TableIcon} from 'akeneo-design-system';
+import {TableIcon} from '@akeneo-pim-community/akeneo-design-system';
 
 const Centered = styled.div`
   text-align: center;

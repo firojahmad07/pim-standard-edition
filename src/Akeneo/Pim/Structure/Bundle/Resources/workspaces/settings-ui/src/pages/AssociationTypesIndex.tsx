@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Breadcrumb, getFontSize, Pagination} from 'akeneo-design-system';
+import {Breadcrumb, getFontSize, Pagination} from '@akeneo-pim-community/akeneo-design-system';
 import {
   PageContent,
   PageHeader,

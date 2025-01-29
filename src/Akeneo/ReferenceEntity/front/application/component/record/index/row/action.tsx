@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import styled from 'styled-components';
-import {DeleteIcon, EditIcon, IconButton, ViewIcon} from 'akeneo-design-system';
+import {DeleteIcon, EditIcon, IconButton, ViewIcon} from '@akeneo-pim-community/akeneo-design-system';
 import {useRoute, useTranslate} from '@akeneo-pim-community/shared';
 import {NormalizedRecord} from 'akeneoreferenceentity/domain/model/record/record';
 import RecordCode from 'akeneoreferenceentity/domain/model/record/code';

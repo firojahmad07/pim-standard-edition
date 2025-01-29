@@ -1,6 +1,6 @@
 import React from 'react';
 import {Attribute, AttributeCode, AttributeType} from '../models';
-import {Field, Helper, SelectInput} from 'akeneo-design-system';
+import {Field, Helper, SelectInput} from '@akeneo-pim-community/akeneo-design-system';
 import {getLabel, useRouter, useTranslate, useUserContext} from '@akeneo-pim-community/shared';
 import {AttributeFetcher, AttributeFetcherIndexParams} from '../fetchers';
 

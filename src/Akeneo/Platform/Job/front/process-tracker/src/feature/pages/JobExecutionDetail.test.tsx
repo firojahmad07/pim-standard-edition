@@ -89,7 +89,7 @@ jest.mock('../hooks/useJobExecution', () => ({
   },
 }));
 
-jest.mock('@akeneo-pim-community/shared/lib/components/PimView', () => ({
+jest.mock('@akeneo-pim-community/shared/components/PimView', () => ({
   PimView: () => <></>,
 }));
 

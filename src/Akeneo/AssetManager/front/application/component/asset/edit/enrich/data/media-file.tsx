@@ -7,7 +7,7 @@ import {
   FullscreenIcon,
   useBooleanState,
   useInModal,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useTranslate, useUploader} from '@akeneo-pim-community/shared';
 import {localeReferenceStringValue} from 'akeneoassetmanager/domain/model/locale-reference';
 import {isMediaFileData} from 'akeneoassetmanager/domain/model/asset/data/media-file';

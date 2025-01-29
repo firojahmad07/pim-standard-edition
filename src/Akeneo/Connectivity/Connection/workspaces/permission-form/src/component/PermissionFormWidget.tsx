@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import styled from 'styled-components';
-import {Checkbox, EraseIcon, IconButton} from 'akeneo-design-system';
+import {Checkbox, EraseIcon, IconButton} from '@akeneo-pim-community/akeneo-design-system';
 import {MultiSelectInputWithDynamicOptions, QueryParamsBuilder} from './MultiSelectInputWithDynamicOptions';
 import {MultiSelectInputWithStaticOptions} from './MultiSelectInputWithStaticOptions';
 import translate from '../dependencies/translate';

@@ -24,7 +24,7 @@ import {fetchProductDataQualityEvaluation} from '@akeneo-pim-community/data-qual
 import {AxesContextProvider} from '@akeneo-pim-community/data-quality-insights/src/application/context/AxesContext';
 import {followNotApplicableEnrichmentImageRecommendation} from '@akeneo-pim-community/data-quality-insights/src/application/user-actions';
 import {ThemeProvider} from 'styled-components';
-import {AssetCollectionIcon, EditIcon, pimTheme, SettingsIcon} from 'akeneo-design-system';
+import {AssetCollectionIcon, EditIcon, pimTheme, SettingsIcon} from '@akeneo-pim-community/akeneo-design-system';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 import {
   checkFollowingAttributeOptionSpellingCriterionActive,

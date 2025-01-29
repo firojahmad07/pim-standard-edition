@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
-import {Field, getColor, Helper, Link, TextInput} from 'akeneo-design-system';
+import {Field, getColor, Helper, Link, TextInput} from '@akeneo-pim-community/akeneo-design-system';
 import {
   useIsMounted,
   DeleteModal as BaseDeleteModal,

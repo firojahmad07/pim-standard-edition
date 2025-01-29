@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {AppIllustration, Information, Link} from 'akeneo-design-system';
+import {AppIllustration, Information, Link} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../../../shared/translate';
 
 type Props = {

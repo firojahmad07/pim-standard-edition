@@ -8,7 +8,7 @@ import {useDashboardState} from '../dashboard-context';
 import useConnectionSelect from '../hooks/useConnectionSelect';
 import {WeeklyAuditChart} from './Chart/WeeklyAuditChart';
 import {NoConnection} from './NoConnection';
-import {SectionTitle} from 'akeneo-design-system';
+import {SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 
 export const DataDestinationCharts = () => {
     const translate = useTranslate();

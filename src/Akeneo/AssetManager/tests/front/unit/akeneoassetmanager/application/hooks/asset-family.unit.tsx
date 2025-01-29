@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import {useAssetFamily} from 'akeneoassetmanager/application/hooks/asset-family';
 import {renderHook, act} from '@testing-library/react-hooks';
 
-jest.mock('@akeneo-pim-community/shared/lib/hooks/useSecurity', () => ({
+jest.mock('@akeneo-pim-community/shared/hooks/useSecurity', () => ({
   useSecurity: () => ({
     isGranted: (permission: string) => {
       switch (permission) {

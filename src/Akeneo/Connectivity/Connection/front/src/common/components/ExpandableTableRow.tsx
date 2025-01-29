@@ -1,5 +1,5 @@
 import React, {Children, createContext, FC, ReactNode, useState} from 'react';
-import {getColor, Table} from 'akeneo-design-system';
+import {getColor, Table} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 
 const LargeCell = styled.td.attrs(({colSpan}) => ({colSpan: colSpan}))`

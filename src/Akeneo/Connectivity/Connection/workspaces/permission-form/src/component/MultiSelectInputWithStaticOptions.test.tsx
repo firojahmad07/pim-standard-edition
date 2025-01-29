@@ -3,7 +3,7 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import {render, screen} from '@testing-library/react';
 import {MultiSelectInputWithStaticOptions} from './MultiSelectInputWithStaticOptions';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {ThemeProvider} from 'styled-components';
 
 // @ts-ignore

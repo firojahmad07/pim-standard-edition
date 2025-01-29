@@ -1,6 +1,6 @@
 import React, {useEffect, useReducer, useState} from 'react';
 import styled from 'styled-components';
-import {getColor, Helper, EditIcon, ViewIcon, SectionTitle} from 'akeneo-design-system';
+import {getColor, Helper, EditIcon, ViewIcon, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {getLabel} from 'pimui/js/i18n';
 import {
   PermissionFormProvider,

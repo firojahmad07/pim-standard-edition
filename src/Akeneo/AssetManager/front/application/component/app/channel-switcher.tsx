@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dropdown, SwitcherButton, useBooleanState} from 'akeneo-design-system';
+import {Dropdown, SwitcherButton, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {Channel, ChannelCode, getChannelLabel, useTranslate} from '@akeneo-pim-community/shared';
 
 type ChannelSwitcherProps = {

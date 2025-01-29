@@ -15,7 +15,7 @@ define([
   'pim/form-registry',
   'pim/common/property',
   'react',
-  'akeneo-design-system',
+  '@akeneo-pim-community/akeneo-design-system',
 ], function ($, __, BaseForm, mediator, FormRegistry, propertyAccessor, React, {Breadcrumb}) {
   return BaseForm.extend({
     events: {

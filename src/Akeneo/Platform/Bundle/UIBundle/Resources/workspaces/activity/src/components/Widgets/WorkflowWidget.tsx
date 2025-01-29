@@ -1,7 +1,7 @@
 import React from 'react';
 import {useGetProposalsToReview} from '../../hooks';
 import {Proposal} from '../../domain';
-import {Button, SectionTitle, SettingsIllustration, Table, Link} from 'akeneo-design-system';
+import {Button, SectionTitle, SettingsIllustration, Table, Link} from '@akeneo-pim-community/akeneo-design-system';
 import {NoDataSection, NoDataText, useRouter, useTranslate} from '@akeneo-pim-community/shared';
 import styled from 'styled-components';
 

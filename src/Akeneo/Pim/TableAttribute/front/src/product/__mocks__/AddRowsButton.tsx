@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from 'akeneo-design-system';
+import {Button} from '@akeneo-pim-community/akeneo-design-system';
 import {AttributeCode, ColumnCode, SelectOptionCode} from '../../models';
 
 type AddRowsButtonProps = {

@@ -1,4 +1,4 @@
-import {Dropdown, IconButton, MoreVerticalIcon, useBooleanState} from 'akeneo-design-system';
+import {Dropdown, IconButton, MoreVerticalIcon, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import React, {FC} from 'react';
 import {useRouter, useTranslate} from '../../hooks';
 import {SubNavigationEntry} from './SubNavigation';

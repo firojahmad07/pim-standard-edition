@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Checkbox, Key} from 'akeneo-design-system';
+import {Checkbox, Key} from '@akeneo-pim-community/akeneo-design-system';
 import {getLabel} from '@akeneo-pim-community/shared';
 import {EditState} from 'akeneoreferenceentity/application/reducer/reference-entity/edit';
 import __ from 'akeneoreferenceentity/tools/translator';

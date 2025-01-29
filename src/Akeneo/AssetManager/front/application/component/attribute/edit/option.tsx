@@ -1,7 +1,7 @@
 import React, {RefObject, createRef} from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-import {Button, Key, CloseIcon, Modal, SectionTitle, getColor} from 'akeneo-design-system';
+import {Button, Key, CloseIcon, Modal, SectionTitle, getColor} from '@akeneo-pim-community/akeneo-design-system';
 import {
   LocaleCode,
   LocaleSelector,

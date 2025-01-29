@@ -2,7 +2,7 @@ import React from 'react';
 import {usePopoverState, Popover, PopoverDisclosure} from 'reakit/Popover';
 import styled from 'styled-components';
 import {useTranslate} from '../../dependenciesTools/hooks';
-import {useTheme} from 'akeneo-design-system';
+import {useTheme} from '@akeneo-pim-community/akeneo-design-system';
 
 type Props = {
   predefinedFormats: {[key: string]: string};

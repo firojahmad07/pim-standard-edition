@@ -1,6 +1,6 @@
 import React, {ReactNode, isValidElement, Children, cloneElement, ButtonHTMLAttributes} from 'react';
 import styled from 'styled-components';
-import {AkeneoThemedProps, useTheme, IconProps} from 'akeneo-design-system';
+import {AkeneoThemedProps, useTheme, IconProps} from '@akeneo-pim-community/akeneo-design-system';
 
 const OptionContainer = styled.button<{isSelected: boolean; withIcon: boolean}>`
   width: 128px;

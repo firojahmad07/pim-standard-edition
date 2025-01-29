@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {AkeneoThemedProps, getColor, getFontSize} from 'akeneo-design-system';
+import {AkeneoThemedProps, getColor, getFontSize} from '@akeneo-pim-community/akeneo-design-system';
 
 const Label = styled.span<{readOnly?: boolean; isCode?: boolean} & AkeneoThemedProps>`
   color: ${({readOnly}) => getColor('grey', readOnly ? 100 : 120)};

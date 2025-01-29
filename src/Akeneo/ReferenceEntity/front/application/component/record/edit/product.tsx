@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {CardGrid, SectionTitle, Key} from 'akeneo-design-system';
+import {CardGrid, SectionTitle, Key} from '@akeneo-pim-community/akeneo-design-system';
 import {Section} from '@akeneo-pim-community/shared';
 import {EditState} from 'akeneoreferenceentity/application/reducer/record/edit';
 import __ from 'akeneoreferenceentity/tools/translator';

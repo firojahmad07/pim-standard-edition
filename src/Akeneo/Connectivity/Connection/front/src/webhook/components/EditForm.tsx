@@ -1,4 +1,4 @@
-import {Helper, Link} from 'akeneo-design-system';
+import {Helper, Link} from '@akeneo-pim-community/akeneo-design-system';
 import React, {FC, useContext, useState, SyntheticEvent} from 'react';
 import {useFormContext} from 'react-hook-form';
 import {useHistory} from 'react-router';

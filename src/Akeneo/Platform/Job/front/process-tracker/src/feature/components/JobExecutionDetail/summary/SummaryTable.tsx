@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Table, Badge, Helper, Level} from 'akeneo-design-system';
+import {Table, Badge, Helper, Level} from '@akeneo-pim-community/akeneo-design-system';
 import {Translate, useTranslate} from '@akeneo-pim-community/shared';
 import {InnerTable} from './InnerTable';
 import {WarningHelper} from './WarningHelper';

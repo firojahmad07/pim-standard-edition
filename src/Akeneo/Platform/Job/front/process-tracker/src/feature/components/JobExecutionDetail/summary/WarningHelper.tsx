@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import {Helper, Link} from 'akeneo-design-system';
+import {Helper, Link} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {Warning} from '../../../models';
 import {InnerTable} from './InnerTable';

@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import {connect} from 'react-redux';
 import styled, {FlattenSimpleInterpolation} from 'styled-components';
-import {DeleteIcon, Key, Checkbox, Button, SectionTitle, useAutoFocus, useBooleanState} from 'akeneo-design-system';
+import {DeleteIcon, Key, Checkbox, Button, SectionTitle, useAutoFocus, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {
   DeleteModal,
   getErrorsForPath,

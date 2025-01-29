@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
 import styled from 'styled-components';
-import {getColor} from 'akeneo-design-system';
+import {getColor} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {CommonRows} from 'akeneoreferenceentity/application/component/record/index/row/common';
 import {ActionRows} from 'akeneoreferenceentity/application/component/record/index/row/action';

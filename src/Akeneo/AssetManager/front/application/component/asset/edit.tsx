@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-import {Button, Dropdown, IconButton, MoreIcon, useBooleanState} from 'akeneo-design-system';
+import {Button, Dropdown, IconButton, MoreIcon, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {
   useSecurity,
   useTranslate,

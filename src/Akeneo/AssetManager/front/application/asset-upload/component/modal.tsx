@@ -1,7 +1,7 @@
 import React, {useReducer, useCallback, useMemo, useEffect, ChangeEvent} from 'react';
 import {Reducer} from 'redux';
 import styled from 'styled-components';
-import {Button, Modal} from 'akeneo-design-system';
+import {Button, Modal} from '@akeneo-pim-community/akeneo-design-system';
 import {useNotify, useTranslate, useUploader, Locale, LocaleCode} from '@akeneo-pim-community/shared';
 import {LineList} from 'akeneoassetmanager/application/asset-upload/component/line-list';
 import Line from 'akeneoassetmanager/application/asset-upload/model/line';

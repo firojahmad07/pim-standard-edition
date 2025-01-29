@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 import {ThemeProvider} from 'styled-components';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {CategoryTree, CategoryTreeModel} from '@akeneo-pim-community/shared';
 import {CategoryResponse, parseResponse} from './CategoryTreeFetcher';
 const Router = require('pim/router');

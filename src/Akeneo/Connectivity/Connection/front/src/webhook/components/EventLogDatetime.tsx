@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {ClockIcon, DateIcon} from 'akeneo-design-system';
+import {ClockIcon, DateIcon} from '@akeneo-pim-community/akeneo-design-system';
 import {theme} from '../../common/styled-with-theme';
 import {useDateFormatter} from '../../shared/formatter/use-date-formatter';
 import styled from 'styled-components';

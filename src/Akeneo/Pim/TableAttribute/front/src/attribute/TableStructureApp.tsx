@@ -13,7 +13,7 @@ import {
   Table,
   useBooleanState,
   uuid,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 import styled, {ThemeProvider} from 'styled-components';
 import {ColumnCode, ColumnDefinition, TableAttribute, TableConfiguration} from '../models';

@@ -1,6 +1,6 @@
 import React, {createContext, FC, useState} from 'react';
 import {Locale} from '@akeneo-pim-community/settings-ui';
-import {useSelection} from 'akeneo-design-system';
+import {useSelection} from '@akeneo-pim-community/akeneo-design-system';
 import {LocaleSelectionState} from '../../hooks/locales/useLocaleSelection';
 
 const LocaleSelectionContext = createContext<LocaleSelectionState>({

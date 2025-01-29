@@ -1,5 +1,5 @@
 import React from 'react';
-import {SelectInput} from 'akeneo-design-system';
+import {SelectInput} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate, LocaleCode, getLabel, ChannelCode, Channel, ChannelReference} from '@akeneo-pim-community/shared';
 
 type ChannelDropdownProps = {

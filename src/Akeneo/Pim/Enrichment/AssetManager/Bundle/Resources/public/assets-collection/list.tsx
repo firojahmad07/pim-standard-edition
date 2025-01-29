@@ -13,7 +13,7 @@ import {
   Pill,
   SectionTitle,
   useBooleanState,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {
   NoDataSection,
   NoDataTitle,

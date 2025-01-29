@@ -1,5 +1,5 @@
 import {EventSubscriptionLogLevel} from '../model/EventSubscriptionLogLevel';
-import {Badge, Level} from 'akeneo-design-system';
+import {Badge, Level} from '@akeneo-pim-community/akeneo-design-system';
 import React, {FC, PropsWithChildren} from 'react';
 
 type Props = {

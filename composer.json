@@ -21,7 +21,7 @@
             "Akeneo\\Platform\\Job\\": "src/Akeneo/Platform/Job/back",
             "Akeneo\\FreeTrial\\": "src/Akeneo/FreeTrial/back",
             "Akeneo\\AssetManager\\": "src/Akeneo/AssetManager/back",
-            "Akeneo\\Platform\\TailoredExport\\": "components/tailored-export/back/src/Akeneo/Platform/Bundle/TailoredExportBundle/src/",
+            "Akeneo\\Pim\\Tailored\\": "src/Akeneo/Pim/Tailored/back/",
             "Akeneo\\ReferenceEntity\\": "src/Akeneo/ReferenceEntity/back"
         }
     },

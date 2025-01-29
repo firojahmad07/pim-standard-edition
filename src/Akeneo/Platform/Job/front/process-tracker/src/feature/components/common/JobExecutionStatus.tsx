@@ -1,5 +1,5 @@
 import React from 'react';
-import {Badge, Level} from 'akeneo-design-system';
+import {Badge, Level} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {JobStatus} from '../../models';
 

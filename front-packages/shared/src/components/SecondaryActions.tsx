@@ -1,5 +1,5 @@
 import React, {cloneElement, FC, isValidElement} from 'react';
-import {Dropdown, IconButton, MoreIcon, useBooleanState} from 'akeneo-design-system';
+import {Dropdown, IconButton, MoreIcon, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../hooks';
 
 const SecondaryActions: FC & {Item: typeof Dropdown.Item} = ({children}) => {

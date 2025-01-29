@@ -26,7 +26,7 @@
     "less": "node $npm_package_config_styles",
     "update-extensions": "node $npm_package_config_source/frontend/build/update-extensions.js",
     "generate-models": "yarn --cwd=node_modules/@akeneo-pim-community/communication-channel generate-models",
-    "dsm:build": "yarn --cwd=front-packages/akeneo-design-system install --frozen-lockfile && yarn --cwd=front-packages/akeneo-design-system lib:build",
+    "dsm:build": "yarn --cwd=front-packages/@akeneo-pim-community/akeneo-design-system install --frozen-lockfile && yarn --cwd=front-packages/@akeneo-pim-community/akeneo-design-system lib:build",
     "shared:lint:check": "yarn --cwd=front-packages/shared lint:check",
     "shared:build": "yarn --cwd=front-packages/shared lib:build",
     "measurement:lint:check": "yarn --cwd=front-packages/measurement lint:check",
@@ -62,12 +62,9 @@
     "@types/lodash": "^4.14.145",
     "@types/luxon": "^1.26.2",
     "@types/node": "11.9.5",
-    "@types/react": "^16.14.0",
     "@types/react-dom": "^16.9.12",
-    "@types/react-redux": "^7.1.0",
     "@types/react-router-dom": "^5.1.0",
     "@types/react-test-renderer": "^16.9.3",
-    "@types/styled-components": "^5.1.1",
     "@types/underscore": "^1.9.3",
     "@types/victory": "^33.0.1",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
@@ -135,7 +132,7 @@
   },
   "dependencies": {
     "ajv": "^6.10.2",
-    "akeneo-design-system": "link:front-packages/akeneo-design-system",
+    "@akeneo-pim-community/akeneo-design-system": "link:front-packages/@akeneo-pim-community/akeneo-design-system",
     "babel-polyfill": "6.26.0",
     "backbone": "0.9.10",
     "css-loader": "^3.3.0",
@@ -158,8 +155,8 @@
     "redux": "^4.0.0",
     "set-value": "~4.0",
     "style-loader": "^1.0.1",
-    "summernote": "0.6.16",
     "codemirror": "^5.13.4",
+    "summernote": "0.6.16",
     "styled-components": "^5.1.1",
     "underscore": "1.12.1",
     "victory": "^33.1.6",
@@ -175,23 +172,26 @@
     "uuid": "^3.3.3"
   },
   "private": true,
-  "workspaces": [
+  "workspaces": [  
     "components/tailored-export/front",
     "front-packages/shared",
-    "front-packages/measurement",
+    "src/Akeneo/Pim/Tailored/front",
     "src/Akeneo/Pim/TableAttribute/front",
     "src/Akeneo/Pim/Automation/RuleEngine/front",
     "src/Akeneo/Platform/Job/front/process-tracker",
     "src/Akeneo/Connectivity/Connection/front",
     "src/Akeneo/Connectivity/Connection/workspaces/permission-form",
-    "src/Akeneo/Platform/Bundle/UIBundle/Resources/workspaces/legacy-bridge",
     "src/Akeneo/Platform/Bundle/CommunicationChannelBundle/front",
     "src/Akeneo/Pim/Automation/DataQualityInsights/front",
     "src/Akeneo/Pim/Structure/Bundle/Resources/workspaces/settings-ui",
     "src/Akeneo/UserManagement/Bundle/Resources/workspaces/user-ui",
+
     "src/Akeneo/Platform/Bundle/UIBundle/Resources/workspaces/activity",
     "src/Akeneo/Platform/Bundle/UIBundle/Resources/workspaces/system",
+    "src/Akeneo/Platform/Bundle/UIBundle/Resources/workspaces/legacy-bridge",
+    "src/Akeneo/Platform/Bundle/UIBundle/Resources/workspaces/akeneo-design-system",
+    "src/Akeneo/Tool/Bundle/MeasureBundle/Resources/workspaces/measurement",
     "src/Akeneo/Pim/Enrichment/Bundle/Resources/workspaces/enrichment",
-    "src/Akeneo/Platform/Bundle/CatalogVolumeMonitoringBundle/front"
+    "src/Akeneo/Platform/Bundle/CatalogVolumeMonitoringBundle/front"    
   ]
 }

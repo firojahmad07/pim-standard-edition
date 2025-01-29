@@ -7,7 +7,7 @@ import {
   SubNavigationItem,
   SubNavigationPanel,
   useBooleanState,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useTranslate} from '@akeneo-pim-community/shared';
 import {MenuDropdown} from 'akeneoassetmanager/application/component/app/MenuDropdown';
 import {Tab} from 'akeneoassetmanager/application/configuration/sidebar';

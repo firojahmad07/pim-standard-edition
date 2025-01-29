@@ -4,7 +4,7 @@ import {render} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import {ThemeProvider} from 'styled-components';
 import {ApplicationDependenciesProvider} from './src/dependenciesTools';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {ConfigContext} from '../front/src/context/ConfigContext';
 import renderText from '../front/src/pages/EditRules/components/actions/attribute/TextValue';
 import renderTextArea from '../front/src/pages/EditRules/components/actions/attribute/TextAreaValue';

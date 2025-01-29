@@ -1,5 +1,5 @@
 import {ReactElement, ReactNode, useCallback, useState} from 'react';
-import {IconProps, MessageBarLevel, uuid} from 'akeneo-design-system';
+import {IconProps, MessageBarLevel, uuid} from '@akeneo-pim-community/akeneo-design-system';
 import {IdentifiableFlashMessage} from '../components';
 
 const useNotifications = () => {

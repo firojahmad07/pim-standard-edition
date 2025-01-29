@@ -1,6 +1,6 @@
 import React, {useEffect, useState, SyntheticEvent} from 'react';
 import styled from 'styled-components';
-import {Image} from 'akeneo-design-system';
+import {Image} from '@akeneo-pim-community/akeneo-design-system';
 import {getMediaPreviewUrl} from 'akeneoassetmanager/tools/media-url-generator';
 import {
   NormalizedMediaLinkAttribute,

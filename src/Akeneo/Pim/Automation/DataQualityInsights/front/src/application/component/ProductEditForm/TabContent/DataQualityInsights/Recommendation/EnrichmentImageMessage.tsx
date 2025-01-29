@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styled from 'styled-components';
 import {useTranslate} from '@akeneo-pim-community/shared';
-import {Link} from 'akeneo-design-system';
+import {Link} from '@akeneo-pim-community/akeneo-design-system';
 
 const LinkableMessage = styled(Link)`
   text-decoration: none;

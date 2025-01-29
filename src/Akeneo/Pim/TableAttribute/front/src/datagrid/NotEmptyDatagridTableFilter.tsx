@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Dropdown, SelectInput, useBooleanState} from 'akeneo-design-system';
+import {Button, Dropdown, SelectInput, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {AttributeCode, NotEmptyTableFilterValue, TableAttribute} from '../models';
 import {AttributeFetcher} from '../fetchers';
 import {getLabel, useRouter, useTranslate, useUserContext} from '@akeneo-pim-community/shared';

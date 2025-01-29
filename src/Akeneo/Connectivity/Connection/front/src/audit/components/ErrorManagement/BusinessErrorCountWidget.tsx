@@ -5,7 +5,7 @@ import {Loading} from '../../../common';
 import {useDashboardState} from '../../dashboard-context';
 import {useBusinessErrorCountPerConnection} from '../../hooks/api/use-business-error-count-per-connection';
 import {BusinessErrorCard} from './BusinessErrorCard';
-import {SectionTitle} from 'akeneo-design-system';
+import {SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter} from '../../../shared/router/use-router';
 import {useSessionStorageState} from '@akeneo-pim-community/shared';
 import {RouterContext} from '../../../shared/router';

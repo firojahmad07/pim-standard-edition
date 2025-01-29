@@ -1,5 +1,5 @@
 import React, {FC, useEffect} from 'react';
-import {Breadcrumb, Button, useBooleanState} from 'akeneo-design-system';
+import {Breadcrumb, Button, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {PageContent, PageHeader, PimView, useRouter, useSecurity, useTranslate} from '@akeneo-pim-community/shared';
 import {CategoryTreesDataGrid, EmptyCategoryTreeList} from '../../components';
 import {useCategoryTreeList} from '../../hooks';

@@ -1,5 +1,5 @@
 import React from 'react';
-import {SelectInput} from 'akeneo-design-system';
+import {SelectInput} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {DataType, FilterOperator, FilterValue} from '../models';
 import {ValuesFilterMapping} from './FilterValues';

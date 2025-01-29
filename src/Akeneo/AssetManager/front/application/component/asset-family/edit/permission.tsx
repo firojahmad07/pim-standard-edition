@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Button, Link, SectionTitle, UserGroupsIllustration} from 'akeneo-design-system';
+import {Button, Link, SectionTitle, UserGroupsIllustration} from '@akeneo-pim-community/akeneo-design-system';
 import {
   NoDataSection,
   NoDataText,

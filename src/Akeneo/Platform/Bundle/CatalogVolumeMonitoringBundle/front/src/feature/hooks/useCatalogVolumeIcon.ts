@@ -1,5 +1,5 @@
 import React from 'react';
-import {AkeneoIcon} from 'akeneo-design-system';
+import {AkeneoIcon} from '@akeneo-pim-community/akeneo-design-system';
 import {
   AddAttributeIcon,
   AssetCollectionIcon,
@@ -12,7 +12,7 @@ import {
   ProductModelIcon,
   ShopIcon,
   TagIcon,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 
 const iconsMapping: {[volumeName: string]: any} = {
   count_attributes: TagIcon,

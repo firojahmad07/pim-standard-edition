@@ -5,7 +5,7 @@ import {Connection as ConnectionModel} from '../../model/connection';
 import {WrongCredentialsCombinations} from '../../model/wrong-credentials-combinations';
 import {Translate} from '../../shared/translate';
 import {Connection} from './Connection';
-import {SectionTitle} from 'akeneo-design-system';
+import {SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 
 const Grid = styled.div`
     margin: 10px 0;

@@ -1,5 +1,5 @@
 import {TableRow, TableValue} from '../models';
-import {uuid} from 'akeneo-design-system';
+import {uuid} from '@akeneo-pim-community/akeneo-design-system';
 import {TableRowWithId, TableValueWithId} from './TableFieldApp';
 
 // As we can't have space, the 'unique id' can not be used as column

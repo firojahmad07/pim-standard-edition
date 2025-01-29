@@ -1,4 +1,4 @@
-import {Dropdown, EraseIcon, IconButton, SwitcherButton, useBooleanState} from 'akeneo-design-system';
+import {Dropdown, EraseIcon, IconButton, SwitcherButton, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {DateTime} from 'luxon';
 import React, {FC, useCallback} from 'react';
 import styled from 'styled-components';

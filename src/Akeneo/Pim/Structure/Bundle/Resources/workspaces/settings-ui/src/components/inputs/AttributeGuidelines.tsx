@@ -1,5 +1,5 @@
 import React from 'react';
-import {Field, TextAreaInput, LoaderIcon} from 'akeneo-design-system';
+import {Field, TextAreaInput, LoaderIcon} from '@akeneo-pim-community/akeneo-design-system';
 import {LocaleCode, LocaleSelector, Locale, useTranslate} from '@akeneo-pim-community/shared';
 import {Guidelines} from '../../models';
 import styled from 'styled-components';

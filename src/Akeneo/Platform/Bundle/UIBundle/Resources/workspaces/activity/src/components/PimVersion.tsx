@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {getColor} from 'akeneo-design-system';
-import {usePimVersion} from '../hooks';
+import {getColor} from '@akeneo-pim-community/akeneo-design-system';
+import {usePimVersion} from '../hooks/usePimVersion';
 import {useTranslate} from '@akeneo-pim-community/shared';
 
 const PimVersion = () => {

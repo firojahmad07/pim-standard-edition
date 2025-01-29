@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Button} from 'akeneo-design-system';
+import {Button} from '@akeneo-pim-community/akeneo-design-system';
 import {Translate} from '../../shared/translate';
 import {useRouter} from '../../shared/router/use-router';
 import {EventSubscription} from '../hooks/api/use-fetch-event-subscription';

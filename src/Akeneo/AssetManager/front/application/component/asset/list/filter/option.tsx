@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import styled from 'styled-components';
-import {Dropdown, MultiSelectInput, SwitcherButton, useBooleanState} from 'akeneo-design-system';
+import {Dropdown, MultiSelectInput, SwitcherButton, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate, getLabel} from '@akeneo-pim-community/shared';
 import {FilterView, FilterViewProps} from 'akeneoassetmanager/application/configuration/value';
 import {isOptionAttribute} from 'akeneoassetmanager/domain/model/attribute/type/option';

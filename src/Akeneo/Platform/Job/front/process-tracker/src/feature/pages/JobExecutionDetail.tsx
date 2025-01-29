@@ -21,7 +21,7 @@ import {
   LoaderIcon,
   MoreIcon,
   useBooleanState,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {Progress, SummaryTable, ShowProfile, StopJobAction, JobExecutionStatus} from '../components';
 import {getDownloadLinks, JobExecution} from '../models';
 import {useJobExecution} from '../hooks/useJobExecution';

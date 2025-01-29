@@ -2,7 +2,7 @@ import userEvent from '@testing-library/user-event';
 import React from 'react';
 import {renderWithProviders} from '../tests/utils';
 import {SecondaryActions} from './SecondaryActions';
-import {Dropdown} from 'akeneo-design-system';
+import {Dropdown} from '@akeneo-pim-community/akeneo-design-system';
 
 test('it should render secondary action dropdown', () => {
   const handleClick = jest.fn();

@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {ProgressBar} from 'akeneo-design-system';
+import {ProgressBar} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {ChannelsLocalesCompletenessRatios} from '../../models';

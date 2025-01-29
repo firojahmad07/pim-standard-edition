@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-import {AkeneoThemedProps, Checkbox, getColor, Locale, Search} from 'akeneo-design-system';
+import {AkeneoThemedProps, Checkbox, getColor, Locale, Search} from '@akeneo-pim-community/akeneo-design-system';
 import {TableInputValue} from './TableInputValue';
 import {ColumnCode, TableAttribute, TableRow, TableValue} from '../models';
 import {CopyContext, TemplateContext, Violations} from '../legacy/table-field';

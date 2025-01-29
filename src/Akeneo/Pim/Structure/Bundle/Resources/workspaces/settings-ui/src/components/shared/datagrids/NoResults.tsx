@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import styled from 'styled-components';
-import {NoResultsIllustration} from 'akeneo-design-system';
+import {NoResultsIllustration} from '@akeneo-pim-community/akeneo-design-system';
 
 const Container = styled.div`
   margin-top: 120px;

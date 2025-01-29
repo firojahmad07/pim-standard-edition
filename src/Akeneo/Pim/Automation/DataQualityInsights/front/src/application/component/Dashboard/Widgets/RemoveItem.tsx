@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {CloseIcon} from 'akeneo-design-system';
+import {CloseIcon} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 
 type Props = {

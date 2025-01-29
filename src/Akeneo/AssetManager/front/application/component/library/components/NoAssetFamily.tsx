@@ -1,5 +1,5 @@
 import {NoDataSection, NoDataText, NoDataTitle, useTranslate} from '@akeneo-pim-community/shared';
-import {AssetsIllustration, Information, Link} from 'akeneo-design-system';
+import {AssetsIllustration, Information, Link} from '@akeneo-pim-community/akeneo-design-system';
 import React from 'react';
 
 const NoAssetFamily = ({onCreateAssetFamily}: {onCreateAssetFamily: () => void}) => {

@@ -5,7 +5,7 @@ import {AttributeOptionsContext, useAttributeContext} from '../contexts';
 import {useSortedAttributeOptions} from '../hooks';
 import AutoOptionSorting from './AutoOptionSorting';
 import NewOptionPlaceholder from './NewOptionPlaceholder';
-import {Button, Search, SectionTitle, Table, useAutoFocus} from 'akeneo-design-system';
+import {Button, Search, SectionTitle, Table, useAutoFocus} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 import DeleteConfirmationModal from './DeleteConfirmationModal';
 import NoResultOnSearch from './NoResultOnSearch';

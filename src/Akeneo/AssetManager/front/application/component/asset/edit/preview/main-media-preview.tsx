@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {SectionTitle, useBooleanState} from 'akeneo-design-system';
+import {SectionTitle, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {Section, useTranslate, LocaleCode, ChannelCode} from '@akeneo-pim-community/shared';
 import EditionAsset, {getEditionAssetMediaData} from 'akeneoassetmanager/domain/model/asset/edition-asset';
 import {MediaPreview} from 'akeneoassetmanager/application/component/asset/edit/preview/media-preview';

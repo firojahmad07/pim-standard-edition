@@ -1,6 +1,6 @@
 import React, {FC, useRef} from 'react';
 import {VictoryAxis, VictoryChart, VictoryLine} from 'victory';
-import {useTheme} from 'akeneo-design-system';
+import {useTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {useGetDashboardChartScalingSizeRatio} from '../../../../infrastructure/hooks';
 

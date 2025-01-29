@@ -4,7 +4,7 @@ import {NotificationLevel, useNotify} from '../../../shared/notify';
 import {TranslateContext} from '../../../shared/translate';
 import {copyTextToClipboard} from '../../copy-text-to-clipboard';
 import {Credential} from './Credential';
-import {CopyIcon} from 'akeneo-design-system';
+import {CopyIcon} from '@akeneo-pim-community/akeneo-design-system';
 
 interface Props {
     label: string;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {LoaderIcon, Locale as LocaleWithFlag} from 'akeneo-design-system';
+import {LoaderIcon, Locale as LocaleWithFlag} from '@akeneo-pim-community/akeneo-design-system';
 import {Locale, LocaleCode, useIsMounted} from '@akeneo-pim-community/shared';
 const FetcherRegistry = require('pim/fetcher-registry');
 

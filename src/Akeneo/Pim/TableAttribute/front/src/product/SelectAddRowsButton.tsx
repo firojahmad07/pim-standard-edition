@@ -8,7 +8,7 @@ import {
   Placeholder,
   Search,
   useBooleanState,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import {getLabel, useSecurity, useTranslate, useUserContext} from '@akeneo-pim-community/shared';
 import {SelectOptionCode} from '../models';
 import styled from 'styled-components';

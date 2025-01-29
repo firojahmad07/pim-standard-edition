@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {AttributesIllustration, SectionTitle} from 'akeneo-design-system';
+import {AttributesIllustration, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {NoDataSection, NoDataTitle, Section, useTranslate} from '@akeneo-pim-community/shared';
 import {useJobExecutionTable} from '../hooks';
 import {LastExecutionTable} from '../components';

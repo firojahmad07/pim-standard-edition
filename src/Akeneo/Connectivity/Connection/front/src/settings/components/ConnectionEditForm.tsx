@@ -1,4 +1,4 @@
-import {Helper, SectionTitle} from 'akeneo-design-system';
+import {Helper, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {useFormikContext} from 'formik';
 import React from 'react';
 import styled from 'styled-components';

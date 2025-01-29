@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Field, TagInput} from 'akeneo-design-system';
+import {Button, Field, TagInput} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {useDictionaryState} from '../../../../infrastructure';

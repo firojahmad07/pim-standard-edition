@@ -6,7 +6,7 @@ define([
   'oro/error',
   'routing',
   'react',
-  'akeneo-design-system',
+  '@akeneo-pim-community/akeneo-design-system',
 ], function ($, __, Backbone, messenger, Error, Routing, React, {Link}) {
   return Backbone.View.extend({
     action: null,

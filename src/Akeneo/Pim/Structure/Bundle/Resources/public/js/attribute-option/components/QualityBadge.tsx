@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Badge} from 'akeneo-design-system';
+import {Badge} from '@akeneo-pim-community/akeneo-design-system';
 import {getQualityBadgeLevel} from '../helper/getQualityBadgeLevel';
 
 const translate = require('oro/translator');

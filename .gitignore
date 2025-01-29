@@ -37,7 +37,7 @@ cypress/screenshots
 
 # The "lib/" folder must be ignored here to not be taken into account when the DSM is extracted to its own repository.
 # See ".github/actions/extract/entrypoint.sh"
-front-packages/akeneo-design-system/lib
+front-packages/@akeneo-pim-community/akeneo-design-system
 
 ###> symfony/framework-bundle ###
 /.env.local

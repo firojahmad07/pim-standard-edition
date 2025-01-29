@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import styled from 'styled-components';
-import {SkeletonPlaceholder} from 'akeneo-design-system';
+import {SkeletonPlaceholder} from '@akeneo-pim-community/akeneo-design-system';
 
 const Container = styled.div`
   display: grid;

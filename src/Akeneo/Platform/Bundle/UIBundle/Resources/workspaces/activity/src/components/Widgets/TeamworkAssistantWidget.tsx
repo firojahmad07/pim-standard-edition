@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {getColor, Helper, Link, ProjectIllustration, SectionTitle} from 'akeneo-design-system';
+import {getColor, Helper, Link, ProjectIllustration, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 import {NoDataSection, NoDataText, useRouter, useTranslate} from '@akeneo-pim-community/shared';
 import {useGetProject, useGetProjectCompleteness} from '../../hooks';

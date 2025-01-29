@@ -1,7 +1,7 @@
 import BaseView = require('pimui/js/view/base');
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {ThemeProvider} from 'styled-components';
 import {AttributeSelector as InnerAttributeSelector} from '../jobs';
 import {AttributeCode, AttributeType} from '../models';

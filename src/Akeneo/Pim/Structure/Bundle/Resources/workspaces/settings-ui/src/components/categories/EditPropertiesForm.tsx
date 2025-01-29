@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {useSecurity, useTranslate} from '@akeneo-pim-community/shared';
 import {Category} from '../../models';
-import {Field, Helper, SectionTitle, TextInput} from 'akeneo-design-system';
+import {Field, Helper, SectionTitle, TextInput} from '@akeneo-pim-community/akeneo-design-system';
 import {EditCategoryForm} from '../../hooks';
 
 const FormContainer = styled.div`

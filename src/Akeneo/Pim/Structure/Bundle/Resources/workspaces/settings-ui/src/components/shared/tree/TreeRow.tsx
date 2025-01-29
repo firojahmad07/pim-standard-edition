@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import {AkeneoThemedProps, ArrowRightIcon, getColor} from 'akeneo-design-system';
+import {AkeneoThemedProps, ArrowRightIcon, getColor} from '@akeneo-pim-community/akeneo-design-system';
 import {PlaceholderPosition} from '../../../models';
 
 type TreeRowProps = {

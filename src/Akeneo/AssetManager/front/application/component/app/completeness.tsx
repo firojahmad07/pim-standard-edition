@@ -1,6 +1,6 @@
 import React from 'react';
 import Completeness from 'akeneoassetmanager/domain/model/asset/completeness';
-import {Badge} from 'akeneo-design-system';
+import {Badge} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 
 const getLevel = (completeness: Completeness) => {

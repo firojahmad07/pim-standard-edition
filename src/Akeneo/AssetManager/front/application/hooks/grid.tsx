@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import {Selection} from 'akeneo-design-system';
+import {Selection} from '@akeneo-pim-community/akeneo-design-system';
 import {ChannelCode, LocaleCode} from '@akeneo-pim-community/shared';
 import AssetFamilyIdentifier from 'akeneoassetmanager/domain/model/asset-family/identifier';
 import {Filter} from 'akeneoassetmanager/application/reducer/grid';

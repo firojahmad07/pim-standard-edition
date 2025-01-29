@@ -1,5 +1,5 @@
 import React from 'react';
-import {useBooleanState} from 'akeneo-design-system';
+import {useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter, useTranslate} from '@akeneo-pim-community/shared';
 import {DeleteModal} from './DeleteModal';
 

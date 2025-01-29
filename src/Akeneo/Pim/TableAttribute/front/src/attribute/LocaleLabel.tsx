@@ -1,5 +1,5 @@
 import React from 'react';
-import {LoaderIcon, Locale as LocaleWithFlag} from 'akeneo-design-system';
+import {LoaderIcon, Locale as LocaleWithFlag} from '@akeneo-pim-community/akeneo-design-system';
 import {Locale, LocaleCode, useIsMounted, useRouter} from '@akeneo-pim-community/shared';
 import {LocaleRepository} from '../repositories';
 

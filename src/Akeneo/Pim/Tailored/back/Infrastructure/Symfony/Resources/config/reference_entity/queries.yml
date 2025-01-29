@@ -1,0 +1,5 @@
+services:
+  Akeneo\Pim\Tailored\Domain\Query\FindRecordLabelsInterface:
+    class: Akeneo\Pim\Tailored\Infrastructure\Query\ReferenceEntity\FindRecordLabels
+    arguments:
+      - '@akeneo_referenceentity.infrastructure.persistence.query.enrich.find_records_labels_public_api'

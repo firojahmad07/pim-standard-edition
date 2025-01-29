@@ -1,5 +1,5 @@
 import React, {MouseEvent} from 'react';
-import {Table} from 'akeneo-design-system';
+import {Table} from '@akeneo-pim-community/akeneo-design-system';
 import {useDateFormatter, useRouter, useSecurity, useTranslate} from '@akeneo-pim-community/shared';
 import {JobExecutionRow, jobCanBeStopped, canShowJobExecutionDetail} from '../models';
 import {JobExecutionStatus, ProgressCell, StopJobAction} from './common';

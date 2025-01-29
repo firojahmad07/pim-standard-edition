@@ -2,7 +2,7 @@ import React, {FC, useContext, useEffect} from 'react';
 import {DraggedNode, ReorderOnDropHandler, TreeNode, useDropTreeNode} from '../../../../../src';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 import {ThemeProvider} from 'styled-components';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {renderHook} from '@testing-library/react-hooks';
 import {
   OrderableTreeContext,

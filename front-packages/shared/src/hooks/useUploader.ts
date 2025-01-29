@@ -1,4 +1,4 @@
-import {FileInfo, useBooleanState} from 'akeneo-design-system';
+import {FileInfo, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {useRouter} from './useRouter';
 import {useCallback} from 'react';
 

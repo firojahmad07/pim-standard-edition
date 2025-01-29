@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {CloseIcon, getColor, getFontSize, IconButton, SelectInput, List, useId} from 'akeneo-design-system';
+import {CloseIcon, getColor, getFontSize, IconButton, SelectInput, List, useId} from '@akeneo-pim-community/akeneo-design-system';
 import {
   getErrorsForPath,
   useTranslate,

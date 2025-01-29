@@ -7,7 +7,7 @@ import {Translate, TranslateContext} from '../../shared/translate';
 import {useImageUploader} from '../use-image-uploader';
 import {useMediaUrlGenerator} from '../use-media-url-generator';
 import {Loading} from './Loading';
-import {DeleteIcon} from 'akeneo-design-system';
+import {DeleteIcon} from '@akeneo-pim-community/akeneo-design-system';
 
 interface Props {
     image: string | null;

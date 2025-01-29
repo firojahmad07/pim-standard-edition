@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {renderHook, act} from '@testing-library/react-hooks';
 import {ThemeProvider} from 'styled-components';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 import {
   BackendCategoryTree,

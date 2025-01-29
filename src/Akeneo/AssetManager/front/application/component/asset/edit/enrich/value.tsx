@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Field, Helper} from 'akeneo-design-system';
+import {Field, Helper} from '@akeneo-pim-community/akeneo-design-system';
 import {ValidationError, useTranslate} from '@akeneo-pim-community/shared';
 import LocaleReference, {
   localeReferenceAreEqual,

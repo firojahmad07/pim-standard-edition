@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
 import {useHistory, useParams} from 'react-router';
-import {Modal, AppIllustration, Button, getColor, getFontSize} from 'akeneo-design-system';
+import {Modal, AppIllustration, Button, getColor, getFontSize} from '@akeneo-pim-community/akeneo-design-system';
 import styled from '../../common/styled-with-theme';
 import {useTranslate} from '../../shared/translate';
 import {useDeleteApp} from '../hooks/use-delete-app';

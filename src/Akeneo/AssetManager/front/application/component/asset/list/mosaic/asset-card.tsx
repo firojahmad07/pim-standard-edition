@@ -10,7 +10,7 @@ import AssetCode from 'akeneoassetmanager/domain/model/asset/code';
 import loadImage from 'akeneoassetmanager/tools/image-loader';
 import {useRegenerate} from 'akeneoassetmanager/application/hooks/regenerate';
 import {emptyMediaPreview} from 'akeneoassetmanager/domain/model/asset/media-preview';
-import {Card, Link} from 'akeneo-design-system';
+import {Card, Link} from '@akeneo-pim-community/akeneo-design-system';
 import {CompletenessBadge} from 'akeneoassetmanager/application/component/app/completeness';
 import Completeness from 'akeneoassetmanager/domain/model/asset/completeness';
 import {useRouter} from '@akeneo-pim-community/shared';

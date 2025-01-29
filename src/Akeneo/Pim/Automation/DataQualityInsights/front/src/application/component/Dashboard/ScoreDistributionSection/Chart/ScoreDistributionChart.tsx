@@ -2,7 +2,7 @@ import React, {FC, useEffect, useRef, useState} from 'react';
 import {VictoryAxis, VictoryBar, VictoryChart, VictoryStack, VictoryTooltip} from 'victory';
 import {useGetDashboardChartScalingSizeRatio} from '../../../../../infrastructure/hooks';
 import {Tooltip} from './Tooltip';
-import {useTheme} from 'akeneo-design-system';
+import {useTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {ScoreDistributionChartDataset} from '../../../../../domain';
 
 const INITIAL_CHART_WIDTH = 481;

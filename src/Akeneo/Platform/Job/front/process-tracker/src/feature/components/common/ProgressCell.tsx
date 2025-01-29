@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {ProgressBar, Table} from 'akeneo-design-system';
+import {ProgressBar, Table} from '@akeneo-pim-community/akeneo-design-system';
 import {
   JobExecutionRow,
   getStepExecutionRowTrackingLevel,

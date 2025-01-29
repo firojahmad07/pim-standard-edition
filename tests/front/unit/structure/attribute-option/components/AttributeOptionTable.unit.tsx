@@ -14,7 +14,7 @@ import {
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 import {AttributeContextProvider} from 'akeneopimstructure/js/attribute-option/contexts';
 import {AttributeOption} from '../../../../../../src/Akeneo/Pim/Structure/Bundle/Resources/public/js/attribute-option/model';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {ThemeProvider} from 'styled-components';
 import AttributeOptionTable from '../../../../../../src/Akeneo/Pim/Structure/Bundle/Resources/public/js/attribute-option/components/AttributeOptionTable';
 import {

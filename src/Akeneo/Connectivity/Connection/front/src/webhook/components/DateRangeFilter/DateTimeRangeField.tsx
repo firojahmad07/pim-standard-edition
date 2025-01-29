@@ -1,4 +1,4 @@
-import {Field} from 'akeneo-design-system';
+import {Field} from '@akeneo-pim-community/akeneo-design-system';
 import React, {FC} from 'react';
 import styled from 'styled-components';
 import {useTranslate} from '../../../shared/translate';

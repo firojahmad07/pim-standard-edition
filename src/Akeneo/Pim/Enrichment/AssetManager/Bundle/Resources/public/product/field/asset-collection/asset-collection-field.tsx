@@ -9,7 +9,7 @@ import {denormalizeLocaleReference} from 'akeneoassetmanager/domain/model/locale
 import {denormalizeAssetFamilyIdentifier} from 'akeneoassetmanager/domain/model/asset-family/identifier';
 import {getMissingRequiredFields} from 'pimui/js/provider/to-fill-field-provider';
 import {ThemeProvider} from 'styled-components';
-import {Helper, pimTheme} from 'akeneo-design-system';
+import {Helper, pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
 
 const Field = require('pim/field');

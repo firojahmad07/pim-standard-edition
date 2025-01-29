@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {Button, ProductsIllustration, Modal, useAutoFocus, useBooleanState} from 'akeneo-design-system';
+import {Button, ProductsIllustration, Modal, useAutoFocus, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {
   filterErrors,
   TextField,

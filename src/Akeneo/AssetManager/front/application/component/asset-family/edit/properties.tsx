@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Button, Dropdown, IconButton, MoreIcon, SectionTitle, useBooleanState} from 'akeneo-design-system';
+import {Button, Dropdown, IconButton, MoreIcon, SectionTitle, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 import {
   useTranslate,
   DeleteModal,

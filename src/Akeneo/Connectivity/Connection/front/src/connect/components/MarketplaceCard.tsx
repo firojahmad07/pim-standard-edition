@@ -1,7 +1,7 @@
 import React, {FC, ReactNode} from 'react';
 import styled from 'styled-components';
 import certifiedIcon from '../../common/assets/icons/certified.svg';
-import {getColor, getFontSize, Button, Link} from 'akeneo-design-system';
+import {getColor, getFontSize, Button, Link} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../../shared/translate';
 import {Extension} from '../../model/extension';
 import {App} from '../../model/app';

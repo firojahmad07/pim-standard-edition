@@ -1,5 +1,5 @@
 import React from 'react';
-import {Badge} from 'akeneo-design-system';
+import {Badge} from '@akeneo-pim-community/akeneo-design-system';
 import {Translate, useTranslate} from '@akeneo-pim-community/shared';
 import {ProductType, PRODUCT_TYPE} from 'akeneoreferenceentity/domain/model/product/product';
 import Completeness from 'akeneoreferenceentity/domain/model/product/completeness';

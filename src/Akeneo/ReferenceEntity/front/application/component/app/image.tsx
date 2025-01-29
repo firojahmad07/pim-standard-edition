@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {FlattenSimpleInterpolation} from 'styled-components';
-import {DeleteIcon, DownloadIcon, ImportIllustration, pimTheme, Key} from 'akeneo-design-system';
+import {DeleteIcon, DownloadIcon, ImportIllustration, pimTheme, Key} from '@akeneo-pim-community/akeneo-design-system';
 import FileModel from 'akeneoreferenceentity/domain/model/file';
 import {getImageShowUrl, getImageDownloadUrl} from 'akeneoreferenceentity/tools/media-url-generator';
 import imageUploader from 'akeneoreferenceentity/infrastructure/uploader/image';

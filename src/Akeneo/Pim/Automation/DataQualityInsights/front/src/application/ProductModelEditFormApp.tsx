@@ -18,7 +18,7 @@ import {
 import {fetchProductModelEvaluation} from '@akeneo-pim-community/data-quality-insights/src';
 import fetchProductModel from '@akeneo-pim-community/data-quality-insights/src/infrastructure/fetcher/ProductEditForm/fetchProductModel';
 import {ThemeProvider} from 'styled-components';
-import {EditIcon, pimTheme, SettingsIcon} from 'akeneo-design-system';
+import {EditIcon, pimTheme, SettingsIcon} from '@akeneo-pim-community/akeneo-design-system';
 import {
   checkFollowingAttributeOptionSpellingCriterionActive,
   checkFollowingAttributeSpellingCriterionActive,

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {useTranslate} from '../../../dependenciesTools/hooks';
-import {getFontFamily} from 'akeneo-design-system';
+import {getFontFamily} from '@akeneo-pim-community/akeneo-design-system';
 
 const PreviewBlock = styled.div`
   background-color: black;

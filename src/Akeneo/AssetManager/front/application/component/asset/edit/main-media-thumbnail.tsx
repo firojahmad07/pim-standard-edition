@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Image} from 'akeneo-design-system';
+import {Image} from '@akeneo-pim-community/akeneo-design-system';
 import {ChannelCode, LocaleCode, useRouter, useTranslate} from '@akeneo-pim-community/shared';
 import EditionAsset, {
   getEditionAssetLabel,

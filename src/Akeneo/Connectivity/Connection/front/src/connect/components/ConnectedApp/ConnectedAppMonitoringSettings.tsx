@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import styled from 'styled-components';
-import {Field, Helper, SectionTitle} from 'akeneo-design-system';
+import {Field, Helper, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {Translate, useTranslate} from '../../../shared/translate';
 import {FlowType} from '../../../model/flow-type.enum';
 import {FlowTypeSelect} from '../../../settings/components/FlowTypeSelect';

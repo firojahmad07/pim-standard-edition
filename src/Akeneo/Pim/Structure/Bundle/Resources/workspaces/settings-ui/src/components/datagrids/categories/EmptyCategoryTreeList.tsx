@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {getColor, getFontSize, Link, ProductCategoryIllustration} from 'akeneo-design-system';
+import {getColor, getFontSize, Link, ProductCategoryIllustration} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '@akeneo-pim-community/shared';
 
 const Container = styled.div`

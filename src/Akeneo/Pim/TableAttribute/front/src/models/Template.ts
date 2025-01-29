@@ -6,7 +6,7 @@ import {
   IconProps,
   ProductDimensionsIcon,
   TableIcon,
-} from 'akeneo-design-system';
+} from '@akeneo-pim-community/akeneo-design-system';
 import React from 'react';
 
 export type TemplateCode = string;

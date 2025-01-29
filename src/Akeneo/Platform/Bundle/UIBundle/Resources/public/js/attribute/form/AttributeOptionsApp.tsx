@@ -8,7 +8,7 @@ import {
 import AttributeOptions from 'akeneopimstructure/js/attribute-option/components/AttributeOptions';
 import OverridePimStyle from 'akeneopimstructure/js/attribute-option/components/OverridePimStyles';
 import {ThemeProvider} from 'styled-components';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {fetchSpellcheckEvaluation} from '@akeneo-pim-community/data-quality-insights';
 
 interface IndexProps {

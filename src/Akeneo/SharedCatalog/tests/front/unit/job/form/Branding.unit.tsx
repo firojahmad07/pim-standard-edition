@@ -4,7 +4,7 @@ import {useFeatureFlags, renderWithProviders} from '@akeneo-pim-community/shared
 import {Branding} from 'akeneosharedcatalog/job/form/Branding';
 
 let mockedActivatedFeatureFlag = ['new_shared_catalog_branding'];
-jest.mock('@akeneo-pim-community/shared/lib/hooks/useFeatureFlags', () => ({
+jest.mock('@akeneo-pim-community/shared/hooks/useFeatureFlags', () => ({
   useFeatureFlags: () => ({
     isEnabled: (featureFlag: string) => mockedActivatedFeatureFlag.includes(featureFlag),
   }),

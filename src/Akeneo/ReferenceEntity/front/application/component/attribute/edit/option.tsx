@@ -24,7 +24,7 @@ import {getErrorsView} from 'akeneoreferenceentity/application/component/app/val
 import {NormalizedAttribute} from 'akeneoreferenceentity/domain/model/attribute/attribute';
 import Flag from 'akeneoreferenceentity/tools/component/flag';
 import {NormalizedReferenceEntity} from 'akeneoreferenceentity/domain/model/reference-entity/reference-entity';
-import {CloseIcon, pimTheme, Key, Button} from 'akeneo-design-system';
+import {CloseIcon, pimTheme, Key, Button} from '@akeneo-pim-community/akeneo-design-system';
 
 const securityContext = require('pim/security-context');
 

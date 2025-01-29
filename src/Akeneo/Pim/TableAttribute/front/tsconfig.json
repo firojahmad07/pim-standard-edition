@@ -20,9 +20,9 @@
         "strictFunctionTypes": true,
         "strictNullChecks": true,
         "strictPropertyInitialization": true,
-        "suppressImplicitAnyIndexErrors": true,
         "target": "es5"
     },
     "include": [
-      "./src", "./custom.d.ts", "./__tests__"]
+        "./src", "./custom.d.ts", "./__tests__"
+    ]
 }

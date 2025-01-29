@@ -4,7 +4,7 @@ import {AttributeContextProvider, AttributeOptionsContextProvider, LocalesContex
 import AttributeOptions from './components/AttributeOptions';
 import OverridePimStyle from './components/OverridePimStyles';
 import {ThemeProvider} from 'styled-components';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 
 interface IndexProps {
   attributeId: number;

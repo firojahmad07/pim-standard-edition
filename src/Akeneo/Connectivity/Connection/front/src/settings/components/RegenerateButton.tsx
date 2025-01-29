@@ -1,7 +1,7 @@
 import React, {FC, useContext} from 'react';
 import {IconButton} from '../../common';
 import {TranslateContext} from '../../shared/translate';
-import {RefreshIcon} from 'akeneo-design-system';
+import {RefreshIcon} from '@akeneo-pim-community/akeneo-design-system';
 
 interface Props {
     onClick: () => void;

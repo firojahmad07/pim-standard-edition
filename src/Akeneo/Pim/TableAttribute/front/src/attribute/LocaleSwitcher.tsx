@@ -1,6 +1,6 @@
 import React from 'react';
 import {Locale, LocaleCode, useTranslate} from '@akeneo-pim-community/shared';
-import {Dropdown, Locale as LocaleFlag, SwitcherButton, useBooleanState} from 'akeneo-design-system';
+import {Dropdown, Locale as LocaleFlag, SwitcherButton, useBooleanState} from '@akeneo-pim-community/akeneo-design-system';
 
 type LocaleSwitcherProps = {
   locales: Locale[];

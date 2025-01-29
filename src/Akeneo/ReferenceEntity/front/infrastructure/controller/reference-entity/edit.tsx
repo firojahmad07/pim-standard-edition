@@ -37,7 +37,7 @@ import {restoreFilters} from 'akeneoreferenceentity/application/action/record/se
 import {gridStateStoragePath} from 'akeneoreferenceentity/infrastructure/middleware/grid';
 import {ThemeProvider} from 'styled-components';
 import {DependenciesProvider} from '@akeneo-pim-community/legacy-bridge';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 const BaseController = require('pim/controller/base');
 const mediator = require('oro/mediator');
 const userContext = require('pim/user-context');

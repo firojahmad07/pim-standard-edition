@@ -1,7 +1,7 @@
 import React from 'react';
 import {useTranslate} from '@akeneo-pim-community/shared';
 import {useAttributeContext} from '../contexts';
-import {BooleanInput, Field} from 'akeneo-design-system';
+import {BooleanInput, Field} from '@akeneo-pim-community/akeneo-design-system';
 import styled from 'styled-components';
 
 type AutoOptionSortingProps = {

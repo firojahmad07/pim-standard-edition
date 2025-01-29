@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import styled from 'styled-components';
-import {getColor, getFontSize, Link, CheckRoundIcon} from 'akeneo-design-system';
+import {getColor, getFontSize, Link, CheckRoundIcon} from '@akeneo-pim-community/akeneo-design-system';
 import {useTranslate} from '../../../shared/translate';
 import {ScopeList} from '../ScopeList';
 import ScopeMessage from '../../../model/Apps/scope-message';

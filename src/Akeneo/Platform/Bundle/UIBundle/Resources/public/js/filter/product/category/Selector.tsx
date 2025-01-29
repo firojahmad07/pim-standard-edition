@@ -10,8 +10,8 @@ import {
   ParentCategoryTree,
 } from '@akeneo-pim-community/shared';
 import styled, {ThemeProvider} from 'styled-components';
-import {pimTheme} from 'akeneo-design-system';
-import {Tree} from 'akeneo-design-system/lib';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
+import {Tree} from '@akeneo-pim-community/akeneo-design-system';
 import {CategoryResponse, parseResponse} from '../../../CategoryTreeFetcher';
 const UserContext = require('pim/user-context');
 const __ = require('oro/translator');

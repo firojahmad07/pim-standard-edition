@@ -1,5 +1,6 @@
 import BaseView = require('pimui/js/view/base');
-import {JobInstanceDetail, JobInstanceDetailProps} from '@akeneo-pim-community/process-tracker';
+
+import {JobInstanceDetail, JobInstanceDetailProps} from '@akeneo-pim-community/process-tracker/src';
 
 class JobInstance extends BaseView {
   /**
@@ -14,4 +15,4 @@ class JobInstance extends BaseView {
   }
 }
 
-export = JobInstance;
+export default JobInstance;

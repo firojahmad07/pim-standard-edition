@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {ClientErrorIllustration, getColor, getFontFamily, getFontSize} from 'akeneo-design-system';
+import {ClientErrorIllustration, getColor, getFontFamily, getFontSize} from '@akeneo-pim-community/akeneo-design-system';
 
 type CatalogVolumeScreenErrorProps = {
   title: string;

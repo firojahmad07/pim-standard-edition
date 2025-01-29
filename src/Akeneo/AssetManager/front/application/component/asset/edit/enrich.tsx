@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-import {getColor, SectionTitle} from 'akeneo-design-system';
+import {getColor, SectionTitle} from '@akeneo-pim-community/akeneo-design-system';
 import {Section, useSecurity, useTranslate} from '@akeneo-pim-community/shared';
 import {EditState} from 'akeneoassetmanager/application/reducer/asset/edit';
 import {assetValueUpdated, saveAsset} from 'akeneoassetmanager/application/action/asset/edit';

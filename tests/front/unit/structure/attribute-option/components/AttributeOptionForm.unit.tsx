@@ -3,7 +3,7 @@ import {fireEvent, render} from '@testing-library/react';
 
 import AttributeOptionForm from 'akeneopimstructure/js/attribute-option/components/AttributeOptionForm';
 import {EditingOptionContext} from 'akeneopimstructure/js/attribute-option/contexts/EditingOptionContext';
-import {pimTheme} from 'akeneo-design-system';
+import {pimTheme} from '@akeneo-pim-community/akeneo-design-system';
 import {ThemeProvider} from 'styled-components';
 
 describe('AttributeOptionForm', () => {
