@@ -30,4 +30,4 @@ class PimEnterpriseDashboardController extends ReactController {
   }
 }
 
-export = PimEnterpriseDashboardController;
+export default PimEnterpriseDashboardController;

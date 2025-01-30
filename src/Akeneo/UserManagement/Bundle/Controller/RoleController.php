@@ -23,19 +23,23 @@ class RoleController extends AbstractController
     private AclSidManager $aclSidManager;
     private AclRoleHandler $aclRoleHandler;
     private TranslatorInterface $translator;
+    protected $privilegesConfig;
 
+        
     public function __construct(
         RoleRepositoryInterface $roleRepository,
         RemoverInterface $remover,
         AclSidManager $aclSidManager,
         AclRoleHandler $aclRoleHandler,
-        TranslatorInterface $translator
+        TranslatorInterface $translator,
+        $privilegesConfig
     ) {
         $this->roleRepository = $roleRepository;
         $this->remover = $remover;
         $this->aclSidManager = $aclSidManager;
         $this->aclRoleHandler = $aclRoleHandler;
         $this->translator = $translator;
+        $this->privilegesConfig = $privilegesConfig;
     }
 
     /**
@@ -53,6 +57,7 @@ class RoleController extends AbstractController
      */
     public function update(Role $entity)
     {
+
         return $this->updateUser($entity);
     }
 
@@ -95,7 +100,7 @@ class RoleController extends AbstractController
     {
         $this->aclRoleHandler->createForm($entity);
 
-        if ($this->aclRoleHandler->process($entity)) {
+        if ($this->aclRoleHandler->process($entity) === true) {
             $this->addFlash(
                 'success',
                 $this->translator->trans('pim_user.controller.role.message.saved')
@@ -108,7 +113,7 @@ class RoleController extends AbstractController
 
         return [
             'form' => $this->aclRoleHandler->createView(),
-            'privilegesConfig' => $this->container->getParameter('pim_user.privileges'),
+            'privilegesConfig' => $this->privilegesConfig,
         ];
     }
 }

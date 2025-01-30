@@ -8,6 +8,7 @@ use Akeneo\UserManagement\Component\Model\Role;
 use Akeneo\UserManagement\Component\Model\UserInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Persistence\ObjectManager;
+use Exception;
 use Oro\Bundle\SecurityBundle\Acl\Persistence\AclManager;
 use Oro\Bundle\SecurityBundle\Acl\Persistence\AclPrivilegeRepository;
 use Symfony\Component\Form\FormFactory;
@@ -146,7 +147,6 @@ class AclRoleHandler
     {
         /** @var ArrayCollection $privileges */
         $privileges = $this->aclManager->getPrivilegeRepository()->getPrivileges($this->aclManager->getSid($role));
-
         foreach ($this->privilegeConfig as $fieldName => $config) {
             $sortedPrivileges = $this->filterPrivileges($privileges, $config['types']);
             if (!$config['show_default']) {
@@ -157,7 +157,6 @@ class AclRoleHandler
                     }
                 }
             }
-
             $this->form->get($fieldName)->setData($sortedPrivileges);
         }
     }

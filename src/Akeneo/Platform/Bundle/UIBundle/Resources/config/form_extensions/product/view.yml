@@ -44,7 +44,7 @@ extensions:
         position: 5
         targetZone: column
         config:
-          stateCode: product_edit_form
+            stateCode: product_edit_form
 
     pimee-product-edit-form-column-navigation:
         module: pim/form/common/column-tabs-navigation
@@ -218,15 +218,15 @@ extensions:
         config:
             entity: pim_enrich.entity.product.label
 
-    pimee-product-view-form-categories:
-        module: pimee/product-edit-form/categories
-        parent: pimee-product-view-column-tabs
-        targetZone: container
-        aclResourceId: pim_enrich_product_categories_view
-        position: 100
-        config:
-            itemCategoryListRoute: pim_enrich_product_listcategories
-            itemCategoryTreeRoute: pim_enrich_product_category_rest_list
+    # pimee-product-view-form-categories:
+    #     module: pimee/product-edit-form/categories
+    #     parent: pimee-product-view-column-tabs
+    #     targetZone: container
+    #     aclResourceId: pim_enrich_product_categories_view
+    #     position: 100
+    #     config:
+    #         itemCategoryListRoute: pim_enrich_product_listcategories
+    #         itemCategoryTreeRoute: pim_enrich_product_category_rest_list
 
     pimee-product-view-associations:
         module: pimee/product-edit-form/associations

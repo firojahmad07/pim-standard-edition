@@ -7,10 +7,11 @@ import {SettingsIndex} from '@akeneo-pim-community/settings-ui';
 
 const mediator = require('oro/mediator');
 
-class DashboardController extends ReactController {
+class SettingsController extends ReactController {
   reactElementToMount() {
     return (
       <DependenciesProvider>
+        {/* @ts-ignore */}
         <ThemeProvider theme={pimTheme}>
           <SettingsIndex />
         </ThemeProvider>
@@ -30,4 +31,4 @@ class DashboardController extends ReactController {
   }
 }
 
-export = DashboardController;
+export default SettingsController;

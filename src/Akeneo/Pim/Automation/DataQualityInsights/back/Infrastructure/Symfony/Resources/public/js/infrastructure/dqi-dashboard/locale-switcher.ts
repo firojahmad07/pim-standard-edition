@@ -35,10 +35,10 @@ class LocaleSwitcher extends BaseForm {
       this.fetchLocales().then((locales: Locale[]) => {
         this.locales = locales;
         const currentLocaleCode = UserContext.get('catalogLocale');
-        let currentLocale = this.locales.find((locale: Locale) => locale.code === currentLocaleCode);
+        var currentLocale = this.locales.find((locale: Locale) => locale.code === currentLocaleCode);
         if (undefined === currentLocale) {
-          [currentLocale] = this.locales;
-          UserContext.set('catalogLocale', currentLocale.code);
+          currentLocale = _.first(this.locales);
+          UserContext.set('catalogLocale', (undefined === currentLocale) ? currentLocaleCode : currentLocale.code);
         }
       })
     );
@@ -76,4 +76,4 @@ class LocaleSwitcher extends BaseForm {
   }
 }
 
-export = LocaleSwitcher;
+export default LocaleSwitcher;

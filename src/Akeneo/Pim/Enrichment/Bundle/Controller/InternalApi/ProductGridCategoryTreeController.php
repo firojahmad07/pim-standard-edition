@@ -89,6 +89,7 @@ class ProductGridCategoryTreeController
             $user->getId(),
             $translationLocale->getCode()
         );
+        dump("we are here",__class__, __LINE__);die;
         $rootCategories = $this->listRootCategoriesWithCount->handle($query);
         $normalizedData = $this->rootCategoryNormalizer->normalizeList($rootCategories);
 

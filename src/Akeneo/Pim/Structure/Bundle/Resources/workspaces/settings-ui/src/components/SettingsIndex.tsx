@@ -320,18 +320,6 @@ const SettingsIndex = () => {
                     )}
                   />
                 )}
-                {featureFlags.isEnabled('free_trial') && (
-                  <DisableIconCard
-                    id="pim-enrich-rule"
-                    icon={
-                      <LockIconContainer>
-                        <LockIcon size={16} color={theme.color.blue100} />
-                      </LockIconContainer>
-                    }
-                    label={translate('free_trial.menu.rules')}
-                    content={translate('free_trial.menu.feature_ee_only')}
-                  />
-                )}
               </IconCardGrid>
             </SectionContent>
           </>
@@ -340,20 +328,6 @@ const SettingsIndex = () => {
     </>
   );
 };
-
-const DisableIconCard = styled(IconCard)`
-  cursor: pointer;
-  border: 1px rgba(240, 241, 243, 0.5) solid;
-
-  :hover {
-    background: #fff;
-    border: 1px rgba(240, 241, 243, 0.5) solid;
-  }
-
-  > *:not(:first-child) {
-    opacity: 0.5;
-  }
-`;
 
 const LockIconContainer = styled.div`
   border: 1px solid #4ca8e0;

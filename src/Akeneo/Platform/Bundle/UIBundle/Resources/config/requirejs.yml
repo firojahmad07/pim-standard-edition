@@ -619,9 +619,11 @@ config:
     pim/controller/attribute/create:       pimui/js/controller/attribute/create
     pim/controller/mass-edit:              pimui/js/controller/mass-edit
     pim/controller/logout:                 pimui/js/controller/logout
-    pim/controller/locales/index:          akeneopimstructure/js/controller/LocalesSettings
-    pim/controller/dashboard:              pimui/js/controller/dashboard.tsx
+    # pim/controller/locales/index:          akeneopimstructure/js/controller/LocalesSettings
+    # pim/controller/dashboard:              pimui/js/controller/dashboard.tsx
     pim/controller/settings:               pimui/js/controller/settings.tsx
+    # pim/controller/settings:               pimui/js/controller/settings.tsx
+
     pim/controller/system-index:           pimui/js/controller/system-index.tsx
     pim/controller/categories/index:       akeneopimstructure/js/controller/CategoriesSettings
 
@@ -771,7 +773,7 @@ config:
     pim/product-edit-form/categories:                        pimui/js/product/form/categories
     pim/product-edit-form/associations:                      pimui/js/product/form/associations
     pim/product-edit-form/associated-product-row:            pimui/js/product/form/associated-product-row
-    pim/product-edit-form/associated-product-row-view:       pimui/js/product/form/associated-product-row-view
+    # pim/product-edit-form/associated-product-row-view:       pimui/js/product/form/associated-product-row-view
     pim/product-edit-form/locale-switcher:                   pimui/js/product/form/locale-switcher
     pim/product-edit-form/scope-switcher:                    pimui/js/product/form/scope-switcher
     pim/product-edit-form/completeness:                      pimui/js/product/form/completeness
@@ -922,7 +924,7 @@ config:
     pim/group-edit-form/save:                   pimui/js/group/form/save
 
     # Attribute
-    pim/attribute-edit-form/tab/choices:                    pimui/js/attribute/form/choices.tsx
+    # pim/attribute-edit-form/tab/choices:                    pimui/js/attribute/form/choices.tsx
     pim/attribute-edit-form/choices/options-grid:           pimui/js/attribute/form/choices/options-grid
     pim/attribute-edit-form/save-form:                      pimui/js/attribute/form/save
     pim/attribute-edit-form/delete:                         pimui/js/attribute/form/delete

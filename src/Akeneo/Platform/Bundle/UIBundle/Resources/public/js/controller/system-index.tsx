@@ -11,6 +11,7 @@ class SystemIndexController extends ReactController {
   reactElementToMount() {
     return (
       <DependenciesProvider>
+        {/* @ts-ignore */}
         <ThemeProvider theme={pimTheme}>
           <SystemIndex />
         </ThemeProvider>
@@ -30,4 +31,4 @@ class SystemIndexController extends ReactController {
   }
 }
 
-export = SystemIndexController;
+export default SystemIndexController;

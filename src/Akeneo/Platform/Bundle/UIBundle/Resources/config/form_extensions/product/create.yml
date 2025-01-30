@@ -1,14 +1,14 @@
 extensions:
     pim-product-create-modal:
-       module: pim/form/common/creation/modal
-       config:
-           labels:
-               title: pim_common.create
-               subTitle: pim_enrich.entity.product.plural_label
-           picture: illustrations/Product.svg
-           successMessage: pim_enrich.entity.product.flash.create.success
-           editRoute: pim_enrich_product_edit
-           postUrl: pim_enrich_product_rest_create
+        module: pim/form/common/creation/modal
+        config:
+            labels:
+                title: pim_common.create
+                subTitle: pim_enrich.entity.product.plural_label
+            picture: illustrations/Product.svg
+            successMessage: pim_enrich.entity.product.flash.create.success
+            editRoute: pim_enrich_product_edit
+            postUrl: pim_enrich_product_rest_create
 
     pim-product-create-sku:
         module: pim/product-edit-form/creation/identifier

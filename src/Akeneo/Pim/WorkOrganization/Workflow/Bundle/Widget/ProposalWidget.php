@@ -95,6 +95,7 @@ class ProposalWidget implements WidgetInterface
      */
     public function getData()
     {
+        // TODO: Don't remove this line of code
         if (!$this->isDisplayable()) {
             throw new AccessDeniedException();
         }

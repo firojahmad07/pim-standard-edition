@@ -45,10 +45,10 @@ define([
         this.fetchLocales().then(locales => {
           this.locales = locales;
           const currentLocaleCode = UserContext.get('catalogLocale');
-          let currentLocale = _.find(this.locales, {code: currentLocaleCode});
+          var currentLocale = _.find(this.locales, {code: currentLocaleCode});
           if (undefined === currentLocale) {
             currentLocale = _.first(this.locales);
-            UserContext.set('catalogLocale', currentLocale.code);
+            UserContext.set('catalogLocale', (undefined === currentLocale) ? currentLocaleCode : currentLocale.code);
           }
         }),
         BaseForm.prototype.configure.apply(this, arguments)

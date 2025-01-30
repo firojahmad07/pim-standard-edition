@@ -1,16 +1,16 @@
 extensions:
     pim-product-model-create-modal:
-       module: pim/form/common/creation/modal
-       config:
-           labels:
-               title: pim_enrich.entity.product_model.module.create.title
-               subTitle: pim_enrich.entity.product.plural_label
-               content: pim_enrich.entity.product_model.module.create.content
-           picture: illustrations/Product-model.svg
-           successMessage: pim_enrich.entity.product_model.flash.create.success
-           editRoute: pim_enrich_product_model_edit
-           postUrl: pim_enrich_product_model_rest_create
-           excludedProperties: [ family ]
+        module: pim/form/common/creation/modal
+        config:
+            labels:
+                title: pim_enrich.entity.product_model.module.create.title
+                subTitle: pim_enrich.entity.product.plural_label
+                content: pim_enrich.entity.product_model.module.create.content
+            picture: illustrations/Product-model.svg
+            successMessage: pim_enrich.entity.product_model.flash.create.success
+            editRoute: pim_enrich_product_model_edit
+            postUrl: pim_enrich_product_model_rest_create
+            excludedProperties: [ family ]
 
     pim-product-model-create-sku:
         module: pim/form/common/creation/field

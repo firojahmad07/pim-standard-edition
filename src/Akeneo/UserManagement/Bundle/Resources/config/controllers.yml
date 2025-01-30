@@ -83,6 +83,7 @@ services:
             - '@oro_security.acl.sid_manager'
             - '@pim_user.form.handler.acl_role'
             - '@translator'
+            - '%pim_user.privileges%'
         calls:
             - [ 'setContainer', [ '@service_container' ] ]
 

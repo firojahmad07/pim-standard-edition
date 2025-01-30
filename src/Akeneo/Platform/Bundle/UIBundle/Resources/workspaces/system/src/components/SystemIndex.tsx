@@ -18,7 +18,6 @@ import {
   IconCardGrid,
   IdIcon,
   KeyIcon,
-  LockIcon,
   SectionTitle,
   SettingsIcon,
   UserIcon,
@@ -161,18 +160,6 @@ const SystemIndex = () => {
                     content={translate(isSSOEnabled ? 'pim_system.sso.enabled' : 'pim_system.sso.disabled')}
                   />
                 )}
-                {featureFlags.isEnabled('free_trial') && (
-                  <DisableIconCard
-                    id="pim-system-sso"
-                    icon={
-                      <LockIconContainer>
-                        <LockIcon size={16} color={theme.color.blue100} />
-                      </LockIconContainer>
-                    }
-                    label={translate('pim_system.sso.title')}
-                    content={translate('free_trial.menu.feature_ee_only')}
-                  />
-                )}
               </IconCardGrid>
             </SectionContent>
           </>
@@ -212,7 +199,7 @@ const SystemIndex = () => {
                     )}
                   />
                 )}
-                {featureFlags.isEnabled('free_trial') && (
+                {/* {featureFlags.isEnabled('free_trial') && (
                   <DisableIconCard
                     id="pim-system-user-group"
                     icon={
@@ -223,7 +210,7 @@ const SystemIndex = () => {
                     label={translate('pim_menu.item.user_group')}
                     content={translate('free_trial.menu.feature_ee_only')}
                   />
-                )}
+                )} */}
                 {canAccessRoles && (
                   <IconCard
                     id="pim-system-user-role"
@@ -246,20 +233,6 @@ const SystemIndex = () => {
     </>
   );
 };
-
-const DisableIconCard = styled(IconCard)`
-  cursor: pointer;
-  border: 1px rgba(240, 241, 243, 0.5) solid;
-
-  :hover {
-    background: #fff;
-    border: 1px rgba(240, 241, 243, 0.5) solid;
-  }
-
-  > *:not(:first-child) {
-    opacity: 0.5;
-  }
-`;
 
 const LockIconContainer = styled.div`
   border: 1px solid #4ca8e0;
