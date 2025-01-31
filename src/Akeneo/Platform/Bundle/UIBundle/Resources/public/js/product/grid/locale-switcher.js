@@ -68,7 +68,7 @@ define([
           locales: this.locales,
           currentLocale,
           i18n,
-          getDisplayName: this.getDisplayName,
+          getDisplayName: this.getDisplayName
         })
       );
     },
@@ -90,9 +90,9 @@ define([
      * @return {String}        The translated locale
      */
     getDisplayName(locale) {
-      return locale.language;
+      return locale.label;
     },
-
+  
     /**
      * Switches locales by visiting the product grid route
      * @param  {Event} event The click event coming from the locale dropdown list

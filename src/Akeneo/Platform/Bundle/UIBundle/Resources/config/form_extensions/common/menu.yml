@@ -96,7 +96,7 @@ extensions:
         config:
             title: pim_menu.tab.settings
             iconModifier: iconSettings
-            to: pim_enrich_categorytree_index
+            to: pim_settings_index
             isLandingSectionPage: true
             icon: SettingsIcon
 
@@ -228,7 +228,7 @@ extensions:
             title: pim_menu.tab.system
             iconModifier: iconSystem
             icon: SystemIcon
-            to: pim_enrich_catalog_volume_index
+            to: pim_system_index
             isLandingSectionPage: true
 
     pim-menu-system-column:

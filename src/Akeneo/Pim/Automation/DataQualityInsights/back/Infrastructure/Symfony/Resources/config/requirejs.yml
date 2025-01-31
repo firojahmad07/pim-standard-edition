@@ -3,15 +3,16 @@ config:
         pim/controller-registry:
             controllers:
                 akeneo_data_quality_insights_dashboard:
+                    module: akeneo/data-quality-insights/dqi-dashboard-index
     paths:
         # Controller
-        akeneo-data-quality-insights-dqi-dashboard-index: akeneodataqualityinsights/js/controller/dqi-dashboard.ts
+        akeneo/data-quality-insights/dqi-dashboard-index: akeneodataqualityinsights/js/controller/dqi-dashboard.ts
 
         ## Product Grid
         oro/datagrid/quality-score-badge-cell: akeneodataqualityinsights/js/infrastructure/datagrid/cell/quality-score-badge-cell.tsx
 
         ## Dashboard
-        akeneo/data-quality-insights/view/dqi-dashboard/section: akeneodataqualityinsights/js/infrastructure/dqi-dashboard/section.tsx
+        # akeneo/data-quality-insights/view/dqi-dashboard/section: akeneodataqualityinsights/js/infrastructure/dqi-dashboard/section.tsx
         akeneo/data-quality-insights/view/dqi-dashboard/base-dashboard: akeneodataqualityinsights/js/infrastructure/dqi-dashboard/base-dashboard.ts
 
         ## Dashboard
@@ -56,4 +57,4 @@ config:
         oro/datagrid/quality-badge-cell: akeneodataqualityinsights/js/infrastructure/attribute-grid/cell/quality-badge-cell.tsx
 
         #Dashboard
-        # akeneo/data-quality-insights/view/dqi-dashboard/section: akeneodataqualityinsights/js/infrastructure/dqi-dashboard/section.tsx
+        akeneo/data-quality-insights/view/dqi-dashboard/section: akeneodataqualityinsights/js/infrastructure/dqi-dashboard/section.tsx

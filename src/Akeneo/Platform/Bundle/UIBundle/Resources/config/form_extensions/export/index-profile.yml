@@ -67,6 +67,6 @@ extensions:
         position: 100
         aclResourceId: pim_importexport_export_profile_create
         config:
-           iconName:  plus
-           title:     pim_import_export.entity.export_profile.module.create.button
-           modalForm: pim-export-profile-create-modal
+            iconName:  plus
+            title:     pim_import_export.entity.export_profile.module.create.button
+            modalForm: pim-export-profile-create-modal

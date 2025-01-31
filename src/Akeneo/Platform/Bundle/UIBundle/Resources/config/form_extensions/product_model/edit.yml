@@ -46,8 +46,8 @@ extensions:
         position: 5
         targetZone: column
         config:
-          stateCode: product_edit_form
-          navigationTitle: pim_menu.navigation.product
+            stateCode: product_edit_form
+            navigationTitle: pim_menu.navigation.product
 
     pim-product-model-edit-form-column-tabs-navigation:
         module: pim/form/common/column-tabs-navigation
@@ -55,7 +55,7 @@ extensions:
         targetZone: navigation
         position: 10
         config:
-          title: pim_menu.navigation.product
+            title: pim_menu.navigation.product
 
     pim-product-model-edit-form-meta:
         module: pim/form/common/meta

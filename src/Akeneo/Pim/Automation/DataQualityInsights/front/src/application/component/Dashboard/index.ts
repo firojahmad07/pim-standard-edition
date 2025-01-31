@@ -1,4 +1,4 @@
-import Dashboard from './Dashboard';
+import {Dashboard} from './Dashboard';
 import DashboardHelper from './DashboardHelper';
 import {KeyIndicators} from './KeyIndicators/KeyIndicators';
 import Widgets from './Widgets/Widgets';

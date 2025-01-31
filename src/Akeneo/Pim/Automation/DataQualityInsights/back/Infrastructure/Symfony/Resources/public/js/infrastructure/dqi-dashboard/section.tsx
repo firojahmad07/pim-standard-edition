@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import {DashboardHelper} from '@akeneo-pim-community/data-quality-insights/src/index';
-import {Dashboard} from '@akeneo-pim-community/data-quality-insights/src/application/component/Dashboard/Dashboard';
-import {TimePeriod} from '@akeneo-pim-community/data-quality-insights/src/domain';
+import {DashboardHelper} from '@akeneo-pim-community/data-quality-insights';
+import {Dashboard} from '@akeneo-pim-community/data-quality-insights';
+import {TimePeriod} from '@akeneo-pim-community/data-quality-insights';
 
 const UserContext = require('pim/user-context');
 const BaseDashboard = require('akeneo/data-quality-insights/view/dqi-dashboard/base-dashboard');

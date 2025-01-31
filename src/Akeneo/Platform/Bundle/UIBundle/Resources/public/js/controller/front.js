@@ -1,6 +1,9 @@
 'use strict';
-
-define(['oro/translator', 'pim/controller/base', 'pim/error'], function (__, BaseController, Error) {
+define([
+  'oro/translator',
+  'pim/controller/base', 
+  'pim/error'
+], function (__, BaseController, Error) {
   return BaseController.extend({
     formPromise: null,
 

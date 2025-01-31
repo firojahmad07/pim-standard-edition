@@ -27,6 +27,7 @@ define([
 
           PageTitle.set({'job.label': _.escape(jobInstance.label)});
 
+          console.log("form : ", jobInstance.meta.form + '-' + mode);
           return FormBuilder.build(jobInstance.meta.form + '-' + mode).then(form => {
             this.on('pim:controller:can-leave', event => {
               form.trigger('pim_enrich:form:can-leave', event);

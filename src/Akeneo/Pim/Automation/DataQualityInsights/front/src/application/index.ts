@@ -7,5 +7,8 @@ export * from './constant';
 export * from './helper';
 export * from './listener';
 export * from './user-actions';
+export * from './component';
+export * from './context';
+
 
 export {AttributeEditFormApp, AttributeCreateFormApp, ProductEditFormApp, ProductModelEditFormApp};

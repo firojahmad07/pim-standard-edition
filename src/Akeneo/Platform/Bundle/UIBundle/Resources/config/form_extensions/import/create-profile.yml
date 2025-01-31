@@ -10,3 +10,32 @@ extensions:
             editRoute: pim_importexport_import_profile_edit
             postUrl: pim_enrich_job_instance_rest_import_create
             routerKey: code
+            
+    pim-import-profile-create-code:
+        module: pim/form/common/creation/field
+        parent: pim-import-profile-create-modal
+        targetZone: fields
+        position: 10
+        config:
+            identifier: code
+            label: pim_common.code
+
+    pim-import-profile-create-label:
+        module: pim/form/common/creation/field
+        parent: pim-import-profile-create-modal
+        targetZone: fields
+        position: 20
+        config:
+            identifier: label
+            label: pim_common.label
+
+    pim-import-profile-create-job:
+        module: pim/form/common/creation/job
+        parent: pim-import-profile-create-modal
+        targetZone: fields
+        position: 30
+        config:
+            type: import
+            identifier: job_name
+            label: pim_import_export.form.job_instance.meta.job
+            url: pim_enrich_job_instance_rest_jobs_get

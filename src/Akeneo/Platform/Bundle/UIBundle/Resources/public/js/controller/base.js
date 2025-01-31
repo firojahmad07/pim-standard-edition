@@ -1,5 +1,5 @@
 'use strict';
-
+console.log("Loading BaseController...");
 define(['backbone'], function (Backbone) {
   return Backbone.View.extend({
     active: false,

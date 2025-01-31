@@ -108,6 +108,7 @@ define([
           }
 
           controller.el = $view;
+          console.log("controller and views : ", controller);
           this.currentController = new controller.class(controller);
           this.currentController.setActive(true);
           this.currentController

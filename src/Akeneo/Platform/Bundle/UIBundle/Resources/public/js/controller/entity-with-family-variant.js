@@ -7,9 +7,20 @@ define([
   'pim/form-builder',
   'pim/fetcher-registry',
   'pim/user-context',
-  'pim/dialog',
   'pim/page-title',
-], function (_, __, BaseController, FormBuilder, FetcherRegistry, UserContext, Dialog, PageTitle) {
+], function (_, __, BaseController, FormBuilder, FetcherRegistry, UserContext, PageTitle) {
+  console.log("we are in base controller : ", BaseController);
+  console.log("BaseController.extend:", BaseController?.extend);
+  console.log("Type of BaseController:", typeof BaseController);
+  // if (typeof BaseController === 'function') {
+  //   BaseController = BaseController(); // Force evaluation
+  // }
+
+  // if (!BaseController || !BaseController.extend) {
+  //   console.error("BaseController is not valid. Falling back to Backbone.View.");
+  //   BaseController = Backbone.View;
+  // }
+
   return BaseController.extend({
     /**
      * {@inheritdoc}

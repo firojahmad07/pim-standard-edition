@@ -25,7 +25,7 @@ export class ProductFetcherImplementation implements ProductFetcher {
       routing.generate('akeneo_reference_entities_product_get_linked_product', {
         referenceEntityIdentifier: referenceEntityIdentifier.stringValue(),
         recordCode: recordCode.stringValue(),
-        attributeCode: attributeCode.stringValue(),
+        attributeCode: attributeCode.stringValues(),
         channel: channel.stringValue(),
         locale: locale.stringValue(),
       })

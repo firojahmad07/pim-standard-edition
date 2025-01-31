@@ -498,7 +498,8 @@ config:
     pimee/rule-manager:                       pimui/js/product/rule-manager
 
     # Controllers
-    pim/controller/dashboard: pimui/js/controller/pim-enterprise-dashboard.tsx
+    # pim/controller/dashboard: pimui/js/controller/pim-enterprise-dashboard.tsx
+    pim/controller/dashboard:   pimui/js/controller/dashboard.tsx
 
     # Form extensions
     pimee/product-edit-form/attributes/copy:                      pimui/js/product/form/attributes/copy
