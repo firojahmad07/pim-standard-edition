@@ -2,7 +2,8 @@ import useFetchProductDataQualityEvaluation from '@akeneo-pim-community/data-qua
 import useProductFamily from '@akeneo-pim-community/data-quality-insights/src/infrastructure/hooks/ProductEditForm/useProductFamily';
 import useCatalogContext from '@akeneo-pim-community/data-quality-insights/src/infrastructure/hooks/ProductEditForm/useCatalogContext';
 import useProduct from '@akeneo-pim-community/data-quality-insights/src/infrastructure/hooks/ProductEditForm/useProduct';
-import {usePageContext} from '@akeneo-pim-community/data-quality-insights/src/infrastructure/hooks';
+import usePageContext from './ProductEditForm/usePageContext';
+
 import useProductEvaluation from '@akeneo-pim-community/data-quality-insights/src/infrastructure/hooks/ProductEditForm/useProductEvaluation';
 
 import useGetWidgetsList from './EditorHighlight/useGetWidgetsList';
@@ -17,12 +18,27 @@ import {useGetSpellcheckSupportedLocales} from './Common/useGetSpellcheckSupport
 import {useLocaleDictionary, DictionaryState} from './Locale/Dictionary/useLocaleDictionary';
 import {useDictionaryState} from './Locale/Dictionary/useDictionaryState';
 
+import useFetchDqiDashboardData from './Dashboard/useFetchDqiDashboardData'
+import useGetChartScalingSizeRatio from './Dashboard/useGetChartScalingSizeRatio';
+import {useFetchProductQualityScore} from './ProductEditForm/useFetchProductQualityScore';
+import {useFetchKeyIndicators} from './Dashboard/useFetchKeyIndicators';
+import {RawScoreEvolutionData, useFetchQualityScoreEvolution} from './Dashboard/useFetchQualityScoreEvolution';
+
+export * from './AttributeGroup';
+
+
 export {
   useFetchProductDataQualityEvaluation,
+  useGetChartScalingSizeRatio as useGetDashboardChartScalingSizeRatio,
+  useFetchProductQualityScore,
+  useFetchKeyIndicators,
+  RawScoreEvolutionData,
+  useFetchQualityScoreEvolution,
   useProductFamily,
   useCatalogContext,
   useProduct,
   usePageContext,
+  useFetchDqiDashboardData,
   useGetWidgetsList as useGetEditorHighlightWidgetsList,
   useGetEditorBoundingRect as useGetEditorHighlightBoundingRect,
   useGetEditorScroll as useGetEditorHighlightScroll,

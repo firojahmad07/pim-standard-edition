@@ -15,4 +15,4 @@ class JobInstance extends BaseView {
   }
 }
 
-export default JobInstance;
+export = JobInstance;

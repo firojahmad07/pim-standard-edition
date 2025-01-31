@@ -21,4 +21,4 @@ const useFetchDqiDashboardData = (
   return dqiDashboardData;
 };
 
-export default useFetchDqiDashboardData;
+export = useFetchDqiDashboardData;
