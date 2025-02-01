@@ -1,5 +1,5 @@
 {
-  "name": "pim-community-dev",
+  "name": "pim-standard-edition",
   "version": "3.2.0",
   "description": "Akeneo PIM Application",
   "homepage": "https://www.akeneo.com/",
@@ -32,20 +32,15 @@
     "measurement:lint:check": "yarn --cwd=front-packages/measurement lint:check",
     "measurement:build": "yarn --cwd=front-packages/measurement lib:build",
     "process-tracker:lint:check": "yarn workspace @akeneo-pim-community/process-tracker lint:check",
-    "process-tracker:build": "yarn workspace @akeneo-pim-community/process-tracker lib:build",
-    "catalog-volume-monitoring:lint:check": "yarn workspace @akeneo-pim-community/catalog-volume-monitoring lint:check",
-    "catalog-volume-monitoring:build": "yarn workspace @akeneo-pim-community/catalog-volume-monitoring lib:build",
-    "packages:unit": "yarn --cwd=front-packages/shared test:unit:run && yarn --cwd=front-packages/measurement test:unit:run && yarn workspace @akeneo-pim-community/process-tracker test:unit:run && yarn workspace @akeneo-pim-community/catalog-volume-monitoring test:unit:run",
-    "packages:lint:check": "yarn shared:lint:check && yarn measurement:lint:check && yarn process-tracker:lint:check && yarn catalog-volume-monitoring:lint:check",
-    "packages:build": "yarn dsm:build && yarn shared:build && yarn measurement:build && yarn catalog-volume-monitoring:build && yarn process-tracker:build"
+    "process-tracker:build": "yarn workspace @akeneo-pim-community/process-tracker lib:build"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/akeneo/pim-community-dev.git"
+    "url": "https://github.com/firojahmad07/pim-standard-edition.git"
   },
   "license": "OSL-3.0",
   "bugs": {
-    "url": "https://github.com/akeneo/pim-community-dev/issues"
+    "url": "https://github.com/firojahmad07/pim-standard-edition/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -132,7 +127,6 @@
   },
   "dependencies": {
     "ajv": "^6.10.2",
-    "@akeneo-pim-community/akeneo-design-system": "link:front-packages/@akeneo-pim-community/akeneo-design-system",
     "babel-polyfill": "6.26.0",
     "backbone": "0.9.10",
     "css-loader": "^3.3.0",
