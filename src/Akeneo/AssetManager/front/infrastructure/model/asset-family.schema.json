@@ -1,0 +1,935 @@
+{
+  "title": "BackendAssetFamily",
+  "type": "object",
+  "properties": {
+    "identifier": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "labels": {
+      "title": "BackendLabels",
+      "anyOf": [
+        {
+          "type": "object",
+          "patternProperties": {
+            ".+": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "array",
+          "maxItems": 0
+        }
+      ]
+    },
+    "image": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "title": "BackendMediaFile",
+          "type": "object",
+          "properties": {
+            "filePath": {
+              "type": "string"
+            },
+            "originalFilename": {
+              "type": "string"
+            },
+            "size": {
+              "type": "number"
+            },
+            "mimeType": {
+              "type": "string"
+            },
+            "extension": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "filePath",
+            "originalFilename"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "asset_count": {
+      "type": "integer"
+    },
+    "attributes": {
+      "type": "array",
+      "items": {
+        "title": "BackendAttribute",
+        "type": "object",
+        "$comment": "See the attached README.md for specifics of this file.",
+        "anyOf": [
+          {
+            "title": "BackendAttributeMediaFile",
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "media_file"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "asset_family_identifier": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "labels": {
+                "title": "BackendLabels",
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "patternProperties": {
+                      ".+": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "type": "array",
+                    "maxItems": 0
+                  }
+                ]
+              },
+              "is_required": {
+                "type": "boolean"
+              },
+              "is_read_only": {
+                "type": "boolean"
+              },
+              "order": {
+                "type": "integer"
+              },
+              "value_per_locale": {
+                "type": "boolean"
+              },
+              "value_per_channel": {
+                "type": "boolean"
+              },
+              "media_type": {
+                "type": "string"
+              },
+              "max_file_size": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "allowed_extensions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "type",
+              "identifier",
+              "asset_family_identifier",
+              "code",
+              "labels",
+              "is_required",
+              "is_read_only",
+              "order",
+              "value_per_locale",
+              "value_per_channel",
+              "media_type",
+              "max_file_size",
+              "allowed_extensions"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "title": "BackendAttributeMediaLink",
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "media_link"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "asset_family_identifier": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "labels": {
+                "title": "BackendLabels",
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "patternProperties": {
+                      ".+": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "type": "array",
+                    "maxItems": 0
+                  }
+                ]
+              },
+              "is_required": {
+                "type": "boolean"
+              },
+              "is_read_only": {
+                "type": "boolean"
+              },
+              "order": {
+                "type": "integer"
+              },
+              "value_per_locale": {
+                "type": "boolean"
+              },
+              "value_per_channel": {
+                "type": "boolean"
+              },
+              "media_type": {
+                "type": "string"
+              },
+              "prefix": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "suffix": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "identifier",
+              "asset_family_identifier",
+              "code",
+              "labels",
+              "is_required",
+              "is_read_only",
+              "order",
+              "value_per_locale",
+              "value_per_channel",
+              "media_type",
+              "prefix",
+              "suffix"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "title": "BackendAttributeText",
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "text"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "asset_family_identifier": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "labels": {
+                "title": "BackendLabels",
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "patternProperties": {
+                      ".+": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "type": "array",
+                    "maxItems": 0
+                  }
+                ]
+              },
+              "is_required": {
+                "type": "boolean"
+              },
+              "is_read_only": {
+                "type": "boolean"
+              },
+              "order": {
+                "type": "integer"
+              },
+              "value_per_locale": {
+                "type": "boolean"
+              },
+              "value_per_channel": {
+                "type": "boolean"
+              },
+              "max_length": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "is_textarea": {
+                "type": "boolean"
+              },
+              "is_rich_text_editor": {
+                "type": "boolean"
+              },
+              "validation_rule": {
+                "type": "string"
+              },
+              "regular_expression": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "identifier",
+              "asset_family_identifier",
+              "code",
+              "labels",
+              "is_required",
+              "is_read_only",
+              "order",
+              "value_per_locale",
+              "value_per_channel",
+              "max_length",
+              "is_textarea",
+              "is_rich_text_editor",
+              "validation_rule",
+              "regular_expression"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "title": "BackendAttributeNumber",
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "number"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "asset_family_identifier": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "labels": {
+                "title": "BackendLabels",
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "patternProperties": {
+                      ".+": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "type": "array",
+                    "maxItems": 0
+                  }
+                ]
+              },
+              "is_required": {
+                "type": "boolean"
+              },
+              "is_read_only": {
+                "type": "boolean"
+              },
+              "order": {
+                "type": "integer"
+              },
+              "value_per_locale": {
+                "type": "boolean"
+              },
+              "value_per_channel": {
+                "type": "boolean"
+              },
+              "max_value": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "min_value": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "decimals_allowed": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "type",
+              "identifier",
+              "asset_family_identifier",
+              "code",
+              "labels",
+              "is_required",
+              "is_read_only",
+              "order",
+              "value_per_locale",
+              "value_per_channel",
+              "max_value",
+              "min_value",
+              "decimals_allowed"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "title": "BackendAttributeOption",
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "option"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "asset_family_identifier": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "labels": {
+                "title": "BackendLabels",
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "patternProperties": {
+                      ".+": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "type": "array",
+                    "maxItems": 0
+                  }
+                ]
+              },
+              "is_required": {
+                "type": "boolean"
+              },
+              "is_read_only": {
+                "type": "boolean"
+              },
+              "order": {
+                "type": "integer"
+              },
+              "value_per_locale": {
+                "type": "boolean"
+              },
+              "value_per_channel": {
+                "type": "boolean"
+              },
+              "options": {
+                "type": "array",
+                "items": {
+                  "title": "BackendOption",
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "labels": {
+                      "title": "BackendLabels",
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "patternProperties": {
+                            ".+": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        {
+                          "type": "array",
+                          "maxItems": 0
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "labels"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "type",
+              "identifier",
+              "asset_family_identifier",
+              "code",
+              "labels",
+              "is_required",
+              "is_read_only",
+              "order",
+              "value_per_locale",
+              "value_per_channel",
+              "options"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "title": "BackendAttributeOptionCollection",
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "option_collection"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "asset_family_identifier": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "labels": {
+                "title": "BackendLabels",
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "patternProperties": {
+                      ".+": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "type": "array",
+                    "maxItems": 0
+                  }
+                ]
+              },
+              "is_required": {
+                "type": "boolean"
+              },
+              "is_read_only": {
+                "type": "boolean"
+              },
+              "order": {
+                "type": "integer"
+              },
+              "value_per_locale": {
+                "type": "boolean"
+              },
+              "value_per_channel": {
+                "type": "boolean"
+              },
+              "options": {
+                "type": "array",
+                "items": {
+                  "title": "BackendOption",
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "labels": {
+                      "title": "BackendLabels",
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "patternProperties": {
+                            ".+": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        {
+                          "type": "array",
+                          "maxItems": 0
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "labels"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "type",
+              "identifier",
+              "asset_family_identifier",
+              "code",
+              "labels",
+              "is_required",
+              "is_read_only",
+              "order",
+              "value_per_locale",
+              "value_per_channel",
+              "options"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "title": "BackendAttributeAny",
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "pattern": "^(?!(media_file|media_link|text|number|option|option_collection)).*$"
+              },
+              "identifier": {
+                "type": "string"
+              },
+              "asset_family_identifier": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "labels": {
+                "title": "BackendLabels",
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "patternProperties": {
+                      ".+": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  {
+                    "type": "array",
+                    "maxItems": 0
+                  }
+                ]
+              },
+              "is_required": {
+                "type": "boolean"
+              },
+              "is_read_only": {
+                "type": "boolean"
+              },
+              "order": {
+                "type": "integer"
+              },
+              "value_per_locale": {
+                "type": "boolean"
+              },
+              "value_per_channel": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "type",
+              "identifier",
+              "asset_family_identifier",
+              "code",
+              "labels",
+              "is_required",
+              "is_read_only",
+              "order",
+              "value_per_locale",
+              "value_per_channel"
+            ],
+            "additionalProperties": true
+          }
+        ]
+      }
+    },
+    "permission": {
+      "title": "BackendPermission",
+      "type": "object",
+      "patternProperties": {
+        ".+": {
+          "type": "boolean"
+        }
+      }
+    },
+    "attribute_as_label": {
+      "type": "string"
+    },
+    "attribute_as_main_media": {
+      "type": "string"
+    },
+    "transformations": {
+      "title": "BackendAssetFamilyTransformation",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "attribute": {
+                "type": "string"
+              },
+              "channel": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "locale": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "attribute",
+              "channel",
+              "locale"
+            ],
+            "additionalProperties": false
+          },
+          "target": {
+            "type": "object",
+            "properties": {
+              "attribute": {
+                "type": "string"
+              },
+              "channel": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "locale": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "attribute",
+              "channel",
+              "locale"
+            ],
+            "additionalProperties": false
+          },
+          "operations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "parameters": {
+                  "type": "object"
+                },
+                "additionalProperties": false
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "filename_prefix": {
+            "type": "string"
+          },
+          "filename_suffix": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "source",
+          "target",
+          "operations"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "naming_convention": {
+      "title": "BackendAssetFamilyNamingConvention",
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "object",
+          "properties": {
+            "property": {
+              "type": "string"
+            },
+            "channel": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "locale": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "property",
+            "channel",
+            "locale"
+          ]
+        },
+        "pattern": {
+          "type": "string"
+        },
+        "abort_asset_creation_on_error": {
+          "type": "boolean"
+        }
+      },
+      "dependencies": {
+        "pattern": [
+          "source",
+          "abort_asset_creation_on_error"
+        ],
+        "abort_asset_creation_on_error": [
+          "source",
+          "pattern"
+        ],
+        "source": [
+          "pattern",
+          "abort_asset_creation_on_error"
+        ]
+      }
+    },
+    "product_link_rules": {
+      "title": "BackendAssetFamilyProductLinkRules",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_selections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "operator": {
+                  "type": "string"
+                },
+                "value": {
+                  "anyOf": [
+                    {
+                      "type": [
+                        "string",
+                        "boolean",
+                        "array"
+                      ]
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                },
+                "channel": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "locale": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "field",
+                "operator",
+                "value"
+              ]
+            }
+          },
+          "assign_assets_to": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "attribute": {
+                  "type": "string"
+                },
+                "mode": {
+                  "type": "string"
+                },
+                "channel": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "locale": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "attribute",
+                "mode"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "identifier",
+    "labels",
+    "image",
+    "asset_count",
+    "attributes",
+    "permission",
+    "attribute_as_label",
+    "attribute_as_main_media"
+  ],
+  "additionalProperties": false
+}

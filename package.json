@@ -166,8 +166,7 @@
     "uuid": "^3.3.3"
   },
   "private": true,
-  "workspaces": [  
-    "components/tailored-export/front",
+  "workspaces": [
     "front-packages/shared",
     "src/Akeneo/Pim/Tailored/front",
     "src/Akeneo/Pim/TableAttribute/front",

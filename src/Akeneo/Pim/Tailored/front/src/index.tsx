@@ -9,8 +9,6 @@ import {
   Translations,
   useRouter,
 } from '@akeneo-pim-community/shared';
-import {routes} from './routes.json';
-import translations from './translations.json';
 import {FakePIM} from './FakePIM';
 import {Attribute, AssetFamily, AssociationType, MeasurementFamily} from './feature/models';
 import {FetcherContext} from './feature/contexts';

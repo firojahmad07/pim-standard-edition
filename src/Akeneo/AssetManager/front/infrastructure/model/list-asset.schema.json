@@ -1,0 +1,221 @@
+{
+  "title": "BackendListAsset",
+  "type": "object",
+  "properties": {
+    "identifier": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "labels": {
+      "title": "BackendLabels",
+      "anyOf": [
+        {
+          "type": "object",
+          "patternProperties": {
+            ".+": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "array",
+          "maxItems": 0
+        }
+      ]
+    },
+    "image": {
+      "type": "array",
+      "items": {
+        "title": "BackendListValue",
+        "type": "object",
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "title": "BackendMediaFile",
+                "type": "object",
+                "properties": {
+                  "filePath": {
+                    "type": "string"
+                  },
+                  "originalFilename": {
+                    "type": "string"
+                  },
+                  "size": {
+                    "type": "number"
+                  },
+                  "mimeType": {
+                    "type": "string"
+                  },
+                  "extension": {
+                    "type": "string"
+                  },
+                  "updatedAt": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "filePath",
+                  "originalFilename"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "channel": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "locale": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "attribute": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "data",
+          "channel",
+          "locale",
+          "attribute"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "asset_family_identifier": {
+      "type": "string"
+    },
+    "values": {
+      "anyOf": [
+        {
+          "type": "object",
+          "patternProperties": {
+            ".+": {
+              "title": "BackendListValue",
+              "type": "object",
+              "properties": {
+                "data": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "title": "BackendMediaFile",
+                      "type": "object",
+                      "properties": {
+                        "filePath": {
+                          "type": "string"
+                        },
+                        "originalFilename": {
+                          "type": "string"
+                        },
+                        "size": {
+                          "type": "number"
+                        },
+                        "mimeType": {
+                          "type": "string"
+                        },
+                        "extension": {
+                          "type": "string"
+                        },
+                        "updatedAt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "filePath",
+                        "originalFilename"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                },
+                "channel": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "locale": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "attribute": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "data",
+                "channel",
+                "locale",
+                "attribute"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        {
+          "type": "array",
+          "maxItems": 0
+        }
+      ]
+    },
+    "completeness": {
+      "title": "BackendCompleteness",
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "number"
+        },
+        "complete": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "required",
+        "complete"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "identifier",
+    "code",
+    "labels",
+    "values",
+    "asset_family_identifier",
+    "image",
+    "completeness"
+  ],
+  "additionalProperties": false
+}

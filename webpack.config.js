@@ -245,7 +245,8 @@ const webpackConfig = {
       Backbone: 'backbone', 
       $: 'jquery', 
       jQuery: 'jquery', 
-      CodeMirror: 'codemirror'
+      CodeMirror: path.resolve(__dirname, 'node_modules/codemirror'),
+      codemirror: path.resolve(__dirname, 'node_modules/codemirror')
     }),
 
     // Ignore these directories when webpack watches for changes

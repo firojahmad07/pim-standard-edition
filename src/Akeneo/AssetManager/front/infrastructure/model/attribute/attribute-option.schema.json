@@ -1,0 +1,31 @@
+{
+  "title": "BackendOption",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "labels": {
+      "title": "BackendLabels",
+      "anyOf": [
+        {
+          "type": "object",
+          "patternProperties": {
+            ".+": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "array",
+          "maxItems": 0
+        }
+      ]
+    }
+  },
+  "required": [
+    "code",
+    "labels"
+  ],
+  "additionalProperties": false
+}
