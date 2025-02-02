@@ -1,0 +1,11 @@
+free_trial:
+  menu:
+    assets: Ressources
+    entities: Entités
+    proposals: Propositions
+    sso: Authentification unique basée sur SAML
+    rules: Règles
+    feature_ee_only: Cette fonctionnalité est uniquement disponible sur l'Enterprise Edition
+  activity:
+    dashboard:
+      projects: Projets

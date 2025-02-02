@@ -1,0 +1,11 @@
+includes:
+    - %rootDir%/../../../vendor/phpstan/phpstan-webmozart-assert/extension.neon
+parameters:
+    level: 5
+    paths:
+        - %rootDir%/../../../src/Akeneo/Pim/Automation/DataQualityInsights/back
+    treatPhpDocTypesAsCertain: false
+    ignoreErrors:
+        - '#Property Akeneo\\Pim\\Automation\\DataQualityInsights\\Infrastructure\\Persistence\\Query\\Dashboard\\GetRanksDistributionFromProductScoresQuery::\$connection is never read, only written.#'
+        - '#Property Akeneo\\Pim\\Automation\\DataQualityInsights\\Infrastructure\\Persistence\\Query\\ProductEvaluation\\GetPendingCriteriaEvaluationsByProductIdsQuery::\$clock is never read, only written.#'
+        - '#Property Akeneo\\Pim\\Automation\\DataQualityInsights\\Infrastructure\\ProductGrid\\RegisterQualityScoreFilterAndColumn::\$requestParams is never read, only written.#'
