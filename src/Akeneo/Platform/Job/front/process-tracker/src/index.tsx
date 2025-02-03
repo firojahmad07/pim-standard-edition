@@ -1,4 +1,5 @@
 import {JobInstanceDetail} from './feature/pages/JobInstanceDetail';
+import {ProcessTrackerApp} from './feature/ProcessTrackerApp';
 
 type JobInstanceDetailProps = {
   code: string;
@@ -8,4 +9,5 @@ type JobInstanceDetailProps = {
 export {
   JobInstanceDetail,
   JobInstanceDetailProps,
+  ProcessTrackerApp
 }
