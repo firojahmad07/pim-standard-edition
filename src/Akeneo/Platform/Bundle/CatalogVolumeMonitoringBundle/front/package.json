@@ -57,7 +57,7 @@
     "prettier": "^2.1.1"
   },
   "proxy": "http://localhost:8080",
-  "main": "lib/index.js",
+  "main": "src/index.tsx",
   "jest": {
     "coverageReporters": [
       "text-summary",
